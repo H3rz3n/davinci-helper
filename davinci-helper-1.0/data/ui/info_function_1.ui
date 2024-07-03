@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- INIZIO MACRO CONTENITORE DELL'INTERFACCIA -->
+<!-- INTERFACE MACRO CONTAINER START -->
+<interface>
+
+		<!-- DICHIARAZIONE DELLE DIPENDENZE DELL'INTERFACCIA -->
+		<!-- DECLARING INTERFACE DEPENDENCIES -->
+    <requires lib="gtk" version="4.6"/>
+    <requires lib="Adw" version="1.0"/>
+
+
+    <!-- APERTURA FINESTRA PRINCIPALE -->
+	  <!-- MAIN WINDOW START-->
+    <object class="GtkWindow" id="info_window_1">
+
+
+        <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <!--         INSERIMENTO DELLE PROPRIETÀ DELLA FINESTRA        -->
+        <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+        <!-- IMPOSTAZIONE ALTEZZA ALL'APERTURA -->
+			  <!-- SETTING HEIGHT SIZE ON OPENING -->
+        <property name="default-height">450</property>
+
+        <!-- IMPOSTAZIONE LUNGHEZZA ALL'APERTURA -->
+			  <!-- SETTING WIDTH SIZE ON OPENING -->
+        <property name="default-width">600</property>
+
+        <!-- IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO -->
+		    <!-- SETTING THE TITLE IN THE TITLE BAR -->
+        <property name="title" translatable="yes">Install Davinci dependencies info</property>
+
+				<!-- IMPOSTAZIONE DELLA FINESTRA COME FINESTRA DI DIALOGO -->
+			  <!-- SETTING THE WINDOW AS A DIALOG WINDOW -->
+        <property name="modal">true</property>
+
+				<!-- IMPOSTAZIONE DELLA CHISURA DELLA FINESTRA ALLA CHISURA DELLA FINESTRA PRINCIPALE -->
+			  <!-- SETTING THE WINDOW TO BE DESTROYED WITH HER MOTHER WINDOW -->
+        <property name="destroy-with-parent">true</property>
+
+				<!-- IMPOSTAZIONE POSSIBILITÀ DI RIDIMENSIONARE LA FINESTRA -->
+			  <!-- SETTING THE POSSIBILITY TO RESIZE THE WINDOW -->
+        <property name="resizable">false</property>
+
+        
+
+        <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+        <!--               CONTENUTO FINESTRA PRINCIPALE               -->
+        <!--                    MAIN WINDOW CONTENT                    -->
+        <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+
+        <!-- APERTURA CHILD GRIGLIA PRINCIPALE -->
+        <!-- MAIN GRID CHILD START -->
+        <child>
+
+            <!-- APERTURA GRIGLIA PRINCIPALE -->
+            <!-- MAIN GRID START -->
+            <object class="GtkGrid" id="info_window_1_main_grid">
+
+                <!-- PROPRIETÀ DELLA GRIGLIA PRINCIPALE -->
+                <!-- MAIN GRID PARAMETERS -->
+
+                <!-- SPAZIO TRA LE RIGHE -->
+                <!-- ROW SPACING -->
+                <property name="row-spacing">1</property>
+
+                <!-- SPAZIO TRA LE COLONNE -->
+                <!-- COLUMN SPACING -->
+                <property name="column-spacing">50</property>
+
+                <!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+                <!-- SETTING COLUMN HOMOGENITY -->
+                <property name="column-homogeneous">false</property>
+
+                <!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+                <!-- SETTING ROW HOMOGENITY -->
+                <property name="row-homogeneous">false</property>
+
+                <!-- INSERISCO I PARAMETRI CSS DEL TESTO TITOLO 1-->
+                <!-- SETTING TITLE TEXT 1 CSS PARAMETERS -->
+                <style>
+                    <class name="Info-Grid"/>
+                </style>
+
+
+
+                  <!-- APERTURA CHILD SCORREVOLE TESTO INFO 1 -->
+                  <!-- SCROLLABLE INFO TEXT 1 CHILD START -->
+                  <child>
+
+                    <!-- APERTURA SCORREVOLE TESTO INFO 1 -->
+                    <!-- SCROLLABLE INFO TEXT 1 START -->
+                    <object class="GtkScrolledWindow">
+
+                      <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
+                      <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                      <property name="hexpand">true</property>
+
+                      <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
+                      <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                      <property name="vexpand">true</property>
+
+                      <!-- POSIZIONAMENTO DEL TESTO INFO 1 NELLA GRIGLIA GENERALE -->
+                      <!-- INFO TEXT 1 POSITION INSIDE THE MAIN GRID -->
+                      <layout>
+
+                          <!-- POSIZIONE VERTICALE -->
+                          <!-- VERTICAL POSITION -->
+                          <property name="column">0</property>
+
+                          <!-- POSIZIONE ORIZZONTALE -->
+                          <!-- HORIZONTAL POSITION -->
+                          <property name="row">0</property>
+
+                      </layout>
+                      
+
+                      <!-- APERTURA CHILD DEL TESTO DI INFO 1 -->
+                      <!-- INFO TEXT 1 CHILD START -->
+                      <child>
+
+                        <!-- APERTURA DEL TESTO DI INFO 1 -->
+                        <!-- INFO TEXT 1 START -->
+                        <object class="GtkLabel" id="info_text_1">
+                        
+                          <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 1 -->
+                          <!-- SETTING THE PREVIEW TEXT 1 -->
+                          <property name="label" translatable="yes">This part of the software will install all the dependencies necessary to correctly launch the installation and the execution of Davinci Resolve. The script will detect your Fedora version and the libraries installed and using this information it will install only the packages needed. This script does not diffuse any information about you or your system, the internet connection is required only if there are some missing libraries.</property>
+
+                          <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+                          <!-- SETTING THE TEXT ALLIGNMENT -->
+                          <property name="justify">center</property>
+
+                          <!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+                          <!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+                          <property name="xalign">0.5</property>
+
+                          <!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+                          <!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+                          <property name="yalign">0.5</property>
+
+                          <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE DEL TESTO -->
+                          <!-- SETTING THE VERTICAL EXPANSION OF THE TEXT CONTAINER -->
+                          <property name="hexpand">true</property>
+
+                          <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE DEL TESTO -->
+                          <!-- SETTING THE VERTICAL EXPANSION OF THE TEXT CONTAINER -->
+                          <property name="vexpand">true</property>
+
+                          <!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+                          <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                          <property name="wrap">true</property>
+
+                          <!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+                          <!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+                          <property name="wrap-mode">word</property>
+
+                          <!-- INSERISCO I PARAMETRI CSS DEL TESTO DI ANTEPRIMA 1-->
+                          <!-- SETTING THE CSS PARAMETERS OF PREVIEW TEXT 1 -->
+                          <style>
+                              <class name="Info-Text"/>
+                          </style>
+
+                        <!-- CHIUSURA TESTO DI INFO 1-->
+                        <!-- INFO TEXT 1 END -->
+                        </object>
+
+                      <!-- CHIUSURA CHILD TESTO DI INFO 1 -->
+                      <!-- INFO TEXT 1 CHILD END -->
+                      </child>
+
+
+                    <!-- CHIUSURA SCORREVOLE TESTO INFO 1 -->
+                    <!-- SCROLLABLE INFO TEXT 1 END -->
+                    </object>
+
+                  <!-- CHIUSURA CHILD SCORREVOLE TESTO INFO 1 -->
+                  <!-- SCROLLABLE INFO TEXT 1 CHILD END -->
+                  </child>
+
+                  <!-- APERTURA CHILD BOX BOTTONE OK 1 -->
+                  <!-- OK BUTTON BOX 1 CHILD START -->
+                  <child>
+
+                      <!-- APERTURA BOX BOTTONI OK 1 -->
+                      <!-- OK BUTTON BOX 1 START -->
+                      <object class="GtkBox" id="info_button_box_1">
+
+                        <!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX -->
+                        <!-- SETTING THE BOX ORIENTATION -->
+                        <property name="orientation">vertical</property>
+
+                        <!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
+                        <!-- SETTING THE BOX VERTICAL ALIGN -->
+                        <property name="valign">center</property>
+
+                        <!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+                        <!-- SETTING THE BOX HORIZONTAL ALIGN -->
+                        <property name="halign">center</property>
+
+                        <!-- POSIZIONAMENTO DEL TESTO INFO 1 NELLA GRIGLIA GENERALE -->
+                        <!-- INFO TEXT 1 POSITION INSIDE THE MAIN GRID -->
+                        <layout>
+
+                            <!-- POSIZIONE VERTICALE -->
+                            <!-- VERTICAL POSITION -->
+                            <property name="column">0</property>
+
+                            <!-- POSIZIONE ORIZZONTALE -->
+                            <!-- HORIZONTAL POSITION -->
+                            <property name="row">1</property>
+
+                        </layout>
+
+                        <!-- INSERISCO I PARAMETRI CSS DEL BOTTONE OK 1-->
+                        <!-- SETTING OK BUTTON 1 CSS PARAMETERS  -->
+                        <style>
+                          <class name="Info-Button-Box"/>
+                        </style>
+
+
+                        <!-- INSERIMENTO CHILD BOTTONE OK 1 -->
+                        <!-- OK BUTTON 1 CHILD START -->
+                        <child>
+
+                          <!-- INSERIMENTO BOTTONE OK 1 -->
+                          <!-- OK BUTTON 1 START -->
+                          <object class="GtkButton" id="ok_button_1">
+
+                            <!-- PROPRIETÀ DEL BOTTONE OK 1 -->
+                            <!-- OK BUTTON 1 PARAMETERS -->
+
+                            <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE OK 1-->
+                            <!-- OK BUTTON 1 TEXT LABEL -->
+                            <property name="label" translatable="yes">Understood</property>
+
+                            <!-- INSERISCO I PARAMETRI CSS DEL BOTTONE OK 1-->
+                            <!-- SETTING OK BUTTON 1 CSS PARAMETERS  -->
+                            <style>
+                              <class name="Ok-Button"/>
+                            </style>
+
+                          <!-- CHIUSURA BOTTONE OK 1 -->
+                          <!-- OK BUTTON 1 END -->
+                          </object>
+
+                        <!-- CHIUSURA CHILD BOTTONE OK 1-->
+                        <!-- OK BUTTON 1 CHILD END -->
+                        </child>
+
+
+                      <!-- CHIUSURA BOX BOTTONI OK 1-->
+                      <!-- OK BUTTON BOX 1 END -->
+                      </object>
+
+                    <!-- CHIUSURA CHILD BOX BOTTONI OK 1 -->
+                    <!-- OK BUTTON BOX 1 CHILD END -->
+                  </child>
+
+
+
+            <!-- CHIUSURA GRIGLIA PRINCIPALE -->
+            <!-- MAIN GRID END -->
+            </object>
+
+        <!-- CHIUSURA CHILD GRIGLIA PRINCIPALE -->
+        <!-- MAIN GRID CHILD END -->
+        </child>
+
+
+
+    <!-- CHIUSURA FINESTRA PRINCIPALE -->
+		<!-- MAIN WINDOW END -->
+    </object>
+
+<!-- CHIUSURA INTERFACCIA -->
+<!-- INTERFACE END -->
+</interface>

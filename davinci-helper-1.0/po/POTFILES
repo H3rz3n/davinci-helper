@@ -1,0 +1,5 @@
+data/com.davinci.resolver.app.desktop.in
+data/com.davinci.resolver.app.metainfo.xml.in
+data/com.davinci.resolver.app.gschema.xml
+src/main.py
+

@@ -1,0 +1,318 @@
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                              PARAMETRI CSS DELLA FINESTRA PRINCIPALE                                   */
+/*                                    MAIN WINDOW CSS PARAMETERS                                          */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+/* PARAMETRI DELLE ICONE DELLE FUNZIONI */
+/* FUNCTION'S ICONS PARAMETERS */
+.Icons {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 150px;
+    min-height: 150px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+
+
+/* PARAMETRI DEI BOX DELLE FUNZIONI */
+/* FUNCTION'S BOX PARAMETERS */
+.Box {
+
+    /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI DEL BOX */
+    /* BOX BACKGROUND COLOR AND BORDER RADIUS */
+    background-color: rgb(48, 48, 48);
+    border-radius: 15px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 50px;
+
+    /* PARAMETRI DI TRANSIZIONE */
+    /* TRANSITION PARAMETERS */
+    transition: 0.3s;
+
+}
+
+/* PARAMETRI DEI BOX DELLE FUNZIONI AL PASSAGGIO DEL MOUSE */
+/* FUNCTION'S BOX PARAMETERS ON MOUSE INTERACTION */
+.Box:hover {
+
+    /* COLORE DI SFONDO DEL BOX */
+    /* BOX BACKGROUND COLOR; */
+    background-color: rgb(55, 55, 55);
+
+}
+
+
+
+/* PARAMETRI DEI TESTI DI ANTEPRIMA DELLE FUNZIONI */
+/* FUNCTION'S PREVIEW TEXT PARAMETERS */
+.Text-Preview {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-weight: bold;
+    font-size: 14pt;
+
+}
+
+
+
+/* PARAMETRI DEI BOTTONI SUPERIORI */
+/* UPPER BUTTONS PARAMETERS */
+.Upper-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+
+}
+
+
+
+/* PARAMETRI DEI BOTTONI INFERIORI */
+/* LOWER BUTTONS PARAMETERS */
+.Lower-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                PARAMETRI CSS DELLE FINESTRE DI INFO                                    */
+/*                                     INFO WINDOWS CSS PARAMETERS                                        */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+/* PARAMETRI DEI TESTI DI INFO */
+/* INFO TEXT PARAMETERS */
+.Info-Text {
+
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 40px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 13pt;
+
+
+
+}
+
+
+
+/* PARAMETRI DELLE GRIGLIE PRINCIPALI DELLE FINESTRE DI INFO */
+/* NFO WINDOWS MAIN GRID PARAMETERS */
+.Info-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 40px;
+
+}
+
+
+
+/* PARAMETRI DEI BOX BOTTONI DELLE FINESTRE DI INFO */
+/* INFO WINDOWS BUTTON BOXS PARAMETERS */
+.Info-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 15px;
+}
+
+
+
+/* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
+/* INFO WINDOWS EXIT BUTTONS PARAMETERS */
+.Ok-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:5px;
+
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                             PARAMETRI CSS DELLE FINESTRE DI FUNZIONE                                   */
+/*                                 FUNCTION WINDOWS CSS PARAMETERS                                       */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+/* PARAMETRI DEI TITOLI TESTUALI DELLE FINESTRE FUNZIONE */
+/* FUNCTION WINDOWS TITLE TEXTS PARAMETERS */
+.Function-Title {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 15pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-bottom: 20px;
+
+}
+
+
+
+/* PARAMETRI DELLE GRIGLIE DELLE FINESTRE FUNZIONE */
+/* FUNCTION WINDOWS GRIDS PARAMETERS */
+.Function-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 40px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI DELLE FINESTRE FUNZIONE*/
+/* FUNCTION WINDOW SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-Scrollable {
+
+    /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI DEL BOX */
+    /* BOX BACKGROUND COLOR AND BORDER RADIUS */
+    background-color: rgb(20, 20, 20);
+    border-radius: 15px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI DELLE FINESTRE FUNZIONE*/
+/* FUNCTION WINDOW SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-Textview {
+
+    /* COLORE DI SFONDO DEL CAMPO DI TESTO */
+    /* BOX BACKGROUND COLOR OF THE TEXTVIEW */
+    background-color: rgb(20, 20, 20);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
