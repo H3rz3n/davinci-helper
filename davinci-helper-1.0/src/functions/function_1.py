@@ -12,7 +12,13 @@ gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, Gdk, Pango, Gio, GLib
 
 
+#
+#
+current_directory = os.path.dirname(os.path.abspath(__file__))
 
+#
+#
+ui_path = os.path.join(current_directory,'..', '..', 'data', 'ui')
 
 
 # DEFINISCO LA CLASSE CHE PERMETTE LA CREAZIONE E MESSA SCHERMO DELLA FINESTRA DELLA FUNZIONE 1
@@ -29,7 +35,7 @@ class build_function_1 ():
         
         # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA INFO 1
 		# IMPORTING THE UI FILE THAT REPRESENT THE INFO WINDOW 1
-        function_1_window_builder.add_from_file("../data/ui/function_1.ui")
+        function_1_window_builder.add_from_file(f"{ui_path}/function_1.ui")
         
         # OTTENGO LA FINESTRA DI INFO 1 ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE INFO WINDOW 1 AND HER CHILD FROM THE UI FILE

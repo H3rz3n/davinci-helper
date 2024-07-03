@@ -170,10 +170,6 @@
 											<!-- ICON 1 START  -->
                                             <object class="GtkImage" id="icon_1">
 
-                                                <!-- DICHIARAZIONE PERCORSO FILE DELL'ICONA 1-->
-												<!-- DECLARING THE FILE PATH OF ICON 1  -->
-                                                <property name="file">/app/share/davinci_resolver/davinci_resolver/F1.png</property>
-
                                                 <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 1 -->
 												<!-- SETTING THE CSS PARAMETERS OF ICON 1 -->
                                                 <style>
@@ -211,7 +207,7 @@
 
                                             <!-- APERTURA TESTO 1 -->
 											<!-- PREVIEW TEXT 1 START -->
-                                            <object class="GtkLabel" id="testo_preview_1">
+                                            <object class="GtkLabel" id="text_preview_1">
 
                                                 <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 1 -->
 												<!-- SETTING THE PREVIEW TEXT 1 -->
@@ -461,10 +457,6 @@ dependencies</property>
 											<!-- IMAGE 2 START  -->
                                             <object class="GtkImage" id="icon_2">
 
-                                                <!-- DICHIARAZIONE PERCORSO FILE DELL'ICONA 2-->
-												<!-- DECLARING THE FILE PATH OF ICON 2  -->
-                                                <property name="file">/app/share/davinci_resolver/davinci_resolver/F2.png</property>
-
                                                 <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 2 -->
 												<!-- SETTING THE CSS PARAMETERS OF ICON 2 -->
                                                 <style>
@@ -502,7 +494,7 @@ dependencies</property>
 
                                             <!-- APERTURA TESTO 2 -->
 											<!-- PREVIEW TEXT 2 START -->
-                                            <object class="GtkLabel" id="testo_preview_2">
+                                            <object class="GtkLabel" id="text_preview_2">
 
                                                 <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 2 -->
 												<!-- SETTING THE PREVIEW TEXT 2 -->
@@ -752,10 +744,6 @@ installer fix</property>
 											<!-- IMAGE 3 START  -->
                                             <object class="GtkImage" id="icon_3">
 
-                                                <!-- DICHIARAZIONE PERCORSO FILE DELL'ICONA 3-->
-												<!-- DECLARING THE FILE PATH OF ICON 3  -->
-                                                <property name="file">/app/share/davinci_resolver/davinci_resolver/F3.png</property>
-
                                                 <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 3 -->
 												<!-- SETTING THE CSS PARAMETERS OF ICON 3 -->
                                                 <style>
@@ -793,7 +781,7 @@ installer fix</property>
 
                                             <!-- APERTURA TESTO 3 -->
 											<!-- PREVIEW TEXT 3 START -->
-                                            <object class="GtkLabel" id="testo_preview_3">
+                                            <object class="GtkLabel" id="text_preview_3">
 
                                                 <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 3 -->
 												<!-- SETTING THE PREVIEW TEXT 3 -->
@@ -1042,10 +1030,6 @@ installation fix</property>
 											<!-- IMAGE 4 START  -->
                                             <object class="GtkImage" id="icon_4">
 
-                                                <!-- DICHIARAZIONE PERCORSO FILE DELL'ICONA 4-->
-												<!-- DECLARING THE FILE PATH OF ICON 4  -->
-                                                <property name="file">/app/share/davinci_resolver/davinci_resolver/F4.png</property>
-
                                                 <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 4 -->
 												<!-- SETTING THE CSS PARAMETERS OF ICON 4 -->
                                                 <style>
@@ -1083,7 +1067,7 @@ installation fix</property>
 
 											<!-- APERTURA TESTO 4 -->
 											<!-- PREVIEW TEXT 4 START -->
-											<object class="GtkLabel" id="preview-text_4">
+											<object class="GtkLabel" id="text_preview_4">
 
 												<!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 4 -->
 												<!-- SETTING THE PREVIEW TEXT 4 -->

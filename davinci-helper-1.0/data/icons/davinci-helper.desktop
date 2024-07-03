@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Alpha di Davinci Helper
+Comment=Una semplice ed umile descrizione
+Exec=davinci-helper
+Icon=davinci-helper-icon.svg
+Terminal=true
+Type=Application
+Categories=Utility;

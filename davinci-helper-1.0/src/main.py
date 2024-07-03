@@ -74,10 +74,34 @@ list_directory_contents(current_dir_path)
 
 
 
+#
+#
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+#
+#
+css_path = os.path.join(current_directory, '..', 'data', 'css')
+
+#
+#
+ui_path = os.path.join(current_directory, '..', 'data', 'ui')
+
+#
+#
+icon_path = os.path.join(current_directory, '..', 'data', 'icons')
+
+#
+#
+po_path = os.path.join(current_directory, '..', 'po')
+
+
+
+
+
 # IMPORTO IL FILE CSS PER LA DEFINIZIONE DEGLI STILI
 # IMPORTING THE CSS FILE FOR STYLES DEFINITION
 css_provider = Gtk.CssProvider()
-css_provider.load_from_path('../data/css/style-dark.css')
+css_provider.load_from_path(f'{css_path}/style-dark.css')
 Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(),css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
 
@@ -112,7 +136,39 @@ class build_main_window(Adw.Application):
 
 		# IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA PRINCIPALE
 		# IMPORTING THE UI FILE THAT REPRESENT THE MAIN WINDOW
-        main_window_builder.add_from_file("../data/ui/main_window.ui")
+        main_window_builder.add_from_file(f"{ui_path}/main_window.ui")
+
+        # OTTENGO LA FINESTRA PRINCIPALE ED I SUOI CHILD DAL FILE UI
+        # OBTAINING THE MAIN WINDOW AND HER CHILD FROM THE UI FILE
+        self.main_window = main_window_builder.get_object("main_window")
+
+        # DICHIARAZIONE PERCORSO FILE DELL'ICONA 1
+        # DECLARING THE FILE PATH OF ICON 1 
+        self.icon_1 = main_window_builder.get_object("icon_1")
+        self.icon_1.set_from_file(f"{icon_path}/icons_main/F1.png")
+
+        # DICHIARAZIONE PERCORSO FILE DELL'ICONA 2
+        # DECLARING THE FILE PATH OF ICON 2 
+        self.icon_2 = main_window_builder.get_object("icon_2")
+        self.icon_2.set_from_file(f"{icon_path}/icons_main/F2.png")
+
+        # DICHIARAZIONE PERCORSO FILE DELL'ICONA 3
+        # DECLARING THE FILE PATH OF ICON 3 
+        self.icon_3 = main_window_builder.get_object("icon_3")
+        self.icon_3.set_from_file(f"{icon_path}/icons_main/F3.png")
+
+        # DICHIARAZIONE PERCORSO FILE DELL'ICONA 4
+        # DECLARING THE FILE PATH OF ICON 4 
+        self.icon_4 = main_window_builder.get_object("icon_4")
+        self.icon_4.set_from_file(f"{icon_path}/icons_main/F4.png")
+
+        # IMPOSTO LA FINESTRA PRINCIPALE PER FAR CHIUDERE IL PROGRAMMA ALLA CHIUSURA DELLA FINESTRA
+        # SETTING THE MAIN WINDOW TO CLOSE THE APP AFTER ALL APP WINDOWS ARE CLOSED
+        self.main_window.set_application(self)
+
+        # MANDO A SCHERMO LA FINESTRA PRINCIPALE ED I SUOI CHILD
+        # PRINTING TO SCREEN THE MAIN WINDOW AND HER CHILDS
+        self.main_window.present()
 
 
 
@@ -178,18 +234,10 @@ class build_main_window(Adw.Application):
         self.info_button_4.connect('clicked', self.info_window_4_activation)
 
         
+
+
+
         
-        # OTTENGO LA FINESTRA PRINCIPALE ED I SUOI CHILD DAL FILE UI
-        # OBTAINING THE MAIN WINDOW AND HER CHILD FROM THE UI FILE
-        self.main_window = main_window_builder.get_object("main_window")
-
-        # IMPOSTO LA FINESTRA PRINCIPALE PER FAR CHIUDERE IL PROGRAMMA ALLA CHIUSURA DELLA FINESTRA
-        # SETTING THE MAIN WINDOW TO CLOSE THE APP AFTER ALL APP WINDOWS ARE CLOSED
-        self.main_window.set_application(self)
-
-        # MANDO A SCHERMO LA FINESTRA PRINCIPALE ED I SUOI CHILD
-        # PRINTING TO SCREEN THE MAIN WINDOW AND HER CHILDS
-        self.main_window.present()
 
 
 
@@ -209,7 +257,6 @@ class build_main_window(Adw.Application):
         # MANDO A SCHERMO LA FINESTRA DELLA FUNZIONE 1 ED I SUOI CHILD
         # PRINTING TO SCREEN THE FUNCTION 1 WINDOW AND HER CHILDS
         function_window_1.print_window()
-        time.sleep(2)
         function_window_1.function_1()
 
 
@@ -239,7 +286,7 @@ class build_main_window(Adw.Application):
         
         # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA INFO 1
 		# IMPORTING THE UI FILE THAT REPRESENT THE INFO WINDOW 1
-        info_1_window_builder.add_from_file("../data/ui/info_function_1.ui")
+        info_1_window_builder.add_from_file(f"{ui_path}/info_function_1.ui")
         
         # OTTENGO LA FINESTRA DI INFO 1 ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE INFO WINDOW 1 AND HER CHILD FROM THE UI FILE
@@ -274,7 +321,7 @@ class build_main_window(Adw.Application):
         
         # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA INFO 2
 		# IMPORTING THE UI FILE THAT REPRESENT THE INFO WINDOW 2
-        info_2_window_builder.add_from_file("../data/ui/info_function_2.ui")
+        info_2_window_builder.add_from_file(f"{ui_path}/info_function_2.ui")
         
         # OTTENGO LA FINESTRA DI INFO 2 ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE INFO WINDOW 2 AND HER CHILD FROM THE UI FILE
@@ -309,7 +356,7 @@ class build_main_window(Adw.Application):
         
         # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA INFO 3
 		# IMPORTING THE UI FILE THAT REPRESENT THE INFO WINDOW 3
-        info_3_window_builder.add_from_file("../data/ui/info_function_3.ui")
+        info_3_window_builder.add_from_file(f"{ui_path}/info_function_3.ui")
         
         # OTTENGO LA FINESTRA DI INFO 3 ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE INFO WINDOW 3 AND HER CHILD FROM THE UI FILE
@@ -344,7 +391,7 @@ class build_main_window(Adw.Application):
         
         # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA INFO 4
 		# IMPORTING THE UI FILE THAT REPRESENT THE INFO WINDOW 4
-        info_4_window_builder.add_from_file("../data/ui/info_function_4.ui")
+        info_4_window_builder.add_from_file(f"{ui_path}/info_function_4.ui")
         
         # OTTENGO LA FINESTRA DI INFO 4 ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE INFO WINDOW 4 AND HER CHILD FROM THE UI FILE
@@ -372,7 +419,7 @@ class build_main_window(Adw.Application):
 
 
 
-def main(version):
+def main():
 
 
     # ASSEGNANAZIONE DELL'ID DEL PROGRAMMA E COPIA DELLA CLASSE DELLA FINESTRA PRINCIPALE NELLA VARIABILE CHE RAPPRESENTA LA FINESTRA DEL PROGRAMMA
@@ -385,9 +432,12 @@ def main(version):
 
 
 
+
+
 #------------------------------------------------------
 
 if __name__ == '__main__':
     
-    VERSION = "1"
-    sys.exit(main(VERSION))
+    main()
+
+    input("inserisci qualcosa per andare avanti")

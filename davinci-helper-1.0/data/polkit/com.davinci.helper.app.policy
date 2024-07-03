@@ -9,7 +9,7 @@
 
     <!--  --> 
     <!--  --> 
-    <action id="com.davinci.helper.app">
+    <action id="davinci-helper">
 
         <!--  --> 
         <!--  --> 
@@ -18,6 +18,8 @@
         <!--  --> 
         <!--  --> 
         <message>Authentication is required to run Davinci Helper</message>
+        <message xml:lang="it">È necessario accedere come root per eseguire tutte le funzioni</message>
+        
 
         <!--  --> 
         <!--  --> 
@@ -38,6 +40,12 @@
         <!--  --> 
         <!--  --> 
         </defaults>
+
+        <!--  --> 
+        <!--  --> 
+        <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/davinci-helper</annotate>
+        <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+
 
     <!--  --> 
     <!--  --> 
