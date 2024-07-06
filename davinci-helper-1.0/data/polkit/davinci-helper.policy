@@ -9,7 +9,7 @@
 
     <!--  --> 
     <!--  --> 
-    <action id="davinci-helper">
+    <action id="davinci-helper-root">
 
         <!--  --> 
         <!--  --> 
@@ -17,8 +17,8 @@
 
         <!--  --> 
         <!--  --> 
-        <message>Authentication is required to run Davinci Helper</message>
-        <message xml:lang="it">È necessario accedere come root per eseguire tutte le funzioni</message>
+        <message>Admin authentication is required to use this function</message>
+        <message xml:lang="it">È necessario autenticarsi come admin per eseguire questa funzione</message>
         
 
         <!--  --> 
@@ -27,11 +27,11 @@
 
             <!--  --> 
             <!--  --> 
-            <allow_any>auth_admin</allow_any>
+            <allow_any>no</allow_any>
 
             <!--  --> 
             <!--  --> 
-            <allow_inactive>auth_admin</allow_inactive>
+            <allow_inactive>no</allow_inactive>
 
             <!--  --> 
             <!--  --> 
@@ -43,7 +43,8 @@
 
         <!--  --> 
         <!--  --> 
-        <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/davinci-helper</annotate>
+        <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/python</annotate>
+        <annotate key="org.freedesktop.policykit.exec.path">args</annotate>
         <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
 
 

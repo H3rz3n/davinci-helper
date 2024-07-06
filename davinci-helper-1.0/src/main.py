@@ -375,7 +375,7 @@ class build_main_window(Adw.Application):
         self.ok_button_3 = info_3_window_builder.get_object("ok_button_3")
 
         # CHIUDO LA FINESTRA DI INFO ALLA PRESSIONE DEL BOTONE
-        # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED
+        # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED%py3_install
         self.ok_button_3.connect('clicked', lambda button: info_window_3.destroy())
 
 
@@ -424,7 +424,7 @@ def main():
 
     # ASSEGNANAZIONE DELL'ID DEL PROGRAMMA E COPIA DELLA CLASSE DELLA FINESTRA PRINCIPALE NELLA VARIABILE CHE RAPPRESENTA LA FINESTRA DEL PROGRAMMA
     # ASSIGNING THE APP ID AND COPY OF THE MAIN WINDOW CLASS IN A VARIABLE
-    app_gui = build_main_window(application_id="com.davinci.helper.app")
+    app_gui = build_main_window(application_id="davinci-helper")
 
     # AVVIO DELLA FINESTRA PRINCIPALE
     # STARTING THE MAIN WINDOW
