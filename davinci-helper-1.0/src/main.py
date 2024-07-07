@@ -29,7 +29,7 @@ import sys, gi, os, time, subprocess, fcntl
 
 # IMPORTAZIONE DEI MODULI PER LE FUNZIONI DI INFO
 # INFO FUNCTION MODULES IMPORT
-from functions.function_1 import build_function_1
+from functions.function_1_GUI import build_function_1
 
 # RICHIESTA DELLE VERSIONI DI GTK ED ADWAITA
 # REQUESTING THE CHOOSEN VERSION OF GTK AND ADWAITA
@@ -417,14 +417,14 @@ class build_main_window(Adw.Application):
 
 
 
-
-
+#
+#
 def main():
 
 
     # ASSEGNANAZIONE DELL'ID DEL PROGRAMMA E COPIA DELLA CLASSE DELLA FINESTRA PRINCIPALE NELLA VARIABILE CHE RAPPRESENTA LA FINESTRA DEL PROGRAMMA
     # ASSIGNING THE APP ID AND COPY OF THE MAIN WINDOW CLASS IN A VARIABLE
-    app_gui = build_main_window(application_id="davinci-helper")
+    app_gui = build_main_window(application_id="com.davinci.helper.app")
 
     # AVVIO DELLA FINESTRA PRINCIPALE
     # STARTING THE MAIN WINDOW
@@ -440,4 +440,4 @@ if __name__ == '__main__':
     
     main()
 
-    input("inserisci qualcosa per andare avanti")
+    #input("inserisci qualcosa per andare avanti")
