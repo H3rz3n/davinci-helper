@@ -25,7 +25,7 @@
         <property name="default-width">1600</property>
 
         <!-- IMPOSTAZIONE DEL TITOLO -->
-        <property name="title">Davinci Resolver Beta 0.6</property>
+        <property name="title">Davinci helper Beta 0.6</property>
 
         <!-- IMPOSTAZIONE CSS "IN SVILUPPO" -->
          <style>

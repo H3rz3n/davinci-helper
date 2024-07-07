@@ -94,8 +94,10 @@ install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/davinci-helper.policy
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/davinci-helper.rules %{buildroot}/%{_datadir}/polkit-1/rules.d/davinci-helper.rules
 
 mkdir -p %{buildroot}%{_datadir}/davinci-helper
-cp -r  data/* %{buildroot}%{_datadir}/davinci-helper/
-cp -r  po/* %{buildroot}%{_datadir}/davinci-helper/
+mkdir -p %{buildroot}%{_datadir}/davinci-helper/data
+mkdir -p %{buildroot}%{_datadir}/davinci-helper/po
+cp -r  data/* %{buildroot}%{_datadir}/davinci-helper/data
+cp -r  po/* %{buildroot}%{_datadir}/davinci-helper/po
 
 
 

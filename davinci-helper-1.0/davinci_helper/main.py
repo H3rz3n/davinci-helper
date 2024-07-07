@@ -1,21 +1,11 @@
-# main.py
 #
 # Copyright 2024 Lorenzo Maiuri
+# Pubblicato sotto licensa CC-BY-NC-SA
+# Published under CC-BY-NC-SA license
+# GitHub : https://github.com/H3rz3n/davinci-helper
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Lesser General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Lesser General Public License for more details.
-#
-# You should have received a copy of the GNU Lesser General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-# SPDX-License-Identifier: LGPL-3.0-or-later
+
+
 
 #-------------------------------------------------------------------------------
 #                 INIZIO DEL PROGRAMMA / THE SOFTWARE STARTS HERE
@@ -25,11 +15,11 @@
 
 # IMPORTAZIONE DEI MODULI STANDARD
 # STANDARD MODULE IMPORT
-import sys, gi, os, time, subprocess, fcntl
+import sys, gi, os, threading
 
 # IMPORTAZIONE DEI MODULI PER LE FUNZIONI DI INFO
 # INFO FUNCTION MODULES IMPORT
-from functions.function_1_GUI import build_function_1
+from .functions.function_1_gui import build_function_1
 
 # RICHIESTA DELLE VERSIONI DI GTK ED ADWAITA
 # REQUESTING THE CHOOSEN VERSION OF GTK AND ADWAITA
@@ -42,59 +32,21 @@ from gi.repository import Gtk, Adw, Gdk, Pango, Gio, GLib
 
 
 
-'''
-# Funzione per stampare il contenuto delle directory
-def list_directory_contents(directory_path):
-    try:
-        with os.scandir(directory_path) as entries:
-            print(f"Contenuto della directory {directory_path}:")
-            for entry in entries:
-                if entry.is_file():
-                    print(f"  File: {entry.name}")
-                elif entry.is_dir():
-                    print(f"  Directory: {entry.name}")
-    except FileNotFoundError:
-        print(f"Errore: la directory {directory_path} non esiste.")
-    except PermissionError:
-        print(f"Errore: permesso negato per la directory {directory_path}.")
+# DEFINISCO I PERCORSI DEI FILE CSS
+# DEFINING CSS FILES PATH
+css_path = os.path.join("/usr/share/davinci-helper/data/css")
 
-# Ottieni il percorso assoluto del file corrente
-current_file_path = os.path.abspath(__file__)
+# DEFINISCO I PERCORSI DEI FILE UI
+# DEFINING UI FILES PATH
+ui_path = os.path.join("/usr/share/davinci-helper/data/ui")
 
-# Ottieni la directory del file corrente
-current_dir_path = os.path.dirname(current_file_path)
+# DEFINISCO I PERCORSI DEI FILE IMMAGINE
+# DEFINING IMAGES FILES PATH
+icon_path = os.path.join("/usr/share/davinci-helper/data/icons")
 
-# Stampa i percorsi
-print(f"Percorso del file corrente: {current_file_path}")
-print(f"Directory del file corrente: {current_dir_path}")
-
-# Stampa il contenuto della directory corrente e della directory data
-list_directory_contents(current_dir_path)
-'''
-
-
-
-#
-#
-current_directory = os.path.dirname(os.path.abspath(__file__))
-
-#
-#
-css_path = os.path.join(current_directory, '..', 'data', 'css')
-
-#
-#
-ui_path = os.path.join(current_directory, '..', 'data', 'ui')
-
-#
-#
-icon_path = os.path.join(current_directory, '..', 'data', 'icons')
-
-#
-#
-po_path = os.path.join(current_directory, '..', 'po')
-
-
+# DEFINISCO I PERCORSI DEI FILE DI TRADUZIONE
+# DEFINING TRANSLATE FILES PATH
+po_path = os.path.join("/usr/share/davinci-helper/po")
 
 
 
@@ -103,9 +55,6 @@ po_path = os.path.join(current_directory, '..', 'po')
 css_provider = Gtk.CssProvider()
 css_provider.load_from_path(f'{css_path}/style-dark.css')
 Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(),css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
-
-
 
 
 
@@ -256,8 +205,9 @@ class build_main_window(Adw.Application):
         
         # MANDO A SCHERMO LA FINESTRA DELLA FUNZIONE 1 ED I SUOI CHILD
         # PRINTING TO SCREEN THE FUNCTION 1 WINDOW AND HER CHILDS
-        function_window_1.print_window()
-        function_window_1.function_1()
+        function_1_window_thread = threading.Thread(target= function_window_1.print_window())
+        function_1_window_thread.start
+
 
 
 
@@ -417,8 +367,8 @@ class build_main_window(Adw.Application):
 
 
 
-#
-#
+# FUNZIONE DI AVVIO DEL PROGRAMMA
+# APP STARTING FUNCTION
 def main():
 
 

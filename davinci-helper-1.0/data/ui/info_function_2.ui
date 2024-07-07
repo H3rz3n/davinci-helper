@@ -128,7 +128,7 @@
                         
                           <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 2 -->
                           <!-- SETTING THE PREVIEW TEXT 2 -->
-                          <property name="label" translatable="yes">This part of the software ask you to indicate the Davinci Resolver installer path and runs it with the necessary patch to allow it to work properly.</property>
+                          <property name="label" translatable="yes">This part of the software ask you to indicate the Davinci Resolve installer path and runs it with the necessary patch to allow it to work properly.</property>
 
                           <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
                           <!-- SETTING THE TEXT ALLIGNMENT -->

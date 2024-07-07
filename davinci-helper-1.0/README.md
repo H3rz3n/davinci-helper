@@ -1,3 +1,3 @@
-# davinci_resolver
+# davinci_helper
 
 A description of this project.
