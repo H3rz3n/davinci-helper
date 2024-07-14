@@ -1,15 +1,24 @@
+#
+# Copyright 2024 Lorenzo Maiuri
+# Pubblicato sotto licensa CC-BY-NC-SA
+# Published under CC-BY-NC-SA license
+#   
+
+#-----------------------------------------------------------------------------------------------------
+
 # IMPORTAZIONE DEI MODULI STANDARD
-# STANDARD MODULE IMPORT
+# STANDARD MODULES IMPORT
 from setuptools import setup, find_packages
 import os
+
+#-----------------------------------------------------------------------------------------------------
 
 # FUNZIONE PER LEGGERE IL FILE README
 # FUNCTION TO READ THE README FILE
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-
-
+#-----------------------------------------------------------------------------------------------------
 
 # INIZIO DELLE IMPOSTAZIONI DI SETUP
 # SETUP SETTINGS START
@@ -40,7 +49,7 @@ setup(
     long_description=read('README.md'),
     
     # TIPOLOGIA DI TESTO DELLA DESCRIZIONE LUNGA
-    # LONG DESCRIPTION TEXT FORMAT
+    # LONG DESCRIPTION TEXT TYPE
     long_description_content_type='text/markdown',
 
     # LICENZA DI PUBBLICAZIONE
@@ -63,11 +72,7 @@ setup(
         "License :: OSI Approved :: CC-BY-NC-SA License",
     ],
 
-
-
-
-
-
+    #-----------------------------------------------------------------------------------------------------
 
     # INCLUSIONE DEI FILE NON ESEGUIBILI
     # NOT EXECUTABLE FILES INCLUSION
@@ -81,15 +86,21 @@ setup(
             'data/icons/davinci-helper.desktop',
             'data/icons/davinci-helper-icon.svg'
         ]),
-        ('share/davinci-helper/data/icons/icons_main', [
-            'data/icons/icons_main/F1.png',
-            'data/icons/icons_main/F2.png',
-            'data/icons/icons_main/F3.png',
-            'data/icons/icons_main/F4.png'
+        ('share/davinci-helper/data/icons/main_icons', [
+            'data/icons/main_icons/F1.svg',
+            'data/icons/main_icons/F2.svg',
+            'data/icons/main_icons/F3.svg',
+            'data/icons/main_icons/F4.svg'
+        ]),
+        ('share/davinci-helper/data/icons/function_icons', [
+            'data/icons/function_icons/error.svg',
+            'data/icons/function_icons/success.svg',
+            'data/icons/function_icons/warning.svg',
+            'data/icons/function_icons/file.svg'
         ]),
         ('share/davinci-helper/data/polkit', [
-            'data/polkit/davinci-helper.policy',
-            'data/polkit/davinci-helper.rules'
+            'data/polkit/com.davinci.helper.app.policy',
+            'data/polkit/com.davinci.helper.app.rules'
         ]),
         ('share/davinci-helper/data/ui', [
             'data/ui/about.ui',
@@ -101,20 +112,19 @@ setup(
             'data/ui/info_function_2.ui',
             'data/ui/info_function_3.ui',
             'data/ui/info_function_4.ui',
+            'data/ui/error_dialog.ui',
             'data/ui/main_window.ui'
         ]),
-        ('share/davinci-helper/po', [
+        ('share/davinci-helper/locale', [
             
         ])
     ],
 
-
-
+    #-----------------------------------------------------------------------------------------------------
 
     # VERSIONE MINIMA DI PYTHON RICHIESTA
     # MINUMUN REQUIRMENT PYTHON VERSION
     python_requires='>=3.0',
-
 
     # MODULI PYTHON ESEGUIBILI
     # EXECUTABLE PYTHON MODULES
@@ -128,3 +138,5 @@ setup(
         ],
     },
 )
+
+#-----------------------------------------------------------------------------------------------------

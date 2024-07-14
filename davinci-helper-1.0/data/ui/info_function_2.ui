@@ -6,7 +6,7 @@
 
 		<!-- DICHIARAZIONE DELLE DIPENDENZE DELL'INTERFACCIA -->
 		<!-- DECLARING INTERFACE DEPENDENCIES -->
-    <requires lib="gtk" version="4.6"/>
+    <requires lib="gtk" version="4.0"/>
     <requires lib="Adw" version="1.0"/>
 
 
@@ -240,7 +240,7 @@
                             <!-- INSERISCO I PARAMETRI CSS DEL BOTTONE OK 2-->
                             <!-- SETTING OK BUTTON 2 CSS PARAMETERS  -->
                             <style>
-                              <class name="Ok-Button"/>
+                              <class name="Exit-Button"/>
                             </style>
 
                           <!-- CHIUSURA BOTTONE OK 2 -->

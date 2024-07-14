@@ -5,8 +5,6 @@
 /* ------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------ */
 
-
-
 /* PARAMETRI DELLE ICONE DELLE FUNZIONI */
 /* FUNCTION'S ICONS PARAMETERS */
 .Icons {
@@ -84,8 +82,6 @@
     margin-bottom: 5px;
     padding-left: 40px;
     padding-right: 40px;
-
-
 }
 
 
@@ -113,12 +109,9 @@
 /* ------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------ */
 
-
-
 /* PARAMETRI DEI TESTI DI INFO */
 /* INFO TEXT PARAMETERS */
 .Info-Text {
-
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
@@ -127,8 +120,6 @@
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
     font-size: 13pt;
-
-
 
 }
 
@@ -159,7 +150,7 @@
 
 /* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
 /* INFO WINDOWS EXIT BUTTONS PARAMETERS */
-.Ok-Button {
+.Exit-Button {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
@@ -176,16 +167,16 @@
 
 /* ------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------ */
-/*                             PARAMETRI CSS DELLE FINESTRE DI FUNZIONE                                   */
-/*                                 FUNCTION WINDOWS CSS PARAMETERS                                       */
+/*                                PARAMETRI CSS DELLA FINESTRA FUNZIONE 1                                 */
+/*                                    FUNCTION 1 WINDOW CSS PARAMETERS                                    */
 /* ------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------ */
 
 
 
-/* PARAMETRI DEI TITOLI TESTUALI DELLE FINESTRE FUNZIONE */
-/* FUNCTION WINDOWS TITLE TEXTS PARAMETERS */
-.Function-Title {
+/* PARAMETRI DEI TITOLI TESTUALI DELLA FINESTRA FUNZIONE 1*/
+/* FUNCTION 1 WINDOWS TITLE TEXTS PARAMETERS */
+.Function-1-Title {
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
@@ -200,21 +191,23 @@
 
 
 
-/* PARAMETRI DELLE GRIGLIE DELLE FINESTRE FUNZIONE */
-/* FUNCTION WINDOWS GRIDS PARAMETERS */
-.Function-Grid {
+/* PARAMETRI DELLE GRIGLIE DELLA FINESTRA FUNZIONE 1*/
+/* FUNCTION 1 WINDOWS GRIDS PARAMETERS */
+.Function-1-Grid {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 40px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
 
 }
 
 
 
-/* PARAMETRI DEI CONTENITORI SCORREVOLI DELLE FINESTRE FUNZIONE*/
-/* FUNCTION WINDOW SCROLLABLE CONTAINERS PARAMETERS*/
-.Function-Scrollable {
+/* PARAMETRI DEI CONTENITORI SCORREVOLI DELLA FINESTRA FUNZIONE 1*/
+/* FUNCTION 1 WINDOW SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-1-Scrollable {
 
     /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI DEL BOX */
     /* BOX BACKGROUND COLOR AND BORDER RADIUS */
@@ -229,9 +222,9 @@
 
 
 
-/* PARAMETRI DEI CONTENITORI SCORREVOLI DELLE FINESTRE FUNZIONE*/
-/* FUNCTION WINDOW SCROLLABLE CONTAINERS PARAMETERS*/
-.Function-Textview {
+/* PARAMETRI DEI CONTENITORI SCORREVOLI DELLA FINESTRA FUNZIONE 1*/
+/* FUNCTION 1 WINDOW SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-1-Textview {
 
     /* COLORE DI SFONDO DEL CAMPO DI TESTO */
     /* BOX BACKGROUND COLOR OF THE TEXTVIEW */
@@ -242,39 +235,330 @@
 
 
 
+/* PARAMETRI DEI BOX BOTTONI DELLA FINESTRA DI FUNZIONE 1*/
+/* FUNCTION 1 WINDOWS BUTTON BOXS PARAMETERS */
+.Function-1-Exit-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 15px;
+}
+
+
+
+/* PARAMETRI DEI BOTTONI DI USCITA DALLA FINESTRA FUNZIONE 1*/
+/* FUNCTION 1 WINDOWS EXIT BUTTONS PARAMETERS */
+.Exit-Button-1 {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin:5px;
+
+
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                PARAMETRI CSS DELLA FINESTRA FUNZIONE 2                                 */
+/*                                    FUNCTION 2 WINDOW CSS PARAMETERS                                    */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+/* PARAMETRI DEI TITOLI TESTUALI DELLA FINESTRA FUNZIONE 2*/
+/* FUNCTION 2 WINDOWS TITLE TEXTS PARAMETERS */
+.Function-2-Title {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 17pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+
+
+/* PARAMETRI DELLE ICONE DELLE FUNZIONI */
+/* FUNCTION'S ICONS PARAMETERS */
+.Function-2-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 120px;
+    min-height: 120px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+
+
+/* PARAMETRI DELLE GRIGLIE DELLA FINESTRA FUNZIONE 2 */
+/* FUNCTION 2 WINDOWS GRIDS PARAMETERS */
+.Function-2-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 60px;
+
+}
+
+
+
+/* PARAMETRI DEI BOX BOTTONI DELLA FINESTRA DI FUNZIONE 2 */
+/* FUNCTION 2 WINDOWS BUTTON BOXS PARAMETERS */
+.Function-2-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 15px;
+}
+
+
+
+/* PARAMETRI DEL CONTENITORE DEL BOTTONE DI APERTURA FILE */
+/* FILE OPEN BUTTON CONTAINER PARAMETERS */
+.Function-2-File-Button-Container {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding:7px;
+
+}
+
+
+
+/* PARAMETRI DEL CONTENITORE DEL BOTTONE DI AVVIO DELLA FUNZIONE */
+/* FUNCTION START BUTTON CONTAINER PARAMETERS */
+.Function-2-Start-Button-Container {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding:7px;
+
+}
+
+
+
+/* PARAMETRI DELL'ETICHETTA DI TESTO DEL BOTTONE DI APERTURA FILE */
+/* FILE OPEN BUTTON TEXT LABEL PARAMETERS*/
+.Function-2-File-Button-Label {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-right: 7px;
+    margin-left: 5px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA DEL BOTTONE DI APERTURA FILE */
+/* FILE OPEN BUTTON ICON PARAMETERS */
+.Function-2-File-Button-Icon {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding:5px;
+    
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA DEL BOTTONE AVVIO DELLA FUNZIONE 2 */
+/* FUNCTION 2 START BUTTON ICON PARAMETERS */
+.Function-2-Start-Button-Icon {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding:5px;
+    
+
+}
+
+
+
+/* PARAMETRI DELL'ETICHETTA DI TESTO DEL BOTTONE DI APERTURA FILE */
+/* FILE OPEN BUTTON TEXT LABEL PARAMETERS*/
+.Function-2-Start-Button-Label {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-right:7px;
+    margin-left: 5px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+
+}
+
+
+
+/* PARAMETRI DEL VISUALIZZATORE DEL PERCORSO DEL FILE */
+/* FILE PATH VISUALIZER PARAMETERS */
+.Function-2-File-Path-Visualizer {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
 
 
 
 
 
 
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                PARAMETRI CSS DELLA FINESTRA DI ERRORE                                  */
+/*                                      ERROR WINDOW CSS PARAMETERS                                       */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
 
 
 
+/* PARAMETRI DELLE ICONA DELLE FINESTRE DI ERRORE */
+/* ERROR WINDOW ICON PARAMETERS */
+.Error-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 80px;
+    min-height: 80px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+}
 
 
 
+/* PARAMETRI DELLA GRIGLIA DELLE FINESTRE DI ERRORE */
+/* ERROR WINDOW GRID PARAMETERS */
+.Error-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 25px;
+
+}
 
 
 
+/* PARAMETRI DEI TESTI DI ERRORE */
+/* ERROR TEXT PARAMETERS */
+.Error-Text {
+
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+
+}
 
 
 
+/* PARAMETRI DEI BOX BOTTONI DELLE FINESTRE DI ERRORE */
+/* ERROR WINDOWS BUTTON BOXS PARAMETERS */
+.Error-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 10px;
+
+}
 
 
 
+/* PARAMETRI DEI CONTENITORI SCORREVOLI DEI LOG DI ERRORE*/
+/* ERROR LOG SCROLLABLE CONTAINERS PARAMETERS*/
+.Error-Log-Viewer {
+
+    /* COLORE DI SFONDO DEL CAMPO DI TESTO */
+    /* BOX BACKGROUND COLOR OF THE TEXTVIEW */
+    background-color: rgb(20, 20, 20);
+
+
+}
 
 
 
+/* PARAMETRI DEI CONTENITORI SCORREVOLI DEI LOG DELLA FINESTRA DI ERRORE*/
+/* ERROR WINDOW LOG SCROLLABLE CONTAINERS PARAMETERS*/
+.Error-Log-Scrollable {
+
+    /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI DEL BOX */
+    /* BOX BACKGROUND COLOR AND BORDER RADIUS */
+    background-color: rgb(20, 20, 20);
+    border-radius: 15px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+}
 
 
 
+/* PARAMETRI DEI BOTTONI CHE MOSTRANO I LOG */
+/* SHOW LOG BUTTONS PARAMETERS */
+.Log-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:5px;
+
+}
 
 
 
+/* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
+/* INFO WINDOWS EXIT BUTTONS PARAMETERS */
+.Exit-Button-2 {
 
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:5px;
 
-
+}
 
 
 

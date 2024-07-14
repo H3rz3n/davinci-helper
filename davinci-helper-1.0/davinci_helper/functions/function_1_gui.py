@@ -8,7 +8,7 @@
 
 # IMPORTAZIONE DEI MODULI STANDARD
 # STANDARD MODULE IMPORT
-import sys, gi, os, subprocess, threading
+import sys, gi, os, subprocess, threading, locale, gettext
 
 # RICHIESTA DELLE VERSIONI DI GTK ED ADWAITA
 # REQUESTING THE CHOOSEN VERSION OF GTK AND ADWAITA
@@ -25,6 +25,28 @@ from gi.repository import Gtk, Adw, Gdk, Pango, Gio, GLib
 # DEFINING UI FILES PATH
 ui_path = os.path.join("/usr/share/davinci-helper/data/ui")
 
+# DEFINISCO I PERCORSI DEI FILE DI TRADUZIONE
+# DEFINING TRANSLATE FILES PATH
+locale_path = os.path.join("/usr/share/davinci-helper/locale")
+
+
+
+# ASSOCIA IL NOME DEL DIZIONARIO DI TRADUZIONE AL FILE CORRISPONDENTE PER IL MODULO LOCALE
+# ASSOCIATE THE NAME OF TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE LOCALE MODULE
+locale.bindtextdomain('davinci-helper', locale_path)
+
+# ASSOCIA IL NOME DEL DIZIONARIO DI TRADUZIONE AL FILE CORRISPONDENTE PER IL MODULO GETTEXT
+# ASSOCIATE THE NAME OF TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE GETTEXT MODULE
+gettext.bindtextdomain('davinci-helper', locale_path)
+
+# COMUMICO A GETTEXT QUALE FILE USARE PER TRADURRE IL PROGRAMMA
+# TELLING GETTEXT WHICH FILE TO USE FOR THE TRANSLATION OF THE APP
+gettext.textdomain('davinci-helper')
+
+# COMUNICO A GETTEXT IL SEGNALE DI TRADUZIONE
+# TELLING GETTEXT THE TRANSLATE SIGNAL
+_ = gettext.gettext
+
 
 
 # DEFINISCO LA CLASSE CHE PERMETTE LA CREAZIONE E MESSA SCHERMO DELLA FINESTRA DELLA FUNZIONE 1
@@ -35,21 +57,25 @@ class build_function_1 ():
     # IMPORTING ATTRIBUTE AND METHODS FROM THE MAIN CLASS "ADW.APPLICATION" USING THE INIT FUNCTION AND THE SUPERCLASS
     def __init__(self, parent):
 
-        # AVVIO LA FUNZIONE BUILDER PER LEGGERE IL FILE UI DELLA FINESTRA INFO 1
-        # STARTING THE BUILDER FUNCTION TO READ THE UI FILE OF THE INFO WINDOW 1
+        # AVVIO LA FUNZIONE BUILDER PER LEGGERE IL FILE UI DELLA FINESTRA FUNZIONE 1
+        # STARTING THE BUILDER FUNCTION TO READ THE UI FILE OF THE FUCNTION 1 WINDOW
         function_1_window_builder = Gtk.Builder()
+
+        # COMUNICO ALLA FUNZIONE BUILDER QUALE DIZIONARIO USARE PER TRADURRE L'INTERFACCIA
+        # TELLING THE BUILDER FUNCTION THE DICTIONARY NAME TO USE FOR THE INTERFACE TRANSLATION
+        function_1_window_builder.set_translation_domain('davinci-helper')
         
-        # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA INFO 1
-		# IMPORTING THE UI FILE THAT REPRESENT THE INFO WINDOW 1
+        # IMPORTO IL FILE UI CHE RAPPRESENTA LA FINESTRA FUNZIONE 1
+		# IMPORTING THE UI FILE THAT REPRESENT THE FUNCTION 1 WINDOW
         function_1_window_builder.add_from_file(f"{ui_path}/function_1.ui")
         
-        # OTTENGO LA FINESTRA DI INFO 1 ED I SUOI CHILD DAL FILE UI
-        # OBTAINING THE INFO WINDOW 1 AND HER CHILD FROM THE UI FILE
-        self.function_window_1 = function_1_window_builder.get_object("function_1_window")
+        # OTTENGO LA FINESTRA FUNZIONE 1 ED I SUOI CHILD DAL FILE UI
+        # OBTAINING THE FUNCTION 1 WINDOW AND HER CHILD FROM THE UI FILE
+        self.function_1_window = function_1_window_builder.get_object("function_1_window")
 
-        # IMPOSTO LA FINESTRA DI INFO 1 COME FIGLIA DELLA FINESTRA PRINCIPALE
-        # SETTING THE INFO WINDOW 1 AD CHILD OF THE MAIN WINDOW
-        self.function_window_1.set_transient_for(parent)
+        # IMPOSTO LA FINESTRA FUNZIONE 1 COME FIGLIA DELLA FINESTRA PRINCIPALE
+        # SETTING THE FUNCTION 1 WINDOW AS CHILD OF THE MAIN WINDOW
+        self.function_1_window.set_transient_for(parent)
 
         # OTTENGO IL CAMPO DI TESTO DEL TERMINALE DAL FILE UI
         # OBTAINING THE TERMINAL TEXT FIELD FROM THE UI FILE
@@ -58,6 +84,15 @@ class build_function_1 ():
         # OTTENGO IL BUFFER DAL CAMPO DI TESTO
         # OBTAINING THE BUFFER FROM THE TEXT FIELD
         self.terminal_textbuffer_1 = self.terminal_textview_1.get_buffer()
+
+        # OTTENGO IL BOTTONE DI USCITA DALLA FUNZIONE 1 DAL FILE UI
+        # OBTAINING THE EXIT BUTTON OF FUNCTION 1 FROM THE UI FILE
+        self.exit_button_1 = function_1_window_builder.get_object("exit_button_1")
+
+        # CHIUDO LA FINESTRA DELLA FUNZIONE 1 ALLA PRESSIONE DEL BOTONE
+        # CLOSE THE FUNCTION 1 WINDOW WHEN THE BUTTON IS PRESSED
+        self.exit_button_1.connect('clicked', lambda button: self.function_1_window.destroy())
+        
         
 
 
@@ -65,15 +100,14 @@ class build_function_1 ():
     # FUNCTION THAT DISPLAYS THE WINDOW
     def print_window (self):
 
-        # MANDO A SCHERMO LA FINESTRA PRINCIPALE ED I SUOI CHILD
-        # PRINTING TO SCREEN THE MAIN WINDOW AND HER CHILDS
-        self.function_window_1.present()
-
         # AVVIO IL THREAD SEPARATO PER ESEGUIRE LO SCRIPT DELLA FUNZIONE 1
         # STARTING A SEPARETED THREAD TO EXECUTE THE FUNCTION 1 SCRIPT
         function_1_thread = threading.Thread(target=self.execute_function_1())
         function_1_thread.start()
 
+        # MANDO A SCHERMO LA FINESTRA DELLA FUNZIONE 1 ED I SUOI CHILD
+        # PRINTING TO SCREEN THE FUNCTION 1 WINDOW AND HER CHILDS
+        self.function_1_window.present()
 
     
     # FUNZIONE CHE ESEGUE CON PERMESSI DI AMMINISTRATORE LO SCRIPT DELLA FUNZIONE 1
@@ -114,16 +148,5 @@ class build_function_1 ():
         self.terminal_textbuffer_1.insert(end_iter, text)
 
 
-
-
-
-
-
-
-            
-
-        
-
-        
 
         

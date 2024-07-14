@@ -6,7 +6,7 @@
 
 		<!-- DICHIARAZIONE DELLE DIPENDENZE DELL'INTERFACCIA -->
 		<!-- DECLARING INTERFACE DEPENDENCIES -->
-    <requires lib="gtk" version="4.6"/>
+    <requires lib="gtk" version="4.0"/>
     <requires lib="Adw" version="1.0"/>
 
 
@@ -128,7 +128,7 @@
                         
                           <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 3 -->
                           <!-- SETTING THE PREVIEW TEXT 3 -->
-                          <property name="label" translatable="yes">This part of the software will install all the dependencies necessary to correctly launch the installation and the execution of Davinci Resolve. The script will detect your Fedora version and the libraries installed and using this information it will install only the packages needed. This script does not diffuse any information about you or your system, the internet connection is required only if there are some missing libraries. </property>
+                          <property name="label" translatable="yes">This part of the software will remove in a safe folder some of the dependencies shipped with Davinci Resolve, in order to make it use the system one's</property>
 
                           <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
                           <!-- SETTING THE TEXT ALLIGNMENT -->
@@ -240,7 +240,7 @@
                             <!-- INSERISCO I PARAMETRI CSS DEL BOTTONE OK 3-->
                             <!-- SETTING OK BUTTON 3 CSS PARAMETERS  -->
                             <style>
-                              <class name="Ok-Button"/>
+                              <class name="Exit-Button"/>
                             </style>
 
                           <!-- CHIUSURA BOTTONE OK 3 -->

@@ -7,7 +7,7 @@ polkit.addRule(function(action, subject) {
 
     /* CONDIZIONE DI VERIFICA CHE SI STA UTILIZZANDO LA POLICY ACTION CORRETTA, SE LA RICHIESTA D'USO DELLE REGOLE È DELLA SESSIONE E SE IL PROCESSO ESISTE NELLA SESSIONE */
     /* THIS CONDITION CHECK IF THE POLKIT IS USING THE CORRECT POLICY, IF THE RULES IS FROM A LOCAL SUBJECT AND IF THIS SUBJECT HAS A PROCESS ASSOCIATED */
-    if (action.id == "davinci-helper-root" && subject.local && subject.local.process) {
+    if (action.id == "com.davinci.helper.app" && subject.local && subject.local.process) {
 
         /* ACQUISISCO IL NOME DEL PROCESSO CHE HA RICHIESTO L'USO DELLE REGOLE */
         /* ACQUIRING THE NAME OF THE PROCESS THAT HAS MADE THE RULES REQUEST */
@@ -19,7 +19,7 @@ polkit.addRule(function(action, subject) {
 
             /* AUTORIZZO L'UTENTE AD INSERIRE LA PASSWORD PER CONTINUARE E TENGO APERTA LA SESSIONE PER 5 MINUTI */
             /* AUTHORIZE THE USER TO ENTER THE PASSWORD TO CONTINUE AND KEEP THE SESSION OPEN FOR 5 MINUTES */
-            return polkit.Result.AUTH_SELF_KEEP;
+            return polkit.Result.AUTH_SELF_kEEP;
         }
     }
 }

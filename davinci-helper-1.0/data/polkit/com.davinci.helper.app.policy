@@ -9,7 +9,7 @@
 
     <!-- INIZIO DELL'AZIONE DI DAVINCI HELPER --> 
     <!-- START OF DAVINCI HELPER ACTION --> 
-    <action id="davinci-helper-root">
+    <action id="com.davinci.helper.app">
 
         <!-- DESCRIZIONE DEL PERCHÈ VENGONO RICHIESTI I PERMESSI --> 
         <!-- DESCRIPTION OF WHY ARE BEEN ASKED ADMIN PERMISSION --> 
@@ -34,7 +34,7 @@
 
             <!-- ACCESSO ALLA FUNZIONE DAGLI UTENTI ATTIVI --> 
             <!-- FUNCTION ACCESS FROM ACTIVE A USERS --> 
-            <allow_active>auth_admin</allow_active>
+            <allow_active>auth_admin_keep</allow_active>
             
         <!-- FINE DELLE IMPOSTAZIONI DI SICUREZZA --> 
         <!-- END OF SECURITY SETTINGS --> 

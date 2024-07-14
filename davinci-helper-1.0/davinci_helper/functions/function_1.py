@@ -1,6 +1,24 @@
 # IMPORTAZIONE DEI MODULI STANDARD
 # STANDARD MODULE IMPORT
-import sys, os, subprocess, threading
+import sys, os, subprocess, threading, gettext, locale
+
+# DEFINISCO I PERCORSI DEI FILE DI TRADUZIONE
+# DEFINING TRANSLATE FILES PATH
+locale_path = os.path.join("/usr/share/davinci-helper/locale")
+
+# ASSOCIA IL NOME DEL DIZIONARIO DI TRADUZIONE AL FILE CORRISPONDENTE PER IL MODULO GETTEXT
+# ASSOCIATE THE NAME OF TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE GETTEXT MODULE
+gettext.bindtextdomain('davinci-helper', locale_path)
+
+# COMUMICO A GETTEXT QUALE FILE USARE PER TRADURRE IL PROGRAMMA
+# TELLING GETTEXT WHICH FILE TO USE FOR THE TRANSLATION OF THE APP
+gettext.textdomain('davinci-helper')
+
+# COMUNICO A GETTEXT IL SEGNALE DI TRADUZIONE
+# TELLING GETTEXT THE TRANSLATE SIGNAL
+_ = gettext.gettext
+
+
 
 # FUNZIONE CHE CERCA QUALI LIBRERIE È NECESSARIO INSTALLARE I FEDORA 38-39-40
 # FUNCTION THAT SEARCH WHICH LIBRARIES ARE MISSING IN FEDORA 38-39-40
@@ -47,7 +65,7 @@ def fix_dependencies_38_39_40 (library_list_output):
 
         # STAMPO LA LISTA DELLE LIBRERIE DA INSTALLARE
         # PRINTING THE LIST OF THE LIBRARIES TO INSTALL
-        print("The following libraries will be installed because are missing :", lib_to_install, "\n")
+        print(_("The following libraries will be installed because are missing :", lib_to_install, "\n"))
 
         # ESECUZIONE DELLA FUNZIONE CHE INSTALLA LE LIBRERIE MANCANTI
         # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING LIBRARIES
@@ -57,7 +75,10 @@ def fix_dependencies_38_39_40 (library_list_output):
 
         # STAMPO L'ASSENZA DI LIBRERIE DA INSTALLARE
         # PRINTING THE MISSING OF LIBRARIES TO INSTALL
-        print("There are no missing libraries to install, you can now install Davinci Resolve ", "\n")
+        print("-------------------------------------------------------------------------------","\n")
+        print(_("There are no missing libraries to install, you can now install Davinci Resolve"))
+        print("")
+        print("-------------------------------------------------------------------------------")
 
 
 
@@ -73,14 +94,16 @@ def libraries_installation (lib_to_install):
     # STAMPA NEL TERMINALE IL RISULTATO A SECONDA CHE CI SIANO ERRORI O MENO
     # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON WHETHER THERE ARE ERRORS OR NOT
     if repo_update_err == None:
-        print("Updating the source repos :", "\n") 
+        print(_("Updating the source repos :"))
+        print("\n")
         print(repo_update_output)
     
     else:
-        print("DEBUG : There was an error updating the repository packages list's :", "\n\n", 
-        repo_update_err, 
-        "\n\nPlease open an issue on the project GitHub page and paste the error code :",
-        "\nhttps://github.com/H3rz3n/davinci-helper")
+        print(_("DEBUG : There was an error updating the repository packages list's :")) 
+        print(repo_update_err)
+        print("\n")
+        print(_("Please open an issue on the project GitHub page and paste the error code :"))
+        print("https://github.com/H3rz3n/davinci-helper")
 
         exit()
 
@@ -97,10 +120,11 @@ def libraries_installation (lib_to_install):
         print(package_install_output)
     
     else:
-        print("DEBUG : There was an error installing the missing libraries :", "\n\n", 
-        package_install_err, 
-        "\n\nPlease open an issue on the project GitHub page and paste the error code :",
-        "\nhttps://github.com/H3rz3n/davinci-helper")
+        print(_("DEBUG : There was an error installing the missing libraries :"))
+        print(package_install_err)
+        print("\n")
+        print(_("Please open an issue on the project GitHub page and paste the error code :"))
+        print("https://github.com/H3rz3n/davinci-helper")
 
         exit()
 
@@ -124,10 +148,11 @@ def get_libraries_list ():
         return library_list_output
 
     else:
-        print("DEBUG : There was an error reading the library list :", "\n\n", 
-        library_list_err,
-        "\n\nPlease open an issue on the project GitHub page and paste the error code :",
-        "\nhttps://github.com/H3rz3n/davinci-helper")
+        print(_("DEBUG : There was an error reading the library list :"))
+        print(library_list_err)
+        print("\n")
+        print(_("Please open an issue on the project GitHub page and paste the error code :"))
+        print("https://github.com/H3rz3n/davinci-helper")
 
         exit()
 
@@ -156,10 +181,9 @@ def check_fedora_version ():
         return fedora_version_output
         
     else:
-        print("DEBUG : There was an error reading what version of Fedora is installed :", "\n\n", 
-        fedora_version_err, 
-        "\n\nPlease open an issue on the project GitHub page and paste the error code :",
-        "\nhttps://github.com/H3rz3n/davinci-helper")
+        print(_("DEBUG : There was an error reading what version of Fedora is installed :"))
+        print(_("Please open an issue on the project GitHub page and paste the error code :"))
+        print("https://github.com/H3rz3n/davinci-helper")
 
         exit()
 
