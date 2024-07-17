@@ -1,10 +1,26 @@
+#
+# Copyright 2024 Lorenzo Maiuri
+# Pubblicato sotto licensa CC-BY-NC-SA
+# Published under CC-BY-NC-SA license
+#   
+
+#-----------------------------------------------------------------------------------------------------
+
 # IMPORTAZIONE DEI MODULI STANDARD
-# STANDARD MODULE IMPORT
+# STANDARD MODULES IMPORT
 import sys, os, subprocess, threading, gettext, locale
+
+#-----------------------------------------------------------------------------------------------------
 
 # DEFINISCO I PERCORSI DEI FILE DI TRADUZIONE
 # DEFINING TRANSLATE FILES PATH
 locale_path = os.path.join("/usr/share/davinci-helper/locale")
+
+#-----------------------------------------------------------------------------------------------------
+
+# ASSOCIA IL NOME DEL DIZIONARIO DI TRADUZIONE AL FILE CORRISPONDENTE PER IL MODULO LOCALE
+# ASSOCIATE THE NAME OF TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE LOCALE MODULE
+locale.bindtextdomain('davinci-helper', locale_path)
 
 # ASSOCIA IL NOME DEL DIZIONARIO DI TRADUZIONE AL FILE CORRISPONDENTE PER IL MODULO GETTEXT
 # ASSOCIATE THE NAME OF TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE GETTEXT MODULE
@@ -18,12 +34,13 @@ gettext.textdomain('davinci-helper')
 # TELLING GETTEXT THE TRANSLATE SIGNAL
 _ = gettext.gettext
 
+#-----------------------------------------------------------------------------------------------------
 
-
-# FUNZIONE CHE CERCA QUALI LIBRERIE È NECESSARIO INSTALLARE I FEDORA 38-39-40
-# FUNCTION THAT SEARCH WHICH LIBRARIES ARE MISSING IN FEDORA 38-39-40
-def fix_dependencies_38_39_40 (library_list_output):
+# FUNZIONE CHE CONTROLLA QUALI LIBRERIE È NECESSARIO INSTALLARE IN FEDORA 38-39-40
+# FUNCTION THAT CHECK WHICH LIBRARIES ARE MISSING IN FEDORA 38-39-40
+def check_dependencies_38_39_40 (library_list_output):
     
+    #-----------------------------------------------------------------------------------------------------
     
     # CONTROLLO SE LE LIBRERIE NECESSARIE SONO INSTALLATE
     # CHECKING IF ALL THE LIBRARIES NEEDED ARE INSTALLED
@@ -54,18 +71,21 @@ def fix_dependencies_38_39_40 (library_list_output):
     if library_list_output.find('zlib') == -1 :
         lib_to_install = lib_to_install + " zlib"
 
+    #-----------------------------------------------------------------------------------------------------
 
     # CONTROLLO SE CI SONO DELLE LIBRERIE MANCANTI
     # CHEKING IF THERE ARE MISSING LIBRARIES
     if lib_to_install != "" :
 
         # ELIMINO LO SPAZIO IN ECCESSO DALLA LISTA DELLE LIBRERIE DA INSTALLARE
-        # REMOVE EXCESS SPACE FROM THE LIST OF LIBRARIES TO INSTALL
+        # REMOVE EXCESS SPACE FROM THE LIST OF THE LIBRARIES TO INSTALL
         lib_to_install = lib_to_install.lstrip(' ')
 
         # STAMPO LA LISTA DELLE LIBRERIE DA INSTALLARE
         # PRINTING THE LIST OF THE LIBRARIES TO INSTALL
-        print(_("The following libraries will be installed because are missing :", lib_to_install, "\n"))
+        print(_(f"The following libraries will be installed because are missing :"))
+        print(lib_to_install )
+        print("")
 
         # ESECUZIONE DELLA FUNZIONE CHE INSTALLA LE LIBRERIE MANCANTI
         # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING LIBRARIES
@@ -75,10 +95,15 @@ def fix_dependencies_38_39_40 (library_list_output):
 
         # STAMPO L'ASSENZA DI LIBRERIE DA INSTALLARE
         # PRINTING THE MISSING OF LIBRARIES TO INSTALL
-        print("-------------------------------------------------------------------------------","\n")
-        print(_("There are no missing libraries to install, you can now install Davinci Resolve"))
+        print("---------------------------------------------------------------------------------")
         print("")
-        print("-------------------------------------------------------------------------------")
+        print(_("There are no missing libraries to install, you can now install DaVinci Resolve"))
+        print("")
+        print("---------------------------------------------------------------------------------")
+
+    #-----------------------------------------------------------------------------------------------------
+
+
 
 
 
@@ -86,53 +111,67 @@ def fix_dependencies_38_39_40 (library_list_output):
 # FUNCTION THAT INSTALL THE MISSING LIBRARIES IN THE SYSTEM
 def libraries_installation (lib_to_install):
 
+    #-----------------------------------------------------------------------------------------------------
+
     # AGGIORNAMENTO DELLA LISTA PACCHETTI DEI REPOSITORY
     # UPDATING THE REPOSITORY PACKAGES LIST'S
     repo_update = subprocess.Popen("dnf check-update",shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     repo_update_output, repo_update_err = repo_update.communicate()
 
     # STAMPA NEL TERMINALE IL RISULTATO A SECONDA CHE CI SIANO ERRORI O MENO
-    # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON WHETHER THERE ARE ERRORS OR NOT
+    # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON IF THERE ARE ERRORS OR NOT
     if repo_update_err == None:
-        print(_("Updating the source repos :"))
-        print("\n")
+        print("")
+        print(_("Updating the source's repos :"))
+        print("")
         print(repo_update_output)
+        print("")
     
     else:
-        print(_("DEBUG : There was an error updating the repository packages list's :")) 
+        print("")
+        print(_("DEBUG : There was an error updating the repository packages list's :"))
+        print("") 
         print(repo_update_err)
-        print("\n")
-        print(_("Please open an issue on the project GitHub page and paste the error code :"))
-        print("https://github.com/H3rz3n/davinci-helper")
+        print("")
+        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(1)
 
-        exit()
+    #-----------------------------------------------------------------------------------------------------
 
-    
-
-    # AGGIORNAMENTO DELLA LISTA PACCHETTI DEI REPOSITORY
-    # UPDATING THE REPOSITORY PACKAGES LIST'S
+    # INSTALLAZIONE DELLE LIBRERIE MANCANTI
+    # INSTALLING THE MISSING LIBRARIES
     package_install = subprocess.Popen(f"dnf install -y {lib_to_install}",shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     package_install_output, package_install_err = package_install.communicate()
 
     # STAMPA NEL TERMINALE IL RISULTATO A SECONDA CHE CI SIANO ERRORI O MENO
-    # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON WHETHER THERE ARE ERRORS OR NOT
-    if package_install_err == None: 
+    # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON IF THERE ARE ERRORS OR NOT
+    if package_install_err == None or package_install_output.find("Curl error") != -1 : 
         print(package_install_output)
     
     else:
+        print("")
         print(_("DEBUG : There was an error installing the missing libraries :"))
+        print("")
         print(package_install_err)
-        print("\n")
-        print(_("Please open an issue on the project GitHub page and paste the error code :"))
-        print("https://github.com/H3rz3n/davinci-helper")
+        print("")
+        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(1)
 
-        exit()
+    #-----------------------------------------------------------------------------------------------------
+
+
 
 
 
 # FUNZIONE CHE LEGGE LE LIBRERIE INSTALLATE NEL SISTEMA
 # FUNCTION THAT READ THE LIST OF THE INSTALLED LIBRARIES
 def get_libraries_list ():
+
+    #-----------------------------------------------------------------------------------------------------
 
     # LETTURA DELLA LISTA DELLE LIBRERIE INSTALLATE
     # READING INSTALLED LIBRARY LIST
@@ -148,19 +187,26 @@ def get_libraries_list ():
         return library_list_output
 
     else:
+        print("")
         print(_("DEBUG : There was an error reading the library list :"))
         print(library_list_err)
-        print("\n")
-        print(_("Please open an issue on the project GitHub page and paste the error code :"))
-        print("https://github.com/H3rz3n/davinci-helper")
+        print("")
+        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(1)
 
-        exit()
+    #-----------------------------------------------------------------------------------------------------
+
+
 
 
 
 # FUNZIONE CHE CONTROLLA LA VERSIONE DI FEDORA INSTALLATA
 # FUNCTION THAT CHECK WHICH VERSION OF FEDORA IS INSTALLED
 def check_fedora_version ():
+
+    #-----------------------------------------------------------------------------------------------------
     
     # LETTURA DELLA VERSIONE DI FEDORA INSTALLATA
     # READING WHICH VERSION OF FEDORA IS INSTALLED
@@ -181,23 +227,20 @@ def check_fedora_version ():
         return fedora_version_output
         
     else:
+        print("")
         print(_("DEBUG : There was an error reading what version of Fedora is installed :"))
-        print(_("Please open an issue on the project GitHub page and paste the error code :"))
-        print("https://github.com/H3rz3n/davinci-helper")
+        print("")
+        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(1)
 
-        exit()
+    #-----------------------------------------------------------------------------------------------------
 
 
-
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
+#----------------------------------------------  MAIN ------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 
 
 # ACQUISISCO LA VERSIONE DI FEDORA UTILIZZATA
@@ -218,7 +261,7 @@ if fedora_version.find("38") != -1 :
     
     # ESECUZIONE DELLA FUNZIONE CHE INSTALLA LE DIPENDENZE MANCANTI
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
-    fix_dependencies_38_39_40(library_list)
+    check_dependencies_38_39_40(library_list)
 
 
 
@@ -228,7 +271,7 @@ elif fedora_version.find("39") != -1 :
     
     # ESECUZIONE DELLA FUNZIONE CHE INSTALLA LE DIPENDENZE MANCANTI
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
-    fix_dependencies_38_39_40(library_list)
+    check_dependencies_38_39_40(library_list)
 
 
 
@@ -238,7 +281,9 @@ elif fedora_version.find("40") != -1 :
 
     # ESECUZIONE DELLA FUNZIONE CHE INSTALLA LE DIPENDENZE MANCANTI
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
-    fix_dependencies_38_39_40(library_list)
+    check_dependencies_38_39_40(library_list)
+
+
 
 
 

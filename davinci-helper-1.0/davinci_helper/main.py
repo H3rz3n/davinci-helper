@@ -21,6 +21,7 @@ import sys, gi, os, threading, gettext, locale
 # FUNCTION MODULES IMPORT
 from .functions.function_1_gui import build_function_1
 from .functions.function_2_gui import build_function_2
+from .functions.function_3_gui import build_function_3
 
 # RICHIESTA DELLE VERSIONI DI GTK ED ADWAITA
 # REQUESTING THE CHOOSEN VERSION OF GTK AND ADWAITA
@@ -167,6 +168,14 @@ class build_main_window(Adw.Application):
         # OPEN THE FUNCTION 2 WINDOW
         self.function_button_2.connect('clicked', self.function_2_window_activation)
 
+        # OTTENGO IL BOTTONE AVVIO FUNZIONE 3 DAL FILE UI
+        # OBTAINING THE START FUNCION 1 BUTTON FROM THE UI FILE
+        self.function_button_3 = main_window_builder.get_object("function_button_3")
+
+        # APRI LA FINESTRA DELLA FUNZIONE 3
+        # OPEN THE FUNCTION 3 WINDOW
+        self.function_button_3.connect('clicked', self.function_3_window_activation)
+
 
 
 
@@ -236,7 +245,7 @@ class build_main_window(Adw.Application):
         
         # MANDO A SCHERMO LA FINESTRA DELLA FUNZIONE 1 ED I SUOI CHILD
         # PRINTING TO SCREEN THE FUNCTION 1 WINDOW AND HER CHILDS
-        self.function_window_1.print_window()
+        self.function_window_1.start_function()
 
         
 
@@ -252,6 +261,19 @@ class build_main_window(Adw.Application):
         # PRINTING TO SCREEN THE FUNCTION 2 WINDOW AND HER CHILDS
         self.function_window_2.print_window()
 
+
+    
+    # FUNZIONE CHE MOSTRA SCHERMO LA FINESTRA DELLA FUNZIONE 3
+    # FUNCTION THAT SHOWS THE FUNCTION 3 WINDOW
+    def function_3_window_activation (self, widget):
+        
+        # GENERO LA FINESTRA FUNZIONE 3 USANDO LA CLASSE APPOSITA E PASSANDO LA FINESTRA PRINCIPALE COME RIFERIMENTO
+        # CREATING THE FUNCTION 3 WINDOW USING HER CLASS AND GIVING THE MAIN WINDOW AS REFERENCE
+        self.function_window_3 = build_function_3(self.main_window)
+        
+        # MANDO A SCHERMO LA FINESTRA DELLA FUNZIONE 3 ED I SUOI CHILD
+        # PRINTING TO SCREEN THE FUNCTION 3 WINDOW AND HER CHILDS
+        self.function_window_3.start_function()
 
 
 

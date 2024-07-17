@@ -14,14 +14,6 @@
 	<!-- WINDOW START-->
     <object class="GtkWindow" id="function_2_window">
 
-		<!-- IMPOSTAZIONE ALTEZZA ALL'APERTURA -->
-		<!-- SETTING HEIGHT SIZE ON OPENING -->
-        <property name="default-height">494</property>
-
-        <!-- IMPOSTAZIONE LUNGHEZZA ALL'APERTURA -->
-		<!-- SETTING WIDTH SIZE ON OPENING -->
-        <property name="default-width">800</property>
-
         <!-- IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO -->
 		<!-- SETTING THE TITLE IN THE TITLE BAR -->
         <property name="title" translatable="yes">Install DaVinci Resolve</property>
@@ -84,12 +76,6 @@
 					<!-- ICON START  -->
 					<object class="GtkImage" id="function_2_icon">
 
-						<!-- IMPOSTO I PARAMETRI CSS -->
-						<!-- SETTING THE CSS PARAMETERS -->
-						<style>
-							<class name="Function-2-Icon"/>
-						</style>
-
 						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
 						<!-- POSITION INSIDE THE GRID  -->
 						<layout>
@@ -104,6 +90,11 @@
 
 						</layout>
 
+						<!-- IMPOSTO I PARAMETRI CSS -->
+						<!-- SETTING THE CSS PARAMETERS -->
+						<style>
+							<class name="Function-2-Icon"/>
+						</style>
 
 					<!-- CHISURA DELL'ICONA -->
 					<!--  ICON END  -->
@@ -127,7 +118,7 @@
 
 						<!-- INSERIMENTO DEL TESTO -->
 						<!-- SETTING THE TEXT -->
-						<property name="label" translatable="yes">Select the DaVinci Resolve installer file</property>
+						<property name="label" translatable="yes"></property>
 
 						<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
 						<!-- SETTING THE TEXT ALLIGNMENT -->
@@ -162,7 +153,7 @@
 						<!-- IMPOSTO I PARAMETRI CSS -->
 						<!-- SETTING CSS PARAMETERS -->
 						<style>
-							<class name="Function-2-Title"/>
+							<class name="Function-2-Title-Text"/>
 						</style>
 					
 					<!-- CHIUSURA DEL TESTO DI TITOLO -->
@@ -653,6 +644,8 @@
 
 						</layout>
 
+
+
 						<!-- APERTURA DEL CHILD DELLO SPINNER -->
 						<!-- SPINNER CHILD START -->
 						<child>
@@ -661,14 +654,6 @@
 							<!-- SPINNER START -->
 							<object class="GtkSpinner" id="function_2_spinner">
 
-								<!-- IMPOSTAZIONE ALTEZZA DELLA FINESTRA ALL'APERTURA -->
-								<!-- SETTING WINDOW HEIGHT ON OPENING -->
-								<property name="height-request">50</property>
-
-								<!-- IMPOSTAZIONE LUNGHEZZA DELLA FINESTRA ALL'APERTURA -->
-								<!-- SETTING WINDOW WIDTH  ON OPENING -->
-								<property name="width-request">50</property>
-
 								<!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
 								<!-- SETTING THE BOX VERTICAL ALIGN -->
 								<property name="valign">center</property>
@@ -676,6 +661,12 @@
 								<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
 								<!-- SETTING THE BOX HORIZONTAL ALIGN -->
 								<property name="halign">center</property>
+
+								<!-- IMPOSTO I PARAMETRI CSS -->
+								<!-- SETTING CSS PARAMETERS -->
+								<style>
+									<class name="Function-2-Spinner"/>
+								</style>
 
 							<!-- CHIUSURA DELLO SPINNNER -->
 							<!-- SPINNER END -->
@@ -686,6 +677,58 @@
 						</child>
 
 
+
+						<!-- APERTURA DEL CHILD DEL TESTO DI ATTESA -->
+						<!-- WAITING TEXT CHILD START -->
+						<child>
+
+							<!-- APERTURA DEL TESTO DI ATTESA -->
+							<!-- WAITING TEXT START -->
+							<object class="GtkLabel" id="function_2_waiting_text">
+
+								<!-- INSERIMENTO DEL TESTO -->
+								<!-- SETTING THE TEXT -->
+								<property name="label" translatable="yes"></property>
+
+								<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+								<!-- SETTING THE TEXT ALLIGNMENT -->
+								<property name="justify">center</property>
+
+								<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+								<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+								<property name="wrap">false</property>
+
+								<!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+								<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+								<property name="xalign">0.5</property>
+
+								<!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+								<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+								<property name="yalign">0.5</property>
+
+								<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+								<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+								<property name="wrap">true</property>
+
+								<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+								<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+								<property name="wrap-mode">word</property>
+
+								<!-- IMPOSTO I PARAMETRI CSS -->
+								<!-- SETTING CSS PARAMETERS -->
+								<style>
+									<class name="Function-2-Waiting-Text"/>
+								</style>
+							
+							<!-- CHIUSURA DEL TESTO DI ATTESA -->
+							<!-- WAITING TEXT END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DEL TESTO DI ATTESA -->
+						<!-- WAITING TEXT CHILD END -->
+						</child>
+
+						
 
 					<!-- CHIUSURA DEL BOX DELLO SPINNER -->
 					<!-- SPINNER BOX END -->

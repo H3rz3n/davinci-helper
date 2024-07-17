@@ -115,12 +115,12 @@
 
 
 
-                <!-- APERTURA DEL CHILD DEL CAMPO DI TESTO SCORREVOLE PER IL TESTO DI ERRORE-->
-                <!-- ERROR TEXT SCROLLABLE TEXT FIELD WINDOW CHILD START -->
+                <!-- APERTURA DEL CHILD DEL CONTENITORE SCORREVOLE PER IL TESTO DI ERRORE-->
+                <!-- ERROR TEXT SCROLLABLE CONTAINER WINDOW CHILD START -->
                 <child>
 
-                    <!-- APERTURA DEL CAMPO DI TESTO SCORREVOLE PER IL TESTO DI ERRORE -->
-                    <!-- ERROR TEXT SCROLLABLE TEXT FIELD WINDOW START -->
+                    <!-- APERTURA DEL DEL CONTENITORE SCORREVOLE PER IL TESTO DI ERRORE -->
+                    <!-- ERROR TEXT SCROLLABLE CONTAINER WINDOW START -->
                     <object class="GtkScrolledWindow" id="error_scrolled">
 
                         <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
@@ -195,25 +195,25 @@
 
 
 
-                    <!-- CHIUSURA DEL CAMPO DI TESTO SCORREVOLE PER IL TESTO DI ERRORE -->
-                    <!-- ERROR TEXT SCROLLABLE TEXT FIELD WINDOW END -->
+                    <!-- CHIUSURA DEL DEL CONTENITORE SCORREVOLE PER IL TESTO DI ERRORE -->
+                    <!-- ERROR TEXT SCROLLABLE CONTAINER WINDOW END -->
                     </object>
 
-                <!-- CHIUSURA DEL CHILD DEL CAMPO DI TESTO SCORREVOLE PER IL TESTO DI ERRORE -->
-                <!-- ERROR TEXT SCROLLABLE TEXT FIELD WINDOW CHILD END -->
+                <!-- CHIUSURA DEL CHILD DEL CONTENITORE SCORREVOLE PER IL TESTO DI ERRORE -->
+                <!-- ERROR TEXT SCROLLABLE CONTAINER WINDOW CHILD END -->
                 </child>
 
 
 
 
 
-                <!-- APERTURA DEL CHILD DEL CAMPO DI TESTO SCORREVOLE PER I LOG DI ERRORE-->
-                <!-- ERROR LOG SCROLLABLE TEXT FIELD WINDOW CHILD START -->
+                <!-- APERTURA DEL CHILD DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE-->
+                <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW CHILD START -->
                 <child>
 
-                    <!-- APERTURA DEL CAMPO DI TESTO SCORREVOLE PER I LOG DI ERRORE -->
-                    <!-- ERROR LOG SCROLLABLE TEXT FIELD WINDOW START -->
-                    <object class="GtkScrolledWindow" id="log_scrolled">
+                    <!-- APERTURA DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE -->
+                    <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW START -->
+                    <object class="GtkScrolledWindow" id="error_log_scrolled">
 
                         <!-- VISIBILITÀ DELL'OGGETTO -->
                         <!-- SETTING THE OBJECT VISIBILITY -->
@@ -263,7 +263,7 @@
 
                             <!-- APERTURA DEL VISUALIZZATORE DEL LOG -->
                             <!-- LOG VIEWER START -->
-                            <object class="GtkTextView" id="log_text">
+                            <object class="GtkTextView" id="error_log_text">
 
                                 <!-- VISIBILITÀ DEL CURSORE NEL TESTO -->
                                 <!-- TEXT CURSOR VISIBILITY -->
@@ -298,125 +298,125 @@
 
 
 
-                    <!-- CHIUSURA DEL CAMPO DI TESTO SCORREVOLE PER I LOG DI ERRORE -->
-                    <!-- ERROR LOG SCROLLABLE TEXT FIELD WINDOW END -->
+                    <!-- CHIUSURA DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE -->
+                    <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW END -->
                     </object>
 
-                <!-- CHIUSURA DEL CHILD DEL CAMPO DI TESTO SCORREVOLE PER I LOG DI ERRORE -->
-                <!-- ERROR LOG SCROLLABLE TEXT FIELD WINDOW CHILD END -->
+                <!-- CHIUSURA DEL CHILD DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE -->
+                <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW CHILD END -->
                 </child>
 
 
 
 
 
-                <!-- APERTURA DEL CHILD DEL BOX BOTTONE DI USCITA -->
-                <!-- EXIT BUTTON BOX CHILD START -->
+                <!-- APERTURA DEL CHILD DEL BOX BOTTONI DI USCITA E DI LOG -->
+                <!-- EXIT AND LOG BUTTONS BOX CHILD START -->
                 <child>
 
-                    <!-- APERTURA DEL BOX BOTTONE DI USCITA -->
-                    <!-- EXIT BUTTON BOX START -->
+                    <!-- APERTURA DEL BOX BOTTONI DI USCITA E DI LOG -->
+                    <!-- EXIT AND LOG BUTTONS BOX START -->
                     <object class="GtkBox" id="error_button_box">
 
-                    <!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX -->
-                    <!-- SETTING THE BOX ORIENTATION -->
-                    <property name="orientation">horizontal</property>
+                        <!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX -->
+                        <!-- SETTING THE BOX ORIENTATION -->
+                        <property name="orientation">horizontal</property>
 
-                    <!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
-                    <!-- SETTING THE BOX VERTICAL ALIGN -->
-                    <property name="valign">center</property>
+                        <!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
+                        <!-- SETTING THE BOX VERTICAL ALIGN -->
+                        <property name="valign">center</property>
 
-                    <!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
-                    <!-- SETTING THE BOX HORIZONTAL ALIGN -->
-                    <property name="halign">center</property>
+                        <!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+                        <!-- SETTING THE BOX HORIZONTAL ALIGN -->
+                        <property name="halign">center</property>
 
-                    <!-- POSIZIONAMENTO NELLA GRIGLIA -->
-                    <!-- POSITION INSIDE THE GRID  -->
-                    <layout>
+                        <!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        <!-- POSITION INSIDE THE GRID  -->
+                        <layout>
 
-                        <!-- POSIZIONE VERTICALE -->
-                        <!-- VERTICAL POSITION -->
-                        <property name="column">0</property>
+                            <!-- POSIZIONE VERTICALE -->
+                            <!-- VERTICAL POSITION -->
+                            <property name="column">0</property>
 
-                        <!-- POSIZIONE ORIZZONTALE -->
-                        <!-- HORIZONTAL POSITION -->
-                        <property name="row">3</property>
+                            <!-- POSIZIONE ORIZZONTALE -->
+                            <!-- HORIZONTAL POSITION -->
+                            <property name="row">3</property>
 
-                    </layout>
-
-                    <!-- IMPOSTO I PARAMETRI CSS -->
-                    <!-- SETTING CSS PARAMETERS  -->
-                    <style>
-                        <class name="Error-Button-Box"/>
-                    </style>
-
-
-                    <!-- APERTURA DEL CHILD DEL BOTTONE PER MOSTRARE I LOG -->
-                    <!-- SHOW LOG BUTTON CHILD START -->
-                    <child>
-
-                        <!-- INSERIMENTO DEL BOTTONE PER MOSTRARE I LOG -->
-                        <!-- SHOW LOG BUTTON START -->
-                        <object class="GtkButton" id="log_button">
-
-                            <!-- VISIBILITÀ DELL'OGGETTO -->
-                            <!-- SETTING THE OBJECT VISIBILITY -->
-                            <property name="visible">false</property>
-
-                            <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
-                            <!-- SETTING BUTTON TEXT LABEL -->
-                            <property name="label" translatable="yes">Show logs</property>
-
-                            <!-- IMPOSTO I PARAMETRI CSS -->
-                            <!-- SETTING CSS PARAMETERS  -->
-                            <style>
-                                <class name="Log-Button"/>
-                            </style>
-
-                        <!-- CHIUSURA DEL BOTTONE PER MOSTRARE I LOG -->
-                        <!-- SHOW LOG BUTTON END -->
-                        </object>
-
-                    <!-- CHIUSURA DEL CHILD DEL BOTTONE PER MOSTRARE I LOG-->
-                    <!-- SHOW LOG BUTTON CHILD END -->
-                    </child>
-
-
-
-                    <!-- INSERIMENTO DEL CHILD DEL BOTTONE DI USCITA -->
-                    <!-- EXIT BUTTON CHILD START -->
-                    <child>
-
-                        <!-- INSERIMENTO DEL BOTTONE DI USCITA -->
-                        <!-- EXIT BUTTON START -->
-                        <object class="GtkButton" id="exit_button">
-
-                        <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
-                        <!-- SETTING BUTTON TEXT LABEL -->
-                        <property name="label" translatable="yes">Understood</property>
+                        </layout>
 
                         <!-- IMPOSTO I PARAMETRI CSS -->
                         <!-- SETTING CSS PARAMETERS  -->
                         <style>
-                            <class name="Exit-Button-2"/>
+                            <class name="Error-Button-Box"/>
                         </style>
 
-                        <!-- CHIUSURA DEL BOTTONE DI USCITA -->
-                        <!-- EXIT BUTTON END -->
-                        </object>
 
-                    <!-- CHIUSURA DEL CHILD DEL BOTTONE DI USCITA-->
-                    <!-- EXIT BUTTON CHILD END -->
-                    </child>
+                        <!-- APERTURA DEL CHILD DEL BOTTONE PER MOSTRARE I LOG -->
+                        <!-- SHOW LOG BUTTON CHILD START -->
+                        <child>
+
+                            <!-- INSERIMENTO DEL BOTTONE PER MOSTRARE I LOG -->
+                            <!-- SHOW LOG BUTTON START -->
+                            <object class="GtkButton" id="error_log_button">
+
+                                <!-- VISIBILITÀ DELL'OGGETTO -->
+                                <!-- SETTING THE OBJECT VISIBILITY -->
+                                <property name="visible">false</property>
+
+                                <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                                <!-- SETTING BUTTON TEXT LABEL -->
+                                <property name="label" translatable="yes">Show logs</property>
+
+                                <!-- IMPOSTO I PARAMETRI CSS -->
+                                <!-- SETTING CSS PARAMETERS  -->
+                                <style>
+                                    <class name="Error-Log-Button"/>
+                                </style>
+
+                            <!-- CHIUSURA DEL BOTTONE PER MOSTRARE I LOG -->
+                            <!-- SHOW LOG BUTTON END -->
+                            </object>
+
+                        <!-- CHIUSURA DEL CHILD DEL BOTTONE PER MOSTRARE I LOG-->
+                        <!-- SHOW LOG BUTTON CHILD END -->
+                        </child>
 
 
 
-                    <!-- CHIUSURA DEL BOX BOTTONE DI USCITA-->
-                    <!-- EXIT BUTTON BOX END -->
+                        <!-- INSERIMENTO DEL CHILD DEL BOTTONE DI USCITA -->
+                        <!-- EXIT BUTTON CHILD START -->
+                        <child>
+
+                            <!-- INSERIMENTO DEL BOTTONE DI USCITA -->
+                            <!-- EXIT BUTTON START -->
+                            <object class="GtkButton" id="error_exit_button">
+
+                            <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            <!-- SETTING BUTTON TEXT LABEL -->
+                            <property name="label" translatable="yes">Understood</property>
+
+                            <!-- IMPOSTO I PARAMETRI CSS -->
+                            <!-- SETTING CSS PARAMETERS  -->
+                            <style>
+                                <class name="Error-Exit-Button"/>
+                            </style>
+
+                            <!-- CHIUSURA DEL BOTTONE DI USCITA -->
+                            <!-- EXIT BUTTON END -->
+                            </object>
+
+                        <!-- CHIUSURA DEL CHILD DEL BOTTONE DI USCITA-->
+                        <!-- EXIT BUTTON CHILD END -->
+                        </child>
+
+
+
+                    <!-- CHIUSURA DEL BOX BOTTONI DI USCITA E DI LOG -->
+                    <!-- EXIT AND LOG BUTTONS BOX END -->
                     </object>
 
-                <!-- CHIUSURA DEL CHILD DEL BOX BOTTONE DI USCITA -->
-                <!-- EXIT BUTTON BOX CHILD END -->
+                <!-- CHIUSURA DEL CHILD DEL BOX BOTTONI DI USCITA E DI LOG -->
+                <!-- EXIT AND LOG BUTTONS BOX CHILD END -->
                 </child>
 
 

@@ -64,7 +64,7 @@ _ = gettext.gettext
 # DEFINING THE CLASS WHO CREATES AND DISPLAYS THE FUNCTION 2 WINDOW
 class build_function_2 ():
 
-    # IMPORTO GLI ATTRIBUTI E METODI DELLA CLASSE MADRE UTILIZZANDO LA FUNZIONE INIT E LA SUPERCLASSE
+    # IMPORTO GLI ATTRIBUTI E METODI DALLA CLASSE MADRE UTILIZZANDO LA FUNZIONE INIT E LA SUPERCLASSE
     # IMPORTING ATTRIBUTE AND METHODS FROM THE PARENT CLASS USING THE INIT FUNCTION AND THE SUPERCLASS
     def __init__(self, parent):
 
@@ -126,6 +126,10 @@ class build_function_2 ():
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILE
+        self.waiting_text = function_2_window_builder.get_object("function_2_waiting_text")
+
+        # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
+        # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILE
         self.spinner_box = function_2_window_builder.get_object("function_2_spinner_box")
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
@@ -149,6 +153,14 @@ class build_function_2 ():
         # DICHIARAZIONE PERCORSO FILE DELL'ICONA DI PRESENTAZIONE
         # DECLARING THE FILE PATH OF THE PRESENTATION ICON 
         self.icon.set_from_file(f"{icon_path}/function_icons/file.svg")
+
+        # IMPOSTO IL TESTO ATTESA
+        # SETTING THE WAITING TEXT
+        self.waiting_text.set_text(_("The time needed to complete the operation will vary\n on your computer and network performance"))
+
+        # IMPOSTO IL TESTO DEL TITOLO
+        # SETTING THE TITLE TEXT
+        self.title_text.set_text(_("Select the DaVinci Resolve installer file"))
 
         #-----------------------------------------------------------------------------------------------------
 
@@ -198,11 +210,11 @@ class build_function_2 ():
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILE
-        self.exit_button = error_dialog_window.get_object("exit_button")
+        self.exit_button = error_dialog_window.get_object("error_exit_button")
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILE
-        self.log_button = error_dialog_window.get_object("log_button")
+        self.log_button = error_dialog_window.get_object("error_log_button")
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILEE
@@ -210,11 +222,11 @@ class build_function_2 ():
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILE
-        self.log_scrolled = error_dialog_window.get_object("log_scrolled")
+        self.log_scrolled = error_dialog_window.get_object("error_log_scrolled")
 
         # OTTENGO IL IL CAMPO DI TESTO DEI LOG ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE LOGS TEXT FIELD AND HER CHILD FROM THE UI FILE
-        self.log_texview = error_dialog_window.get_object("log_text")
+        self.log_texview = error_dialog_window.get_object("error_log_text")
 
         # OTTENGO IL IL CAMPO DI TESTO DEI LOG ED I SUOI CHILD DAL FILE UI
         # OBTAINING THE LOGS TEXT FIELD AND HER CHILD FROM THE UI FILE
@@ -230,8 +242,8 @@ class build_function_2 ():
         # STARTING THE FUNCTION THAT SHOWS THE LOGS
         self.log_button.connect('clicked', self.show_logs, error_log)
 
-        # CHIUDO LA FINESTRA DI INFO ALLA PRESSIONE DEL BOTONE
-        # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED
+        # CHIUDO LA FINESTRA DI ERRORE ALLA PRESSIONE DEL BOTONE
+        # CLOSE THE ERROR WINDOW WHEN THE BUTTON IS PRESSED
         self.exit_button.connect('clicked', lambda button: self.error_dialog_window.destroy())
 
         #-----------------------------------------------------------------------------------------------------
@@ -240,8 +252,8 @@ class build_function_2 ():
         # CHECK FOR WHICH TYPE OF ERROR THE POP-UP WAS INVOKED
         if error_type == "Missing":
 
-            # DICHIARAZIONE PERCORSO DEL FILE DELL'ICONA DI ERRORE
-            # DECLARING THE FILE PATH OF THE ERROR ICON 
+            # CARICO IL FILE DELL'ICONA DI AVVISO
+            # LOADING THE WARNING ICON FILE
             self.error_icon.set_from_file(f"{icon_path}/function_icons/warning.svg")
 
             # STAMPO IL MESSAGGIO DI ERRORE PER FILE MANCANTE
@@ -250,8 +262,8 @@ class build_function_2 ():
 
         elif error_type == "Unsuitable" :
 
-            # DICHIARAZIONE PERCORSO DEL FILE DELL'ICONA DI ERRORE
-            # DECLARING THE FILE PATH OF THE ERROR ICON 
+            # CARICO IL FILE DELL'ICONA DI AVVISO
+            # LOADING THE WARNING ICON FILE 
             self.error_icon.set_from_file(f"{icon_path}/function_icons/warning.svg")
 
             # STAMPO IL MESSAGGIO DI ERRORE PER FILE NON IDONEO
@@ -260,8 +272,8 @@ class build_function_2 ():
 
         elif error_type == "Extraction" :
 
-            # DICHIARAZIONE PERCORSO DEL FILE DELL'ICONA DI ERRORE
-            # DECLARING THE FILE PATH OF THE ERROR ICON 
+            # CARICO IL FILE DELL'ICONA DI ERRORE
+            # LOADING THE ERROR ICON FILE 
             self.error_icon.set_from_file(f"{icon_path}/function_icons/error.svg")
 
             # STAMPO IL MESSAGGIO DI ERRORE PER ERRORE NELL'ESTRAZIONE DELL'INSTALLER
@@ -275,8 +287,8 @@ class build_function_2 ():
         
         elif error_type == "Install" :
 
-            # DICHIARAZIONE PERCORSO DEL FILE DELL'ICONA DI ERRORE
-            # DECLARING THE FILE PATH OF THE ERROR ICON 
+            # CARICO IL FILE DELL'ICONA DI ERRORE
+            # LOADING THE ERROR ICON FILE 
             self.error_icon.set_from_file(f"{icon_path}/function_icons/error.svg")
 
             # STAMPO IL MESSAGGIO DI ERRORE PER ERRORE DURANTE L'AVVIO DELL'INSTALLER
@@ -290,8 +302,8 @@ class build_function_2 ():
 
         else :
 
-            # DICHIARAZIONE PERCORSO DEL FILE DELL'ICONA DI ERRORE
-            # DECLARING THE FILE PATH OF THE ERROR ICON 
+             # CARICO IL FILE DELL'ICONA DI ERRORE
+            # LOADING THE ERROR ICON FILE
             self.error_icon.set_from_file(f"{icon_path}/function_icons/error.svg")
 
             # STAMPO IL MESSAGGIO DI ERRORE PER GLI ERRORI SCONOSCIUTI
@@ -598,6 +610,7 @@ class build_function_2 ():
         self.spinner.start()
 
         #-----------------------------------------------------------------------------------------------------
+
 
 
 

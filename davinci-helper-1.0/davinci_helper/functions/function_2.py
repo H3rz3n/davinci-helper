@@ -10,20 +10,6 @@
 # STANDARD MODULES IMPORT
 import sys, gi, os, subprocess, threading, locale, gettext
 
-# IMPORTAZIONE DEI MODULI DELLE FUNZIONI
-# FUNCTION MODULES IMPORT
-from .function_2 import installation_script
-
-# RICHIESTA DELLE VERSIONI DI GTK ED ADWAITA
-# REQUESTING THE CHOOSEN VERSION OF GTK AND ADWAITA
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
-gi.require_version('Gio', '2.0')
-
-# IMPORTO I MODULI NECESSARI DA GI
-# IMPORTING THE NECESSARY MODULES FROM GI
-from gi.repository import Gtk, Adw, Gdk, Gio, GLib
-
 #-----------------------------------------------------------------------------------------------------
 
 # DEFINISCO I PERCORSI DEI FILE DI TRADUZIONE
@@ -49,8 +35,6 @@ gettext.textdomain('davinci-helper')
 _ = gettext.gettext
 
 #-----------------------------------------------------------------------------------------------------
-
-
 
 # FUNZIONE CHE AVVIA L'INSTALLAZIONE DI DAVINCI RESOLVE
 # FUNCTION THAT STARTS THE DAVINCI RESOLVE INSTALLATION WIZARD

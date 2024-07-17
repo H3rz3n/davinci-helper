@@ -91,7 +91,6 @@ DaVinci Helper is the ultime app to help you install and run Davinci Resolve on 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/icons/davinci-helper.desktop %{buildroot}%{_datadir}/applications/davinci-helper.desktop
 install -Dm644 %{_builddir}/%{name}-%{version}/data/icons/davinci-helper-icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci-helper-icon.svg
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.policy %{buildroot}/%{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
-install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.rules %{buildroot}/%{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
 
 mkdir -p %{buildroot}%{_datadir}/davinci-helper
 mkdir -p %{buildroot}%{_datadir}/davinci-helper/data
@@ -121,15 +120,14 @@ cp -r  locale/* %{buildroot}%{_datadir}/davinci-helper/locale
 %{_datadir}/applications/davinci-helper.desktop
 %{_datadir}/icons/hicolor/scalable/apps/davinci-helper-icon.svg
 %{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
-%{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
 
 
 
 # OPERAZIONI ESEGUITE POST INSTALLAZIONE
 # POST INSTALLATION OPERATIONS
-#%post
-#update-desktop-database &> /dev/null || :
-#sudo systemctl restart polkit
+%post
+update-desktop-database &> /dev/null || :
+sudo systemctl restart polkit
 
 
 

@@ -99,8 +99,7 @@ setup(
             'data/icons/function_icons/file.svg'
         ]),
         ('share/davinci-helper/data/polkit', [
-            'data/polkit/com.davinci.helper.app.policy',
-            'data/polkit/com.davinci.helper.app.rules'
+            'data/polkit/com.davinci.helper.app.policy'
         ]),
         ('share/davinci-helper/data/ui', [
             'data/ui/about.ui',
