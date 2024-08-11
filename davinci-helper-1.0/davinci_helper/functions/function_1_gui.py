@@ -311,7 +311,7 @@ class build_function_1 ():
 
         # CONTROLLO SE LO SCRIPT HA PRODOTTO ERRORI
         # SEARCHING IF THE SCRIPT HAS RETURNED ANY ERROR
-        if function_1_log_err != None or ((function_1_log_output != None) and (function_1_log_output.find("Curl error") != -1) ):
+        if function_1_log.returncode == 1 :
 
             # RACCOLGO I LOG IN UNICA VARIABILE
             # JOINING THE LOGS AS A ONE VARIABLE
@@ -332,9 +332,22 @@ class build_function_1 ():
             # STAMPO NEL TERMINALE I MESSAGGI DI OUTPUT E DI ERRORE
             # PRINTING INSIDE THE TERMINAL THE OUTPUT AND ERROR MESSAGGES
             print(function_1_log_output)
-            print(function_1_log_err)
 
-        elif function_1_log_output != None :
+        elif function_1_log_output.find("Request dismissed") != -1 :
+            
+            # NASCONDO IL BOTTONE PER MOSTRARE I LOG
+            # HIDING THE SHOW LOG BUTTON
+            self.log_button.hide()
+
+            # AVVIO LA FUNZIONE CHE MOSTRA L'ERRORE DI MANCANZA DEI PERMESSI DI AMMINISTRATORE
+            # STARTING THE FUNCTION THAT SHOW THE ERROR ABOUT THE LACK OF ADMIN PERMISSION
+            self.show_permission_error()
+
+            # STAMPO NEL TERMINALE I MESSAGGI DI OUTPUT E DI ERRORE
+            # PRINTING INSIDE THE TERMINAL THE OUTPUT AND ERROR MESSAGGES
+            print(function_1_log_output)
+
+        else :
 
             # OTTENGO CIÒ CHE È STATO PRECEDENTEMENTE CARICATO NEL BUFFER DEL TESTO
             # OBTAINING WHAT WAS PREVIOUSLY ADDED TO THE TEXT BUFFER
@@ -343,7 +356,7 @@ class build_function_1 ():
             # AGGIUNGO IL NUOVO TESTO AL BUFER DEL TESTO
             # ADDING NEW TEXT TO THE TEXT BUFFER
             self.log_text_viewer_buffer.insert(end_iter, function_1_log_output)
-            print(function_1_log_err)
+            
 
             # AVVIO LA FUNZIONE CHE RIPORTA LO STATO DI SUCCESSO
             # STARTING THE FUNCTION THAT SHOWS THE SUCCESS STATE
@@ -352,7 +365,6 @@ class build_function_1 ():
             # STAMPO NEL TERMINALE I MESSAGGI DI OUTPUT E DI ERRORE
             # PRINTING INSIDE THE TERMINAL THE OUTPUT AND ERROR MESSAGGES
             print(function_1_log_output)
-            print(function_1_log_err)
 
         #-----------------------------------------------------------------------------------------------------
 
@@ -401,6 +413,30 @@ class build_function_1 ():
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI ERRORE
         # LOADING THE SUBTITLE TEXT IN CASE OF ERROR
         self.sub_title_text.set_text(_("There was an error installing the dependencies. Please check the logs to have more details"))
+
+        #-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+    # FUNZIONE CHE MOSTRA L'ICONA ED IL TESTO IN CASO DI DI ERRORI DI PERMESSI NELL'AVVIARE LO SCRIPT
+    # FUNCTION THAT SHOW THE ICON AND TEXT IF THE SCRIPT RETURN ANY ERRORS ABOUT START PERMESSION
+    def show_permission_error (self):
+
+        #-----------------------------------------------------------------------------------------------------
+
+        # CARICO IL FILE DELL'ICONA DI IN CASO ERRORE
+        # LOADING THE ICON FILE IN CASE OF ERROR
+        self.icon.set_from_file(f"{icon_path}/function_icons/error.svg")
+
+        # CARICO IL TESTO DEL TITOLO DI IN CASO ERRORE
+        # LOADING TITLE TEXT IN CASE OF ERROR
+        self.title_text.set_text(_("You need to grant admin permission to use this function"))
+
+        # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI ERRORE
+        # LOADING THE SUBTITLE TEXT IN CASE OF ERROR
+        self.sub_title_text.set_text(_("It was impossible to start the function because you didn't give admin permission. Please try again."))
 
         #-----------------------------------------------------------------------------------------------------
 

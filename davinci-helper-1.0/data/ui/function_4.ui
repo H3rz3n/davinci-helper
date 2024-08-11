@@ -1,9 +1,630 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- MACRO CONTENITORE DELL'INTERFACCIA -->
+<!-- INIZIO DELL'INTERFACCIA -->
+<!-- INTERFACE START -->
 <interface>
-	<object class="GtkApplicationWindow">
+
+	<!-- DICHIARAZIONE DELLE DIPENDENZE DELL'INTERFACCIA -->
+	<!-- DECLARING INTERFACE DEPENDENCIES -->
+    <requires lib="gtk" version="4.0"/>
+    <requires lib="Adw" version="1.0"/>
 
 
-	</object>
+    <!-- APERTURA DELLA FINESTRA  -->
+	<!-- WINDOW START-->
+    <object class="GtkWindow" id="function_4_window">
+
+        <!-- IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO -->
+		<!-- SETTING THE TITLE IN THE TITLE BAR -->
+        <property name="title" translatable="yes">Install DaVinci Resolve dependencies</property>
+
+		<!-- IMPOSTAZIONE DELLA FINESTRA COME FINESTRA DI DIALOGO -->
+		<!-- SETTING THE WINDOW AS A DIALOG WINDOW -->
+        <property name="modal">true</property>
+
+		<!-- IMPOSTAZIONE DELLA CHIUSURA DELLA FINESTRA ALLA CHIUSURA DELLA FINESTRA GENITORE -->
+		<!-- SETTING THE WINDOW TO BE DESTROYED WITH HER PARENT WINDOW -->
+        <property name="destroy-with-parent">true</property>
+
+		<!-- IMPOSTAZIONE POSSIBILITÀ DI RIDIMENSIONARE LA FINESTRA -->
+		<!-- SETTING THE POSSIBILITY TO RESIZE THE WINDOW -->
+        <property name="resizable">false</property>
+
+
+
+
+
+        <!-- APERTURA DEL CHILD DELLA GRIGLIA -->
+		<!-- GRID CHILD START -->
+		<child>
+
+			<!-- APERTURA DELLA GRIGLIA -->
+			<!-- GRID START -->
+			<object class="GtkGrid" id="function_4_grid">
+
+				<!-- SPAZIO TRA LE RIGHE -->
+				<!-- ROW SPACING -->
+				<property name="row-spacing">1</property>
+
+				<!-- SPAZIO TRA LE COLONNE -->
+				<!-- COLUMN SPACING -->
+				<property name="column-spacing">50</property>
+
+				<!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+				<!-- SETTING COLUMN HOMOGENITY -->
+				<property name="column-homogeneous">true</property>
+
+				<!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+				<!-- SETTING ROW HOMOGENITY -->
+				<property name="row-homogeneous">false</property>
+
+				<!-- IMPOSTO I PARAMETRI CSS -->
+				<!-- SETTING CSS PARAMETERS -->
+				<style>
+					<class name="Function-4-Grid"/>
+				</style>
+
+
+
+
+
+                <!-- APERTURA DEL CHILD DELL'ICONA -->
+				<!-- ICON CHILD START -->
+				<child>
+
+					<!-- APERTURA DELL'ICONA -->
+					<!-- ICON START  -->
+					<object class="GtkImage" id="function_4_icon">
+
+						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+						<!-- POSITION INSIDE THE GRID  -->
+						<layout>
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">0</property>
+
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">0</property>
+
+						</layout>
+
+						<!-- IMPOSTO I PARAMETRI CSS -->
+						<!-- SETTING THE CSS PARAMETERS -->
+						<style>
+							<class name="Function-4-Icon"/>
+						</style>
+
+					<!-- CHISURA DELL'ICONA -->
+					<!-- ICON END  -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DELL'ICONA -->
+				<!-- ICON CHILD END  -->
+				</child>
+
+
+
+
+
+                <!-- APERTURA DEL CHILD DEL TESTO DI TITOLO -->
+				<!-- TITLE TEXT CHILD START -->
+				<child>
+
+					<!-- APERTURA DEL TESTO DI TITOLO -->
+					<!-- TITLE TEXT START -->
+					<object class="GtkLabel" id="function_4_title_text">
+
+						<!-- INSERIMENTO DEL TESTO -->
+						<!-- SETTING THE TEXT -->
+						<property name="label" translatable="yes"></property>
+
+						<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+						<!-- SETTING THE TEXT ALLIGNMENT -->
+						<property name="justify">center</property>
+
+						<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+						<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+						<property name="wrap">true</property>
+
+						<!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+						<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+						<property name="xalign">0.5</property>
+
+						<!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
+						<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+						<property name="yalign">0.5</property>
+
+						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+						<!-- POSITION INSIDE THE GRID -->
+						<layout>
+
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">0</property>
+
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">1</property>
+
+						</layout>
+
+						<!-- IMPOSTO I PARAMETRI CSS -->
+						<!-- SETTING CSS PARAMETERS -->
+						<style>
+							<class name="Function-4-Title-Text"/>
+						</style>
+					
+					<!-- CHIUSURA DEL TESTO DI TITOLO -->
+					<!-- TITLE TEXT END -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DEL TESTO DI TITOLO -->
+				<!-- TITLE TEXT CHILD END -->
+				</child>
+
+
+
+
+
+                <!-- APERTURA DEL CHILD DEL CONTENITORE SCORREVOLE PER IL TESTO DI SOTTOTITOLO-->
+                <!-- SUBTITLE TEXT SCROLLABLE CONTAINER CHILD START -->
+                <child>
+
+                    <!-- APERTURA DEL CONTENITORE SCORREVOLE PER IL TESTO DI SOTTOTITOLO -->
+                    <!-- SUBTITLE TEXT SCROLLABLE CONTAINER START -->
+                    <object class="GtkScrolledWindow" id="function_4_subtitle_scrollable_container">
+
+                        <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="hexpand">true</property>
+
+                        <!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="vexpand">true</property>
+
+                        <!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        <!-- POSITION INSIDE THE GRID  -->
+                        <layout>
+
+                            <!-- POSIZIONE VERTICALE -->
+                            <!-- VERTICAL POSITION -->
+                            <property name="column">0</property>
+
+                            <!-- POSIZIONE ORIZZONTALE -->
+                            <!-- HORIZONTAL POSITION -->
+                            <property name="row">2</property>
+
+                        </layout>
+
+                        <!-- IMPOSTO I PARAMETRI CSS -->
+                        <!-- SETTING CSS PARAMETERS -->
+                        <style>
+                            <class name="Function-4-Sub-Title-Scrollable"/>
+                        </style>
+
+                        <!-- APERTURA DEL CHILD DEL TESTO DI SOTTOTITOLO -->
+                        <!-- TSUBITLE TEXT CHILD START -->
+                        <child>
+
+                            <!-- APERTURA DEL TESTO DI SOTTOTITOLO -->
+                            <!-- SUBTITLE TEXT START -->
+                            <object class="GtkLabel" id="function_4_sub_title_text">
+
+                                <!-- INSERIMENTO DEL TESTO -->
+                                <!-- SETTING THE TEXT -->
+                                <property name="label" translatable="yes"></property>
+
+                                <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+                                <!-- SETTING THE TEXT ALLIGNMENT -->
+                                <property name="justify">center</property>
+
+                                <!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+                                <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                <property name="wrap">true</property>
+
+                                <!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+                                <!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+                                <property name="xalign">0.5</property>
+
+                                <!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
+                                <!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+                                <property name="yalign">0.5</property>
+
+                                <!-- IMPOSTO I PARAMETRI CSS -->
+                                <!-- SETTING CSS PARAMETERS -->
+                                <style>
+                                    <class name="Function-4-Sub-Title-Text"/>
+                                </style>
+                            
+                            <!-- CHIUSURA DEL TESTO DI SOTTOTITOLO -->
+                            <!-- SUBTITLE TEXT END -->
+                            </object>
+
+                        <!-- CHIUSURA DEL CHILD DEL TESTO DI SOTTOTITOLO -->
+                        <!-- SUBTITLE TEXT CHILD END -->
+                        </child>
+
+
+                    <!-- CHIUSURA DEL CONTENITORE SCORREVOLE PER IL TESTO DI SOTTOTITOLO -->
+                    <!-- SUBTITLE TEXT SCROLLABLE CONTAINER END -->
+                    </object>
+
+                <!-- CHIUSURA DEL CHILD DEL CONTENITORE SCORREVOLE PER IL TESTO DI SOTTOTITOLO -->
+                <!-- SUBTITLE TEXT SCROLLABLE CONTAINER CHILD END -->
+                </child>
+
+
+
+
+
+                <!-- APERTURA DEL CHILD DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE-->
+                <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW CHILD START -->
+                <child>
+
+                    <!-- APERTURA DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE -->
+                    <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW START -->
+                    <object class="GtkScrolledWindow" id="function_4_log_scrollable_container">
+
+                        <!-- VISIBILITÀ DELL'OGGETTO -->
+                        <!-- SETTING THE OBJECT VISIBILITY -->
+                        <property name="visible">False</property>
+
+                        <!-- DEFINIZIONE DELL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="hexpand">true</property>
+
+                        <!-- DEFINIZIONE DELL'ESPANSIONE VERTICALE DEL CONTENITORE -->
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="vexpand">true</property>
+
+                        <!-- POSIZIONAMENTO NELLA GRIGLIA -->
+						<!-- POSITION INSIDE THE GRID  -->
+                        <layout>
+
+                            <!-- POSIZIONE VERTICALE -->
+                            <!-- VERTICAL POSITION -->
+                            <property name="column">0</property>
+
+                            <!-- POSIZIONE ORIZZONTALE -->
+                            <!-- HORIZONTAL POSITION -->
+                            <property name="row">3</property>
+
+                        </layout>
+
+                        <!-- IMPOSTO I PARAMETRI CSS -->
+						<!-- SETTING THE CSS PARAMETERS -->
+                        <style>
+                            <class name="Function-4-Log-Scrollable"/>
+                        </style>
+
+                        
+                                
+                        <!-- APERTURA DEL CHILD DEL VISUALIZZATORE DI TESTO -->
+                        <!-- TEXT VIEWER CHILD START -->
+                        <child>
+
+                            <!-- APERTURA DEL VISUALIZZATORE DI TESTO -->
+                            <!-- TEXT VIEWER START -->
+                            <object class="GtkTextView" id="function_4_log_text_viewer">
+
+                                <!-- VISIBILITÀ DEL CURSORE NEL TESTO -->
+                                <!-- TEXT CURSOR VISIBILITY -->
+                                <property name="cursor-visible">false</property>
+
+                                <!-- POSSIBILITÀ DI MODIFCARE IL TESTO -->
+                                <!-- TEXT EDIT POSSIBILITY -->
+                                <property name="editable">false</property>
+
+                                <!-- FONT MONOSPAZIATO -->
+                                <!-- MONOSPACE FONT -->
+                                <property name="monospace">true</property>
+
+                                <!-- CRITERIO PER ANDARE A CAPO -->
+                                <!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+                                <property name="wrap-mode">word</property>
+                                
+                                <!-- IMPOSTO I PARAMETRI CSS -->
+						        <!-- SETTING THE CSS PARAMETERS -->
+                                <style>
+                                    <class name="Function-4-Log-Text-Viewer"/>
+                                </style>
+
+                            <!-- CHIUSURA DEL VISUALIZZATORE DI TESTO -->
+                            <!-- TEXT VIEWER END -->
+                            </object>
+
+                        <!-- CHIUSURA DEL CHILD DEL VISUALIZZATORE DI TESTO -->
+                        <!-- TEXT VIEWER CHILD END -->
+                        </child>
+
+
+
+                    <!-- CHIUSURA DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE -->
+                    <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW END -->
+                    </object>  
+
+                <!-- CHIUSURA DEL CHILD DEL CONTENITORE SCORREVOLE PER I LOG DI ERRORE -->
+                <!-- ERROR LOG SCROLLABLE CONTAINER WINDOW CHILD END -->
+                </child>
+
+
+
+
+
+                <!-- APERTURA DEL CHILD DEL BOX BOTTONI DI USCITA E DI LOG -->
+                <!-- EXIT AND LOG BUTTONS BOX CHILD START -->
+                <child>
+
+                    <!-- APERTURA DEL BOX BOTTONI DI USCITA E DI LOG -->
+                    <!-- EXIT AND LOG BUTTONS BOX START -->
+                    <object class="GtkBox" id="function_4_button_box">
+
+                        <!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX -->
+                        <!-- SETTING THE BOX ORIENTATION -->
+                        <property name="orientation">horizontal</property>
+
+                        <!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
+                        <!-- SETTING THE BOX VERTICAL ALIGN -->
+                        <property name="valign">center</property>
+
+                        <!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+                        <!-- SETTING THE BOX HORIZONTAL ALIGN -->
+                        <property name="halign">center</property>
+
+                        <!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        <!-- POSITION INSIDE THE GRID  -->
+                        <layout>
+
+                            <!-- POSIZIONE VERTICALE -->
+                            <!-- VERTICAL POSITION -->
+                            <property name="column">0</property>
+
+                            <!-- POSIZIONE ORIZZONTALE -->
+                            <!-- HORIZONTAL POSITION -->
+                            <property name="row">4</property>
+
+                        </layout>
+
+                        <!-- IMPOSTO I PARAMETRI CSS -->
+                        <!-- SETTING CSS PARAMETERS  -->
+                        <style>
+                            <class name="Function-4-Button-Box"/>
+                        </style>
+
+
+                        <!-- APERTURA DEL CHILD DEL BOTTONE PER MOSTRARE I LOG -->
+                        <!-- SHOW LOG BUTTON CHILD START -->
+                        <child>
+
+                            <!-- INSERIMENTO DEL BOTTONE PER MOSTRARE I LOG -->
+                            <!-- SHOW LOG BUTTON START -->
+                            <object class="GtkButton" id="function_4_log_button">
+
+                                <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                                <!-- SETTING BUTTON TEXT LABEL -->
+                                <property name="label" translatable="yes">Show logs</property>
+
+                                <!-- IMPOSTO I PARAMETRI CSS -->
+                                <!-- SETTING CSS PARAMETERS  -->
+                                <style>
+                                    <class name="Function-4-Log-Button"/>
+                                </style>
+
+                            <!-- CHIUSURA DEL BOTTONE PER MOSTRARE I LOG -->
+                            <!-- SHOW LOG BUTTON END -->
+                            </object>
+
+                        <!-- CHIUSURA DEL CHILD DEL BOTTONE PER MOSTRARE I LOG-->
+                        <!-- SHOW LOG BUTTON CHILD END -->
+                        </child>
+
+
+
+                        <!-- INSERIMENTO DEL CHILD DEL BOTTONE DI USCITA -->
+                        <!-- EXIT BUTTON CHILD START -->
+                        <child>
+
+                            <!-- INSERIMENTO DEL BOTTONE DI USCITA -->
+                            <!-- EXIT BUTTON START -->
+                            <object class="GtkButton" id="function_4_exit_button">
+
+                            <!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            <!-- SETTING BUTTON TEXT LABEL -->
+                            <property name="label" translatable="yes">Exit</property>
+
+                            <!-- IMPOSTO I PARAMETRI CSS -->
+                            <!-- SETTING CSS PARAMETERS  -->
+                            <style>
+                                <class name="Function-4-Exit-Button"/>
+                            </style>
+
+                            <!-- CHIUSURA DEL BOTTONE DI USCITA -->
+                            <!-- EXIT BUTTON END -->
+                            </object>
+
+                        <!-- CHIUSURA DEL CHILD DEL BOTTONE DI USCITA-->
+                        <!-- EXIT BUTTON CHILD END -->
+                        </child>
+
+
+
+                    <!-- CHIUSURA DEL BOX BOTTONI DI USCITA E DI LOG -->
+                    <!-- EXIT AND LOG BUTTONS BOX END -->
+                    </object>
+
+                <!-- CHIUSURA DEL CHILD DEL BOX BOTTONI DI USCITA E DI LOG -->
+                <!-- EXIT AND LOG BUTTONS BOX CHILD END -->
+                </child>
+
+
+
+
+
+                <!-- APERTURA DEL CHILD DEL BOX DELLO SPINNER -->
+				<!-- SPINNER BOX CHILD START -->
+				<child>
+
+					<!-- APERTURA DEL BOX DELLO SPINNER -->
+					<!-- SPINNER BOX START -->
+					<object class="GtkBox" id="function_4_spinner_box">
+
+						<!-- VISIBILITÀ DELL'OGGETTO -->
+						<!-- SETTING THE OBJECT VISIBILITY -->
+						<property name="visible">false</property>
+
+						<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX -->
+						<!-- SETTING THE BOX ORIENTATION -->
+						<property name="orientation">vertical</property>
+
+						<!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
+						<!-- SETTING THE BOX VERTICAL ALIGN -->
+						<property name="valign">center</property>
+
+						<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+						<!-- SETTING THE BOX HORIZONTAL ALIGN -->
+						<property name="halign">center</property>
+
+						<!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="hexpand">true</property>
+
+                        <!-- DEFINIZIONE DELL'ESPANSIONE VERTICALE DEL CONTENITORE -->
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="vexpand">true</property>
+
+						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+						<!-- POSITION INSIDE THE GRID -->
+						<layout>
+
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">0</property>
+
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">5</property>
+
+						</layout>
+
+
+
+						<!-- APERTURA DEL CHILD DELLO SPINNER -->
+						<!-- SPINNER CHILD START -->
+						<child>
+
+							<!-- APERTURA DELLO SPINNER -->
+							<!-- SPINNER START -->
+							<object class="GtkSpinner" id="function_4_spinner">
+
+								<!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
+								<!-- SETTING THE BOX VERTICAL ALIGN -->
+								<property name="valign">center</property>
+
+								<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+								<!-- SETTING THE BOX HORIZONTAL ALIGN -->
+								<property name="halign">center</property>
+
+								<!-- IMPOSTO I PARAMETRI CSS -->
+								<!-- SETTING CSS PARAMETERS -->
+								<style>
+									<class name="Function-4-Spinner"/>
+								</style>
+
+							<!-- CHIUSURA DELLO SPINNNER -->
+							<!-- SPINNER END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DELLO SPINNER -->
+						<!-- SPINNER CHILD END -->
+						</child>
+
+
+
+						<!-- APERTURA DEL CHILD DEL TESTO DI ATTESA -->
+						<!-- WAITING TEXT CHILD START -->
+						<child>
+
+							<!-- APERTURA DEL TESTO DI ATTESA -->
+							<!-- WAITING TEXT START -->
+							<object class="GtkLabel" id="function_4_waiting_text">
+
+								<!-- INSERIMENTO DEL TESTO -->
+								<!-- SETTING THE TEXT -->
+								<property name="label" translatable="yes"></property>
+
+								<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+								<!-- SETTING THE TEXT ALLIGNMENT -->
+								<property name="justify">center</property>
+
+								<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+								<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+								<property name="wrap">false</property>
+
+								<!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+								<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+								<property name="xalign">0.5</property>
+
+								<!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
+								<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
+								<property name="yalign">0.5</property>
+
+								<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+								<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+								<property name="wrap">true</property>
+
+								<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+								<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+								<property name="wrap-mode">word</property>
+
+								<!-- IMPOSTO I PARAMETRI CSS -->
+								<!-- SETTING CSS PARAMETERS -->
+								<style>
+									<class name="Function-4-Waiting-Text"/>
+								</style>
+							
+							<!-- CHIUSURA DEL TESTO DI ATTESA -->
+							<!-- WAITING TEXT END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DEL TESTO DI ATTESA -->
+						<!-- WAITING TEXT CHILD END -->
+						</child>
+
+
+
+					<!-- CHIUSURA DEL BOX DELLO SPINNER -->
+					<!-- SPINNER BOX END -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DEL BOX DELLO SPINNER -->
+				<!-- SPINNER BOX CHILD END -->
+				</child>
+
+
+
+
+
+
+
+
+
+	        <!-- CHIUSURA GRIGLIA -->
+			<!-- GRID END -->
+			</object>
+
+		<!-- CHIUSURA CHILD GRIGLIA -->
+		<!-- GRID CHILD END -->
+		</child>
+
+
+
+
+
+    <!-- CHIUSURA DELLA FINESTRA -->
+	<!-- WINDOW END -->
+    </object>
+
+<!-- CHIUSURA DELL'INTERFACCIA -->
+<!-- INTERFACE END -->
 </interface>

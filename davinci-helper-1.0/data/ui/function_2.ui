@@ -128,11 +128,11 @@
 						<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
 						<property name="wrap">false</property>
 
-						<!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+						<!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
 						<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 						<property name="xalign">0.5</property>
 
-						<!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+						<!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
 						<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 						<property name="yalign">0.5</property>
 
@@ -321,7 +321,7 @@
 												<!-- IMPOSTO I PARAMETRI CSS -->
 												<!-- SETTING CSS PARAMETERS -->
 												<style>
-													<class name="File-Button-Icon-2"/>
+													<class name="Function-2-File-Button-Icon"/>
 												</style>
 
 											<!-- CHIUSURA DELL'ICONA DEL BOTTONE DI APERTURA FILE -->
@@ -443,7 +443,7 @@
 												<!-- IMPOSTO I PARAMETRI CSS -->
 												<!-- SETTING CSS PARAMETERS -->
 												<style>
-													<class name="Start-Button-Icon-2"/>
+													<class name="Function-2-Start-Button-Icon"/>
 												</style>
 
 											<!-- CHIUSURA DELL'ICONA DEL BOTTONE DI AVVIO DELLA FUNZIONE -->
@@ -471,7 +471,7 @@
 												<!-- IMPOSTO I PARAMETRI CSS -->
 												<!-- SETTING CSS PARAMETERS -->
 												<style>
-													<class name="Start-Button-Label-2"/>
+													<class name="Function-2-Start-Button-Label"/>
 												</style>
 
 											<!-- CHIUSURA DELL'ETICHETTA DI TESTO DEL BOTTONE DI AVVIO DELLA FUNZIONE -->
@@ -698,11 +698,11 @@
 								<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
 								<property name="wrap">false</property>
 
-								<!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+								<!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
 								<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 								<property name="xalign">0.5</property>
 
-								<!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+								<!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
 								<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 								<property name="yalign">0.5</property>
 

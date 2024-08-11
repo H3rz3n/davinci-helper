@@ -4,7 +4,7 @@
  "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
 
 <!-- INIZIO DELLE IMPOSTAZIONI DELLA POLICY --> 
-<!-- START OF POLICY SETTINGS --> 
+<!-- START OF THE POLICY SETTINGS --> 
 <policyconfig>
 
     <!-- INIZIO DELL'AZIONE DI DAVINCI HELPER --> 
@@ -21,7 +21,7 @@
         <message xml:lang="it">È necessario autenticarsi come admin per eseguire questa funzione</message>
         
         <!-- INIZIO IMPOSTAZIONI DI SICUREZZA --> 
-        <!-- START OF SECURITY SETTINGS --> 
+        <!-- SECURITY SETTINGS START --> 
         <defaults>
 
             <!-- ACCESSO ALLA FUNZIONE DA TUTTI GLI UTENTI --> 
@@ -37,21 +37,21 @@
             <allow_active>auth_admin_keep</allow_active>
             
         <!-- FINE DELLE IMPOSTAZIONI DI SICUREZZA --> 
-        <!-- END OF SECURITY SETTINGS --> 
+        <!-- SECURITY SETTINGS END --> 
         </defaults>
 
         <!-- FUNZIONI PER CUI SI È RICHIESTA L'AUTORIZZAZIONE  --> 
-        <!-- FUNCTIONS FOR WHICH AUTHORIZATION IS REQUESTED --> 
+        <!-- FUNCTIONS FOR WHERE AUTHORIZATION IS REQUESTED --> 
         <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/python</annotate>
         <annotate key="org.freedesktop.policykit.exec.args">/usr/lib/python*/site-packages/davinci_helper/functions/function_1.py</annotate>
         <annotate key="org.freedesktop.policykit.exec.args">/usr/lib/python*/site-packages/davinci_helper/functions/function_3.py</annotate>
         <annotate key="org.freedesktop.policykit.exec.args">/usr/lib/python*/site-packages/davinci_helper/functions/function_4.py</annotate>
 
-    <!-- FINE DELL'AZIONE DI DAVINCI HELPE --> 
+    <!-- FINE DELL'AZIONE DI DAVINCI HELPER --> 
     <!-- END OF DAVINCI HELPER ACTION --> 
     </action>
 
 <!-- FINE DELLE IMPOSTAZIONI DELLA POLICY --> 
-<!-- END OF POLICY SETTINGS --> 
+<!-- END OF THE POLICY SETTINGS --> 
 </policyconfig>
 

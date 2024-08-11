@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- INIZIO MACRO CONTENITORE DELL'INTERFACCIA -->
-<!-- INTERFACE MACRO CONTAINER START -->
+<!-- INIZIO DELL'INTERFACCIA -->
+<!-- INTERFACE START -->
 <interface>
-
-
 
     <!-- DICHIARAZIONE DELLE DIPENDENZE DELL'INTERFACCIA -->
 	<!-- DECLARING INTERFACE DEPENDENCIES -->
@@ -12,1192 +10,1301 @@
     <requires lib="Adw" version="1.0"/>
 
 
-    <!-- APERTURA FINESTRA PRINCIPALE -->
-	<!-- MAIN WINDOW START-->
+ 	<!-- APERTURA DELLA FINESTRA  -->
+	<!-- WINDOW START-->
     <object class="GtkApplicationWindow" id="main_window">
-
-        <!-- IMPOSTAZIONE ALTEZZA ALL'APERTURA -->
-		<!-- SETTING HEIGHT SIZE ON OPENING -->
-        <property name="default-height">988</property>
-
-        <!-- IMPOSTAZIONE LUNGHEZZA ALL'APERTURA -->
-		<!-- SETTING WIDTH SIZE ON OPENING -->
-        <property name="default-width">1600</property>
 
         <!-- IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO -->
 		<!-- SETTING THE TITLE IN THE TITLE BAR -->
-        <property name="title">Davinci Helper - ALPHA 0.13</property>
+        <property name="title">DaVinci Helper</property>
 
+        <!-- IMPOSTAZIONE ALTEZZA ALL'APERTURA -->
+		<!-- SETTING HEIGHT SIZE ON OPENING -->
+        <property name="default-height">800</property>
 
 
-        <!-- APERTURA CHILD BOX PRINCIPALE-->
-		<!-- MAIN BOX CHILD START -->
-        <child>
 
-            <!-- APERTURA BOX PRINCIPALE-->
-			<!-- MAIN BOX START -->
-            <object class="GtkBox" id="main_box">
+		<!-- APERTURA DEL CHILD DELLA BARRA DEL TITOLO -->
+		<!-- TITLE BAR CHILD START -->
+		<child type="titlebar">
 
-                <!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX -->
-				<!-- SETTING THE BOX'S ORIENTATION -->
-                <property name="orientation">horizontal</property>
+			<!-- APERTURA DELLA BARRA DEL TITOLO -->
+			<!-- TITLE BAR START -->
+			<object class="GtkHeaderBar" id="main_window_header_bar">
 
-                <!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
-				<!-- SETTING THE BOX'S VERTICAL ALIGN -->
-                <property name="valign">center</property>
+				
 
-                <!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
-				<!-- SETTING THE BOX'S HORIZONTAL ALIGN -->
-                <property name="halign">center</property>
+				<!-- APERTURA DEL CHILD DEL BOTTONE DEL MENU A TENDINA -->
+				<!-- DROPDOWN MENU BUTTON CHILD START -->
+				<child type="end">
 
+					<!-- APERTURA DEL BOTTONE DEL MENU A TENDINA -->
+					<!-- DROPDOWN MENU BUTTON START -->
+					<object class="GtkMenuButton" id="main_window_menu_button">
 
+						<!-- ASSEGNO IL POPOVER DA UTILIZZARE -->
+						<!-- SETTING WHICH POPOVER USE -->
+						<property name="popover">popover-menu</property>
 
-                <!-- APERTURA CHILD GRIGLIA GENERALE-->
-				<!-- MAIN GRID CHILD START -->
-                <child>
+						<!-- ASSEGNO UN ICONA AL BOTTONE -->
+						<!-- SETTING THE ICON BUTTON -->
+						<property name="icon-name">open-menu-symbolic</property>
 
-                    <!-- APERTURA GRIGLIA -->
-					<!-- MAIN GRID START -->
-                    <object class="GtkGrid" id="main_grid">
+					<!-- CHIUSURA DEL BOTTONE DEL MENU A TENDINA -->
+					<!-- DROPDOWN MENU BUTTON END -->
+					</object>
 
-                        <!-- PROPRIETÀ DELLA GRIGLIA GENERALE -->
-						<!-- MAIN GRID PARAMETERS -->
+				<!-- CHIUSURA DEL CHILD DEL BOTTONE DEL MENU A TENDINA -->
+				<!-- DROPDOWN MENU BUTTON CHILD END -->
+				</child>
 
-                        <!-- SPAZIO TRA LE RIGHE -->
-						<!-- ROW SPACING -->
-                        <property name="row-spacing">100</property>
 
-                        <!-- SPAZIO TRA LE COLONNE -->
-						<!-- COLUMN SPACING -->
-                        <property name="column-spacing">40</property>
 
+			<!-- CHIUSURA DELLA BARRA DEL TITOLO -->
+			<!-- TITLE BAR END -->
+			</object>
 
+		<!-- CHIUSURA DEL CHILD DELLA BARRA DEL TITOLO -->
+		<!-- TITLE BAR CHILD END -->
+		</child>
 
-                        <!-- APERTURA CHILD BOX 1 -->
-						<!-- BOX 1 CHILD START -->
-                        <child>
 
-                            <!-- APERTURA BOX 1 -->
-							<!-- BOX 1 START -->
-                            <object class="GtkBox" id="box_1">
 
-								<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX 1 -->
-								<!-- SETTING THE BOX 1 ORIENTATION -->
-								<property name="orientation">vertical</property>
+		<!-- APERTURA DEL CHILD DELLA GRIGLIA GENERALE-->
+		<!-- MAIN GRID CHILD START -->
+		<child>
 
-                                <!-- INSERISCO I PARAMETRI CSS DEL BOX 1-->
-								<!-- SETTING BOX 1 CSS PARAMETERS -->
-                                <style>
-                                    <class name="Box"/>
-                                </style>
+			<!-- APERTURA DELLA GRIGLIA -->
+			<!-- MAIN GRID START -->
+			<object class="GtkGrid" id="main_grid">
 
+				<!-- SPAZIO TRA LE RIGHE -->
+				<!-- ROW SPACING -->
+				<property name="row-spacing">0</property>
 
-                                <!-- POSIZIONAMENTO DEL BOX 1 NELLA GRIGLIA GENERALE -->
-								<!-- BOX 1 POSITION INSIDE THE MAIN GRID -->
-                                <layout>
+				<!-- SPAZIO TRA LE COLONNE -->
+				<!-- COLUMN SPACING -->
+				<property name="column-spacing">40</property>
 
-                                    <!-- POSIZIONE VERTICALE -->
-									<!-- VERTICAL POSITION -->
-                                    <property name="column">0</property>
+				<!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+				<!-- SETTING COLUMN HOMOGENITY -->
+				<property name="column-homogeneous">true</property>
 
-                                    <!-- POSIZIONE ORIZZONTALE -->
-									<!-- HORIZONTAL POSITION -->
-                                    <property name="row">0</property>
+				<!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+				<!-- SETTING ROW HOMOGENITY -->
+				<property name="row-homogeneous">false</property>
 
-                                </layout>
+				<!-- IMPOSTAZIONE DELL'ALLINEAMENTO VERTICALE-->
+				<!-- SETTING THE BOX VERTICAL ALIGN -->
+				<property name="valign">center</property>
 
+				<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+				<!-- SETTING THE BOX HORIZONTAL ALIGN -->
+				<property name="halign">center</property>
 
+				<!-- IMPOSTO I PARAMETRI CSS -->
+				<!-- SETTING CSS PARAMETERS  -->
+				<style>
+					<class name="Main-Window-Main-Grid"/>
+				</style>
 
-                                <!-- APERTURA CHILD GRIGLIA BOX 1 -->
-								<!-- BOX 1 GRID CHILD START -->
-                                <child>
 
-                                    <!-- APERTURA GRIGLIA BOX 1 -->
-									<!-- BOX 1 GRID START-->
-                                    <object class="GtkGrid" id="box_1_grid">
 
-                                        <!-- PROPRIETÀ DELLA GRIGLIA BOX 1 -->
-										<!-- BOX 1 GRID PARAMETERS -->
+				<!-- APERTURA DEL CHILD DEL BOX 1 -->
+				<!-- BOX 1 CHILD START -->
+				<child>
 
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
-										<!-- SETTING COLUMN HOMOGENITY -->
-                                        <property name="column-homogeneous">false</property>
+					<!-- APERTURA DEL BOX 1 -->
+					<!-- BOX 1 START -->
+					<object class="GtkBox" id="main_window_function_box_1">
 
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
-										<!-- SETTING ROW HOMOGENITY -->
-                                        <property name="row-homogeneous">false</property>
+						<!-- IMPOSTAZIONE DELL'ORIENTAMENTO-->
+						<!-- SETTING ORIENTATION -->
+						<property name="orientation">vertical</property>
 
+						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+						<!-- POSITION INSIDE THE MAIN GRID -->
+						<layout>
 
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">0</property>
 
-                                        <!-- APERTURA CHILD ICONA 1 -->
-										<!-- ICON 1 CHILD START -->
-                                        <child>
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">0</property>
 
-                                            <!-- APERTURA ICONA 1 -->
-											<!-- ICON 1 START  -->
-                                            <object class="GtkImage" id="icon_1">
+						</layout>
 
-                                                <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 1 -->
-												<!-- SETTING THE CSS PARAMETERS OF ICON 1 -->
-                                                <style>
-                                                    <class name="Icons"/>
-                                                </style>
+						<!-- IMPOSTO I PARAMETRI CSS -->
+						<!-- SETTING CSS PARAMETERS  -->
+						<style>
+							<class name="Main-Window-Function-Box"/>
+						</style>
 
-                                                <!-- POSIZIONAMENTO DELL'IMMAGINE 1 NELLA GRIGLIA BOX 1-->
-												<!-- POSITION OF ICON 1 INSIDE THE BOX 1 GRID  -->
-                                                <layout>
 
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
 
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">0</property>
+						<!-- APERTURA DEL CHILD DELLA GRIGLIA DEL BOX 1 -->
+						<!-- BOX 1 GRID CHILD START -->
+						<child>
 
-                                                </layout>
+							<!-- APERTURA DELLA GRIGLIA DEL BOX 1 -->
+							<!-- BOX 1 GRID START-->
+							<object class="GtkGrid" id="main_window_box_1_grid">
 
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+								<!-- SETTING COLUMN HOMOGENITY -->
+								<property name="column-homogeneous">false</property>
 
-                                            <!-- CHISURA IMMAGINE 1 -->
-											<!-- ICON 1 END  -->
-                                            </object>
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+								<!-- SETTING ROW HOMOGENITY -->
+								<property name="row-homogeneous">false</property>
 
-                                        <!-- CHIUSURA CHILD IMMAGINE 1 -->
-										<!-- ICON 1 CHILD END  -->
-                                        </child>
 
 
+								<!-- APERTURA DEL CHILD DELL'ICONA 1 -->
+								<!-- ICON 1 CHILD START -->
+								<child>
 
-                                        <!-- APERTURA CHILD TESTO ANTEPRIMA 1 -->
-										<!-- PREVIEW TEXT 1 CHILD START  -->
-                                        <child>
+									<!-- APERTURA DELL'ICONA 1 -->
+									<!-- ICON 1 START  -->
+									<object class="GtkImage" id="main_window_icon_1">
 
-                                            <!-- APERTURA TESTO 1 -->
-											<!-- PREVIEW TEXT 1 START -->
-                                            <object class="GtkLabel" id="text_preview_1">
+										<!-- INSERISCO I PARAMETRI CSS DELL'ICONA 1 -->
+										<!-- SETTING THE CSS PARAMETERS OF ICON 1 -->
+										<style>
+											<class name="Main-Window-Icons"/>
+										</style>
 
-                                                <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 1 -->
-												<!-- SETTING THE PREVIEW TEXT 1 -->
-                                                <property name="label" translatable="yes">Install Davinci
-dependencies</property>
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+										<!-- POSITION INSIDE THE GRID  -->
+										<layout>
 
-                                                <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
-												<!-- SETTING THE TEXT ALLIGNMENT -->
-                                                <property name="justify">center</property>
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
 
-                                                <!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
-												<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-                                                <property name="wrap">true</property>
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">0</property>
 
-                                                <!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
-												<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
-                                                <property name="wrap-mode">word</property>
+										</layout>
 
-                                                <!-- INSERISCO I PARAMETRI CSS DEL TESTO DI ANTEPRIMA 1-->
-												<!-- SETTING THE CSS PARAMETERS OF PREVIEW TEXT 1 -->
-                                                <style>
-                                                    <class name="Text-Preview"/>
-                                                </style>
+									<!-- CHISURA DELL'ICONA 1 -->
+									<!-- ICON 1 END  -->
+									</object>
 
-                                                <!-- POSIZIONAMENTO DEL TESTO DI ANTEPRIMA 1 NELLA GRIGLIA BOX 1-->
-												<!-- POSITION OF PREVIEW TEXT 1 INSIDE THE BOX 1 GRID -->
-                                                <layout>
+								<!-- CHIUSURA DEL CHILD DELL'ICONA 1 -->
+								<!-- ICON 1 CHILD END  -->
+								</child>
 
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
 
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">1</property>
 
-                                                </layout>
+								<!-- APERTURA DEL CHILD DEL TITOLO 1 -->
+								<!-- TITLE TEXT 1 CHILD START  -->
+								<child>
 
+									<!-- APERTURA DEL TITOLO 1 -->
+									<!-- TITLE TEXT 1 START -->
+									<object class="GtkLabel" id="main_window_text_title_1">
 
-                                            <!-- CHIUSURA TESTO DI ANTEPRIMA 1 -->
-											<!-- PREVIEW TEXT 1 END -->
-                                        		</object>
+										<!-- INSERIMENTO DEL TESTO -->
+										<!-- SETTING THE TEXT -->
+										<property name="label" translatable="yes"></property>
 
-                                        <!-- CHIUSURA CHILD TESTO 1 -->
-										<!-- PREVIEW TEXT 1 CHILD END -->
-                                        </child>
+										<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+										<!-- SETTING THE TEXT ALLIGNMENT -->
+										<property name="justify">center</property>
 
+										<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+										<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+										<property name="wrap">true</property>
 
+										<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+										<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+										<property name="wrap-mode">word</property>
 
-										<!-- APERTURA CHILD BOX BOTTONI 1 -->
-										<!-- BUTTON BOX 1 CHILD START -->
-                        				<child>
+										<!-- IMPOSTO I PARAMETRI CSS -->
+										<!-- SETTING CSS PARAMETERS -->
+										<style>
+											<class name="Main-Window-Title"/>
+										</style>
 
-											<!-- APERTURA DI BOX BOTTONI 1 -->
-											<!-- BUTTON BOX 1 START -->
-												<object class="GtkBox" id="button_box_1">
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+										<!-- POSITION INSIDE THE GRID -->
+										<layout>
 
-												<!-- PROPRIETÀ DEL BOX BOTTONI 1-->
-												<!-- BUTTON BOX 1 PARAMETERS -->
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
 
-												<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX BOTTONI 1 -->
-												<!-- SETTING THE BUTTON BOX 1 ORIENTATION -->
-												<property name="orientation">vertical</property>
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">1</property>
 
-												<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
-												<!-- SETTING THE HORIZONTAL ALIGNMENT -->
-												<property name="halign">center</property>
+										</layout>
 
-												<!-- POSIZIONAMENTO DEL BOX BOTTONI 1 NELLA GRIGLIA BOX 1-->
-												<!-- BUTTON BOX 1 POSITION INSIDE BOX 1 GRID -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">2</property>
-
-                                                </layout>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE ESEGUI 1 -->
-												<!-- START BUTTON 1 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE ESEGUI 1 -->
-													<!-- START BUTTON 1 START -->
-													<object class="GtkButton" id="function_button_1">
-
-													<!-- PROPRIETÀ DEL BOTTONE ESEGUI 1 -->
-													<!-- START BUTTON 1 PARAMETERS -->
-
-													<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1-->
-													<!-- START BUTTON 1 TEXT LABEL -->
-													<property name="label" translatable="yes">Start</property>
-
-													<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE ESEGUI 1-->
-													<!-- SETTING START BUTTON 1 CSS PARAMETERS  -->
-													<style>
-														<class name="Upper-Button"/>
-													</style>
-
-												<!-- CHIUSURA BOTTONE ESEGUI 1 -->
-												<!-- START BUTTON 1 END -->
-												</object>
-
-											<!-- CHIUSURA CHILD BOTTONE ESEGUI 1 -->
-											<!-- START BUTTON 1 CHILD END -->
-											</child>
-
-
-
-											<!-- INSERIMENTO CHILD BOTTONE INFO 1 -->
-											<!-- INFO BUTTON 1 CHILD START -->
-											<child>
-
-												<!-- INSERIMENTO BOTTONE INFO 1 -->
-												<!-- INFO BUTTON 1 START -->
-												<object class="GtkButton" id="info_button_1">
-
-													<!-- PROPRIETÀ DEL BOTTONE INFO 1 -->
-													<!-- INFO BUTTON 1 PARAMETERS -->
-
-													<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE INFO 1-->
-													<!-- INFO BUTTON 1 TEXT LABEL -->
-													<property name="label" translatable="yes">Info</property>
-
-													<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE INFO 1-->
-													<!-- SETTING INFO BUTTON 1 CSS PARAMETERS  -->
-													<style>
-														<class name="Lower-Button"/>
-													</style>
-
-												<!-- CHIUSURA BOTTONE INFO 1 -->
-												<!-- INFO BUTTON 1 END -->
-												</object>
-
-											<!-- CHIUSURA CHILD BOTTONI 1-->
-											<!-- INFO BUTTON 1 CHILD END -->
-											</child>
-
-										<!-- CHIUSURA BOX BOTTONI 1  -->
-										<!-- BUTTON BOX 1 END -->
+									<!-- CHIUSURA DEL TITOLO 1 -->
+									<!-- TITLE TEXT 1  END -->
 										</object>
 
-									<!-- CHIUSURA CHILD BOX BOTTONI 1 -->
-									<!-- BUTTON BOX 1 CHILD END -->
-									</child>
-
-                                    <!-- CHIUSURA GRIGLIA BOX 1 -->
-									<!-- BOX 1 GRID END -->
-                                    </object>
-
-                                <!-- CHIUSURA CHILD GRIGLIA BOX 1 -->
-								<!-- BOX 1 GRID CHILD END -->
-                                </child>
-
-                            <!-- CHIUSURA BOX 1 -->
-							<!-- BOX 1 END -->
-                            </object>
-
-                        <!-- CHIUSURA CHILD BOX 1 -->
-						<!-- BOX 1 CHILD END -->
-                        </child>
+								<!-- CHIUSURA DEL CHILD DEL TITOLO 1 -->
+								<!-- TITLE TEXT 1 CHILD END -->
+								</child>
 
 
 
+								<!-- APERTURA DEL CHILD DEL BOX BOTTONI 1 -->
+								<!-- BUTTON BOX 1 CHILD START -->
+								<child>
 
+									<!-- APERTURA DEL BOX BOTTONI 1 -->
+									<!-- BUTTON BOX 1 START -->
+									<object class="GtkBox" id="main_window_button_box_1">
 
-						<!-- APERTURA CHILD BOX 2 -->
-						<!-- BOX 2 CHILD START -->
-                        <child>
+										<!-- IMPOSTAZIONE DELL'ORIENTAMENTO -->
+										<!-- SETTING THE ORIENTATION -->
+										<property name="orientation">vertical</property>
 
-                            <!-- APERTURA BOX 2 -->
-							<!-- BOX 2 START -->
-                            <object class="GtkBox" id="box_2">
+										<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+										<!-- SETTING THE HORIZONTAL ALIGNMENT -->
+										<property name="halign">center</property>
 
-								<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX 2 -->
-								<!-- SETTING THE BOX 2 ORIENTATION -->
-								<property name="orientation">vertical</property>
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+										<!-- POSITION INSIDE THE GRID -->
+										<layout>
 
-                                <!-- INSERISCO I PARAMETRI CSS DEL BOX 2-->
-								<!-- SETTING BOX 2 CSS PARAMETERS -->
-                                <style>
-                                    <class name="Box"/>
-                                </style>
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
 
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">2</property>
 
-                                <!-- POSIZIONAMENTO DEL BOX 2 NELLA GRIGLIA GENERALE -->
-								<!-- BOX 2 POSITION INSIDE THE MAIN GRID -->
-                                <layout>
-
-                                    <!-- POSIZIONE VERTICALE -->
-									<!-- VERTICAL POSITION -->
-                                    <property name="column">1</property>
-
-                                    <!-- POSIZIONE ORIZZONTALE -->
-									<!-- HORIZONTAL POSITION -->
-                                    <property name="row">0</property>
-
-                                </layout>
+										</layout>
 
 
 
-                                <!-- APERTURA CHILD GRIGLIA BOX 2 -->
-								<!-- BOX 2 GRID CHILD START -->
-                                <child>
-
-                                    <!-- APERTURA GRIGLIA BOX 2 -->
-									<!-- BOX 2 GRID START-->
-                                    <object class="GtkGrid" id="box_2_grid">
-
-                                        <!-- PROPRIETÀ DELLA GRIGLIA BOX 2 -->
-										<!-- BOX 2 GRID PARAMETERS -->
-
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
-										<!-- SETTING COLUMN HOMOGENITY -->
-                                        <property name="column-homogeneous">false</property>
-
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
-										<!-- SETTING ROW HOMOGENITY -->
-                                        <property name="row-homogeneous">false</property>
-
-
-
-                                        <!-- APERTURA CHILD ICONA 2 -->
-										<!-- IMAGE 2 CHILD START -->
-                                        <child>
-
-                                            <!-- APERTURA ICONA 2 -->
-											<!-- IMAGE 2 START  -->
-                                            <object class="GtkImage" id="icon_2">
-
-                                                <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 2 -->
-												<!-- SETTING THE CSS PARAMETERS OF ICON 2 -->
-                                                <style>
-                                                    <class name="Icons"/>
-                                                </style>
-
-                                                <!-- POSIZIONAMENTO DELL'IMMAGINE 2 NELLA GRIGLIA BOX 2-->
-												<!-- POSITION OF ICON 2 INSIDE THE BOX 2 GRID  -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">0</property>
-
-                                                </layout>
-
-
-                                            <!-- CHISURA IMMAGINE 2 -->
-											<!-- ICON 2 END  -->
-                                            </object>
-
-                                        <!-- CHIUSURA CHILD IMMAGINE 2 -->
-										<!-- ICON 2 CHILD END  -->
-                                        </child>
-
-
-
-                                        <!-- APERTURA CHILD TESTO ANTEPRIMA 2 -->
-										<!-- PREVIEW TEXT 2 CHILD START  -->
-                                        <child>
-
-                                            <!-- APERTURA TESTO 2 -->
-											<!-- PREVIEW TEXT 2 START -->
-                                            <object class="GtkLabel" id="text_preview_2">
-
-                                                <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 2 -->
-												<!-- SETTING THE PREVIEW TEXT 2 -->
-                                                <property name="label" translatable="yes">Install
-Davinci Resolve</property>
-
-                                                <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
-												<!-- SETTING THE TEXT ALLIGNMENT -->
-                                                <property name="justify">center</property>
-
-                                                <!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
-												<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-                                                <property name="wrap">true</property>
-
-                                                <!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
-												<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
-                                                <property name="wrap-mode">word</property>
-
-                                                <!-- INSERISCO I PARAMETRI CSS DEL TESTO DI ANTEPRIMA 2-->
-												<!-- SETTING THE CSS PARAMETERS OF PREVIEW TEXT 2 -->
-                                                <style>
-                                                    <class name="Text-Preview"/>
-                                                </style>
-
-                                                <!-- POSIZIONAMENTO DEL TESTO DI ANTEPRIMA 2 NELLA GRIGLIA BOX 2-->
-												<!-- POSITION OF PREVIEW TEXT 2 INSIDE THE BOX 2 GRID -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">1</property>
-
-                                                </layout>
-
-
-                                            	<!-- CHIUSURA TESTO DI ANTEPRIMA 2 -->
-												<!-- PREVIEW TEXT 2 END -->
-                                        		</object>
-
-                                        <!-- CHIUSURA CHILD TESTO 2 -->
-										<!-- PREVIEW TEXT 2 CHILD END -->
-                                        </child>
-
-
-
-										<!-- APERTURA CHILD BOX BOTTONI 2 -->
-										<!-- BUTTON BOX 2 CHILD START -->
+										<!-- APERTURA DEL CHILD DEL BOTTONE ESEGUI 1 -->
+										<!-- EXEC BUTTON 1 CHILD START -->
 										<child>
 
-											<!-- APERTURA DI BOX BOTTONI 2 -->
-											<!-- BUTTON BOX 2 START -->
-											<object class="GtkBox" id="button_box_2">
-
-												<!-- PROPRIETÀ DEL BOX BOTTONI 2-->
-												<!-- BUTTON BOX 2 PARAMETERS -->
-
-												<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX BOTTONI 2 -->
-												<!-- SETTING THE BUTTON BOX 2 ORIENTATION -->
-												<property name="orientation">vertical</property>
-
-												<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
-												<!-- SETTING THE HORIZONTAL ALIGNMENT -->
-												<property name="halign">center</property>
-
-												<!-- POSIZIONAMENTO DEL BOX BOTTONI 2 NELLA GRIGLIA BOX 2-->
-												<!-- BUTTON BOX 2 POSITION INSIDE BOX 2 GRID -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">2</property>
-
-                                                </layout>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE ESEGUI 2 -->
-												<!-- START BUTTON 2 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE ESEGUI 2 -->
-													<!-- START BUTTON 2 START -->
-													<object class="GtkButton" id="function_button_2">
-
-														<!-- PROPRIETÀ DEL BOTTONE ESEGUI 2 -->
-														<!-- START BUTTON 2 PARAMETERS -->
-
-														<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 2-->
-														<!-- START BUTTON 2 TEXT LABEL -->
-														<property name="label" translatable="yes">Start</property>
-
-														<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE ESEGUI 2-->
-														<!-- SETTING START BUTTON 2 CSS PARAMETERS  -->
-														<style>
-															<class name="Upper-Button"/>
-														</style>
-
-													<!-- CHIUSURA BOTTONE ESEGUI 2 -->
-													<!-- START BUTTON 2 END -->
-													</object>
-
-												<!-- CHIUSURA CHILD BOTTONE ESEGUI 2 -->
-												<!-- START BUTTON 2 CHILD END -->
-												</child>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE INFO 2 -->
-												<!-- INFO BUTTON 2 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE INFO 2 -->
-													<!-- NFO BUTTON 2 START -->
-													<object class="GtkButton" id="info_button_2">
-
-														<!-- PROPRIETÀ DEL BOTTONE INFO 2 -->
-														<!-- INFO BUTTON 2 PARAMETERS -->
-
-														<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE INFO 2-->
-														<!-- INFO BUTTON 2 TEXT LABEL -->
-														<property name="label" translatable="yes">Info</property>
-
-														<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE INFO 2-->
-														<!-- SETTING INFO BUTTON 2 CSS PARAMETERS  -->
-														<style>
-															<class name="Lower-Button"/>
-														</style>
-
-													<!-- CHIUSURA BOTTONE INFO 2 -->
-													<!-- INFO BUTTON 2 END -->
-													</object>
-
-												<!-- CHIUSURA CHILD BOTTONI 2-->
-												<!-- INFO BUTTON 2 CHILD END -->
-												</child>
-
-											<!-- CHIUSURA BOX BOTTONI 2  -->
-											<!-- BUTTON BOX 2 END -->
-											</object>
-
-										<!-- CHIUSURA CHILD BOX BOTTONI 2 -->
-										<!-- BUTTON BOX 2 CHILD END -->
-										</child>
-
-                                    <!-- CHIUSURA GRIGLIA BOX 2 -->
-									<!-- BOX 2 GRID END -->
-                                    </object>
-
-                                <!-- CHIUSURA CHILD GRIGLIA BOX 2 -->
-								<!-- BOX 2 GRID CHILD END -->
-                                </child>
-
-                            <!-- CHIUSURA BOX 2 -->
-							<!-- BOX 2 END -->
-                            </object>
-
-                        <!-- CHIUSURA CHILD BOX 2 -->
-						<!-- BOX 2 CHILD END -->
-                        </child>
-
-
-
-
-
-						<!-- APERTURA CHILD BOX 3 -->
-						<!-- BOX 3 CHILD START -->
-                        <child>
-
-                            <!-- APERTURA BOX 3 -->
-							<!-- BOX 3 START -->
-                            <object class="GtkBox" id="box_3">
-
-								<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX 3 -->
-								<!-- SETTING THE BOX 3 ORIENTATION -->
-								<property name="orientation">vertical</property>
-
-                                <!-- INSERISCO I PARAMETRI CSS DEL BOX 3-->
-								<!-- SETTING BOX 3 CSS PARAMETERS -->
-                                <style>
-                                    <class name="Box"/>
-                                </style>
-
-
-                                <!-- POSIZIONAMENTO DEL BOX 3 NELLA GRIGLIA GENERALE -->
-								<!-- BOX 3 POSITION INSIDE THE MAIN GRID -->
-                                <layout>
-
-                                    <!-- POSIZIONE VERTICALE -->
-									<!-- VERTICAL POSITION -->
-                                    <property name="column">2</property>
-
-                                    <!-- POSIZIONE ORIZZONTALE -->
-									<!-- HORIZONTAL POSITION -->
-                                    <property name="row">0</property>
-
-                                </layout>
-
-                                <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-                                <!--                      CONTENUTO BOX 3                      -->
-								<!--                       BOX 3 CONTENT                       -->
-                                <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||| -->
-
-                                <!-- APERTURA CHILD GRIGLIA BOX 3 -->
-								<!-- BOX 3 GRID CHILD START -->
-                                <child>
-
-                                    <!-- APERTURA GRIGLIA BOX 3 -->
-									<!-- BOX 3 GRID START-->
-                                    <object class="GtkGrid" id="box_3_grid">
-
-                                        <!-- PROPRIETÀ DELLA GRIGLIA BOX 3 -->
-										<!-- BOX 3 GRID PARAMETERS -->
-
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
-										<!-- SETTING COLUMN HOMOGENITY -->
-                                        <property name="column-homogeneous">false</property>
-
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
-										<!-- SETTING ROW HOMOGENITY -->
-                                        <property name="row-homogeneous">false</property>
-
-
-
-                                        <!-- APERTURA CHILD ICONA 3 -->
-										<!-- IMAGE 3 CHILD START -->
-                                        <child>
-
-                                            <!-- APERTURA ICONA 3 -->
-											<!-- IMAGE 3 START  -->
-                                            <object class="GtkImage" id="icon_3">
-
-                                                <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 3 -->
-												<!-- SETTING THE CSS PARAMETERS OF ICON 3 -->
-                                                <style>
-                                                    <class name="Icons"/>
-                                                </style>
-
-                                                <!-- POSIZIONAMENTO DELL'IMMAGINE 3 NELLA GRIGLIA BOX 3-->
-												<!-- POSITION OF ICON 3 INSIDE THE BOX 3 GRID  -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">0</property>
-
-                                                </layout>
-
-
-                                            <!-- CHISURA IMMAGINE 3 -->
-											<!-- ICON 3 END  -->
-                                            </object>
-
-                                        <!-- CHIUSURA CHILD IMMAGINE 3 -->
-										<!-- ICON 3 CHILD END  -->
-                                        </child>
-
-
-
-                                        <!-- APERTURA CHILD TESTO ANTEPRIMA 3 -->
-										<!-- PREVIEW TEXT 3 CHILD START  -->
-                                        <child>
-
-                                            <!-- APERTURA TESTO 3 -->
-											<!-- PREVIEW TEXT 3 START -->
-                                            <object class="GtkLabel" id="text_preview_3">
-
-                                                <!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 3 -->
-												<!-- SETTING THE PREVIEW TEXT 3 -->
-                                                <property name="label" translatable="yes">Apply Davinci post
-installation fix</property>
-
-                                                <!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
-												<!-- SETTING THE TEXT ALLIGNMENT -->
-                                                <property name="justify">center</property>
-
-                                                <!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
-												<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-                                                <property name="wrap">true</property>
-
-                                                <!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
-												<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
-                                                <property name="wrap-mode">word</property>
-
-                                                <!-- INSERISCO I PARAMETRI CSS DEL TESTO DI ANTEPRIMA 3-->
-												<!-- SETTING THE CSS PARAMETERS OF PREVIEW TEXT 3 -->
-                                                <style>
-                                                    <class name="Text-Preview"/>
-                                                </style>
-
-                                                <!-- POSIZIONAMENTO DEL TESTO DI ANTEPRIMA 3 NELLA GRIGLIA BOX 3-->
-												<!-- POSITION OF PREVIEW TEXT 3 INSIDE THE BOX 3 GRID -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">1</property>
-
-                                                </layout>
-
-
-                                            	<!-- CHIUSURA TESTO DI ANTEPRIMA 3 -->
-												<!-- PREVIEW TEXT 3 END -->
-                                        		</object>
-
-                                        <!-- CHIUSURA CHILD TESTO 3 -->
-										<!-- PREVIEW TEXT 3 CHILD END -->
-                                        </child>
-
-
-
-										<!-- APERTURA CHILD BOX BOTTONI 3 -->
-										<!-- BUTTON BOX 3 CHILD START -->
-										<child>
-
-											<!-- APERTURA DI BOX BOTTONI 3 -->
-											<!-- BUTTON BOX 3 START -->
-											<object class="GtkBox" id="button_box_3">
-
-												<!-- PROPRIETÀ DEL BOX BOTTONI 3-->
-												<!-- BUTTON BOX 3 PARAMETERS -->
-
-												<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX BOTTONI 3 -->
-												<!-- SETTING THE BUTTON BOX 3 ORIENTATION -->
-												<property name="orientation">vertical</property>
-
-												<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
-												<!-- SETTING THE HORIZONTAL ALIGNMENT -->
-												<property name="halign">center</property>
-
-												<!-- POSIZIONAMENTO DEL BOX BOTTONI 3 NELLA GRIGLIA BOX 3-->
-												<!-- BUTTON BOX 3 POSITION INSIDE BOX 3 GRID -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">3</property>
-
-                                                </layout>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE ESEGUI 3 -->
-												<!-- START BUTTON 3 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE ESEGUI 3 -->
-													<!-- START BUTTON 3 START -->
-													<object class="GtkButton" id="function_button_3">
-
-														<!-- PROPRIETÀ DEL BOTTONE ESEGUI 3 -->
-														<!-- START BUTTON 3 PARAMETERS -->
-
-														<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 3-->
-														<!-- START BUTTON 3 TEXT LABEL -->
-														<property name="label" translatable="yes">Start</property>
-
-														<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE ESEGUI 3-->
-														<!-- SETTING START BUTTON 3 CSS PARAMETERS  -->
-														<style>
-															<class name="Upper-Button"/>
-														</style>
-
-													<!-- CHIUSURA BOTTONE ESEGUI 3 -->
-													<!-- START BUTTON 3 END -->
-													</object>
-
-												<!-- CHIUSURA CHILD BOTTONE ESEGUI 3 -->
-												<!-- START BUTTON 3 CHILD END -->
-												</child>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE INFO 3 -->
-												<!-- INFO BUTTON 3 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE INFO 3 -->
-													<!-- NFO BUTTON 3 START -->
-													<object class="GtkButton" id="info_button_3">
-
-														<!-- PROPRIETÀ DEL BOTTONE INFO 3 -->
-														<!-- INFO BUTTON 3 PARAMETERS -->
-
-														<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE INFO 3-->
-														<!-- INFO BUTTON 3 TEXT LABEL -->
-														<property name="label" translatable="yes">Info</property>
-
-														<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE INFO 3-->
-														<!-- SETTING INFO BUTTON 3 CSS PARAMETERS  -->
-														<style>
-															<class name="Lower-Button"/>
-														</style>
-
-													<!-- CHIUSURA BOTTONE INFO 3 -->
-													<!-- INFO BUTTON 3 END -->
-													</object>
-
-												<!-- CHIUSURA CHILD BOTTONI 3-->
-												<!-- INFO BUTTON 3 CHILD END -->
-												</child>
-
-											<!-- CHIUSURA BOX BOTTONI 3  -->
-											<!-- BUTTON BOX 3 END -->
-											</object>
-
-										<!-- CHIUSURA CHILD BOX BOTTONI 3 -->
-										<!-- BUTTON BOX 3 CHILD END -->
-										</child>
-
-                                    <!-- CHIUSURA GRIGLIA BOX 3 -->
-									<!-- BOX 3 GRID END -->
-                                    </object>
-
-                                <!-- CHIUSURA CHILD GRIGLIA BOX 3 -->
-								<!-- BOX 3 GRID CHILD END -->
-                                </child>
-
-                            <!-- CHIUSURA BOX 3 -->
-							<!-- BOX 3 END -->
-                            </object>
-
-                        <!-- CHIUSURA CHILD BOX 3 -->
-						<!-- BOX 3 CHILD END -->
-                        </child>
-
-
-
-
-
-						<!-- APERTURA CHILD BOX 4 -->
-						<!-- BOX 4 CHILD START -->
-                        <child>
-
-                            <!-- APERTURA BOX 4 -->
-							<!-- BOX 4 START -->
-                            <object class="GtkBox" id="box_4">
-
-								<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX 4 -->
-								<!-- SETTING THE BOX 4 ORIENTATION -->
-								<property name="orientation">vertical</property>
-
-                                <!-- INSERISCO I PARAMETRI CSS DEL BOX 4-->
-								<!-- SETTING BOX 4 CSS PARAMETERS -->
-                                <style>
-                                    <class name="Box"/>
-                                </style>
-
-
-                                <!-- POSIZIONAMENTO DEL BOX 4 NELLA GRIGLIA GENERALE -->
-								<!-- BOX 4 POSITION INSIDE THE MAIN GRID -->
-                                <layout>
-
-                                    <!-- POSIZIONE VERTICALE -->
-									<!-- VERTICAL POSITION -->
-                                    <property name="column">3</property>
-
-                                    <!-- POSIZIONE ORIZZONTALE -->
-									<!-- HORIZONTAL POSITION -->
-                                    <property name="row">0</property>
-
-                                </layout>
-
-
-
-                                <!-- APERTURA CHILD GRIGLIA BOX 4 -->
-								<!-- BOX 4 GRID CHILD START -->
-                                <child>
-
-                                    <!-- APERTURA GRIGLIA BOX 4 -->
-									<!-- BOX 4 GRID START-->
-                                    <object class="GtkGrid" id="box_4_grid">
-
-                                        <!-- PROPRIETÀ DELLA GRIGLIA BOX 4 -->
-										<!-- BOX 4 GRID PARAMETERS -->
-
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
-										<!-- SETTING COLUMN HOMOGENITY -->
-                                        <property name="column-homogeneous">false</property>
-
-                                        <!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
-										<!-- SETTING ROW HOMOGENITY -->
-                                        <property name="row-homogeneous">false</property>
-
-
-
-                                        <!-- APERTURA CHILD ICONA 4 -->
-										<!-- IMAGE 4 CHILD START -->
-                                        <child>
-
-                                            <!-- APERTURA ICONA 4 -->
-											<!-- IMAGE 4 START  -->
-                                            <object class="GtkImage" id="icon_4">
-
-                                                <!-- INSERISCO I PARAMETRI CSS DELL'ICONA 4 -->
-												<!-- SETTING THE CSS PARAMETERS OF ICON 4 -->
-                                                <style>
-                                                    <class name="Icons"/>
-                                                </style>
-
-                                                <!-- POSIZIONAMENTO DELL'IMMAGINE 4 NELLA GRIGLIA BOX 4-->
-												<!-- POSITION OF ICON 4 INSIDE THE BOX 4 GRID  -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">0</property>
-
-                                                </layout>
-
-
-                                            <!-- CHISURA IMMAGINE 4 -->
-											<!-- ICON 4 END  -->
-                                            </object>
-
-                                        <!-- CHIUSURA CHILD IMMAGINE 4 -->
-										<!-- ICON 4 CHILD END  -->
-                                        </child>
-
-
-
-										<!-- APERTURA CHILD TESTO ANTEPRIMA 4 -->
-										<!-- PREVIEW TEXT 4 CHILD START  -->
-										<child>
-
-											<!-- APERTURA TESTO 4 -->
-											<!-- PREVIEW TEXT 4 START -->
-											<object class="GtkLabel" id="text_preview_4">
-
-												<!-- INSERIMENTO DEL TESTO DI ANTEPRIMA 4 -->
-												<!-- SETTING THE PREVIEW TEXT 4 -->
-												<property name="label" translatable="yes">Check and install the
-correct GPU driver</property>
-
-											<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
-											<!-- SETTING THE TEXT ALLIGNMENT -->
-											<property name="justify">center</property>
-
-											<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
-											<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-											<property name="wrap">false</property>
-
-											<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
-											<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
-											<property name="wrap-mode">word</property>
-
-											<!-- INSERISCO I PARAMETRI CSS DEL TESTO DI ANTEPRIMA 4-->
-											<!-- SETTING THE CSS PARAMETERS OF PREVIEW TEXT 4 -->
+											<!-- APERTURA DEL BOTTONE ESEGUI 1 -->
+											<!-- EXEC BUTTON 1 START -->
+											<object class="GtkButton" id="main_window_function_button_1">
+
+											<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1-->
+											<!-- START BUTTON 1 TEXT LABEL -->
+											<property name="label" translatable="yes">Start</property>
+
+											<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE ESEGUI 1-->
+											<!-- SETTING START BUTTON 1 CSS PARAMETERS  -->
 											<style>
-												<class name="Text-Preview"/>
+												<class name="Main-Window-Exec-Button"/>
 											</style>
 
-											<!-- POSIZIONAMENTO DEL TESTO DI ANTEPRIMA 4 NELLA GRIGLIA BOX 4-->
-											<!-- POSITION OF PREVIEW TEXT 4 INSIDE THE BOX 4 GRID -->
-											<layout>
-
-												<!-- POSIZIONE VERTICALE -->
-												<!-- VERTICAL POSITION -->
-												<property name="column">0</property>
-
-												<!-- POSIZIONE ORIZZONTALE -->
-												<!-- HORIZONTAL POSITION -->
-												<property name="row">1</property>
-
-											</layout>
-
-
-											<!-- CHIUSURA TESTO DI ANTEPRIMA 4 -->
-											<!-- PREVIEW TEXT 4 END -->
+											<!-- CHIUSURA DEL BOTTONE ESEGUI 1 -->
+											<!-- EXEC BUTTON 1 END -->
 											</object>
 
-                                        <!-- CHIUSURA CHILD TESTO  ANTEPRIMA 4 -->
-										<!-- PREVIEW TEXT 4 CHILD END -->
-                                        </child>
-
-
-										<!-- APERTURA CHILD BOX BOTTONI 4 -->
-										<!-- BUTTON BOX 4 CHILD START -->
-										<child>
-
-											<!-- APERTURA DI BOX BOTTONI 4 -->
-											<!-- BUTTON BOX 4 START -->
-											<object class="GtkBox" id="button_box_4">
-
-												<!-- PROPRIETÀ DEL BOX BOTTONI 4-->
-												<!-- BUTTON BOX 4 PARAMETERS -->
-
-												<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX BOTTONI 4 -->
-												<!-- SETTING THE BUTTON BOX 4 ORIENTATION -->
-												<property name="orientation">vertical</property>
-
-												<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
-												<!-- SETTING THE HORIZONTAL ALIGNMENT -->
-												<property name="halign">center</property>
-
-												<!-- POSIZIONAMENTO DEL BOX BOTTONI 4 NELLA GRIGLIA BOX 4-->
-												<!-- BUTTON BOX 4 POSITION INSIDE BOX 4 GRID -->
-                                                <layout>
-
-                                                    <!-- POSIZIONE VERTICALE -->
-													<!-- VERTICAL POSITION -->
-                                                    <property name="column">0</property>
-
-                                                    <!-- POSIZIONE ORIZZONTALE -->
-													<!-- HORIZONTAL POSITION -->
-                                                    <property name="row">4</property>
-
-                                                </layout>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE ESEGUI 4 -->
-												<!-- START BUTTON 4 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE ESEGUI 4 -->
-													<!-- START BUTTON 4 START -->
-													<object class="GtkButton" id="function_button_4">
-
-														<!-- PROPRIETÀ DEL BOTTONE ESEGUI 4 -->
-														<!-- START BUTTON 4 PARAMETERS -->
-
-														<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 4-->
-														<!-- START BUTTON 4 TEXT LABEL -->
-														<property name="label" translatable="yes">Start</property>
-
-														<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE ESEGUI 4-->
-														<!-- SETTING START BUTTON 4 CSS PARAMETERS  -->
-														<style>
-															<class name="Upper-Button"/>
-														</style>
-
-													<!-- CHIUSURA BOTTONE ESEGUI 4 -->
-													<!-- START BUTTON 4 END -->
-													</object>
-
-												<!-- CHIUSURA CHILD BOTTONE ESEGUI 4 -->
-												<!-- START BUTTON 4 CHILD END -->
-												</child>
-
-
-
-												<!-- INSERIMENTO CHILD BOTTONE INFO 4 -->
-												<!-- INFO BUTTON 4 CHILD START -->
-												<child>
-
-													<!-- INSERIMENTO BOTTONE INFO 4 -->
-													<!-- NFO BUTTON 4 START -->
-													<object class="GtkButton" id="info_button_4">
-
-														<!-- PROPRIETÀ DEL BOTTONE INFO 4 -->
-														<!-- INFO BUTTON 4 PARAMETERS -->
-
-														<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE INFO 4-->
-														<!-- INFO BUTTON 4 TEXT LABEL -->
-														<property name="label" translatable="yes">Info</property>
-
-														<!-- INSERISCO I PARAMETRI CSS DEL BOTTONE INFO 4-->
-														<!-- SETTING INFO BUTTON 4 CSS PARAMETERS  -->
-														<style>
-															<class name="Lower-Button"/>
-														</style>
-
-													<!-- CHIUSURA BOTTONE INFO 4 -->
-													<!-- INFO BUTTON 4 END -->
-													</object>
-
-												<!-- CHIUSURA CHILD BOTTONI 4-->
-												<!-- INFO BUTTON 4 CHILD END -->
-												</child>
-											
-
-											
-											<!-- CHIUSURA BOX BOTTONI 4  -->
-											<!-- BUTTON BOX 4 END -->
-											</object>
-
-										<!-- CHIUSURA CHILD BOX BOTTONI 4 -->
-										<!-- BUTTON BOX 4 CHILD END -->
+										<!-- CHIUSURA DEL CHILD DEL BOTTONE ESEGUI 1 -->
+										<!-- EXEC BUTTON 1 CHILD END -->
 										</child>
 
 
 
-                                    <!-- CHIUSURA GRIGLIA BOX 4 -->
-									<!-- BOX 4 GRID END -->
-                                    </object>
+										<!-- APERTURA DEL CHILD DEL BOTTONE INFO 1 -->
+										<!-- INFO BUTTON 1 CHILD START -->
+										<child>
 
-                                <!-- CHIUSURA CHILD GRIGLIA BOX 4 -->
-								<!-- BOX 4 GRID CHILD END -->
-                                </child>
+											<!-- APERTURA BOTTONE INFO 1 -->
+											<!-- INFO BUTTON 1 START -->
+											<object class="GtkButton" id="main_window_info_button_1">
 
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            					<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Info</property>
 
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                            					<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Info-Button"/>
+												</style>
 
-                            <!-- CHIUSURA BOX 4 -->
-							<!-- BOX 4 END -->
-                            </object>
+											<!-- CHIUSURA BOTTONE INFO 1 -->
+											<!-- INFO BUTTON 1 END -->
+											</object>
 
-                        <!-- CHIUSURA CHILD BOX 4 -->
-						<!-- BOX 4 CHILD END -->
-                        </child>
-
-
-
-                    <!-- CHIUSURA GRIGLIA GENERALE-->
-					<!-- MAIN GRID END -->
-                    </object>
-
-                <!-- CHIUSURA CHILD GRIGLIA GENERALE -->
-				<!-- MAIN GRID CHILD END -->
-                </child>
+										<!-- CHIUSURA CHILD BOTTONI 1-->
+										<!-- INFO BUTTON 1 CHILD END -->
+										</child>
 
 
 
-            <!-- CHIUSURA BOX PRINCIPALE -->
-			<!-- MAIN BOX END -->
-            </object>
 
-        <!-- CHIUSURA CHILD BOX PRINCIPALE -->
-		<!-- MAIN BOX CHILD END -->
-        </child>
+									<!-- CHIUSURA DEL BOX BOTTONI 1  -->
+									<!-- BUTTON BOX 1 END -->
+									</object>
+
+								<!-- CHIUSURA  DEL CHILD DEL BOX BOTTONI 1 -->
+								<!-- BUTTON BOX 1 CHILD END -->
+								</child>
+
+
+
+							<!-- CHIUSURA DELLA GRIGLIA DEL BOX 1 -->
+							<!-- BOX 1 GRID END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DELLA GRIGLIA DEL BOX 1 -->
+						<!-- BOX 1 GRID CHILD END -->
+						</child>
+
+
+						
+					<!-- CHIUSURA DEL BOX 1 -->
+					<!-- BOX 1 END -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DEL BOX 1 -->
+				<!-- BOX 1 CHILD END -->
+				</child>
+
+
+
+
+
+				<!-- APERTURA DEL CHILD DEL BOX 2 -->
+				<!-- BOX 2 CHILD START -->
+				<child>
+
+					<!-- APERTURA DEL BOX 2 -->
+					<!-- BOX 2 START -->
+					<object class="GtkBox" id="main_window_function_box_2">
+
+						<!-- IMPOSTAZIONE DELL'ORIENTAMENTO -->
+						<!-- SETTING THE ORIENTATION -->
+						<property name="orientation">vertical</property>
+
+						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+						<!-- POSITION INSIDE THE GRID -->
+						<layout>
+
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">1</property>
+
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">0</property>
+
+						</layout>
+
+						<!-- IMPOSTO I PARAMETRI CSS -->
+						<!-- SETTING CSS PARAMETERS -->
+						<style>
+							<class name="Main-Window-Function-Box"/>
+						</style>
+
+
+
+						<!-- APERTURA DEL CHILD DELLA GRIGLIA DEL BOX 2 -->
+						<!-- BOX 2 GRID CHILD START -->
+						<child>
+
+							<!-- APERTURA DELLA GRIGLIA DEL BOX 2 -->
+							<!-- BOX 2 GRID START-->
+							<object class="GtkGrid" id="box_2_grid">
+
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+								<!-- SETTING COLUMN HOMOGENITY -->
+								<property name="column-homogeneous">false</property>
+
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+								<!-- SETTING ROW HOMOGENITY -->
+								<property name="row-homogeneous">false</property>
+
+
+
+								<!-- APERTURA DEL CHILD DELL'ICONA 2 -->
+								<!-- ICON 2 CHILD START -->
+								<child>
+
+									<!-- APERTURA DELL'ICONA 2 -->
+									<!-- ICON 2 START  -->
+									<object class="GtkImage" id="main_window_icon_2">
+
+										<!-- IMPOSTO I PARAMETRI CSS -->
+										<!-- SETTING CSS PARAMETERS -->
+										<style>
+											<class name="Main-Window-Icons"/>
+										</style>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+										<!-- POSITION INSIDE THE GRID -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">0</property>
+
+										</layout>
+
+									<!-- CHISURA DELL'ICONA 2 -->
+									<!-- ICON 2 END  -->
+									</object>
+
+								<!-- CHISURA DEL CHILD DELL'ICONA 2 -->
+								<!-- ICON 2 CHILD END  -->
+								</child>
+
+
+
+								<!-- APERTURA DEL CHILD DEL TITOLO 2 -->
+								<!-- PREVIEW TEXT 2 CHILD START  -->
+								<child>
+
+									<!-- APERTURA DEL TITOLO 2 -->
+									<!-- TITLE TEXT 2  START -->
+									<object class="GtkLabel" id="main_window_text_title_2">
+
+										<!-- INSERIMENTO DEL TESTO  -->
+										<!-- SETTING THE TEXT -->
+										<property name="label" translatable="yes"></property>
+
+										<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+										<!-- SETTING THE TEXT ALLIGNMENT -->
+										<property name="justify">center</property>
+
+										<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+										<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+										<property name="wrap">true</property>
+
+										<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+										<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+										<property name="wrap-mode">word</property>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+										<!-- POSITION INSIDE THE GRID -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">1</property>
+
+										</layout>
+
+										<!-- IMPOSTO I PARAMETRI CSS -->
+										<!-- SETTING CSS PARAMETERS -->
+										<style>
+											<class name="Main-Window-Title"/>
+										</style>
+
+
+										<!-- CHIUSURA DEL TITOLO 2 -->
+										<!-- TITLE TEXT 2  END -->
+										</object>
+
+								<!-- CHIUSURA DEL CHILD DEL TITOLO 2 -->
+								<!-- TITLE TEXT 2 CHILD END -->
+								</child>
+
+
+
+								<!-- APERTURA DEL CHILD DEL BOX BOTTONI 2 -->
+								<!-- BUTTON BOX 2 CHILD START -->
+								<child>
+
+									<!-- APERTURA DEL BOX BOTTONI 2 -->
+									<!-- BUTTON BOX 2 START -->
+									<object class="GtkBox" id="main_window_button_box_2">
+
+										<!-- IMPOSTAZIONE DELL'ORIENTAMENTO -->
+										<!-- SETTING THE ORIENTATION -->
+										<property name="orientation">vertical</property>
+
+										<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+										<!-- SETTING THE HORIZONTAL ALIGNMENT -->
+										<property name="halign">center</property>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        				<!-- POSITION INSIDE THE GRID  -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">2</property>
+
+										</layout>
+
+
+
+										<!-- APERTURA DEL CHILD DEL BOTTONE ESEGUI 2 -->
+										<!-- EXEC BUTTON 2 CHILD START -->
+										<child>
+
+											<!-- APERTURA DEL BOTTONE ESEGUI 2 -->
+											<!-- EXEC BUTTON 2 START -->
+											<object class="GtkButton" id="main_window_function_button_2">
+
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            					<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Start</property>
+
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                                				<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Exec-Button"/>
+												</style>
+
+											<!-- CHIUSURA DEL BOTTONE ESEGUI 2 -->
+											<!-- EXEC BUTTON 2 END -->
+											</object>
+
+										<!-- CHIUSURA DEL CHILD DEL BOTTONE ESEGUI 2 -->
+										<!-- EXEC BUTTON 2 CHILD END -->
+										</child>
+
+
+
+										<!-- APERTURA DEL CHILD DEL BOTTONE INFO 2 -->
+										<!-- INFO BUTTON 2 CHILD START -->
+										<child>
+
+											<!-- APERTURA BOTTONE INFO 2 -->
+											<!-- INFO BUTTON 2 START -->
+											<object class="GtkButton" id="main_window_info_button_2">
+
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            					<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Info</property>
+
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                                				<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Info-Button"/>
+												</style>
+
+											<!-- CHIUSURA BOTTONE INFO 2 -->
+											<!-- INFO BUTTON 2 END -->
+											</object>
+
+										<!-- CHIUSURA CHILD BOTTONI 2-->
+										<!-- INFO BUTTON 2 CHILD END -->
+										</child>
+
+
+
+									<!-- CHIUSURA DEL BOX BOTTONI 2  -->
+									<!-- BUTTON BOX 2 END -->
+									</object>
+
+								<!-- CHIUSURA  DEL CHILD DEL BOX BOTTONI 2 -->
+								<!-- BUTTON BOX 2 CHILD END -->
+								</child>
+
+
+
+							<!-- CHIUSURA DELLA GRIGLIA DEL BOX 2 -->
+							<!-- BOX 2 GRID END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DELLA GRIGLIA DEL BOX 2 -->
+						<!-- BOX 2 GRID CHILD END -->
+						</child>
+
+
+
+					<!-- CHIUSURA DEL BOX 2 -->
+					<!-- BOX 2 END -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DEL BOX 2 -->
+				<!-- BOX 2 CHILD END -->
+				</child>
+
+
+
+
+
+				<!-- APERTURA DEL CHILD DEL BOX 3 -->
+				<!-- BOX 3 CHILD START -->
+				<child>
+
+					<!-- APERTURA DEL BOX 3 -->
+					<!-- BOX 3 START -->
+					<object class="GtkBox" id="main_window_function_box_3">
+
+						<!-- IMPOSTAZIONE DELL'ORIENTAMENTO -->
+						<!-- SETTING THE ORIENTATION -->
+						<property name="orientation">vertical</property>
+
+						<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        <!-- POSITION INSIDE THE GRID  -->
+						<layout>
+
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">2</property>
+
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">0</property>
+
+						</layout>
+
+						<!-- IMPOSTO I PARAMETRI CSS -->
+                        <!-- SETTING CSS PARAMETERS  -->
+						<style>
+							<class name="Main-Window-Function-Box"/>
+						</style>
+
+
+
+						<!-- APERTURA DEL CHILD DELLA  GRIGLIA DEL  BOX 3 -->
+						<!-- BOX 3 GRID CHILD START -->
+						<child>
+
+							<!-- APERTURA DELLA GRIGLIA DEL  BOX 3 -->
+							<!-- BOX 3 GRID START-->
+							<object class="GtkGrid" id="box_3_grid">
+
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+								<!-- SETTING COLUMN HOMOGENITY -->
+								<property name="column-homogeneous">false</property>
+
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+								<!-- SETTING ROW HOMOGENITY -->
+								<property name="row-homogeneous">false</property>
+
+
+
+								<!-- APERTURA DEL CHILD DELL'ICONA 3 -->
+								<!-- ICON 3 CHILD START -->
+								<child>
+
+									<!-- APERTURA DELL'ICONA 3 -->
+									<!-- ICON 3 START  -->
+									<object class="GtkImage" id="main_window_icon_3">
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        				<!-- POSITION INSIDE THE GRID  -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">0</property>
+
+										</layout>
+
+										<!-- IMPOSTO I PARAMETRI CSS -->
+                        				<!-- SETTING CSS PARAMETERS  -->
+										<style>
+											<class name="Main-Window-Icons"/>
+										</style>
+
+
+									<!-- CHISURA DELL'ICONA 3 -->
+									<!-- ICON 3 END  -->
+									</object>
+
+								<!-- CHISURA DEL CHILD DELL'ICONA 3 -->
+								<!-- ICON 3 CHILD END  -->
+								</child>
+
+
+
+								<!-- APERTURA DEL CHILD DEL TITOLO 3 -->
+								<!-- PREVIEW TEXT 3 CHILD START  -->
+								<child>
+
+									<!-- APERTURA DEL TITOLO 3 -->
+									<!-- TITLE TEXT 3  START -->
+									<object class="GtkLabel" id="main_window_text_title_3">
+
+										<!-- INSERIMENTO DEL TESTO  -->
+										<!-- SETTING THE TEXT -->
+										<property name="label" translatable="yes"></property>
+
+										<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+										<!-- SETTING THE TEXT ALLIGNMENT -->
+										<property name="justify">center</property>
+
+										<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+										<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+										<property name="wrap">true</property>
+
+										<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+										<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+										<property name="wrap-mode">word</property>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        				<!-- POSITION INSIDE THE GRID  -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">1</property>
+
+										</layout>
+
+										<!-- IMPOSTO I PARAMETRI CSS -->
+                        				<!-- SETTING CSS PARAMETERS  -->
+										<style>
+											<class name="Main-Window-Title"/>
+										</style>
+
+										
+
+										<!-- CHIUSURA DEL TITOLO 3 -->
+										<!-- TITLE TEXT 3  END -->
+										</object>
+
+								<!-- CHIUSURA DEL CHILD DEL TITOLO 3 -->
+								<!-- TITLE TEXT 3 CHILD END -->
+								</child>
+
+
+
+								<!-- APERTURA DEL CHILD DEL BOX BOTTONI 3 -->
+								<!-- BUTTON BOX 3 CHILD START -->
+								<child>
+
+									<!-- APERTURA DEL BOX BOTTONI 3 -->
+									<!-- BUTTON BOX 3 START -->
+									<object class="GtkBox" id="main_window_button_box_3">
+
+										<!-- PROPRIETÀ DEL BOX BOTTONI 3-->
+										<!-- BUTTON BOX 3 PARAMETERS -->
+
+										<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX BOTTONI 3 -->
+										<!-- SETTING THE BUTTON BOX 3 ORIENTATION -->
+										<property name="orientation">vertical</property>
+
+										<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+										<!-- SETTING THE HORIZONTAL ALIGNMENT -->
+										<property name="halign">center</property>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        				<!-- POSITION INSIDE THE GRID  -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">3</property>
+
+										</layout>
+
+
+
+										<!-- APERTURA DEL CHILD DEL BOTTONE ESEGUI 3 -->
+										<!-- EXEC BUTTON 3 CHILD START -->
+										<child>
+
+											<!-- APERTURA DEL BOTTONE ESEGUI 3 -->
+											<!-- EXEC BUTTON 3 START -->
+											<object class="GtkButton" id="main_window_function_button_3">
+
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                                				<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Start</property>
+
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                                				<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Exec-Button"/>
+												</style>
+
+											<!-- CHIUSURA DEL BOTTONE ESEGUI 3 -->
+											<!-- EXEC BUTTON 3 END -->
+											</object>
+
+										<!-- CHIUSURA DEL CHILD DEL BOTTONE ESEGUI 3 -->
+										<!-- EXEC BUTTON 3 CHILD END -->
+										</child>
+
+
+
+										<!-- APERTURA DEL CHILD DEL BOTTONE INFO 3 -->
+										<!-- INFO BUTTON 3 CHILD START -->
+										<child>
+
+											<!-- APERTURA BOTTONE INFO 3 -->
+											<!-- INFO BUTTON 3 START -->
+											<object class="GtkButton" id="main_window_info_button_3">
+
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                                				<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Info</property>
+
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                                				<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Info-Button"/>
+												</style>
+
+											<!-- CHIUSURA BOTTONE INFO 3 -->
+											<!-- INFO BUTTON 3 END -->
+											</object>
+
+										<!-- CHIUSURA CHILD BOTTONI 3-->
+										<!-- INFO BUTTON 3 CHILD END -->
+										</child>
+
+
+
+									<!-- CHIUSURA DEL BOX BOTTONI 3  -->
+									<!-- BUTTON BOX 3 END -->
+									</object>
+
+								<!-- CHIUSURA  DEL CHILD DEL BOX BOTTONI 3 -->
+								<!-- BUTTON BOX 3 CHILD END -->
+								</child>
+
+
+
+							<!-- CHIUSURA DELLA GRIGLIA DEL BOX 3 -->
+							<!-- BOX 3 GRID END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DELLA GRIGLIA DEL BOX 3 -->
+						<!-- BOX 3 GRID CHILD END -->
+						</child>
+
+
+
+					<!-- CHIUSURA DEL BOX 3 -->
+					<!-- BOX 3 END -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DEL BOX 3 -->
+				<!-- BOX 3 CHILD END -->
+				</child>
+
+
+
+
+
+				<!-- APERTURA DEL CHILD DEL BOX 4 -->
+				<!-- BOX 4 CHILD START -->
+				<child>
+
+					<!-- APERTURA DEL BOX 4 -->
+					<!-- BOX 4 START -->
+					<object class="GtkBox" id="main_window_function_box_4">
+
+						<!-- IMPOSTAZIONE DELL'ORIENTAMENTO DEL BOX 4 -->
+						<!-- SETTING THE BOX 4 ORIENTATION -->
+						<property name="orientation">vertical</property>
+
+						<!-- IMPOSTO I PARAMETRI CSS -->
+                        <!-- SETTING CSS PARAMETERS  -->
+						<style>
+							<class name="Main-Window-Function-Box"/>
+						</style>
+
+
+						<!-- POSIZIONAMENTO DEL BOX 4 NELLA GRIGLIA GENERALE -->
+						<!-- BOX 4 POSITION INSIDE THE MAIN GRID -->
+						<layout>
+
+							<!-- POSIZIONE VERTICALE -->
+							<!-- VERTICAL POSITION -->
+							<property name="column">3</property>
+
+							<!-- POSIZIONE ORIZZONTALE -->
+							<!-- HORIZONTAL POSITION -->
+							<property name="row">0</property>
+
+						</layout>
+
+
+
+						<!-- APERTURA DEL CHILD DELLA GRIGLIA DEL  BOX 4 -->
+						<!-- BOX 4 GRID CHILD START -->
+						<child>
+
+							<!-- APERTURA DELLA GRIGLIA DEL  BOX 4 -->
+							<!-- BOX 4 GRID START-->
+							<object class="GtkGrid" id="box_4_grid">
+
+								<!-- PROPRIETÀ DELLA GRIGLIA BOX 4 -->
+								<!-- BOX 4 GRID PARAMETERS -->
+
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE COLONNE -->
+								<!-- SETTING COLUMN HOMOGENITY -->
+								<property name="column-homogeneous">false</property>
+
+								<!-- PARAMETRO DI OMOGENEITÀ DELLE RIGHE -->
+								<!-- SETTING ROW HOMOGENITY -->
+								<property name="row-homogeneous">false</property>
+
+
+
+								<!-- APERTURA DEL CHILD DELL'ICONA 4 -->
+								<!-- ICON 4 CHILD START -->
+								<child>
+
+									<!-- APERTURA DELL'ICONA 4 -->
+									<!-- ICON 4 START  -->
+									<object class="GtkImage" id="main_window_icon_4">
+
+										<!-- IMPOSTO I PARAMETRI CSS -->
+                                		<!-- SETTING CSS PARAMETERS  -->
+										<style>
+											<class name="Main-Window-Icons"/>
+										</style>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        				<!-- POSITION INSIDE THE GRID  -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">0</property>
+
+										</layout>
+
+
+									<!-- CHISURA DELL'ICONA 4 -->
+									<!-- ICON 4 END  -->
+									</object>
+
+								<!-- CHISURA DEL CHILD DELL'ICONA 4 -->
+								<!-- ICON 4 CHILD END  -->
+								</child>
+
+
+
+								<!-- APERTURA DEL CHILD DEL TITOLO 4 -->
+								<!-- PREVIEW TEXT 4 CHILD START  -->
+								<child>
+
+									<!-- APERTURA DEL TITOLO 4 -->
+									<!-- TITLE TEXT 4  START -->
+									<object class="GtkLabel" id="main_window_text_title_4">
+
+									<!-- INSERIMENTO DEL TESTO -->
+									<!-- SETTING THE TEXT -->
+									<property name="label" translatable="yes"></property>
+
+									<!-- DEFINIZIONE DELL'ALLINEAMENTO DEL TESTO -->
+									<!-- SETTING THE TEXT ALLIGNMENT -->
+									<property name="justify">center</property>
+
+									<!-- DEFINIZIONE DELLA POSSIBILITÀ DI ANDARE A CAPO -->
+									<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+									<property name="wrap">false</property>
+
+									<!-- DEFINIZIONE DEL CRITERIO DI TRONCATURA DELLA FRASE -->
+									<!-- SETTING THE SENTENCE TRUNCATION'S CRITERIA -->
+									<property name="wrap-mode">word</property>
+
+									<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        			<!-- POSITION INSIDE THE GRID  -->
+									<layout>
+
+										<!-- POSIZIONE VERTICALE -->
+										<!-- VERTICAL POSITION -->
+										<property name="column">0</property>
+
+										<!-- POSIZIONE ORIZZONTALE -->
+										<!-- HORIZONTAL POSITION -->
+										<property name="row">1</property>
+
+									</layout>
+
+									<!-- IMPOSTO I PARAMETRI CSS -->
+                        			<!-- SETTING CSS PARAMETERS  -->
+									<style>
+										<class name="Main-Window-Title"/>
+									</style>
+
+									<!-- CHIUSURA DEL TITOLO 4 -->
+									<!-- TITLE TEXT 4  END -->
+									</object>
+
+								<!-- CHIUSURA DEL CHILD DEL TITOLO 4 -->
+								<!-- TITLE TEXT 4 CHILD END -->
+								</child>
+
+
+
+								<!-- APERTURA DEL CHILD DEL BOX BOTTONI 4 -->
+								<!-- BUTTON BOX 4 CHILD START -->
+								<child>
+
+									<!-- APERTURA DEL BOX BOTTONI 4 -->
+									<!-- BUTTON BOX 4 START -->
+									<object class="GtkBox" id="main_window_button_box_4">
+
+										<!-- IMPOSTAZIONE DELL'ORIENTAMENTO -->
+										<!-- SETTING THE ORIENTATION -->
+										<property name="orientation">vertical</property>
+
+										<!-- IMPOSTAZIONE DELL'ALLINEAMENTO ORIZZONTALE-->
+										<!-- SETTING THE HORIZONTAL ALIGNMENT -->
+										<property name="halign">center</property>
+
+										<!-- POSIZIONAMENTO NELLA GRIGLIA -->
+                        				<!-- POSITION INSIDE THE GRID  -->
+										<layout>
+
+											<!-- POSIZIONE VERTICALE -->
+											<!-- VERTICAL POSITION -->
+											<property name="column">0</property>
+
+											<!-- POSIZIONE ORIZZONTALE -->
+											<!-- HORIZONTAL POSITION -->
+											<property name="row">4</property>
+
+										</layout>
+
+
+
+										<!-- APERTURA DEL CHILD DEL BOTTONE ESEGUI 4 -->
+										<!-- EXEC BUTTON 4 CHILD START -->
+										<child>
+
+											<!-- APERTURA DEL BOTTONE ESEGUI 4 -->
+											<!-- EXEC BUTTON 4 START -->
+											<object class="GtkButton" id="main_window_function_button_4">
+
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            					<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Start</property>
+
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                        						<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Exec-Button"/>
+												</style>
+
+											<!-- CHIUSURA DEL BOTTONE ESEGUI 4 -->
+											<!-- EXEC BUTTON 4 END -->
+											</object>
+
+										<!-- CHIUSURA DEL CHILD DEL BOTTONE ESEGUI 4 -->
+										<!-- EXEC BUTTON 4 CHILD END -->
+										</child>
+
+
+
+										<!-- APERTURA DEL CHILD DEL BOTTONE INFO 4 -->
+										<!-- INFO BUTTON 4 CHILD START -->
+										<child>
+
+											<!-- APERTURA BOTTONE INFO 4 -->
+											<!-- INFO BUTTON 4 START -->
+											<object class="GtkButton" id="main_window_info_button_4">
+
+												<!-- IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE -->
+                            					<!-- SETTING BUTTON TEXT LABEL -->
+												<property name="label" translatable="yes">Info</property>
+
+												<!-- IMPOSTO I PARAMETRI CSS -->
+                        						<!-- SETTING CSS PARAMETERS  -->
+												<style>
+													<class name="Main-Window-Info-Button"/>
+												</style>
+
+											<!-- CHIUSURA BOTTONE INFO 4 -->
+											<!-- INFO BUTTON 4 END -->
+											</object>
+
+										<!-- CHIUSURA CHILD BOTTONI 4-->
+										<!-- INFO BUTTON 4 CHILD END -->
+										</child>
+									
+
+									
+									<!-- CHIUSURA DEL BOX BOTTONI 4  -->
+									<!-- BUTTON BOX 4 END -->
+									</object>
+
+								<!-- CHIUSURA  DEL CHILD DEL BOX BOTTONI 4 -->
+								<!-- BUTTON BOX 4 CHILD END -->
+								</child>
+
+
+
+							<!-- CHIUSURA DELLA GRIGLIA DEL BOX 4 -->
+							<!-- BOX 4 GRID END -->
+							</object>
+
+						<!-- CHIUSURA DEL CHILD DELLA GRIGLIA DEL BOX 4 -->
+						<!-- BOX 4 GRID CHILD END -->
+						</child>
+
+
+
+					<!-- CHIUSURA DEL BOX 4 -->
+					<!-- BOX 4 END -->
+					</object>
+
+				<!-- CHIUSURA DEL CHILD DEL BOX 4 -->
+				<!-- BOX 4 CHILD END -->
+				</child>
+
+
+
+			<!-- CHIUSURA GRIGLIA GENERALE-->
+			<!-- MAIN GRID END -->
+			</object>
+
+		<!-- CHIUSURA CHILD GRIGLIA GENERALE -->
+		<!-- MAIN GRID CHILD END -->
+		</child>
 
 
 
     <!-- CHIUSURA FINESTRA PRINCIPALE -->
 	<!-- MAIN WINDOW END -->
     </object>
+
+
+
+
+
+	<!-- APERTURA DEL MENU A TENDINA -->
+	<!-- DROPDOWN MENU START -->
+	<object class="GtkPopoverMenu" id="popover-menu">
+
+		<!-- IMPOSTAZIONE LARGHEZZA -->
+		<!-- SETTING HEIGHT SIZE ON OPENING -->
+		<property name="width-request">275</property>
+
+		<!-- IMPOSTAZIONE DELL'ALTEZZA -->
+		<!-- SETTING HEIGHT SIZE ON OPENING -->
+    	<property name="height-request">100</property>
+
+		<!-- ASSEGNO IL MODELLO DI MENU DA UTILIZZARE -->
+		<!-- SETTING WHICH MENU TEMPLATE TO USE -->
+		<property name="menu-model">main_window_main-menu</property>
+
+		<!-- IMPOSTO I PARAMETRI CSS -->
+		<!-- SETTING CSS PARAMETERS  -->
+		<style>
+			<class name="Main-Window-Menu"/>
+		</style>
+
+	<!-- CHIUSURA DEL MENU A TENDINA -->
+	<!-- DROPDOWN MENU END -->
+	</object>
+
+
+
+
+
+	<!-- APERTURA STRUTTURA MENU -->
+	<!-- MENU STRUCTURE START -->
+	<menu id="main_window_main-menu">
+
+		<!-- APERTURA SEZIONE 1 -->
+		<!-- SECTION 1 START -->
+		<section>
+
+			<!-- APERTURA ITEM -->
+			<!-- ITEM START -->
+			<item>
+
+				<!-- NOME DELLA VOCE -->
+				<!-- ITEM NAME -->
+				<attribute name="label" translatable="yes">Check for updates</attribute>
+
+				<!-- AZIONE DELLA VOCE -->
+				<!-- ITEM ACTION -->
+				<attribute name="action">app.check_update</attribute>
+
+			<!-- CHIUSURA ITEM -->
+			<!-- ITEM END -->
+			</item>
+
+
+
+			<!-- APERTURA ITEM -->
+			<!-- ITEM START -->
+			<item>
+
+				<!-- NOME DELLA VOCE -->
+				<!-- ITEM NAME -->
+				<attribute name="label" translatable="yes">Load default settings</attribute>
+
+				<!-- AZIONE DELLA VOCE -->
+				<!-- ITEM ACTION -->
+				<attribute name="action">app.reset_settings</attribute>
+			
+			<!-- CHIUSURA ITEM -->
+			<!-- ITEM END -->
+			</item>
+
+		<!-- CHISURA SEZIONE 1 -->
+		<!-- SECTION 1 END -->
+		</section>
+
+
+
+		<!-- APERTURA SEZIONE 1 -->
+		<!-- SECTION 1 START -->
+		<section>
+
+			<!-- APERTURA ITEM -->
+			<!-- ITEM START -->
+			<item>
+
+				<!-- NOME DELLA VOCE -->
+				<!-- ITEM NAME -->
+				<attribute name="label" translatable="yes">About this app</attribute>
+
+				<!-- AZIONE DELLA VOCE -->
+				<!-- ITEM ACTION -->
+				<attribute name="action">app.show_about</attribute>
+
+			<!-- CHIUSURA ITEM -->
+			<!-- ITEM END -->
+			</item>
+
+		<!-- CHISURA SEZIONE 1 -->
+		<!-- SECTION 1 END -->
+		</section>
+
+
+
+	<!-- CHIUSURA STRUTTURA MENU -->
+	<!-- MENU STRUCTURE END -->
+  	</menu>
+
+
+
 
 <!-- CHIUSURA INTERFACCIA -->
 <!-- INTERFACE END -->

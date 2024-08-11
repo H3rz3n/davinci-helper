@@ -57,8 +57,7 @@ def installation_script(file_path):
 
     # CREO LA CARTELLA IN CUI ESTRARRE L'INSTALLER
     # CREATING THE FOLDER WHERE TO EXTRACT THE INSTALLER
-    make_folder = subprocess.Popen(f"mkdir -p {folder_path}", shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-    make_folder_output, make_folder_err = make_folder.communicate()
+    subprocess.Popen(f"mkdir -p {folder_path}", shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -69,12 +68,11 @@ def installation_script(file_path):
 
     # STAMPO I LOG E GLI ERRORI
     # PRINT ANY LOGS AND ERRORS
-    print(unzip_output)
-    print(unzip_err)
+    print("DEBUG : ",unzip_output)
 
     # CONTROLLO SE SONO PRESENTI ERRORI DOPO L'ESECUZIONE DEL PROGRAMMA E LI RIMANDO AL PROGRAMMA PRINCIPALE
     # CHECKING FOR ERRORS AFTER RUNNING THE PROGRAM AND RETURN THEM TO THE MAIN PROGRAM
-    if unzip_output.find("unzip:  cannot find or open") == 0 :
+    if unzip_output.find("unzip:  cannot find or open") != -1 :
 
         # RESTITUISCO UN ERRORE INERENTE ALL'ESTRAZIONE DEL FILE DI INSTALLAZIONE
         # RETURNING AN ERROR ABOUT THE EXTRACTION OF THE INSTALLER FILE
@@ -82,7 +80,7 @@ def installation_script(file_path):
         error_log = (_(f"DEBUG : There was an error extracting the DaVinci Resolve installer.\n\n{unzip_output}\n {unzip_err} \n\nPlease open an issue and paste those logs on the project GitHub page  :\nhttps://github.com/H3rz3n/davinci-helper/issues"))
         print(error_log)
         return  error_type, error_log
-        exit()
+        exit(1)
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -93,8 +91,7 @@ def installation_script(file_path):
 
     # STAMPO I LOG E GLI ERRORI
     # PRINT ANY LOGS AND ERRORS
-    print(start_wizard_output)
-    print(start_wizard_err)
+    print("DEBUG : ", start_wizard_output)
 
     # CONTROLLO SE SONO PRESENTI ERRORI DOPO L'ESECUZIONE DEL PROGRAMMA E LI RIMANDO AL PROGRAMMA PRINCIPALE
     # CHECKING FOR ERRORS AFTER RUNNING THE PROGRAM AND RETURN THEM TO THE MAIN PROGRAM
@@ -106,7 +103,7 @@ def installation_script(file_path):
         error_log = (_(f"DEBUG : There was an error starting the install wizard of DaVinci Resolve.\n\n{start_wizard_err} \n\nPlease open an issue and paste those logs on the project GitHub page :\nhttps://github.com/H3rz3n/davinci-helper/issues"))
         print(error_log)
         return  error_type, error_log
-        exit()
+        exit(1)
 
     else:
 
@@ -115,7 +112,7 @@ def installation_script(file_path):
         error_log="Nothing to say, all clear. Here's a bit of Lorem Ipsum just for fun : \n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet tristique enim, id semper augue tincidunt non. Aliquam ut rhoncus augue, non commodo justo. Suspendisse quis mauris a lectus ullamcorper consectetur quis sed nisi. Fusce non ex sed nibh consequat egestas ac et lectus. Donec urna ligula, euismod vitae posuere ac, tincidunt vitae augue. Pellentesque porttitor volutpat lacus nec eleifend. Curabitur laoreet orci augue, in malesuada dui cursus eu. Pellentesque sapien nibh, mollis luctus egestas a, euismod elementum lacus. Quisque tristique odio sed ultricies fermentum."        
         error_type="No"
         return error_type, error_log
-        exit()
+        exit(0)
 
     #-----------------------------------------------------------------------------------------------------
 

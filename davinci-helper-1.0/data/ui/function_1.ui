@@ -127,11 +127,11 @@
 						<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
 						<property name="wrap">true</property>
 
-						<!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+						<!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
 						<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 						<property name="xalign">0.5</property>
 
-						<!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+						<!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
 						<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 						<property name="yalign">0.5</property>
 
@@ -223,11 +223,11 @@
                                 <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
                                 <property name="wrap">true</property>
 
-                                <!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+                                <!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
                                 <!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
                                 <property name="xalign">0.5</property>
 
-                                <!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+                                <!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
                                 <!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
                                 <property name="yalign">0.5</property>
 
@@ -561,11 +561,11 @@
 								<!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
 								<property name="wrap">false</property>
 
-								<!-- DEFINZIONE DELL'ALLINEMENATO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
+								<!-- DEFINZIONE DELL'ALLINEAMENTO ORIZZONTALE DEL TESTO NEL CONTENITORE -->
 								<!-- SETTING THE HORIZONTAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 								<property name="xalign">0.5</property>
 
-								<!-- DEFINZIONE DELL'ALLINEMENATO VERTICALE DEL TESTO NEL CONTENITORE -->
+								<!-- DEFINZIONE DELL'ALLINEAMENTO VERTICALE DEL TESTO NEL CONTENITORE -->
 								<!-- SETTING THE VERTICAL TEXT ALLIGNMENT INSIDE THE CONTAINER -->
 								<property name="yalign">0.5</property>
 

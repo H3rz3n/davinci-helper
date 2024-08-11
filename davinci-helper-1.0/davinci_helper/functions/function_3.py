@@ -53,14 +53,12 @@ def check_davinci_version ():
 
         # STAMPO IL MESSAGGI DI ERRORE
         # PRINTING THE ERROR MESSAGE
-        print("---------------------------------------------------------------------------------")
         print("")
         print(_("DEBUG : It was impossible to find the DaVinci Resolve installation folder in /opt/resolve. If you have not done it already, please install DaVinci Resolve and try again."))
         print("")
         print(_("Please open an issue and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
-        print("---------------------------------------------------------------------------------")
         exit(1)
 
     #-----------------------------------------------------------------------------------------------------
@@ -78,11 +76,7 @@ def check_davinci_version ():
         # STAMPA LA VERSIONE DI DAVINCI IN USO
         # PRINTING WHICH VERSION OF DAVINCI IS IN USE
         print("")
-        print("---------------------------------------------------------------------------------")
-        print("")
-        print(_("Found as installed DaVinci Resolve 18.x.x"))
-        print("")
-        print("---------------------------------------------------------------------------------")
+        print(_("Was found as installed DaVinci Resolve 18.x.x"))
         print("")
 
         # AVVIO LA FUNZIONE CHE APPLICA LA PATCH POST-INSTALLAZIONE DI DAVINCI 18
@@ -94,7 +88,7 @@ def check_davinci_version ():
         # STAMPA LA VERSIONE DI DAVINCI IN USO
         # PRINTING WHICH VERSION OF DAVINCI IS IN USE
         print("")
-        print(_("Found as installed DaVinci Resolve 19.x.x"))
+        print(_("Was found as installed DaVinci Resolve 19.x.x"))
         print("")
 
         # AVVIO LA FUNZIONE CHE APPLICA LA PATCH POST-INSTALLAZIONE DI DAVINCI 19
@@ -105,12 +99,10 @@ def check_davinci_version ():
 
         # STAMPO IL MESSAGGIO DI ERRORE
         # PRINTING THE ERROR MESSAGE
-        print("---------------------------------------------------------------------------------")
         print("")
-        print(_("DEBUG : Found an installed a version of DaVinci that is not currently supported. Please visit the GitHub page to found which version of DaVinci Resolve are supported."))
+        print(_("DEBUG : Has been found an installed a version of DaVinci that is not currently supported. Please visit the GitHub page to found which version of DaVinci Resolve are supported."))
         print("https://github.com/H3rz3n/davinci-helper")
         print("")
-        print("---------------------------------------------------------------------------------")
         exit(1)
 
     #-----------------------------------------------------------------------------------------------------
@@ -156,11 +148,7 @@ def post_installation_18 ():
         # STAMPO IL MESSAGGIO DI MANCATA ESECUZIONE DEL PROGRAMMA PERCHÈ NON NECESSARIO
         # PRINTING THE MESSAGE THAT THE PROGRAM FAILED TO EXECUTE BECAUSE IT IS NOT NECESSARY
         print("")
-        print("---------------------------------------------------------------------------------")
-        print("")
         print(_("The libraries were already moved inside the secure folder. There was no need to execute the function."))
-        print("")
-        print("---------------------------------------------------------------------------------")
         print("")
         exit(0)
 
@@ -171,12 +159,8 @@ def post_installation_18 ():
     # STAMPO IL MESSAGGIO DI AVVISO DELLE LIBRERIE CHE VERRANNO SPOSTATE
     # PRINTING THE WARNING MESSAGGE ABOUT THE LIBRARIES THAT WILL BE MOVED
     print("")
-    print("---------------------------------------------------------------------------------")
-    print("")
     print(_("The following libraries will be moved in a secure folder :"))
     print(lib_to_move)
-    print("")
-    print("---------------------------------------------------------------------------------")
     print("")
 
     #-----------------------------------------------------------------------------------------------------
@@ -197,14 +181,12 @@ def post_installation_18 ():
 
         # STAMPO IL MESSAGGI DI ERRORE
         # PRINTING THE ERROR MESSAGE
-        print("---------------------------------------------------------------------------------")
         print("")
         print(_("DEBUG : It was impossible to create the secure folder where to move libraries in /opt/resolve/libs/disabled_libraries. Try again granting the app root permission or create it by yourself."))
         print("")
         print(_("Please open an issue and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
-        print("---------------------------------------------------------------------------------")
         exit(1)
     
     #-----------------------------------------------------------------------------------------------------
@@ -226,14 +208,11 @@ def post_installation_18 ():
         # STAMPO IL MESSAGGI DI ERRORE
         # PRINTING THE ERROR MESSAGE
         print("")
-        print("---------------------------------------------------------------------------------")
-        print("")
         print(_("DEBUG : There was an error moving libgmodule*, libgio*, libgmodule* inside the secure folder in /opt/resolve/libs/disabled_libraries. Try again granting the app root permission or move it by yourself."))
         print("")
         print(_("Please open an issue and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
-        print("---------------------------------------------------------------------------------")
         exit(1)
     
     else :
@@ -241,11 +220,7 @@ def post_installation_18 ():
         # STAMPO IL MESSAGGIO DI AVVENUTA ESECUTIONE DEL PROGRAMMA CON SUCCESSO
         # PRINTING THE MESSAGE THAT THE PROGRAM HAS BEEN EXECUTED SUCCESSFULLY
         print("")
-        print("---------------------------------------------------------------------------------")
-        print("")
         print(_("The libraries were correctly moved inside the secure folder."))
-        print("")
-        print("---------------------------------------------------------------------------------")
         print("")
         exit(0)
 
@@ -261,7 +236,7 @@ def post_installation_19 ():
 
     #-----------------------------------------------------------------------------------------------------
 
-    print("Currently in development")
+    print("Currently in development, sorry")
     exit(1)
 
     #-----------------------------------------------------------------------------------------------------

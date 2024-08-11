@@ -18,7 +18,7 @@ Release:        1%{?dist}
 
 # BREVE RIASSUNTO DI COSA FA IL PROGRAMMA
 # SHORT SUMMARY OF WHAT THE APP DOES
-Summary:        DaVinci Helper is the ultime app to help you install and run Davinci Resolve on Fedora Linux.
+Summary:        The best DaVinci Resolve companion app on Linux
 
 
 
@@ -88,16 +88,12 @@ DaVinci Helper is the ultime app to help you install and run Davinci Resolve on 
 %install
 %py3_install
 
-install -Dm644 %{_builddir}/%{name}-%{version}/data/icons/davinci-helper.desktop %{buildroot}%{_datadir}/applications/davinci-helper.desktop
-install -Dm644 %{_builddir}/%{name}-%{version}/data/icons/davinci-helper-icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci-helper-icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.desktop %{buildroot}%{_datadir}/applications/com.davinci.helper.app.desktop
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci-helper-icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci-helper-icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.metainfo.xml %{buildroot}%{_datadir}/metainfo/com.davinci.helper.app.metainfo.xml
+
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.policy %{buildroot}/%{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
-
-mkdir -p %{buildroot}%{_datadir}/davinci-helper
-mkdir -p %{buildroot}%{_datadir}/davinci-helper/data
-mkdir -p %{buildroot}%{_datadir}/davinci-helper/locale
-cp -r  data/* %{buildroot}%{_datadir}/davinci-helper/data
-cp -r  locale/* %{buildroot}%{_datadir}/davinci-helper/locale
-
+install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.rules %{buildroot}/%{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
 
 
 # ELENCO DEI FILE INSTALLATI DAL PROGRAMMA E DELLE LORO POSIZIONI NEL SISTEMA
@@ -117,9 +113,11 @@ cp -r  locale/* %{buildroot}%{_datadir}/davinci-helper/locale
 # ELENCO DEI FILE INSTALLATI E DELLE LORO POSIZIONI
 # LIST OF THE INSTALLED FILES AND THEIR POSITION
 %{_bindir}/%{name}
-%{_datadir}/applications/davinci-helper.desktop
+%{_datadir}/applications/com.davinci.helper.app.desktop
 %{_datadir}/icons/hicolor/scalable/apps/davinci-helper-icon.svg
+%{_datadir}/metainfo/com.davinci.helper.app.metainfo.xml
 %{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
+%{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
 
 
 

@@ -95,11 +95,9 @@ def check_dependencies_38_39_40 (library_list_output):
 
         # STAMPO L'ASSENZA DI LIBRERIE DA INSTALLARE
         # PRINTING THE MISSING OF LIBRARIES TO INSTALL
-        print("---------------------------------------------------------------------------------")
         print("")
         print(_("There are no missing libraries to install, you can now install DaVinci Resolve"))
         print("")
-        print("---------------------------------------------------------------------------------")
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -147,7 +145,7 @@ def libraries_installation (lib_to_install):
 
     # STAMPA NEL TERMINALE IL RISULTATO A SECONDA CHE CI SIANO ERRORI O MENO
     # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON IF THERE ARE ERRORS OR NOT
-    if package_install_err == None or package_install_output.find("Curl error") != -1 : 
+    if package_install_err == None and package_install_output.find("Curl error") == -1 : 
         print(package_install_output)
     
     else:

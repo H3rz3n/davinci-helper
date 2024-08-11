@@ -5,19 +5,13 @@
 /* ------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------ */
 
-/* PARAMETRI DELLE ICONE DELLE FUNZIONI */
-/* FUNCTION'S ICONS PARAMETERS */
-.Icons {
-
-    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
-    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
-    min-width: 150px;
-    min-height: 150px;
+/* PARAMETRI DELLA GRIGLIA PRINCIPALE */
+/* MAIN GRID PARAMETERS */
+.Main-Window-Main-Grid {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 90px;
 
 }
 
@@ -25,16 +19,16 @@
 
 /* PARAMETRI DEI BOX DELLE FUNZIONI */
 /* FUNCTION'S BOX PARAMETERS */
-.Box {
+.Main-Window-Function-Box {
 
-    /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI DEL BOX */
-    /* BOX BACKGROUND COLOR AND BORDER RADIUS */
+    /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI */
+    /* BACKGROUND COLOR AND BORDER RADIUS */
     background-color: rgb(48, 48, 48);
-    border-radius: 15px;
+    border-radius: 13px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 50px;
+    padding: 30px;
 
     /* PARAMETRI DI TRANSIZIONE */
     /* TRANSITION PARAMETERS */
@@ -44,11 +38,28 @@
 
 /* PARAMETRI DEI BOX DELLE FUNZIONI AL PASSAGGIO DEL MOUSE */
 /* FUNCTION'S BOX PARAMETERS ON MOUSE INTERACTION */
-.Box:hover {
+.Main-Window-Function-Box:hover {
 
-    /* COLORE DI SFONDO DEL BOX */
-    /* BOX BACKGROUND COLOR; */
+    /* COLORE DI SFONDO */
+    /* BACKGROUND COLOR; */
     background-color: rgb(55, 55, 55);
+
+}
+
+
+
+/* PARAMETRI DELLE ICONE DELLE FUNZIONI */
+/* FUNCTION'S ICONS PARAMETERS */
+.Main-Window-Icons {
+
+    /* PARAMETRI DIMENSIONALI */
+    /* SIZE PARAMETERS */
+    min-width: 130px;
+    min-height: 130px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 10px;
 
 }
 
@@ -56,17 +67,21 @@
 
 /* PARAMETRI DEI TESTI DI ANTEPRIMA DELLE FUNZIONI */
 /* FUNCTION'S PREVIEW TEXT PARAMETERS */
-.Text-Preview {
+.Main-Window-Title {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 10px;
+
+    /* PARAMETRI DIMENSIONALI */
+    /* SIZE PARAMETERS */
+    min-width: 200px;
+    min-height: 60px;
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
     font-weight: bold;
-    font-size: 14pt;
+    font-size: 13pt;
 
 }
 
@@ -74,7 +89,7 @@
 
 /* PARAMETRI DEI BOTTONI SUPERIORI */
 /* UPPER BUTTONS PARAMETERS */
-.Upper-Button {
+.Main-Window-Exec-Button {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
@@ -88,13 +103,26 @@
 
 /* PARAMETRI DEI BOTTONI INFERIORI */
 /* LOWER BUTTONS PARAMETERS */
-.Lower-Button {
+.Main-Window-Info-Button {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
     margin-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
+
+}
+
+
+
+/* PARAMETRI DEL MENU A TENDINA */
+/* DROPDOWN MENU PARAMETERS */
+.Main-Window-Menu {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-weight: normal;
+    font-size: 11pt;
 
 }
 
@@ -109,29 +137,42 @@
 /* ------------------------------------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------------------------------------ */
 
-/* PARAMETRI DEI TESTI DI INFO */
-/* INFO TEXT PARAMETERS */
-.Info-Text {
+/* PARAMETRI DELLE GRIGLIE PRINCIPALI DELLE FINESTRE DI INFO */
+/* NFO WINDOWS MAIN GRID PARAMETERS */
+.Info-Window-Grid {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 40px;
-
-    /* PARAMETRI DEL TESTO */
-    /* TEXT PARAMETERS */
-    font-size: 13pt;
+    padding: 30px;
 
 }
 
 
 
-/* PARAMETRI DELLE GRIGLIE PRINCIPALI DELLE FINESTRE DI INFO */
-/* NFO WINDOWS MAIN GRID PARAMETERS */
-.Info-Grid {
+/* PARAMETRI DEI TESTI DI INFO */
+/* INFO TEXT PARAMETERS */
+.Info-Window-Text-Scrollable {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 450px;
+    min-height: 250px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 40px;
+    padding: 10px;
+
+}
+
+
+
+/* PARAMETRI DEI TESTI DI INFO */
+/* INFO TEXT PARAMETERS */
+.Info-Window-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
 
 }
 
@@ -139,24 +180,24 @@
 
 /* PARAMETRI DEI BOX BOTTONI DELLE FINESTRE DI INFO */
 /* INFO WINDOWS BUTTON BOXS PARAMETERS */
-.Info-Button-Box {
+.Info-Window-Button-Box {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    margin: 15px;
+    margin: 5px;
 }
 
 
 
 /* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
 /* INFO WINDOWS EXIT BUTTONS PARAMETERS */
-.Exit-Button {
+.Info-Window-Exit-Button {
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
+    padding:5px;
     padding-left: 20px;
     padding-right: 20px;
-    margin:5px;
 
 }
 
@@ -178,7 +219,12 @@
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 40px;
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
 
 }
 
@@ -190,8 +236,8 @@
 
     /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
     /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
-    min-width: 120px;
-    min-height: 120px;
+    min-width: 100px;
+    min-height: 100px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
@@ -208,13 +254,13 @@
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
-    font-size: 17pt;
+    font-size: 16pt;
     font-weight: bold;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
 }
 
@@ -227,7 +273,7 @@
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
     padding: 10px;
-    margin-bottom: 20px;
+
 
 }
 
@@ -239,7 +285,7 @@
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: normal;
 
     /* PARAMETRI DI SPAZIATURA */
@@ -257,18 +303,21 @@
 
     /* PARAMETRI DIMENSIONALI  */
     /* SIZE PARAMETERS  */
-    min-width: 750px;
-    min-height: 500px;
+    min-width: 530px;
+    min-height: 200px;
 
     /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI  */
     /* BACKGROUND COLOR AND BORDER RADIUS */
     background-color: rgb(20, 20, 20);
-    border-radius: 15px;
+    border-radius: 13px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 10pt;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 30px;
-    margin: 10px;
+    padding: 20px;
 
 }
 
@@ -293,7 +342,8 @@
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    margin-top: 10px;
+    padding: 5px;
+
 }
 
 
@@ -308,7 +358,8 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin:10px;
+    margin-left:5px;
+    margin-right:5px;
 
 }
 
@@ -324,7 +375,8 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin:10px;
+    margin-left:5px;
+    margin-right:5px;
 
 }
 
@@ -336,16 +388,16 @@
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: normal;
 
      /* PARAMETRI DIMENSIONALI  */
     /* SIZE PARAMETERS  */
-    min-width: 200px;
+    min-width: 130px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 10px;
+    padding: 5px;
 
 }
 
@@ -357,14 +409,14 @@
 
     /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
     /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
-    min-width: 80px;
-    min-height: 80px;
+    min-width: 60px;
+    min-height: 60px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 60px;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
 }
 
@@ -441,6 +493,12 @@
     /* SPACING PARAMETERS */
     padding: 60px;
 
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
+
+
 }
 
 
@@ -504,7 +562,7 @@
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding:7px;
+    margin: 5px;
     
 
 }
@@ -517,7 +575,7 @@
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding:5px;
+    margin: 5px;
     
 
 }
@@ -589,7 +647,12 @@
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 40px;
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 330px;
 
 }
 
@@ -601,8 +664,8 @@
 
     /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
     /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
-    min-width: 120px;
-    min-height: 120px;
+    min-width: 100px;
+    min-height: 100px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
@@ -619,13 +682,13 @@
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
-    font-size: 17pt;
+    font-size: 16pt;
     font-weight: bold;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
 }
 
@@ -635,10 +698,17 @@
 /* SCROLLABLE CONTAINERS PARAMETERS*/
 .Function-3-Sub-Title-Scrollable {
 
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 130px;
+
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
     padding: 10px;
-    margin-bottom: 20px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-height: 80px;
 
 }
 
@@ -650,7 +720,7 @@
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: normal;
 
     /* PARAMETRI DI SPAZIATURA */
@@ -668,18 +738,21 @@
 
     /* PARAMETRI DIMENSIONALI  */
     /* SIZE PARAMETERS  */
-    min-width: 750px;
-    min-height: 500px;
+    min-width: 530px;
+    min-height: 200px;
 
     /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI  */
     /* BACKGROUND COLOR AND BORDER RADIUS */
     background-color: rgb(20, 20, 20);
-    border-radius: 15px;
+    border-radius: 13px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 10pt;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 30px;
-    margin: 10px;
+    padding: 20px;
 
 }
 
@@ -704,7 +777,7 @@
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 
@@ -719,7 +792,8 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin:10px;
+    margin-left:5px;
+    margin-right:5px;
 
 }
 
@@ -735,7 +809,8 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin:10px;
+    margin-left:5px;
+    margin-right:5px;
 
 }
 
@@ -747,16 +822,16 @@
 
     /* PARAMETRI DEL TESTO */
     /* TEXT PARAMETERS */
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: normal;
 
-     /* PARAMETRI DIMENSIONALI  */
+    /* PARAMETRI DIMENSIONALI  */
     /* SIZE PARAMETERS  */
-    min-width: 200px;
+    min-width: 130px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
-    padding: 10px;
+    padding: 5px;
 
 }
 
@@ -768,16 +843,237 @@
 
     /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
     /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
-    min-width: 80px;
-    min-height: 80px;
+    min-width: 60px;
+    min-height: 60px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                PARAMETRI CSS DELLA FINESTRA FUNZIONE 4                                 */
+/*                                    FUNCTION 4 WINDOW CSS PARAMETERS                                    */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+/* PARAMETRI DELLA GRIGLIA */
+/* GRID PARAMETERS */
+.Function-4-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA  */
+/* ICONS PARAMETERS */
+.Function-4-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 100px;
+    min-height: 100px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+
+
+/* PARAMETRI DEL TITOLO TESTUALI */
+/* TITLE TEXT PARAMETERS */
+.Function-4-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 16pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-4-Sub-Title-Scrollable {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 130px;
 
     /* PARAMETRI DI SPAZIATURA */
     /* SPACING PARAMETERS */
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 60px;
+
 
 }
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.Function-4-Sub-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-4-Log-Scrollable {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 530px;
+    min-height: 200px;
+
+    /* COLORE DI SFONDO E ROTONDITÀ DEI BORDI  */
+    /* BACKGROUND COLOR AND BORDER RADIUS */
+    background-color: rgb(20, 20, 20);
+    border-radius: 13px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 10pt;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 20px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Function-4-Log-Text-Viewer {
+
+    /* COLORE DI SFONDO DEL CAMPO DI TESTO */
+    /* BOX BACKGROUND COLOR OF THE TEXTVIEW */
+    background-color: rgb(20, 20, 20);
+
+}
+
+
+
+/* PARAMETRI DEI BOX BOTTONI DELLA FINESTRA DI FUNZIONE 4*/
+/* FUNCTION 4 WINDOWS BUTTON BOXS PARAMETERS */
+.Function-4-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+}
+
+
+
+/* PARAMETRI DEI BOTTONI CHE MOSTRANO I LOG */
+/* SHOW LOG BUTTONS PARAMETERS */
+.Function-4-Log-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+
+
+/* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
+/* INFO WINDOWS EXIT BUTTONS PARAMETERS */
+.Function-4-Exit-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+
+
+/* PARAMETRI DEL TESTO MOSTRATO IN ATTESA DEL CARICAMENTO */
+/* LOADING WAITING TEXT PARAMTERS */
+.Function-4-Waiting-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 130px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+
+}
+
+
+
+/* PARAMETRI DELLA ROTELLINA DI CARICAMENTO*/
+/* LOADING WHEEL PARAMETERS*/
+.Function-4-Spinner {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 60px;
+    min-height: 60px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
 
 
 
@@ -909,8 +1205,745 @@
 
 
 
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                             PARAMETRI CSS DELLA FINESTRA DI AVVISO BETA GPU                            */
+/*                                  GPU BETA ALLERT WINDOW CSS PARAMETERS                                 */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
 
 
+/* PARAMETRI DELLA GRIGLIA */
+/* GRID PARAMETERS */
+.GPU-Warning-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA  */
+/* ICONS PARAMETERS */
+.GPU-Warning-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 100px;
+    min-height: 100px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+
+
+/* PARAMETRI DEL TITOLO TESTUALI */
+/* TITLE TEXT PARAMETERS */
+.GPU-Warning-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 16pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.GPU-Warning-Sub-Title-Scrollable {
+
+     /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-height: 130px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.GPU-Warning-Sub-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+
+}
+
+
+
+/* PARAMETRI DEL BOX DELLA SWITCH */
+/* SWITCH BOX PARAMETERS */
+.GPU-Warning-Switch-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 5px;
+    margin-bottom: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL ETICHETTA DELLA SWITCH */
+/* SWITCH LABEL PARAMETERS */
+.GPU-Warning-Switch-Label {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 11pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+    
+}
+
+
+
+/* PARAMETRI DELLA SWITCH */
+/* SWITCH PARAMETERS */
+.GPU-Warning-Switch {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 3px;
+    
+}
+
+
+
+/* PARAMETRI DEI BOX BOTTONI DELLA FINESTRA DI FUNZIONE 4*/
+/* FUNCTION 4 WINDOWS BUTTON BOXS PARAMETERS */
+.GPU-Warning-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+}
+
+
+
+/* PARAMETRI DEI BOTTONI CHE MOSTRANO I LOG */
+/* SHOW LOG BUTTONS PARAMETERS */
+.GPU-Warning-Start-Function-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+
+
+/* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
+/* INFO WINDOWS EXIT BUTTONS PARAMETERS */
+.GPU-Warning-Exit-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                   PARAMETRI CSS DELLA FINESTRA DI BENVENUTO DELLA FINESTRA PRINCIPALE                  */
+/*                                MAIN WINDOW WELCOME WINDOW CSS PARAMETERS                               */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+/* PARAMETRI DELLA GRIGLIA */
+/* GRID PARAMETERS */
+.Welcome-Messagge-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA  */
+/* ICONS PARAMETERS */
+.Welcome-Messagge-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 100px;
+    min-height: 100px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL TITOLO TESTUALI */
+/* TITLE TEXT PARAMETERS */
+.Welcome-Messagge-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 17pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Welcome-Messagge-Sub-Title-Scrollable {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 600px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.Welcome-Messagge-Sub-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+    line-height: 20px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Welcome-Messagge-Sub-Title-Scrollable-2 {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 600px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.Welcome-Messagge-Sub-Title-Text-2 {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 11pt;
+    font-weight: normal;
+    line-height: 20px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Welcome-Messagge-Sub-Title-Scrollable-3 {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 600px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.Welcome-Messagge-Sub-Title-Text-3 {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 11pt;
+    font-weight: normal;
+    line-height: 20px;
+
+}
+
+
+
+/* PARAMETRI DEL BOX DELLA SWITCH */
+/* SWITCH BOX PARAMETERS */
+.Welcome-Messagge-Switch-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 5px;
+    margin-bottom: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL ETICHETTA DELLA SWITCH */
+/* SWITCH LABEL PARAMETERS */
+.Welcome-Messagge-Switch-Label {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 11pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+    
+}
+
+
+
+/* PARAMETRI DELLA SWITCH */
+/* SWITCH PARAMETERS */
+.Welcome-Messagge-Switch {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin: 3px;
+    
+}
+
+
+
+/* PARAMETRI DEI BOX BOTTONI DELLA FINESTRA DI FUNZIONE 4*/
+/* FUNCTION 4 WINDOWS BUTTON BOXS PARAMETERS */
+.Welcome-Messagge-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+}
+
+
+
+/* PARAMETRI DEI BOTTONI CHE MOSTRANO I LOG */
+/* SHOW LOG BUTTONS PARAMETERS */
+.Welcome-Messagge-Start-Function-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+
+
+/* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
+/* INFO WINDOWS EXIT BUTTONS PARAMETERS */
+.Welcome-Messagge-Exit-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                               PARAMETRI CSS DELLA FINESTRA DI INFORMAZIONI                             */
+/*                                       ABOUT WINDOW CSS PARAMETERS                                      */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+/* PARAMETRI DELLA GRIGLIA */
+/* GRID PARAMETERS */
+.About-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA  */
+/* ICONS PARAMETERS */
+.About-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 100px;
+    min-height: 100px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL TITOLO TESTUALI */
+/* TITLE TEXT PARAMETERS */
+.About-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 20pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 15px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.About-Sub-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 14px;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+    margin-bottom: 5px;
+
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.About-Sub-Title-Text-2 {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+    line-height: 20px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+    margin-bottom: 70px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.About-Sub-Title-Scrollable-3 {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-height: 50px;
+    min-width: 150px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.About-Sub-Title-Text-3 {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 10pt;
+    line-height: 22px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                            PARAMETRI CSS DELLA FINESTRA DI RESET IMPOSTAZIONI                          */
+/*                                   RESET SETTINGS WINDOW CSS PARAMETERS                                 */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+/* PARAMETRI DELLA GRIGLIA */
+/* GRID PARAMETERS */
+.Reset-Settings-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 450px;
+    min-height: 200px;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA  */
+/* ICONS PARAMETERS */
+.Reset-Settings-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 80px;
+    min-height: 80px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL TITOLO TESTUALI */
+/* TITLE TEXT PARAMETERS */
+.Reset-Settings-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 12pt;
+    font-weight: normal;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 15px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                               PARAMETRI CSS DELLA FINESTRA DI AGGIORNAMENTO                            */
+/*                                       UPDATE WINDOW CSS PARAMETERS                                     */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+/* PARAMETRI DELLA GRIGLIA */
+/* GRID PARAMETERS */
+.Check-Update-Grid {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 30px;
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-width: 570px;
+    min-height: 300px;
+
+}
+
+
+
+/* PARAMETRI DELL'ICONA  */
+/* ICONS PARAMETERS */
+.Check-Update-Icon {
+
+    /* PARAMETRI DIMENSIONALI DELLE ICONE DELLE FUNZIONI */
+    /* SIZE PARAMETERS OF THE FUNCTION'S ICONS */
+    min-width: 100px;
+    min-height: 100px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+
+}
+
+
+
+/* PARAMETRI DEL TITOLO TESTUALI */
+/* TITLE TEXT PARAMETERS */
+.Check-Update-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 17pt;
+    font-weight: bold;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+
+
+/* PARAMETRI DEI CONTENITORI SCORREVOLI */
+/* SCROLLABLE CONTAINERS PARAMETERS*/
+.Check-Update-Sub-Title-Scrollable {
+
+    /* PARAMETRI DIMENSIONALI  */
+    /* SIZE PARAMETERS  */
+    min-height: 50px;
+    min-width: 150px;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+    margin-bottom: 50px;
+
+}
+
+
+
+/* PARAMETRI DEL SOTTOTITOLO TESTUALI */
+/* SUBTITLE TEXT PARAMETERS */
+.Check-Update-Sub-Title-Text {
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 15px;
+    font-weight: normal;
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+
+}
+
+
+
+/* PARAMETRI DEI BOX BOTTONI DELLA FINESTRA DI FUNZIONE 4*/
+/* FUNCTION 4 WINDOWS BUTTON BOXS PARAMETERS */
+.Check-Update-Button-Box {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding: 5px;
+}
+
+
+
+/* PARAMETRI DEI BOTTONI CHE AVVIA IL DOWNLOAD */
+/* START DOWNLOAD BUTTONS PARAMETERS */
+.Check-Update-Download-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:5px;
+
+}
+
+
+
+/* PARAMETRI DEI BOTTONI DI USCITA DALLE FINESTRE DI INFO */
+/* INFO WINDOWS EXIT BUTTONS PARAMETERS */
+.Check-Update-Exit-Button {
+
+    /* PARAMETRI DI SPAZIATURA */
+    /* SPACING PARAMETERS */
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:5px;
+
+}
 
 
 

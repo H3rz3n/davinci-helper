@@ -82,8 +82,12 @@ setup(
     # NOT EXECUTABLE FILES PATH
     data_files=[
         ('share/davinci-helper/data/css', ['data/css/style-dark.css']),
-        ('share/davinci-helper/data/icons', [
-            'data/icons/davinci-helper.desktop',
+        ('share/davinci-helper/data/desktop', [
+            'data/desktop/com.davinci.helper.app.desktop',
+            'data/desktop/com.davinci.helper.app.metainfo.xml',
+            'data/desktop/davinci-helper-icon.svg'
+        ]),
+          ('share/davinci-helper/data/icons/', [
             'data/icons/davinci-helper-icon.svg'
         ]),
         ('share/davinci-helper/data/icons/main_icons', [
@@ -102,7 +106,7 @@ setup(
             'data/polkit/com.davinci.helper.app.policy'
         ]),
         ('share/davinci-helper/data/ui', [
-            'data/ui/about.ui',
+            'data/ui/about_window.ui',
             'data/ui/function_1.ui',
             'data/ui/function_2.ui',
             'data/ui/function_3.ui',
@@ -112,7 +116,19 @@ setup(
             'data/ui/info_function_3.ui',
             'data/ui/info_function_4.ui',
             'data/ui/error_dialog.ui',
+            'data/ui/welcome_messagge_splash_screen.ui',
+            'data/ui/gpu_warning_splash_screen.ui',
+            'data/ui/check_update.ui',
+            'data/ui/reset_settings.ui',
             'data/ui/main_window.ui'
+        ]),
+        ('share/davinci-helper/data/gpu_support', [
+            'data/gpu_support/amd_support.txt',
+            'data/gpu_support/intel_support.txt',
+            'data/gpu_support/nvidia_support.txt'
+        ]),
+        ('share/davinci-helper/data/settings', [
+            'data/settings/davinci_helper_settings'
         ]),
         ('share/davinci-helper/locale', [
             
