@@ -147,7 +147,7 @@ class build_about_window():
         
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI ERRORE
         # LOADING THE SUBTITLE TEXT IN CASE OF ERROR
-        paragraph_3 = '''This software is published under the <a href="https://www.example.com">CC-BY-NC-SA license</a> and comes without any warranty.\nWe are not responsibile for any side effect or damage on your equipment.'''
+        paragraph_3 = '''This software is published under the <a href="https://github.com/H3rz3n/davinci-toolbox/blob/main/LICENSE">CC-BY-NC-SA license</a> and comes without any warranty.\nWe are not responsibile for any side effect or damage on your equipment.'''
         self.sub_title_text_3.set_markup(paragraph_3)
 
         #-----------------------------------------------------------------------------------------------------
