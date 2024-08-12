@@ -11,7 +11,7 @@ Currently **this program supports only Fedora Linux** in all his spins and deriv
 DaVinci Toolbox will help you doing this things :
 - Install all the necessary dependencies to correctly install and start DaVinci Resolve
 - Help you starting the official installation wizard**
-- **Apply all the necessary post install tricks to properly start DaVinci Resolve
+- Apply all the necessary post install tricks to properly start DaVinci Resolve
 - Install the necessary GPU drivers to make to correctly use your graphic card with DaVinci Resolve
 
 
