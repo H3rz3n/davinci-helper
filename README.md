@@ -31,7 +31,7 @@ Currently the app support only DaVinci Resolve 18.x.y. In the future will be add
 In this first releases only Nvidia GPUs will be supported because we don't have any AMD or Intel GPU where to test on. If you have and AMD or Intel GPU and want to support the project please help use testing the drivers or provide as an already working solution.
 
 ## I want to contribute to the project, what can I do ?
-If you want to contribute to this project you can help use [testing the GPU drivers](https://github.com/H3rz3n/davinci-toolbox/discussions), translating the app and [making a donation]() to support the work needed for the maintenance and the continue update to keep up with the latest DaVinci version.
+If you want to contribute to this project you can help use [testing the GPU drivers](https://github.com/H3rz3n/davinci-toolbox/discussions), translating the app or [making a donation]() to support the work needed for the maintenance and the continue update to keep up with the latest DaVinci version.
 
 
 
