@@ -11,7 +11,7 @@ Currently **this program supports only Fedora Linux** in all his spins and deriv
 DaVinci Helper will help you with :
 - The installation of all the necessary dependencies to correctly install and start DaVinci Resolve
 - Starting the official installation wizard**
-- **Applying all the necessary post install tricks to properly start DaVinci Resolve
+- Applying all the necessary post install tricks to properly start DaVinci Resolve
 - Installing the necessary GPU drivers to make to correctly use your graphic card with DaVinci Resolve
 
 
