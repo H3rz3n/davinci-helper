@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <p align="center">
   <img src="/screenshot/thumbnail.svg" alt="Thumbnail" width="600"/>
 </p>
@@ -33,10 +32,7 @@ In this first release only Nvidia GPUs will be supported because we don't have a
 
 ## What you can do to contribute to the project:
 If you want to contribute to this project you can help us by testing the GPU drivers](https://github.com/H3rz3n/davinci-helper/discussions), translating the app and [making a donation]() to support the work needed for the maintenance and the continued update to keep up with the latest DaVinci version.
-=======
-<p align="center">
-  <img src="/screenshot/thumbnail.svg" alt="Thumbnail" width="600"/>
-</p>
+
 
 ## What is DaVinci Helper :
 DaVinci Helper is a companion app that will simplify the installation and the use of BlackMagic DaVinci Resolve on Linux. This app is written using Python and has a GUI based on GTK4 and Adwaita. 
@@ -71,6 +67,3 @@ If you want to contribute to this project you can help use [testing the GPU driv
 
 
 
-
-
->>>>>>> c7c3f7f2e3101490060a88ee18a702eb304ff5fc
