@@ -1,10 +1,11 @@
-# DaVinci Toolbox
+<p align="center">
+  <img src="/screenshot/thumbnail.svg" alt="Thumbnail" width="600"/>
+</p>
 
 ## What is DaVinci Toolbox :
 DaVinci Toolbox is a companion app that will simplify the installation and the use of BlackMagic DaVinci Resolve on Linux. This app is written using Python and has a GUI based on GTK4 and Adwaita. 
 
 Currently **this program supports only Fedora Linux** in all his spins and derivates. If the project will receive a good feedback by the community I will made a version for Debian-based system like Linux Mint and Ubuntu.
-
 
 ## What this app does :
 DaVinci Toolbox will help you doing this things :
