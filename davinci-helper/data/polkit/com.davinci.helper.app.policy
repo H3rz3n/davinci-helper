@@ -13,7 +13,7 @@
 
         <!-- DESCRIZIONE DEL PERCHÈ VENGONO RICHIESTI I PERMESSI --> 
         <!-- DESCRIPTION OF WHY ARE BEEN ASKED ADMIN PERMISSION --> 
-        <description>Please allow Davinci Helper to run with administrative privileges, it is required to install the dependencies and the drivers </description>
+        <description>Please allow DaVinci Helper to run with administrative privileges, it is required to install the dependencies and the drivers </description>
 
         <!-- MESSAGGIO DI RICHIESTA DEI PERMESSI ALL'UTENTE --> 
         <!-- USER PERMISSION REQUEST MESSAGE --> 

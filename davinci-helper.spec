@@ -65,7 +65,7 @@ Requires:       libadwaita
 # DESCRIZIONE DELLE FUNZIONI DEL PROGRAMMA
 # APP FUNCTIONS DESCRIPTION
 %description
-DaVinci Helper is the ultime app to help you install and run Davinci Resolve on Fedora Linux.
+DaVinci Helper is the ultime app to help you install and run DaVinci Resolve on Fedora Linux.
 
 
 

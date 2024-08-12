@@ -156,7 +156,7 @@ class build_function_4 ():
 
         # IMPOSTO IL TESTO ATTESA
         # SETTING THE WAITING TEXT
-        self.waiting_text.set_text(_("The time needed to complete the operation will vary\n on your computer and network performance"))
+        self.waiting_text.set_text(_("The time needed to complete the operation will vary\ndepending on on your computer and network performance"))
 
         # ACQUISISCO L'OGGETTO DELLA FINESTRA MADRE
         # ACQUIRING MAIN WINDOW OBJECT
@@ -436,11 +436,11 @@ class build_function_4 ():
 
         # CARICO IL TESTO DEL TITOLO DI IN CASO SUCCESSO
         # LOADING TITLE TEXT IN CASE OF SUCCESS
-        self.title_text.set_text(_("The GPU drivers has been installed successfully"))
+        self.title_text.set_text(_("The GPU drivers have been installed successfully"))
 
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI SUCCESSO
         # LOADING THE SUBTITLE TEXT IN CASE OF SUCCESS
-        self.sub_title_text.set_text(_("Your GPU drivers has been correctly installed\nand now the GPU is supported by DaVinci Resolve."))
+        self.sub_title_text.set_text(_("Your GPU drivers have been correctly installed\nand now the GPU is supported by DaVinci Resolve."))
 
         #-----------------------------------------------------------------------------------------------------
     
@@ -488,7 +488,7 @@ class build_function_4 ():
 
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI AVVISO
         # LOADING THE SUBTITLE TEXT IN CASE OF WARNING
-        self.sub_title_text.set_text(_("It was impossible to install the drivers for your GPU\nbecause is currently not supported by this app."))
+        self.sub_title_text.set_text(_("It was impossible to install the drivers for your GPU\nbecause it is currently not supported by this app."))
 
         #-----------------------------------------------------------------------------------------------------
 
@@ -512,7 +512,7 @@ class build_function_4 ():
 
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI ERRORE
         # LOADING THE SUBTITLE TEXT IN CASE OF ERROR
-        self.sub_title_text.set_text(_("It was impossible to install the drivers for your GPU\nbecause is currently not supported by DaVinci Resolve.\nPlease check the logs for more details."))
+        self.sub_title_text.set_text(_("It was impossible to install the drivers for your GPU\nbecause it is currently not supported by DaVinci Resolve.\nPlease check the logs for more details."))
 
         #-----------------------------------------------------------------------------------------------------
 

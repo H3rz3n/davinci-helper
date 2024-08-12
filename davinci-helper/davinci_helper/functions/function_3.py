@@ -56,7 +56,7 @@ def check_davinci_version ():
         print("")
         print(_("DEBUG : It was impossible to find the DaVinci Resolve installation folder in /opt/resolve. If you have not done it already, please install DaVinci Resolve and try again."))
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)
@@ -76,7 +76,7 @@ def check_davinci_version ():
         # STAMPA LA VERSIONE DI DAVINCI IN USO
         # PRINTING WHICH VERSION OF DAVINCI IS IN USE
         print("")
-        print(_("Was found as installed DaVinci Resolve 18.x.x"))
+        print(_("DaVinci Resolve 18.x.x was found in the system"))
         print("")
 
         # AVVIO LA FUNZIONE CHE APPLICA LA PATCH POST-INSTALLAZIONE DI DAVINCI 18
@@ -88,7 +88,7 @@ def check_davinci_version ():
         # STAMPA LA VERSIONE DI DAVINCI IN USO
         # PRINTING WHICH VERSION OF DAVINCI IS IN USE
         print("")
-        print(_("Was found as installed DaVinci Resolve 19.x.x"))
+        print(_("DaVinci Resolve 19.x.x was found in the system"))
         print("")
 
         # AVVIO LA FUNZIONE CHE APPLICA LA PATCH POST-INSTALLAZIONE DI DAVINCI 19
@@ -100,7 +100,7 @@ def check_davinci_version ():
         # STAMPO IL MESSAGGIO DI ERRORE
         # PRINTING THE ERROR MESSAGE
         print("")
-        print(_("DEBUG : Has been found an installed a version of DaVinci that is not currently supported. Please visit the GitHub page to found which version of DaVinci Resolve are supported."))
+        print(_("DEBUG : An installed version of DaVinci that is not currently supported was found. Please visit the GitHub page to find which version of DaVinci Resolve are supported."))
         print("https://github.com/H3rz3n/davinci-helper")
         print("")
         exit(1)
@@ -184,7 +184,7 @@ def post_installation_18 ():
         print("")
         print(_("DEBUG : It was impossible to create the secure folder where to move libraries in /opt/resolve/libs/disabled_libraries. Try again granting the app root permission or create it by yourself."))
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)
@@ -210,7 +210,7 @@ def post_installation_18 ():
         print("")
         print(_("DEBUG : There was an error moving libgmodule*, libgio*, libgmodule* inside the secure folder in /opt/resolve/libs/disabled_libraries. Try again granting the app root permission or move it by yourself."))
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)

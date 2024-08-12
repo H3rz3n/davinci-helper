@@ -151,7 +151,7 @@ class build_check_update_window ():
 
         # CARICO IL TESTO DEL SOTTOTITOLO DI IN CASO SUCCESSO
         # LOADING SUBTITLE TEXT IN CASE OF SUCCESS
-        self.check_update_sub_title_text.set_text(_("Has been found a new version of this app on the official GitHub repository.\nWe recommend you to update it before starting using it."))
+        self.check_update_sub_title_text.set_text(_("A new version of this app was found on the official GitHub repository.\nWe recommend you update it before starting using it."))
         
         #-----------------------------------------------------------------------------------------------------
 

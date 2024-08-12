@@ -151,7 +151,7 @@ class build_function_1 ():
 
         # IMPOSTO IL TESTO ATTESA
         # SETTING THE WAITING TEXT
-        self.waiting_text.set_text(_("The time needed to complete the operation will vary\n on your computer and network performance"))
+        self.waiting_text.set_text(_("The time needed to complete the operation will vary\ndepending on on your computer and network performance"))
 
         
         #-----------------------------------------------------------------------------------------------------

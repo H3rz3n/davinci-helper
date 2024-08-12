@@ -178,7 +178,7 @@
 
 						<!-- TESTO DI ANTEPRIMA DEL CAMPO DI TESTO -->
 						<!-- PREVIEW TEXT OF THE TEXT FIELD -->
-						<property name="placeholder_text" translatable="Yes">Please select the "name.zip" to correctly start the installation of Davinci Resolve</property>
+						<property name="placeholder_text" translatable="Yes">Please select the "name.zip" to correctly start the installation of DaVinci Resolve</property>
 
 						<!-- DEFINIZIONE DEL'ESPANSIONE ORIZZONTALE DEL CONTENITORE -->
 						<!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->

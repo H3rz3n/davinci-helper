@@ -77,7 +77,7 @@ def installation_script(file_path):
         # RESTITUISCO UN ERRORE INERENTE ALL'ESTRAZIONE DEL FILE DI INSTALLAZIONE
         # RETURNING AN ERROR ABOUT THE EXTRACTION OF THE INSTALLER FILE
         error_type="Extraction"
-        error_log = (_(f"DEBUG : There was an error extracting the DaVinci Resolve installer.\n\n{unzip_output}\n {unzip_err} \n\nPlease open an issue and paste those logs on the project GitHub page  :\nhttps://github.com/H3rz3n/davinci-helper/issues"))
+        error_log = (_(f"DEBUG : There was an error extracting the DaVinci Resolve installer.\n\n{unzip_output}\n {unzip_err} \n\nPlease open an issue report and paste those logs on the project GitHub page  :\nhttps://github.com/H3rz3n/davinci-helper/issues"))
         print(error_log)
         return  error_type, error_log
         exit(1)
@@ -100,7 +100,7 @@ def installation_script(file_path):
         # RESTITUISCO UN ERRORE INERENTE ALL'INSTALLAZIONE
         # RETURNING AN ERROR ABOUT THE INSTALLATION
         error_type="Install"
-        error_log = (_(f"DEBUG : There was an error starting the install wizard of DaVinci Resolve.\n\n{start_wizard_err} \n\nPlease open an issue and paste those logs on the project GitHub page :\nhttps://github.com/H3rz3n/davinci-helper/issues"))
+        error_log = (_(f"DEBUG : There was an error starting the install wizard of DaVinci Resolve.\n\n{start_wizard_err} \n\nPlease open an issue report and paste those logs on the project GitHub page :\nhttps://github.com/H3rz3n/davinci-helper/issues"))
         print(error_log)
         return  error_type, error_log
         exit(1)

@@ -244,7 +244,7 @@ def check_nvidia_gpu_support (gpu_model_name_list, gpu_model_number_list):
                         # STAMPO IL MODELLO DI GPU TROVATO COME COMPATIBILE
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
                         print("")
-                        print(_(f"Has been found a compatible Nvidia GPU : {gpu_name.upper()}"))
+                        print(_(f"A compatible Nvidia GPU was found : {gpu_name.upper()}"))
                         print("")
 
                         # IMPOSTO COME TROVATA UNA GPU COMPATIBILE NVIDIA
@@ -309,7 +309,7 @@ def check_amd_gpu_support (gpu_model_name_list, gpu_model_number_list):
                         # STAMPO IL MODELLO DI GPU TROVATO COME COMPATIBILE
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
                         print("")
-                        print(_(f"Has been found a compatible AMD GPU : {gpu_name.upper()}"))
+                        print(_(f"A compatible AMD GPU was found : {gpu_name.upper()}"))
                         print("")
 
                         # IMPOSTO COME TROVATA UNA GPU COMPATIBILE AMD
@@ -378,7 +378,7 @@ def check_intel_gpu_support (gpu_model_name_list, gpu_model_number_list):
                         # STAMPO IL MODELLO DI GPU TROVATO COME COMPATIBILE
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
                         print("")
-                        print(_(f"Has been found a compatible Intel GPU : {gpu_name.upper()}"))
+                        print(_(f"A compatible Intel GPU was found : {gpu_name.upper()}"))
                         print("")
 
                         # IMPOSTO COME TROVATA UNA GPU COMPATIBILE INTEL
@@ -443,7 +443,7 @@ def add_repository():
         # STAMPO IL MESSAGGIO
         # PRINTING THE MESSAGE
         print("")
-        print(_("The RPM Fusion repository was already added to the system, there was no need to add it."))
+        print(_("The RPM Fusion repository had already been added to the system, there was no need to add it."))
         print("")
 
     else :
@@ -462,7 +462,7 @@ def add_repository():
             print("")
             print(_("DEBUG : It was impossible to add the RPM Fusion Free and Non-Free repository. Check your network connection and try again or add it by yourself."))
             print("")
-            print(_("Please open an issue and paste this error code on the project GitHub page :"))
+            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
             print("https://github.com/H3rz3n/davinci-helper/issues")
             print("")
             exit(1)
@@ -551,7 +551,7 @@ def install_nvidia_driver():
             print("")
             print(_("DEBUG : It was impossible to install the proprietary Nvidia GPU driver. Check your network connection and try again or install it by yourself."))
             print("")
-            print(_("Please open an issue and paste this error code on the project GitHub page :"))
+            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
             print("https://github.com/H3rz3n/davinci-helper/issues")
             print("")            
             exit(1)
@@ -577,9 +577,9 @@ def install_amd_driver():
     #-----------------------------------------------------------------------------------------------------
     
     print("")
-    print(_("DEBUG : It was impossible to install the drivers for your GPU because is currently not supported by this app. "))
+    print(_("DEBUG : It was impossible to install the drivers for your GPU because it is currently not supported by this app. "))
     print("")
-    print(_("If you know that your GPU is supported by DaVinci Resolve please open an issue on the project GitHub page :"))
+    print(_("If you know that your GPU is supported by DaVinci Resolve please open an issue report on the project GitHub page :"))
     print("https://github.com/H3rz3n/davinci-helper/issues")
     print("")
     exit(2)
@@ -598,9 +598,9 @@ def install_intel_driver():
    #-----------------------------------------------------------------------------------------------------
     
     print("")
-    print(_("DEBUG : It was impossible to install the drivers for your GPU because is currently not supported by this app. "))
+    print(_("DEBUG : It was impossible to install the drivers for your GPU because it is currently not supported by this app. "))
     print("")
-    print(_("If you know that your GPU is supported by DaVinci Resolve please open an issue on the project GitHub page :"))
+    print(_("If you know that your GPU is supported by DaVinci Resolve please open an issue report on the project GitHub page :"))
     print("https://github.com/H3rz3n/davinci-helper/issues")
     print("")
     exit(2)

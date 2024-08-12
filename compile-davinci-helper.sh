@@ -19,7 +19,7 @@ rm -rf "/home/$USER/rpmbuild/SOURCES"
 
 sudo dnf remove -y davinci-helper
 sudo dnf install -y /home/lorenzo/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.fc40.noarch.rpm --disablerepo=*
-cp /home/lorenzo/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.fc40.noarch.rpm /home/lorenzo/Pubblici/Test_Davinci_Helper
+cp /home/lorenzo/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.fc40.noarch.rpm /home/lorenzo/Pubblici/Test_DaVinci_Helper
 
 
 

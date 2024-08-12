@@ -269,7 +269,7 @@ class build_main_window(Adw.Application):
 
         # CARICO IL TESTO DEL TITOLO 
         # LOADING TITLE TEXT
-        self.main_window_text_title_3.set_text(_("Apply Davinci post\ninstallation fix"))
+        self.main_window_text_title_3.set_text(_("Apply DaVinci post\ninstallation fix"))
 
         # CARICO IL TESTO DEL TITOLO 
         # LOADING TITLE TEXT
@@ -523,7 +523,7 @@ class build_main_window(Adw.Application):
 
         # CARICO IL TESTO DI INFO
         # LOADING THE INFO TEXT
-        self.info_window_1_info_text.set_text(_("This part of the software will install all the dependencies necessary to correctly launch the installation and the execution of Davinci Resolve. The script will detect your Fedora version and the libraries installed and using this information it will install only the packages needed. This script does not diffuse any information about you or your system, the internet connection is required only if there are some missing libraries"))
+        self.info_window_1_info_text.set_text(_("This part of the software will install all the dependencies necessary to correctly launch the installation and the execution of DaVinci Resolve. The script will detect your Fedora version and the libraries installed and using this information it will install only the packages needed. This script does not diffuse any information about you or your system, the internet connection is required only if there are some missing libraries"))
 
         # CHIUDO LA FINESTRA DI INFO ALLA PRESSIONE DEL BOTONE
         # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED
@@ -579,7 +579,7 @@ class build_main_window(Adw.Application):
 
         # CARICO IL TESTO DI INFO
         # LOADING THE INFO TEXT
-        self.info_window_2_info_text.set_text(_("This part of the software ask you to indicate the Davinci Resolve installer path and runs it with the necessary patch to allow it to work properly."))
+        self.info_window_2_info_text.set_text(_("This part of the software asks you to indicate the DaVinci Resolve installer path and runs it with the necessary patch to allow it to work properly."))
 
         # CHIUDO LA FINESTRA DI INFO ALLA PRESSIONE DEL BOTONE
         # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED
@@ -628,14 +628,14 @@ class build_main_window(Adw.Application):
         self.info_window_3_info_text = info_3_window_builder.get_object("info_window_3_info_text")
 
         # OTTENGO L'OGGETTO ED I SUOI CHILD DAL FILE UI
-        # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FILE
+        # OBTAINING THE OBJECT AND HIS CHILD FROM THE UI FIL
         self.info_window_3_exit_button = info_3_window_builder.get_object("info_window_3_exit_button")
 
         #-----------------------------------------------------------------------------------------------------
 
         # CARICO IL TESTO DI INFO
         # LOADING THE INFO TEXT
-        self.info_window_3_info_text.set_text(_("This part of the software will remove in a safe folder some of the dependencies shipped with Davinci Resolve, in order to make it use the system one's"))
+        self.info_window_3_info_text.set_text(_("This part of the software will put some of the dependencies shipped with DaVinci Resolve in a safe folder, in order to make it use the system one's"))
 
         # CHIUDO LA FINESTRA DI INFO ALLA PRESSIONE DEL BOTONE
         # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED
@@ -691,7 +691,7 @@ class build_main_window(Adw.Application):
 
         # CARICO IL TESTO DI INFO
         # LOADING THE INFO TEXT
-        self.info_window_4_info_text.set_text(_("This part of the software will check what GPU are you using and then, if is supported, will check if the correct drivers are installed. If it finds missing or outdated drivers the software will install it to make your GPU fully support Davinci Resolve."))
+        self.info_window_4_info_text.set_text(_("This part of the software will check what GPU you are using and then, if it is supported, it will check if the correct drivers are installed. If it finds missing or outdated drivers the software will install them to make your GPU fully support DaVinci Resolve."))
 
         # CHIUDO LA FINESTRA DI INFO ALLA PRESSIONE DEL BOTONE
         # CLOSE THE INFO WINDOW WHEN THE BUTTON IS PRESSED

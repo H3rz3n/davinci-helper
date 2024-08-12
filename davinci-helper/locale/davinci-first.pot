@@ -21,7 +21,7 @@ msgstr ""
 #. FUNCTION 1 PREVIEW TEXT FROM THE MAIN WINDOW
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/main_window.ui:214
 msgid ""
-"Install Davinci\n"
+"Install DaVinci\n"
 "dependencies"
 msgstr ""
 
@@ -48,14 +48,14 @@ msgstr ""
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/main_window.ui:501
 msgid ""
 "Install\n"
-"Davinci Resolve"
+"DaVinci Resolve"
 msgstr ""
 
 #. TESTO DI ANTEMPRIMA DELLA FUNZIONE 3 NELLA SCHERMATA PRINCIPALE
 #. FUNCTION 3 PREVIEW TEXT FROM THE MAIN WINDOW
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/main_window.ui:788
 msgid ""
-"Apply Davinci post\n"
+"Apply DaVinci post\n"
 "installation fix"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 #. TESTO DEL TITOLO DELLE INFO DELLA FUNZIONE 1
 #. TITLE TEXT OF FUNCION 1 INFO SECTION
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/info_function_1.ui:32
-msgid "Install Davinci dependencies info"
+msgid "Install DaVinci dependencies info"
 msgstr ""
 
 #. TESTO DI DESCRIZIONE DELLA FUNZIONE 1
@@ -78,7 +78,7 @@ msgstr ""
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/info_function_1.ui:131
 msgid ""
 "This part of the software will install all the dependencies necessary to "
-"correctly launch the installation and the execution of Davinci Resolve. The "
+"correctly launch the installation and the execution of DaVinci Resolve. The "
 "script will detect your Fedora version and the libraries installed and using "
 "this information it will install only the packages needed. This script does "
 "not diffuse any information about you or your system, the internet "
@@ -97,21 +97,21 @@ msgstr ""
 #. TESTO DEL TITOLO DELLE INFO DELLA FUNZIONE 2
 #. TITLE TEXT OF FUNCION 2 INFO SECTION
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/info_function_2.ui:32
-msgid "Davinci Resolve installer fix info"
+msgid "DaVinci Resolve installer fix info"
 msgstr ""
 
 #. TESTO DI DESCRIZIONE DELLA FUNZIONE 2
 #. FUNCTION 2 DESCRIPTION TEXT
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/info_function_2.ui:131
 msgid ""
-"This part of the software ask you to indicate the Davinci Resolve installer "
+"This part of the software asks you to indicate the DaVinci Resolve installer "
 "path and runs it with the necessary patch to allow it to work properly."
 msgstr ""
 
 #. TESTO DEL TITOLO DELLE INFO DELLA FUNZIONE 3
 #. TITLE TEXT OF FUNCION 3 INFO SECTION
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/info_function_3.ui:32
-msgid "Apply Davinci post installation fix info"
+msgid "Apply DaVinci post installation fix info"
 msgstr ""
 
 #. TESTO DI DESCRIZIONE DELLA FUNZIONE 3
@@ -119,7 +119,7 @@ msgstr ""
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/info_function_3.ui:131
 msgid ""
 "This part of the software will remove in a safe folder some of the "
-"dependencies shipped with Davinci Resolve, in order to make it use the "
+"dependencies shipped with DaVinci Resolve, in order to make it use the "
 "system one's"
 msgstr ""
 
@@ -136,13 +136,13 @@ msgid ""
 "This part of the software will check what GPU are you using and then, if is "
 "supported, will check if the correct drivers are installed. If it finds "
 "missing or outdated drivers the software will install it to make your GPU "
-"fully support Davinci Resolve."
+"fully support DaVinci Resolve."
 msgstr ""
 
 #. TESTO DEL TITOLO DELLA FINESTRA FUNZIONE 1
 #. TITLE TEXT OF FUNCION 1 WINDOW
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/data/ui/function_1.ui:32
-msgid "Install Davinci Resolve dependencies"
+msgid "Install DaVinci Resolve dependencies"
 msgstr ""
 
 #. TESTO DEL TITOLO DELLA FUNZIONE 1
@@ -160,14 +160,14 @@ msgstr ""
 #. TESTO DELLO STATO DI AVANZAMENTO DELLA FUNZIONE 1
 #. FUNCTION 1 PROGRESS STATE TEXT
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/davinci_helper/functions/function_1.py:68
-msgid "The following libraries will be installed because are missing :"
+msgid "The following libraries will be installed because they are missing :"
 msgstr ""
 
 #. TESTO DELLO STATO DI AVANZAMENTO DELLA FUNZIONE 1
 #. FUNCTION 1 PROGRESS STATE TEXT
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/davinci_helper/functions/function_1.py:79
 msgid ""
-"There are no missing libraries to install, you can now install Davinci "
+"There are no missing libraries to install, you can now install DaVinci "
 "Resolve"
 msgstr ""
 
@@ -180,7 +180,7 @@ msgstr ""
 #. TESTO DI ERRORE DELLA FUNZIONE 1 - NON TRADURRE DEBUG
 #. FUNCTION 1 ERROR TEXT - DON'T TRANSLATE DEBUG
 #: /home/lorenzo/Documenti/GitHub/davinci-helper/davinci-helper-1.0/davinci_helper/functions/function_1.py:101
-msgid "DEBUG : There was an error updating the repository packages list's :"
+msgid "DEBUG : There was an error updating the repository packages lists :"
 msgstr ""
 
 #. TESTO DI ERRORE DELLA FUNZIONE 1 - NON TRADURRE DEBUG

@@ -156,7 +156,7 @@ class build_function_2 ():
 
         # IMPOSTO IL TESTO ATTESA
         # SETTING THE WAITING TEXT
-        self.waiting_text.set_text(_("The time needed to complete the operation will vary\n on your computer and network performance"))
+        self.waiting_text.set_text(_("The time needed to complete the operation will vary\ndepending on on your computer and network performance"))
 
         # IMPOSTO IL TESTO DEL TITOLO
         # SETTING THE TITLE TEXT
@@ -258,7 +258,7 @@ class build_function_2 ():
 
             # STAMPO IL MESSAGGIO DI ERRORE PER FILE MANCANTE
             # PRINTING MISSING FILE ERROR MESSAGE
-            self.error_label.set_text(_("No file has been found on this path, please select a file to continue the installation"))
+            self.error_label.set_text(_("No file has been found on this path, please select a file to continue with the installation"))
 
         elif error_type == "Unsuitable" :
 
@@ -268,7 +268,7 @@ class build_function_2 ():
 
             # STAMPO IL MESSAGGIO DI ERRORE PER FILE NON IDONEO
             # PRINTING THE ERROR MESSAGE FOR INSUITABLE FILE
-            self.error_label.set_text(_("The file of your choice is not a Davinci Resolve installation zip file. If you have renamed the file please ensure that the file name containes the words 'DaVinci', 'Resolve', 'Linux' like the original one. Please select an appropriate file to continue."))
+            self.error_label.set_text(_("The file you chose is not a DaVinci Resolve installation zip file. If you have renamed the file please make sure that the file name containes the words 'DaVinci', 'Resolve', 'Linux' like the original one. Please select an appropriate file to continue."))
 
         elif error_type == "Extraction" :
 

@@ -83,7 +83,7 @@ def check_dependencies_38_39_40 (library_list_output):
 
         # STAMPO LA LISTA DELLE LIBRERIE DA INSTALLARE
         # PRINTING THE LIST OF THE LIBRARIES TO INSTALL
-        print(_(f"The following libraries will be installed because are missing :"))
+        print(_(f"The following libraries will be installed because they are missing :"))
         print(lib_to_install )
         print("")
 
@@ -127,11 +127,11 @@ def libraries_installation (lib_to_install):
     
     else:
         print("")
-        print(_("DEBUG : There was an error updating the repository packages list's :"))
+        print(_("DEBUG : There was an error updating the repository packages lists :"))
         print("") 
         print(repo_update_err)
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)
@@ -154,7 +154,7 @@ def libraries_installation (lib_to_install):
         print("")
         print(package_install_err)
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)
@@ -189,7 +189,7 @@ def get_libraries_list ():
         print(_("DEBUG : There was an error reading the library list :"))
         print(library_list_err)
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)
@@ -228,7 +228,7 @@ def check_fedora_version ():
         print("")
         print(_("DEBUG : There was an error reading what version of Fedora is installed :"))
         print("")
-        print(_("Please open an issue and paste this error code on the project GitHub page :"))
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")
         print("")
         exit(1)

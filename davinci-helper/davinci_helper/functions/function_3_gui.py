@@ -151,7 +151,7 @@ class build_function_3 ():
 
         # IMPOSTO IL TESTO ATTESA
         # SETTING THE WAITING TEXT
-        self.waiting_text.set_text(_("The time needed to complete the operation will vary\n on your computer and network performance"))
+        self.waiting_text.set_text(_("The time needed to complete the operation will vary\ndepending on on your computer and network performance"))
 
         
         #-----------------------------------------------------------------------------------------------------
@@ -386,7 +386,7 @@ class build_function_3 ():
 
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI SUCCESSO
         # LOADING THE SUBTITLE TEXT IN CASE OF SUCCESS
-        self.sub_title_text.set_text(_("All the operations has been correctly executed inside the DaVinci Resolve installation folder. Now you can proceed to close this window and check if you are using the correct GPU drivers."))
+        self.sub_title_text.set_text(_("All the operations have been correctly executed inside the DaVinci Resolve installation folder. Now you can proceed to close this window and check if you are using the correct GPU drivers."))
 
         #-----------------------------------------------------------------------------------------------------
     
