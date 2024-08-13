@@ -826,7 +826,7 @@ class build_main_window(Adw.Application):
         # LOADING THE SUBTITLE TEXT
         #self.welcome_messagge_sub_title_text_3.set_text(_('''If you find this app useful please consider to help us
         #developing this app or making a donation to the project.'''))
-        paragraph_3 = '''If you find this app useful and want to improve it please\nconsider to help us <a href="https://github.com/H3rz3n/davinci-helper">developing</a> this app or <a href="https://www.example.com">making a donation</a>  to the project.'''
+        paragraph_3 = (_('''If you find this app useful and want to improve it please\nconsider to help us <a href="https://github.com/H3rz3n/davinci-helper">developing</a> this app or <a href="https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8">making a donation</a>  to the project.'''))
         self.welcome_messagge_sub_title_text_3.set_markup(paragraph_3)
 
         # AVVIO LA FUNZIONE CHE CAMBIA LE IMPOSTAZIONI DI VISIBILITÀ DELLA SPLASH SCREEN

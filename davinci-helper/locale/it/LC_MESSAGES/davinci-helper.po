@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: davinci-helper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-12 19:55+0200\n"
+"POT-Creation-Date: 2024-08-13 09:35+0200\n"
 "PO-Revision-Date: 2024-08-12 16:17+0200\n"
 "Last-Translator: Lorenzo Maiuri <lorenzo.maiuri@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -543,7 +543,7 @@ msgstr ""
 "del progetto. Stai già utilizzando l'ultima versione disponibile e puoi "
 "utilizzarla senza incorrere in problemi."
 
-#: davinci_helper/main.py:264
+#: davinci_helper/main.py:264 davinci_helper/main.py:268
 msgid ""
 "Install DaVinci\n"
 "dependencies"
@@ -551,7 +551,7 @@ msgstr ""
 "Installa le\n"
 "dipendenze di DaVinci"
 
-#: davinci_helper/main.py:268
+#: davinci_helper/main.py:268 davinci_helper/main.py:272
 msgid ""
 "Launch DaVinci\n"
 "Resolve installer"
@@ -559,7 +559,7 @@ msgstr ""
 "Avvia l'installazione\n"
 "di DaVinci Resolve"
 
-#: davinci_helper/main.py:272
+#: davinci_helper/main.py:272 davinci_helper/main.py:276
 msgid ""
 "Apply DaVinci post\n"
 "installation fix"
@@ -567,7 +567,7 @@ msgstr ""
 "Applica la patch\n"
 "di post installazione"
 
-#: davinci_helper/main.py:276
+#: davinci_helper/main.py:276 davinci_helper/main.py:280
 msgid ""
 "Check and install the\n"
 "correct GPU driver"
@@ -575,7 +575,7 @@ msgstr ""
 "Controlla ed installa\n"
 "i driver GPU corretti"
 
-#: davinci_helper/main.py:526
+#: davinci_helper/main.py:526 davinci_helper/main.py:530
 msgid ""
 "This part of the software will install all the dependencies necessary to "
 "correctly launch the installation and the execution of DaVinci Resolve. The "
@@ -591,7 +591,7 @@ msgstr ""
 "connessione ad internet solo se dovesse essere necessario scaricare i "
 "pacchetti mancanti"
 
-#: davinci_helper/main.py:582
+#: davinci_helper/main.py:582 davinci_helper/main.py:586
 msgid ""
 "This part of the software asks you to indicate the DaVinci Resolve installer "
 "path and runs it with the necessary patch to allow it to work properly."
@@ -600,7 +600,7 @@ msgstr ""
 "dell'installer e successivamente avvia il wizard di installazione di DaVinci "
 "Resolve"
 
-#: davinci_helper/main.py:638
+#: davinci_helper/main.py:638 davinci_helper/main.py:642
 msgid ""
 "This part of the software will put some of the dependencies shipped with "
 "DaVinci Resolve in a safe folder, in order to make it use the system one's"
@@ -609,7 +609,7 @@ msgstr ""
 "assieme a DaVinci in una cartella sicura, in modo che esso sia costretto ad "
 "usare quelle di sistema"
 
-#: davinci_helper/main.py:694
+#: davinci_helper/main.py:694 davinci_helper/main.py:698
 msgid ""
 "This part of the software will check what GPU you are using and then, if it "
 "is supported, it will check if the correct drivers are installed. If it "
@@ -621,7 +621,7 @@ msgstr ""
 "per permettere a DaVinci Resolve di rilevarla e renderla pienamente "
 "compatibile."
 
-#: davinci_helper/main.py:811
+#: davinci_helper/main.py:811 davinci_helper/main.py:815
 msgid ""
 "You have successfully\n"
 "installed DaVinci Helper !"
@@ -629,7 +629,7 @@ msgstr ""
 "Congratulazioni, hai installato\n"
 "con successo DaVinci Helper !"
 
-#: davinci_helper/main.py:815
+#: davinci_helper/main.py:815 davinci_helper/main.py:819
 msgid ""
 "Thank you for trusting us and installing DaVinci Helper. We hope that\n"
 "this app will make the installation of DaVinci Resolve easier for you."
@@ -639,7 +639,7 @@ msgstr ""
 "che questo programma vi semplifichi il processo di installazione di DaVinci "
 "Resolve"
 
-#: davinci_helper/main.py:819
+#: davinci_helper/main.py:819 davinci_helper/main.py:823
 msgid ""
 "This app is not affiliated in any way with BlackMagic Design,\n"
 "it's only a community project and comes without any guarantees."
@@ -665,6 +665,10 @@ msgstr "Apri file"
 msgid "Start installation"
 msgstr "Avvia l'installazione"
 
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -709,6 +713,10 @@ msgstr "Mostra i log"
 #. SETTING THE TITLE IN THE TITLE BAR
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #: data/ui/info_function_1.ui:19 data/ui/info_function_2.ui:19
 #: data/ui/info_function_3.ui:19 data/ui/info_function_4.ui:19
 #: data/ui/main_window.ui:327 data/ui/main_window.ui:593
@@ -731,6 +739,10 @@ msgstr "."
 msgid "Understood"
 msgstr "Ho capito"
 
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
 #. START BUTTON 1 TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -886,3 +898,15 @@ msgstr ""
 "alcuna garanzia sul suo corretto funzionamento. \n"
 "Noi non siamo responsabile di alcun danno o malfunzionamento che possa "
 "verificarsi sui vostri dispositivi."
+
+#: davinci_helper/main.py:829
+msgid ""
+"If you find this app useful and want to improve it please\n"
+"consider to help us <a href=\"https://github.com/H3rz3n/davinci-"
+"helper\">developing</a> this app or <a href=\"https://www.paypal.com/donate/?"
+"hosted_button_id=CPCG2RFAV82T8\">making a donation</a>  to the project."
+msgstr ""
+"Se pensi che questo programma sia utile e vuoi aiutarci a farlo crescere\n"
+"considera l'idea di aiutarci a <a href=\"https://github.com/H3rz3n/davinci-helper\">svilupparlo</a> "
+"oppure <a href=\"https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8\">facendo una donazione</a>\n"
+"progetto per permetterci di continuare a svilupparlo."
