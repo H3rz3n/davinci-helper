@@ -131,8 +131,8 @@ setup(
         ('share/davinci-helper/data/settings', [
             'data/settings/davinci_helper_settings'
         ]),
-        ('share/davinci-helper/locale', [
-            
+        ('share/davinci-helper/locale/it/LC_MESSAGES', [
+            'locale/it/LC_MESSAGES/davinci-helper.mo'
         ])
     ],
 

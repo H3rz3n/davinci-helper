@@ -79,6 +79,10 @@ gettext.textdomain('davinci-helper')
 # TELLING GETTEXT THE TRANSLATE SIGNAL
 _ = gettext.gettext
 
+
+
+
+
 #-----------------------------------------------------------------------------------------------------
 
 # DEFINISCO LA CLASSE CHE PERMETTE LA CREAZIONE E MESSA SCHERMO DELLA FINESTRA PRINCIPALE
@@ -918,6 +922,11 @@ def main():
     # AVVIO LA FUNZIONE CHE CONTROLLA L'ESISTENZA DELLE IMPOSTAZIONI
     # STARTING THE FUNCTION THAT CHECKS IF THE SETTINGS EXIST
     check_settings_existence()
+
+    #
+    #
+    #_ = set_language()
+    #print("Prova")
 
     # ASSEGNANAZIONE DELL'ID DEL PROGRAMMA E COPIA DELLA CLASSE DELLA FINESTRA PRINCIPALE NELLA VARIABILE CHE RAPPRESENTA LA FINESTRA DEL PROGRAMMA
     # ASSIGNING THE APP ID AND COPY OF THE MAIN WINDOW CLASS IN A VARIABLE

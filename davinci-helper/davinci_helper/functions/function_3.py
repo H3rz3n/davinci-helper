@@ -208,7 +208,7 @@ def post_installation_18 ():
         # STAMPO IL MESSAGGI DI ERRORE
         # PRINTING THE ERROR MESSAGE
         print("")
-        print(_("DEBUG : There was an error moving libgmodule*, libgio*, libgmodule* inside the secure folder in /opt/resolve/libs/disabled_libraries. Try again granting the app root permission or move it by yourself."))
+        print(_("DEBUG : There was an error moving the libraries inside the secure folder in /opt/resolve/libs/disabled_libraries. Try again granting the app root permission or move it by yourself."))
         print("")
         print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("https://github.com/H3rz3n/davinci-helper/issues")

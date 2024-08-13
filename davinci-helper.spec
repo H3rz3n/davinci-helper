@@ -24,7 +24,7 @@ Summary:        The best DaVinci Resolve companion app on Linux
 
 # LICENZA DI PUBBLICAZIONE
 # PUBBLICATION LICENSE
-License:        CC-BY-NC-SA
+License:        CC-BY-NC-SA-4.0
 
 
 

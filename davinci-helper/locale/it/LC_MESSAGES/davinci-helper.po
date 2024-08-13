@@ -7,16 +7,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: davinci-helper\n"
-"Report-Msgid-Bugs-To: https://github.com/H3rz3n/davinci-helper/issues\n"
-"POT-Creation-Date: 2024-08-12 16:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-12 19:55+0200\n"
 "PO-Revision-Date: 2024-08-12 16:17+0200\n"
 "Last-Translator: Lorenzo Maiuri <lorenzo.maiuri@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# ALL THE TEXT NEED TO BE CONSIDERED JUST AS
+# NORMAL TEXT UNLESS OTHERWISE SPECIFIED
+# IF IS NOT SPECIFIED NEVER TRANSLATE ANYTHING INSIDE {}
+# BRACKETS, THE LINKS AND THE "DEBUG" WORD 
+# WHEN YOU FIND THE \N IT MEANS THAT IN THIS PARAGRAPH IS NEEDED
+# TO CORRECTLY GO TO THE NEXT LINE. IF YOU DON'T FIND THE \N
+# WHEN GOING TO THE NEXT LINE WITH "" REMEMBER TO LEAVE A SPACE
+# AFTER THE LAST WORD OF EVERY SENTENCE THAT DOES NOT HAS A . AT THE END.
+# WHEN YOU GO TO THE NEXT LINE WITH "" REMEMBER TO DON'T MAKE THE
+# SENTENCE TOO LONG. IT'S ALWAYS A GOOD THING TO REFER TO THE LENGHT 
+# OF THE UNTRANSLATED SENTENCE.
+# IF THERE IS NOT A . AT THE END OF THE SENTENCE DON'T PUT IT.
 #: davinci_helper/functions/function_1_gui.py:154
 #: davinci_helper/functions/function_3_gui.py:154
 #: davinci_helper/functions/function_4_gui.py:159
@@ -28,13 +40,9 @@ msgstr ""
 "Il tempo richiesto per completare l'operazione può variare\n"
 "in base alle prestazioni del tuo computer e della rete internet."
 
-
-
 #: davinci_helper/functions/function_1_gui.py:387
 msgid "The dependencies have been correctly installed"
 msgstr "Le dipendenze sono state installate correttamente"
-
-
 
 #: davinci_helper/functions/function_1_gui.py:391
 msgid ""
@@ -42,33 +50,27 @@ msgid ""
 "you can close this window and correctly start the DaVinci Resolve installer."
 msgstr ""
 "Tutte le dipendenze sono stante installate correttamente nel sistema. Ora "
-"puoi chudere questa finestra e far partire correttamente il wizard di installazione di DaVinci Resolve"
-
-
+"puoi chudere questa finestra e far partire correttamente il wizard di "
+"installazione di DaVinci Resolve"
 
 #: davinci_helper/functions/function_1_gui.py:411
 msgid "There was an error installing the dependencies"
 msgstr "Si è verificato un errore durante l'installazione delle dipendenze"
-
-
 
 #: davinci_helper/functions/function_1_gui.py:415
 msgid ""
 "There was an error installing the dependencies. Please check the logs to "
 "have more details"
 msgstr ""
-"Si è verificato un errore durante l'installazione delle dipendenze. Per favore controlla "
-"i log per avere maggiori dettagli"
-
-
+"Si è verificato un errore durante l'installazione delle dipendenze. Per "
+"favore controlla i log per avere maggiori dettagli"
 
 #: davinci_helper/functions/function_1_gui.py:435
 #: davinci_helper/functions/function_3_gui.py:433
 #: davinci_helper/functions/function_4_gui.py:534
 msgid "You need to grant admin permission to use this function"
-msgstr "È necessario avere i permessi di amministratore per eseguire questa funzione"
-
-
+msgstr ""
+"È necessario avere i permessi di amministratore per eseguire questa funzione"
 
 #: davinci_helper/functions/function_1_gui.py:439
 #: davinci_helper/functions/function_3_gui.py:437
@@ -77,20 +79,14 @@ msgid ""
 "It was impossible to start the function because you didn't give admin "
 "permission. Please try again."
 msgstr ""
-"Non è stato possibile avviare questa funzione perchè non hai fornito i necessari "
-"permessi di amministratore. Per favore, riprova."
-
-
+"Non è stato possibile avviare questa funzione perchè non hai fornito i "
+"necessari permessi di amministratore. Per favore, riprova."
 
 #: davinci_helper/functions/function_3_gui.py:385
 msgid ""
 "The DaVinci Resolve post installation\n"
 "patch has been applied"
-msgstr ""
-"La patch di post installazione di DaVinci Resolve"
-"è stata applicata"
-
-
+msgstr "La patch di post installazione di DaVinci Resolveè stata applicata"
 
 #: davinci_helper/functions/function_3_gui.py:389
 msgid ""
@@ -98,51 +94,43 @@ msgid ""
 "installation folder. Now you can proceed to close this window and check if "
 "you are using the correct GPU drivers."
 msgstr ""
-""
-""
-""
-
-
+"Tutte le operazioni all'interno della cartella di DaVinci Resolve sono state "
+"completate con successo. Adesso puoi chiudere questa finestra e controllare "
+"se stai utilizzando i giusti driver della GPU."
 
 #: davinci_helper/functions/function_3_gui.py:409
 msgid "There was an error patching DaVinci Resolve"
 msgstr ""
-
-
+"Si è verificato un errore durante l'applicazione della patch a DaVinci "
+"Resolve"
 
 #: davinci_helper/functions/function_3_gui.py:413
 msgid ""
 "There was an error patching DaVinci Resolve. Please check the logs to have "
 "more details"
 msgstr ""
-
-
+"Si è verificato un errore durante l'applicazione della patch a DaVinci "
+"Resolve. Per favore, controlla i log per maggiori dettagli"
 
 #: davinci_helper/functions/function_1.py:86
 msgid "The following libraries will be installed because they are missing :"
-msgstr ""
-
-
+msgstr "Le seguenti librerie verranno installate perchè mancanti :"
 
 #: davinci_helper/functions/function_1.py:99
 msgid ""
 "There are no missing libraries to install, you can now install DaVinci "
 "Resolve"
 msgstr ""
-
-
+"Tutte le librerie necessarie sono già installate, adesso puoi installare "
+"DaVinci Resolve"
 
 #: davinci_helper/functions/function_1.py:123
 msgid "Updating the source's repos :"
-msgstr ""
-
-
+msgstr "Aggiorno la lista di pacchetti dei sorgenti :"
 
 #: davinci_helper/functions/function_1.py:130
 msgid "DEBUG : There was an error updating the repository packages lists :"
-msgstr ""
-
-
+msgstr "DEBUG : Si è verificato un errore nell'aggiornamento dei sorgenti :"
 
 #: davinci_helper/functions/function_1.py:134
 #: davinci_helper/functions/function_1.py:157
@@ -157,75 +145,65 @@ msgid ""
 "Please open an issue report and paste this error code on the project GitHub "
 "page :"
 msgstr ""
-
-
+"Per favore, apri una segnalazione dell'errore ed incolla questo codice nella "
+"relativa pagina GitHub del progetto :"
 
 #: davinci_helper/functions/function_1.py:153
 msgid "DEBUG : There was an error installing the missing libraries :"
 msgstr ""
-
-
+"DEBUG : Si è verificato un errore nell'installazione delle librerie "
+"mancanti :"
 
 #: davinci_helper/functions/function_1.py:189
 msgid "DEBUG : There was an error reading the library list :"
 msgstr ""
-
-
+"DEBUG : Si è verificato un errore nella lettura delle librerie installate :"
 
 #: davinci_helper/functions/function_1.py:229
 msgid ""
 "DEBUG : There was an error reading what version of Fedora is installed :"
 msgstr ""
-
-
+"DEBUG : Si è verificato nella lettura della versione di Fedora utilizzata :"
 
 #: davinci_helper/functions/function_4_gui.py:439
 msgid "The GPU drivers have been installed successfully"
-msgstr ""
-
-
+msgstr "I driver della GPU sono stati installati con successo"
 
 #: davinci_helper/functions/function_4_gui.py:443
 msgid ""
 "Your GPU drivers have been correctly installed\n"
 "and now the GPU is supported by DaVinci Resolve."
 msgstr ""
-
-
+"I driver della tua GPU sono stati installati correttamente\n"
+"ed adesso la tua GPU è pienamente supportata da DaVinci Resolve."
 
 #: davinci_helper/functions/function_4_gui.py:463
 msgid "There was an error installing the GPU drivers"
-msgstr ""
-
-
+msgstr "Si è verificato un errore durante l'installazione dei driver della GPU"
 
 #: davinci_helper/functions/function_4_gui.py:467
 msgid ""
 "There was an error installing the GPU drivers. Please check the logs to have "
 "more details"
 msgstr ""
-
-
+"Si è verificato un errore durante l'installazione dei driver della GPU.Per "
+"favore, controlla i log per avere maggiori dettagli"
 
 #: davinci_helper/functions/function_4_gui.py:487
 msgid "Your GPU is currently not supported by this app"
-msgstr ""
-
-
+msgstr "Al momento la tua GPU non è supportata da questo programma"
 
 #: davinci_helper/functions/function_4_gui.py:491
 msgid ""
 "It was impossible to install the drivers for your GPU\n"
 "because it is currently not supported by this app."
 msgstr ""
-
-
+"È stato imposibile installare i driver per la tua GPU\n"
+"perchè al momento non è supportata da questo programma."
 
 #: davinci_helper/functions/function_4_gui.py:511
 msgid "Your GPU is not supported by DaVinci Resolve"
-msgstr ""
-
-
+msgstr "La tua GPU non è supportata da DaVinci Resolve"
 
 #: davinci_helper/functions/function_4_gui.py:515
 msgid ""
@@ -233,14 +211,13 @@ msgid ""
 "because it is currently not supported by DaVinci Resolve.\n"
 "Please check the logs for more details."
 msgstr ""
-
-
+"È stato imposibile installare i driver per la tua GPU\n"
+"perchè non è supportata da DaVinci Resolve. Per favore, controlla i log per "
+"maggiori dettagli."
 
 #: davinci_helper/functions/function_4_gui.py:672
 msgid "This function is still in BETA"
-msgstr ""
-
-
+msgstr "Questa funzione è ancora in BETA"
 
 #: davinci_helper/functions/function_4_gui.py:676
 msgid ""
@@ -252,22 +229,25 @@ msgid ""
 "drivers or you know how to make them work with DaVinci Resolve,\n"
 "please start a discussion on the GitHub page."
 msgstr ""
-
-
+"Questa funzione è ancora parzialmente in sviluppo e potrebbe non funzionare "
+"come preventivato.\n"
+"Per terminare questa parte di programma ho bisogno del tuo aiuto.\n"
+"\n"
+"Se possiedi una GPU AMD o Intel ARC e sei interessato nell'aiutarci a "
+"testare la compatibilità della tua GPU o sai come farla funzionare con "
+"DaVinci Resolve, apri una discussione nella relativa pagina GitHub."
 
 #: davinci_helper/functions/function_2_gui.py:163
 msgid "Select the DaVinci Resolve installer file"
-msgstr ""
-
-
+msgstr "Seleziona il file di installazione di DaVinci Resolve"
 
 #: davinci_helper/functions/function_2_gui.py:261
 msgid ""
 "No file has been found on this path, please select a file to continue with "
 "the installation"
 msgstr ""
-
-
+"Non è stato trovato nessun file nel percorso indicato, per favore seleziona "
+"il file di installazione per continuare."
 
 #: davinci_helper/functions/function_2_gui.py:271
 msgid ""
@@ -276,31 +256,34 @@ msgid ""
 "words 'DaVinci', 'Resolve', 'Linux' like the original one. Please select an "
 "appropriate file to continue."
 msgstr ""
-
-
+"Il file di installazione da te selezionato non è valido. Se hai rinominato "
+"il file assicurati che contenga le parole 'DaVinci', 'Resolve','Linux' come "
+"il file di installazione originale. Per favore, selezionaun file adatto per "
+"continuare."
 
 #: davinci_helper/functions/function_2_gui.py:281
 msgid ""
 "There was an error extracting the 'Name.zip' installer file. Please check "
 "the logs to have more details."
 msgstr ""
-
-
+"Si è verificato un errore nell'estrazione del file di installazione "
+"'Nomefile.zip'. Per favore, controlla i log per maggiori dettagli."
 
 #: davinci_helper/functions/function_2_gui.py:296
 msgid ""
 "There was an error during the installer startup. Please check the logs to "
 "have more details."
 msgstr ""
-
-
+"Si è verificato un errore durante l'avvio del wizard di installazione.Per "
+"favore, controlla i log per maggiori dettagli."
 
 #: davinci_helper/functions/function_2_gui.py:311
 msgid "There was an unknown error. Please check the logs to have more details."
 msgstr ""
+"Si è verificato un errore sconosciuto, Per favore, controlla i log per "
+"maggiori dettagli."
 
-
-
+# DO NOT TRANSLATE THE LINK AND EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_2.py:80
 #, python-brace-format
 msgid ""
@@ -313,9 +296,17 @@ msgid ""
 "page  :\n"
 "https://github.com/H3rz3n/davinci-helper/issues"
 msgstr ""
+"DEBUG : Si è verificato un errore durante l'estrazione dell'installer di "
+"DaVinci Resolve. \n"
+"\n"
+"{unzip_output}\n"
+" {unzip_err} \n"
+"\n"
+"Per favore, apri una segnalazione dell'errore ed incolla questo codice "
+"nellarelativa pagina GitHub del progetto :https://github.com/H3rz3n/davinci-"
+"helper/issues"
 
-
-
+# DO NOT TRANSLATE THE LINK AND EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_2.py:103
 #, python-brace-format
 msgid ""
@@ -327,29 +318,34 @@ msgid ""
 "page :\n"
 "https://github.com/H3rz3n/davinci-helper/issues"
 msgstr ""
+"DEBUG : Si è verificato un errore durante l'avvio del wizard di "
+"installazione di DaVinci Resolve\n"
+"{start_wizard_err} \n"
+"\n"
+"Per favore, apri una segnalazione dell'errore ed incolla questo codice "
+"nellarelativa pagina GitHub del progetto :https://github.com/H3rz3n/davinci-"
+"helper/issues"
 
-
-
+# DO NOT TRANSLATE /OPT/RESOLVE
 #: davinci_helper/functions/function_3.py:57
 msgid ""
 "DEBUG : It was impossible to find the DaVinci Resolve installation folder "
 "in /opt/resolve. If you have not done it already, please install DaVinci "
 "Resolve and try again."
 msgstr ""
+"DEBUG : È stato impossibile trovare la cartella in cui è installato DaVinci "
+"Resolve nel percorso /opt/resolve. Se non lo hai ancora fatto, per favore "
+"installa DaVinci Resolve e prova di nuovo."
 
-
-
+# LEAVE THE 18.X.X NUMBER
 #: davinci_helper/functions/function_3.py:79
 msgid "DaVinci Resolve 18.x.x was found in the system"
-msgstr ""
+msgstr "È stato trovato DaVinci 18.x.x installato nel sistema"
 
-
-
+# LEAVE THE 19.X.X NUMBER
 #: davinci_helper/functions/function_3.py:91
 msgid "DaVinci Resolve 19.x.x was found in the system"
-msgstr ""
-
-
+msgstr "È stato trovato DaVinci 19.x.x installato nel sistema"
 
 #: davinci_helper/functions/function_3.py:103
 msgid ""
@@ -357,64 +353,65 @@ msgid ""
 "found. Please visit the GitHub page to find which version of DaVinci Resolve "
 "are supported."
 msgstr ""
-
-
+"DEBUG : È stata trovata installata una versione di DaVinci non supportata."
+"Per favore, visita la pagina GitHub del programma per scoprire qualiversioni "
+"di Resolve sono supportate."
 
 #: davinci_helper/functions/function_3.py:151
 msgid ""
 "The libraries were already moved inside the secure folder. There was no need "
 "to execute the function."
 msgstr ""
-
-
+"Le librerie di default sono state già spostate nella cartella sicura. Non è "
+"stato necessario eseguire questa funzione."
 
 #: davinci_helper/functions/function_3.py:162
 msgid "The following libraries will be moved in a secure folder :"
-msgstr ""
+msgstr "Le seguenti librerie verrano spostate in una cartella sicura"
 
-
-
+# DO NOT TRANSLATE /OPT/RESOLVE
 #: davinci_helper/functions/function_3.py:185
 msgid ""
 "DEBUG : It was impossible to create the secure folder where to move "
 "libraries in /opt/resolve/libs/disabled_libraries. Try again granting the "
 "app root permission or create it by yourself."
 msgstr ""
+"DEBUG : È stato impossibile creare la cartella sicura in /opt/resolve/libs/"
+"disabled_libraries in cui spostare le librerie. Per favore prova di nuovo "
+"utilizzando i permessi di amministratoreo creala autonomamente."
 
-
-
+# DO NOT TRANSLATE /OPT/RESOLVE
 #: davinci_helper/functions/function_3.py:211
 msgid ""
-"DEBUG : There was an error moving libgmodule*, libgio*, libgmodule* inside "
-"the secure folder in /opt/resolve/libs/disabled_libraries. Try again "
-"granting the app root permission or move it by yourself."
+"DEBUG : There was an error moving the libraries inside the secure folder in /"
+"opt/resolve/libs/disabled_libraries. Try again granting the app root "
+"permission or move it by yourself."
 msgstr ""
-
-
+"DEBUG : Si è verificato un errore nello spostamento delle librerie "
+"all'interno della cartella sicura in /opt/resolve/libs/disabled_libraries. "
+"Per favore prova di nuovo utilizzando i permessi di amministratore o "
+"spostale autonomamente."
 
 #: davinci_helper/functions/function_3.py:223
 msgid "The libraries were correctly moved inside the secure folder."
 msgstr ""
+"Le librerie disabilitate sono state spostate con successo nella cartella "
+"sicura"
 
-
-
+# DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:247
 msgid "A compatible Nvidia GPU was found : {gpu_name.upper()}"
-msgstr ""
+msgstr "È stata trovata una GPU Nvidia compatibile : {gpu_name.upper()}"
 
-
-
+# DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:312
 msgid "A compatible AMD GPU was found : {gpu_name.upper()}"
-msgstr ""
+msgstr "È stata trovata una GPU AMD compatibile : {gpu_name.upper()}"
 
-
-
+# DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:381
 msgid "A compatible Intel GPU was found : {gpu_name.upper()}"
-msgstr ""
-
-
+msgstr "È stata trovata una GPU Intel compatibile : {gpu_name.upper()}"
 
 #: davinci_helper/functions/function_4.py:417
 msgid ""
@@ -422,16 +419,17 @@ msgid ""
 "that you have a DaVinci Resolve compatible GPU, please open an issue and "
 "paste this error code on the project GitHub page :"
 msgstr ""
-
-
+"DEBUG : Non è stata trovata nessuna GPU supportata nel tuo sistema. Se sei "
+"consapevole che la tua GPU è supportata, per favore apri una segnalazione "
+"dell'errore ed incolla questo codice nella pagina GitHub del progetto : "
 
 #: davinci_helper/functions/function_4.py:446
 msgid ""
 "The RPM Fusion repository had already been added to the system, there was no "
 "need to add it."
 msgstr ""
-
-
+"I repository di RPM Fusion erano già presenti nel sistema, non è stato "
+"necessarioaggiungerli"
 
 #: davinci_helper/functions/function_4.py:463
 msgid ""
@@ -439,36 +437,36 @@ msgid ""
 "repository. Check your network connection and try again or add it by "
 "yourself."
 msgstr ""
-
-
+"DEBUG : Non è stato possibile aggiungere i repository RPM Fusion Free e Non-"
+"FreePer favore, controlla la tua connessione di rete e prova di nuovo, o "
+"aggiungilitu stesso al tuo sistema."
 
 #: davinci_helper/functions/function_4.py:475
 msgid "Successfully added the RPM Fusion Free and Non-Free repository."
 msgstr ""
-
-
+"I repository di RPM Fusion Free e Non-Free sono stati aggiunti con successo "
+"al sistema."
 
 #: davinci_helper/functions/function_4.py:535
 msgid ""
 "The proprietary Nvidia GPU driver was already installed on the system, there "
 "was no need to install it."
 msgstr ""
-
-
+"I driver GPU proprietari Nvidia erano già presenti nel sistema e non è stato "
+"necessario installarli."
 
 #: davinci_helper/functions/function_4.py:552
 msgid ""
 "DEBUG : It was impossible to install the proprietary Nvidia GPU driver. "
 "Check your network connection and try again or install it by yourself."
 msgstr ""
-
-
+"DEBUG : È stato impossibile installare i driver GPU proprietari Nvidia. Per "
+"favore, controlla la tua connessione di rete e prova di nuovo, o installali "
+"tu stesso."
 
 #: davinci_helper/functions/function_4.py:564
 msgid "Successfully installed the proprietary Nvidia GPU driver."
-msgstr ""
-
-
+msgstr "Sono stati installati con successo i driver GPU proprietari Nvidia"
 
 #: davinci_helper/functions/function_4.py:580
 #: davinci_helper/functions/function_4.py:601
@@ -476,8 +474,8 @@ msgid ""
 "DEBUG : It was impossible to install the drivers for your GPU because it is "
 "currently not supported by this app. "
 msgstr ""
-
-
+"DEBUG : Non è stato possibile installare i driver perchè la tua GPU al "
+"momento non è supportata da questo programma."
 
 #: davinci_helper/functions/function_4.py:582
 #: davinci_helper/functions/function_4.py:603
@@ -485,59 +483,55 @@ msgid ""
 "If you know that your GPU is supported by DaVinci Resolve please open an "
 "issue report on the project GitHub page :"
 msgstr ""
-
-
+"Se sei consapevole che la tua GPU è supportata da DaVinci Resolve, per "
+"favore apri una segnalazione dell'errore ed incolla questo codice nella "
+"pagina GitHub del progetto :"
 
 #.
 #: davinci_helper/functions/about_gui.py:138
 #: data/desktop/com.davinci.helper.app.desktop:5
 #: data/desktop/com.davinci.helper.app.metainfo.xml:17
 msgid "DaVinci Helper"
-msgstr ""
-
-
+msgstr "DaVinci Helper"
 
 #: davinci_helper/functions/about_gui.py:142
-msgid "Version 1.0"
-msgstr ""
+#: davinci_helper/functions/about_gui.py:143
+#, python-brace-format
+msgid "Version {version}"
+msgstr "Versione {version}"
 
-
-
-#: davinci_helper/functions/about_gui.py:146
+# DON'T TOUCH THE \TEXT#: davinci_helper/functions/about_gui.py:146
+#: davinci_helper/functions/about_gui.py:147
 msgid ""
 "Developed with love by Lorenzo \"Herzen\" Maiuri\n"
 "Translated with love by Camilla Fioretti"
 msgstr ""
-
-
+"Sviluppato con amore da Lorenzo \"Herzen\" Maiuri\n"
+"Tradotto con amore da Camilla Fioretti"
 
 #: davinci_helper/functions/settings_management.py:118
 msgid ""
 "The default settings has\n"
 "been loaded successfully"
 msgstr ""
-
-
+"Le impostazioni di default\n"
+"sono state ripristinate con successo"
 
 #: davinci_helper/functions/check_update.py:150
 msgid "A new update is available"
-msgstr ""
-
-
+msgstr "È disponibile un nuovo aggiornamento"
 
 #: davinci_helper/functions/check_update.py:154
 msgid ""
 "A new version of this app was found on the official GitHub repository.\n"
 "We recommend you update it before starting using it."
 msgstr ""
-
-
+"È disponibile una nuova versione di questo programma nel repository GitHub "
+"del progetto. Ti raccomandiamo di aggiornare prima di utilizzarlo."
 
 #: davinci_helper/functions/check_update.py:180
 msgid "You're using the latest version"
-msgstr ""
-
-
+msgstr "Stai già utilizzando l'ultima versione disponibile"
 
 #: davinci_helper/functions/check_update.py:184
 msgid ""
@@ -545,40 +539,41 @@ msgid ""
 "You're already using the latest version and you can use the app without "
 "issues."
 msgstr ""
-
-
+"Non è stata trovata nessuna nuova versione dell'app nel repository GitHub "
+"del progetto. Stai già utilizzando l'ultima versione disponibile e puoi "
+"utilizzarla senza incorrere in problemi."
 
 #: davinci_helper/main.py:264
 msgid ""
 "Install DaVinci\n"
 "dependencies"
 msgstr ""
-
-
+"Installa le\n"
+"dipendenze di DaVinci"
 
 #: davinci_helper/main.py:268
 msgid ""
 "Launch DaVinci\n"
 "Resolve installer"
 msgstr ""
-
-
+"Avvia l'installazione\n"
+"di DaVinci Resolve"
 
 #: davinci_helper/main.py:272
 msgid ""
 "Apply DaVinci post\n"
 "installation fix"
 msgstr ""
-
-
+"Applica la patch\n"
+"di post installazione"
 
 #: davinci_helper/main.py:276
 msgid ""
 "Check and install the\n"
 "correct GPU driver"
 msgstr ""
-
-
+"Controlla ed installa\n"
+"i driver GPU corretti"
 
 #: davinci_helper/main.py:526
 msgid ""
@@ -589,24 +584,30 @@ msgid ""
 "not diffuse any information about you or your system, the internet "
 "connection is required only if there are some missing libraries"
 msgstr ""
-
-
+"Questa parte del programma installa le dipendenze neccessarie per l'avvio "
+"dell'installazione di DaVinci Resolve. Lo script controllerà quali librerie "
+"sono già presenti nel sistema ed installerà quelle mancanti. Lo script non "
+"raccoglie ne diffonde alcun dato su di te o il tuo sistema ed utilizza la "
+"connessione ad internet solo se dovesse essere necessario scaricare i "
+"pacchetti mancanti"
 
 #: davinci_helper/main.py:582
 msgid ""
 "This part of the software asks you to indicate the DaVinci Resolve installer "
 "path and runs it with the necessary patch to allow it to work properly."
 msgstr ""
-
-
+"Questa parte del programma ti richiede di indicare il percorso "
+"dell'installer e successivamente avvia il wizard di installazione di DaVinci "
+"Resolve"
 
 #: davinci_helper/main.py:638
 msgid ""
 "This part of the software will put some of the dependencies shipped with "
 "DaVinci Resolve in a safe folder, in order to make it use the system one's"
 msgstr ""
-
-
+"Questa parte del programma sposta alcune librerie problematiche installate "
+"assieme a DaVinci in una cartella sicura, in modo che esso sia costretto ad "
+"usare quelle di sistema"
 
 #: davinci_helper/main.py:694
 msgid ""
@@ -615,57 +616,63 @@ msgid ""
 "finds missing or outdated drivers the software will install them to make "
 "your GPU fully support DaVinci Resolve."
 msgstr ""
-
-
+"Questa parte del programma rileva quale GPU è presente nel sistema e "
+"controlla se è supportata. In caso lo sia, installa i driver GPU necessari "
+"per permettere a DaVinci Resolve di rilevarla e renderla pienamente "
+"compatibile."
 
 #: davinci_helper/main.py:811
 msgid ""
 "You have successfully\n"
 "installed DaVinci Helper !"
 msgstr ""
-
-
+"Congratulazioni, hai installato\n"
+"con successo DaVinci Helper !"
 
 #: davinci_helper/main.py:815
 msgid ""
 "Thank you for trusting us and installing DaVinci Helper. We hope that\n"
 "this app will make the installation of DaVinci Resolve easier for you."
 msgstr ""
-
-
+"Grazie per averci dimostrato fiducia ed aver installato DaVinci Helper. "
+"Speriamo che\n"
+"che questo programma vi semplifichi il processo di installazione di DaVinci "
+"Resolve"
 
 #: davinci_helper/main.py:819
 msgid ""
 "This app is not affiliated in any way with BlackMagic Design,\n"
 "it's only a community project and comes without any guarantees."
 msgstr ""
-
-
+"Questo programma non è affiliato in alcun modo a BlackMagic Design, \n"
+"è solo un progetto nato dalla comunità e non ha con se alcuna garanzia."
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/function_2.ui:19
 msgid "Install DaVinci Resolve"
-msgstr ""
-
-
+msgstr "Installa DaVinci Resolve"
 
 #. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
 #. SETTING THE BUTTON TEXT LABEL
 #: data/ui/function_2.ui:347
 msgid "Open file"
-msgstr ""
-
-
+msgstr "Apri file"
 
 #. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
 #. SETTING THE BUTTON TEXT LABEL
 #: data/ui/function_2.ui:469
 msgid "Start installation"
-msgstr ""
+msgstr "Avvia l'installazione"
 
-
-
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -675,27 +682,29 @@ msgstr ""
 #: data/ui/gpu_warning_splash_screen.ui:434
 #: data/ui/welcome_messagge_splash_screen.ui:608 data/ui/check_update.ui:340
 msgid "Exit"
-msgstr ""
-
-
+msgstr "Esci"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/function_3.ui:19 data/ui/function_4.ui:19 data/ui/function_1.ui:19
 msgid "Install DaVinci Resolve dependencies"
-msgstr ""
-
-
+msgstr "Installa le dipendenze di DaVinci Resolve"
 
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
 #: data/ui/function_3.ui:402 data/ui/function_4.ui:406
 #: data/ui/error_dialog.ui:368 data/ui/function_1.ui:406
 msgid "Show logs"
-msgstr ""
+msgstr "Mostra i log"
 
-
-
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -705,18 +714,14 @@ msgstr ""
 #: data/ui/main_window.ui:327 data/ui/main_window.ui:593
 #: data/ui/main_window.ui:863 data/ui/main_window.ui:1132
 msgid "Info"
-msgstr ""
-
-
+msgstr "Info"
 
 #. INSERIMENTO DEL TESTO
 #. SETTING THE TEXT
 #: data/ui/info_function_1.ui:115 data/ui/info_function_2.ui:115
 #: data/ui/info_function_3.ui:115 data/ui/info_function_4.ui:115
 msgid "."
-msgstr ""
-
-
+msgstr "."
 
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
@@ -724,10 +729,16 @@ msgstr ""
 #: data/ui/info_function_3.ui:224 data/ui/info_function_4.ui:224
 #: data/ui/error_dialog.ui:396
 msgid "Understood"
-msgstr ""
+msgstr "Ho capito"
 
-
-
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
 #. START BUTTON 1 TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -735,173 +746,143 @@ msgstr ""
 #: data/ui/main_window.ui:299 data/ui/main_window.ui:565
 #: data/ui/main_window.ui:835 data/ui/main_window.ui:1104
 msgid "Start"
-msgstr ""
-
-
+msgstr "Avvia"
 
 #. NOME DELLA VOCE
 #. ITEM NAME
 #: data/ui/main_window.ui:1242
 msgid "Check for updates"
-msgstr ""
-
-
+msgstr "Ricerca di aggiornamenti"
 
 #. NOME DELLA VOCE
 #. ITEM NAME
 #: data/ui/main_window.ui:1260
 msgid "Load default settings"
-msgstr ""
-
-
+msgstr "Ripristina le impostazioni di default"
 
 #. NOME DELLA VOCE
 #. ITEM NAME
 #: data/ui/main_window.ui:1286
 msgid "About this app"
-msgstr ""
-
-
+msgstr "Informazioni su questa app"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/error_dialog.ui:27
 msgid "Error"
-msgstr ""
-
-
+msgstr "Errore"
 
 #. INSERIMENTO DEL TESTO
 #. SETTING THE ERROR TEXT
 #: data/ui/error_dialog.ui:160
 msgid "ERROR !"
-msgstr ""
-
-
+msgstr "Errore !"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/gpu_warning_splash_screen.ui:27
 msgid "This function is still a BETA !"
-msgstr ""
-
-
+msgstr "Questa funzione è ancora in BETA !"
 
 #. INSERIMENTO DEL TESTO
 #. SETTING THE TEXT
 #: data/ui/gpu_warning_splash_screen.ui:312
 #: data/ui/welcome_messagge_splash_screen.ui:486
 msgid "Never show again"
-msgstr ""
-
-
+msgstr "Non mostrare più"
 
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
 #: data/ui/gpu_warning_splash_screen.ui:462
 msgid "Start anyway"
-msgstr ""
-
-
+msgstr "Avvia comunque"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/welcome_messagge_splash_screen.ui:27
 msgid "Welcome"
-msgstr ""
-
-
+msgstr "Benvenut*"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/about_window.ui:27
 msgid "About"
-msgstr ""
-
-
+msgstr "Informazioni"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/reset_settings.ui:19
 msgid "Reset Settings"
-msgstr ""
-
-
+msgstr "Ripristino delle informazioni"
 
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #: data/ui/check_update.ui:27
 msgid "Check Update"
-msgstr ""
-
-
+msgstr "Ricerca di aggiornamenti"
 
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
 #: data/ui/check_update.ui:312
 msgid "Download"
-msgstr ""
+msgstr "Download"
 
-
-
+# DO NOT TRANSLATE
 #: data/desktop/com.davinci.helper.app.desktop:11
 msgid "Video;Editing;DaVinci;Resolve"
-msgstr ""
-
-
+msgstr "Video;Editing;DaVinci;Resolve"
 
 #.
 #: data/desktop/com.davinci.helper.app.metainfo.xml:21
 msgid "The best DaVinci Resolve companion app on Linux"
-msgstr ""
-
-
+msgstr "Il tuo miglior aiutante nell'uso di DaVinci Resolve"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:29
 msgid ""
 "This app is created with the purpose of making it easier for Linux users to "
 "install and use DaVinci Resolve."
 msgstr ""
-
-
+"Questo programma è stato creato con lo scopo si semplificare la vita agli "
+"utenti Linux ed aiutarli ad installare ed utilizzare DaVinci Resolve."
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:30
 msgid "Features :"
-msgstr ""
-
-
+msgstr "Caratteristiche :"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:32
 msgid "Automatic and dynamic dependecies installation"
-msgstr ""
-
-
+msgstr "Installazione delle dipendenze dinamica ed automatica"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:33
 msgid "DaVinci Resolve installation wizard easy start"
-msgstr ""
-
-
+msgstr "Avvio semplificato del wizard di installazione"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:34
 msgid "Application of post install patch"
-msgstr ""
-
-
+msgstr "Applicazione delle patch di post installazione"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:35
 msgid "Easy GPU Driver installation"
-msgstr ""
-
-
+msgstr "Installazione semplificata dei driver GPU"
 
 #.
 #: data/desktop/com.davinci.helper.app.metainfo.xml:51
 msgid "Lorenzo Maiuri"
-msgstr ""
-
-
+msgstr "Lorenzo Maiuri"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:89
 msgid "Initial release of DaVinci Helper."
+msgstr "Primo rilascio di DaVinci Helper."
+
+#: davinci_helper/functions/about_gui.py:151
+msgid ""
+"This software is published under the <a href=\"https://github.com/H3rz3n/"
+"davinci-helper/blob/main/LICENSE\">CC-BY-NC-SA license</a> and comes without "
+"any warranty.\n"
+"We are not responsibile for any side effect or damage on your equipment."
 msgstr ""
+"Questo programma è pubblicato sotto la <a href=\"https://github.com/H3rz3n/"
+"davinci-helper/blob/main/LICENSE\">licenza CC-BY-NC-SA</a> e non fornisce "
+"alcuna garanzia sul suo corretto funzionamento. \n"
+"Noi non siamo responsabile di alcun danno o malfunzionamento che possa "
+"verificarsi sui vostri dispositivi."

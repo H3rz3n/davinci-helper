@@ -8,17 +8,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-12 16:17+0200\n"
+"POT-Creation-Date: 2024-08-12 19:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"                 
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-
-
+# ALL THE TEXT NEED TO BE CONSIDERED JUST AS
+# NORMAL TEXT UNLESS OTHERWISE SPECIFIED
+# IF IS NOT SPECIFIED NEVER TRANSLATE ANYTHING INSIDE {}
+# BRACKETS, THE LINKS AND THE "DEBUG" WORD 
+# WHEN YOU FIND THE \N IT MEANS THAT IN THIS PARAGRAPH IS NEEDED
+# TO CORRECTLY GO TO THE NEXT LINE. IF YOU DON'T FIND THE \N
+# WHEN GOING TO THE NEXT LINE WITH "" REMEMBER TO LEAVE A SPACE
+# AFTER THE LAST WORD OF EVERY SENTENCE THAT DOES NOT HAS A . AT THE END.
+# WHEN YOU GO TO THE NEXT LINE WITH "" REMEMBER TO DON'T MAKE THE
+# SENTENCE TOO LONG. IT'S ALWAYS A GOOD THING TO REFER TO THE LENGHT 
+# OF THE UNTRANSLATED SENTENCE.
+# IF THERE IS NOT A . AT THE END OF THE SENTENCE DON'T PUT IT.
 #: davinci_helper/functions/function_1_gui.py:154
 #: davinci_helper/functions/function_3_gui.py:154
 #: davinci_helper/functions/function_4_gui.py:159
@@ -28,13 +38,9 @@ msgid ""
 "depending on on your computer and network performance"
 msgstr ""
 
-
-
 #: davinci_helper/functions/function_1_gui.py:387
 msgid "The dependencies have been correctly installed"
 msgstr ""
-
-
 
 #: davinci_helper/functions/function_1_gui.py:391
 msgid ""
@@ -42,21 +48,15 @@ msgid ""
 "you can close this window and correctly start the DaVinci Resolve installer."
 msgstr ""
 
-
-
 #: davinci_helper/functions/function_1_gui.py:411
 msgid "There was an error installing the dependencies"
 msgstr ""
-
-
 
 #: davinci_helper/functions/function_1_gui.py:415
 msgid ""
 "There was an error installing the dependencies. Please check the logs to "
 "have more details"
 msgstr ""
-
-
 
 #: davinci_helper/functions/function_1_gui.py:435
 #: davinci_helper/functions/function_3_gui.py:433
@@ -230,6 +230,7 @@ msgstr ""
 msgid "There was an unknown error. Please check the logs to have more details."
 msgstr ""
 
+# DO NOT TRANSLATE THE LINK AND EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_2.py:80
 #, python-brace-format
 msgid ""
@@ -243,6 +244,7 @@ msgid ""
 "https://github.com/H3rz3n/davinci-helper/issues"
 msgstr ""
 
+# DO NOT TRANSLATE THE LINK AND EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_2.py:103
 #, python-brace-format
 msgid ""
@@ -255,6 +257,7 @@ msgid ""
 "https://github.com/H3rz3n/davinci-helper/issues"
 msgstr ""
 
+# DO NOT TRANSLATE /OPT/RESOLVE
 #: davinci_helper/functions/function_3.py:57
 msgid ""
 "DEBUG : It was impossible to find the DaVinci Resolve installation folder "
@@ -262,10 +265,12 @@ msgid ""
 "Resolve and try again."
 msgstr ""
 
+# LEAVE THE 18.X.X NUMBER
 #: davinci_helper/functions/function_3.py:79
 msgid "DaVinci Resolve 18.x.x was found in the system"
 msgstr ""
 
+# LEAVE THE 19.X.X NUMBER
 #: davinci_helper/functions/function_3.py:91
 msgid "DaVinci Resolve 19.x.x was found in the system"
 msgstr ""
@@ -287,6 +292,7 @@ msgstr ""
 msgid "The following libraries will be moved in a secure folder :"
 msgstr ""
 
+# DO NOT TRANSLATE /OPT/RESOLVE
 #: davinci_helper/functions/function_3.py:185
 msgid ""
 "DEBUG : It was impossible to create the secure folder where to move "
@@ -294,25 +300,29 @@ msgid ""
 "app root permission or create it by yourself."
 msgstr ""
 
+# DO NOT TRANSLATE /OPT/RESOLVE
 #: davinci_helper/functions/function_3.py:211
 msgid ""
-"DEBUG : There was an error moving libgmodule*, libgio*, libgmodule* inside "
-"the secure folder in /opt/resolve/libs/disabled_libraries. Try again "
-"granting the app root permission or move it by yourself."
+"DEBUG : There was an error moving the libraries inside the secure folder in /"
+"opt/resolve/libs/disabled_libraries. Try again granting the app root "
+"permission or move it by yourself."
 msgstr ""
 
 #: davinci_helper/functions/function_3.py:223
 msgid "The libraries were correctly moved inside the secure folder."
 msgstr ""
 
+# DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:247
 msgid "A compatible Nvidia GPU was found : {gpu_name.upper()}"
 msgstr ""
 
+# DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:312
 msgid "A compatible AMD GPU was found : {gpu_name.upper()}"
 msgstr ""
 
+# DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:381
 msgid "A compatible Intel GPU was found : {gpu_name.upper()}"
 msgstr ""
@@ -379,10 +389,13 @@ msgid "DaVinci Helper"
 msgstr ""
 
 #: davinci_helper/functions/about_gui.py:142
-msgid "Version 1.0"
+#: davinci_helper/functions/about_gui.py:143
+#, python-brace-format
+msgid "Version {version}"
 msgstr ""
 
-#: davinci_helper/functions/about_gui.py:146
+# DON'T TOUCH THE \TEXT#: davinci_helper/functions/about_gui.py:146
+#: davinci_helper/functions/about_gui.py:147
 msgid ""
 "Developed with love by Lorenzo \"Herzen\" Maiuri\n"
 "Translated with love by Camilla Fioretti"
@@ -509,6 +522,14 @@ msgstr ""
 #. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #: data/ui/function_2.ui:571 data/ui/function_3.ui:430
 #: data/ui/function_4.ui:434 data/ui/function_1.ui:434
 #: data/ui/gpu_warning_splash_screen.ui:434
@@ -529,6 +550,14 @@ msgstr ""
 msgid "Show logs"
 msgstr ""
 
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -555,6 +584,14 @@ msgstr ""
 msgid "Understood"
 msgstr ""
 
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
 #. START BUTTON 1 TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -643,6 +680,7 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
+# DO NOT TRANSLATE
 #: data/desktop/com.davinci.helper.app.desktop:11
 msgid "Video;Editing;DaVinci;Resolve"
 msgstr ""
@@ -685,4 +723,12 @@ msgstr ""
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:89
 msgid "Initial release of DaVinci Helper."
+msgstr ""
+
+#: davinci_helper/functions/about_gui.py:151
+msgid ""
+"This software is published under the <a href=\"https://github.com/H3rz3n/"
+"davinci-helper/blob/main/LICENSE\">CC-BY-NC-SA license</a> and comes without "
+"any warranty.\n"
+"We are not responsibile for any side effect or damage on your equipment."
 msgstr ""
