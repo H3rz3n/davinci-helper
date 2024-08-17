@@ -79,6 +79,10 @@
     <url type="help">https://github.com/H3rz3n/davinci-helper/wiki</url>
 
 
+    
+
+       
+   
     <!-- -->
     <!-- -->
     <releases>
@@ -89,27 +93,13 @@
             </description>
         </release>
     
-    <!-- -->
-    <!-- -->
-    </releases>
 
-    <!-- -->
-    <!-- -->
-    <releases>
 
         <release version="1.0.1" date="2024-08-17">
             <description>
                 <p>Switched to GPL-3.0 license</p>
             </description>
         </release>
-    
-    <!-- -->
-    <!-- -->
-    </releases>
-
-    <!-- -->
-    <!-- -->
-    <releases>
 
         <release version="1.0" date="2024-08-11">
             <description>
@@ -117,9 +107,11 @@
             </description>
         </release>
     
+    
     <!-- -->
     <!-- -->
     </releases>
+
 
 
 
