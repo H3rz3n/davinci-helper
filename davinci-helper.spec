@@ -6,7 +6,7 @@ Name:           davinci-helper
 
 # VERSIONE DEL PROGRAMMA
 # APP VERSION
-Version:        1.0
+Version:        1.0.1
 
 
 

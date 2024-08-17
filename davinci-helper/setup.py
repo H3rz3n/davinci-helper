@@ -30,7 +30,7 @@ setup(
     
     # VERSIONE DEL PROGRAMMA
     # APP VERSION
-    version="1.0",
+    version="1.0.1",
 
     # AUTORE DEL PROGRAMMA
     # APP AUTHOR
@@ -67,7 +67,7 @@ setup(
     # CLASSIFICAZIONE DEL PROGETTO
     # PROJECT CLASSIFICATION
     classifiers=[
-        "Development Status :: 1.0 - Stable",
+        "Development Status :: 1.0.1 - Stable",
         "Topic :: Utilities",
         "License :: OSI Approved :: GPL-3.0 License",
     ],

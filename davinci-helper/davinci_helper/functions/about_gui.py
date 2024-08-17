@@ -139,7 +139,7 @@ class build_about_window():
 
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI ERRORE
         # LOADING THE SUBTITLE TEXT IN CASE OF ERROR
-        version = "1.0"
+        version = "1.0.1"
         self.sub_title_text.set_text(_(f"Version {version}"))
 
         # CARICO IL TESTO DEL SOTTOTITOLO IN CASO DI ERRORE
