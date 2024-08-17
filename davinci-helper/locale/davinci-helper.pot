@@ -740,7 +740,7 @@ msgstr ""
 #: davinci_helper/functions/about_gui.py:151
 msgid ""
 "This software is published under the <a href=\"https://github.com/H3rz3n/"
-"davinci-helper/blob/main/LICENSE\">CC-BY-NC-SA license</a> and comes without "
+"davinci-helper/blob/main/LICENSE\">GPL-3.0 license</a> and comes without "
 "any warranty.\n"
 "We are not responsibile for any side effect or damage on your equipment."
 msgstr ""

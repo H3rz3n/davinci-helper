@@ -1,7 +1,7 @@
 #
 # Copyright 2024 Lorenzo Maiuri
-# Pubblicato sotto licensa CC-BY-NC-SA
-# Published under CC-BY-NC-SA license
+# Pubblicato sotto licensa GPL-3.0
+# Published under GPL-3.0 license
 #   
 
 #-----------------------------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ setup(
 
     # LICENZA DI PUBBLICAZIONE
     # PUBBLICATION LICENSE
-    license="CC-BY-NC-SA-4.0",
+    license="GPL-3.0",
 
     # PAROLE CHIAVE
     # KEYWORDS
@@ -69,7 +69,7 @@ setup(
     classifiers=[
         "Development Status :: 1.0 - Stable",
         "Topic :: Utilities",
-        "License :: OSI Approved :: CC-BY-NC-SA-4.0 License",
+        "License :: OSI Approved :: GPL-3.0 License",
     ],
 
     #-----------------------------------------------------------------------------------------------------
