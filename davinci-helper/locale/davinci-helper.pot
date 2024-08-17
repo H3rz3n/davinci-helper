@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-13 09:35+0200\n"
+"POT-Creation-Date: 2024-08-17 12:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,6 +122,7 @@ msgstr ""
 #: davinci_helper/functions/function_3.py:213
 #: davinci_helper/functions/function_4.py:465
 #: davinci_helper/functions/function_4.py:554
+#: davinci_helper/functions/function_4.py:615
 msgid ""
 "Please open an issue report and paste this error code on the project GitHub "
 "page :"
@@ -182,10 +183,12 @@ msgid ""
 msgstr ""
 
 #: davinci_helper/functions/function_4_gui.py:672
+#: davinci_helper/functions/function_4_gui.py:674
 msgid "This function is still in BETA"
 msgstr ""
 
 #: davinci_helper/functions/function_4_gui.py:676
+#: davinci_helper/functions/function_4_gui.py:678
 msgid ""
 "This function is currently in a development state and it may not function "
 "properly.\n"
@@ -314,17 +317,17 @@ msgstr ""
 
 # DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:247
-msgid "A compatible Nvidia GPU was found : {gpu_name.upper()}"
+msgid "A compatible Nvidia GPU was found : {gpu_name_placeholder}"
 msgstr ""
 
 # DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:312
-msgid "A compatible AMD GPU was found : {gpu_name.upper()}"
+msgid "A compatible AMD GPU was found : {gpu_name_placeholder}"
 msgstr ""
 
 # DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:381
-msgid "A compatible Intel GPU was found : {gpu_name.upper()}"
+msgid "A compatible Intel GPU was found : {gpu_name_placeholder}"
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:417
@@ -369,6 +372,7 @@ msgstr ""
 
 #: davinci_helper/functions/function_4.py:580
 #: davinci_helper/functions/function_4.py:601
+#: davinci_helper/functions/function_4.py:644
 msgid ""
 "DEBUG : It was impossible to install the drivers for your GPU because it is "
 "currently not supported by this app. "
@@ -376,6 +380,7 @@ msgstr ""
 
 #: davinci_helper/functions/function_4.py:582
 #: davinci_helper/functions/function_4.py:603
+#: davinci_helper/functions/function_4.py:646
 msgid ""
 "If you know that your GPU is supported by DaVinci Resolve please open an "
 "issue report on the project GitHub page :"
@@ -391,7 +396,7 @@ msgstr ""
 #: davinci_helper/functions/about_gui.py:142
 #: davinci_helper/functions/about_gui.py:143
 #, python-brace-format
-msgid "Version {version}"
+msgid "Version {version_placeholder}"
 msgstr ""
 
 # DON'T TOUCH THE \TEXT#: davinci_helper/functions/about_gui.py:146
@@ -534,6 +539,18 @@ msgstr ""
 #. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #: data/ui/function_2.ui:571 data/ui/function_3.ui:430
 #: data/ui/function_4.ui:434 data/ui/function_1.ui:434
 #: data/ui/gpu_warning_splash_screen.ui:434
@@ -551,9 +568,24 @@ msgstr ""
 #. SETTING BUTTON TEXT LABEL
 #: data/ui/function_3.ui:402 data/ui/function_4.ui:406
 #: data/ui/error_dialog.ui:368 data/ui/function_1.ui:406
+#: davinci_helper/functions/function_1_gui.py:466
+#: davinci_helper/functions/function_3_gui.py:464
+#: davinci_helper/functions/function_4_gui.py:563
 msgid "Show logs"
 msgstr ""
 
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
 #. SETTING THE TITLE IN THE TITLE BAR
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -592,6 +624,18 @@ msgstr ""
 msgid "Understood"
 msgstr ""
 
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
 #. START BUTTON 1 TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -734,14 +778,15 @@ msgid "Lorenzo Maiuri"
 msgstr ""
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:89
+#: data/desktop/com.davinci.helper.app.metainfo.xml:116
 msgid "Initial release of DaVinci Helper."
 msgstr ""
 
 #: davinci_helper/functions/about_gui.py:151
 msgid ""
 "This software is published under the <a href=\"https://github.com/H3rz3n/"
-"davinci-helper/blob/main/LICENSE\">GPL-3.0 license</a> and comes without "
-"any warranty.\n"
+"davinci-helper/blob/main/LICENSE\">GPL-3.0 license</a> and comes without any "
+"warranty.\n"
 "We are not responsibile for any side effect or damage on your equipment."
 msgstr ""
 
@@ -751,4 +796,34 @@ msgid ""
 "consider to help us <a href=\"https://github.com/H3rz3n/davinci-"
 "helper\">developing</a> this app or <a href=\"https://www.paypal.com/donate/?"
 "hosted_button_id=CPCG2RFAV82T8\">making a donation</a>  to the project."
+msgstr ""
+
+#: davinci_helper/functions/function_4.py:591
+msgid ""
+"The open source AMD GPU driver was already installed on the system, there "
+"was no need to install it."
+msgstr ""
+
+#: davinci_helper/functions/function_4.py:613
+msgid ""
+"DEBUG : It was impossible to install the open source AMD GPU driver. Check "
+"your network connection and try again or install it by yourself."
+msgstr ""
+
+#: davinci_helper/functions/function_4.py:625
+msgid "Successfully installed the open source AMD GPU driver."
+msgstr ""
+
+#: davinci_helper/functions/function_1_gui.py:473
+#: davinci_helper/functions/function_3_gui.py:471
+#: davinci_helper/functions/function_4_gui.py:570
+msgid "Hide logs"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:88
+msgid "Added support for AMD GPU."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:102
+msgid "Switched to GPL-3.0 license"
 msgstr ""

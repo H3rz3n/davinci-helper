@@ -6,7 +6,7 @@ Name:           davinci-helper
 
 # VERSIONE DEL PROGRAMMA
 # APP VERSION
-Version:        1.0.1
+Version:        1.1.0
 
 
 
@@ -132,5 +132,11 @@ sudo systemctl restart polkit
 # ELENCO DEI CAMBIAMENTI DELLA VERSIONE
 # CHANGELOG OF THE VERSION
 %changelog
-* Wed Jul 03 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.0-1
-- Initial package creation
+* Sat Aug 17 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.1.0-1
+- Added AMD GPU support.
+
+* Sat Aug 17 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.0.1-1
+- Switched license to GPL-3.0
+
+* Tue Aug 13 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.0.0-1
+- Initial release

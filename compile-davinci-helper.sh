@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 clear
-version="1.0.1"
+version="1.1.0"
 
 mkdir -p "/home/$USER/build_davinci_helper"
 cp -r * "/home/$USER/build_davinci_helper"

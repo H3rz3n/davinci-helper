@@ -461,12 +461,14 @@ class build_function_3 ():
             # NASCONDO IL CAMPO DI TESTO DEI LOG
             # HIDING THE LOGS TEXT FIELD
             self.log_scrollable_container.set_visible(False)
+            self.log_button.set_label(_("Show logs"))
 
         else :
 
             # RENDO VISIBILE IL CAMPO DI TESTO DEI LOG
             # SHOWING THE LOGS TEXT FIELD
             self.log_scrollable_container.set_visible(True)
+            self.log_button.set_label(_("Hide logs"))
 
         #-----------------------------------------------------------------------------------------------------
         

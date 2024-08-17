@@ -325,7 +325,7 @@ class build_function_4 ():
 
             # RACCOLGO I LOG IN UNICA VARIABILE
             # JOINING THE LOGS AS A ONE VARIABLE
-            log_output = str(function_4_log_output) + str(function_4_log_err)
+            log_output = str(function_4_log_output)
 
             # OTTENGO CIÒ CHE È STATO PRECEDENTEMENTE CARICATO NEL BUFFER DEL TESTO
             # OBTAINING WHAT WAS PREVIOUSLY ADDED TO THE TEXT BUFFER
@@ -347,7 +347,7 @@ class build_function_4 ():
 
             # RACCOLGO I LOG IN UNICA VARIABILE
             # JOINING THE LOGS AS A ONE VARIABLE
-            log_output = str(function_4_log_output) + str(function_4_log_err)
+            log_output = str(function_4_log_output)
 
             # OTTENGO CIÒ CHE È STATO PRECEDENTEMENTE CARICATO NEL BUFFER DEL TESTO
             # OBTAINING WHAT WAS PREVIOUSLY ADDED TO THE TEXT BUFFER
@@ -369,7 +369,7 @@ class build_function_4 ():
 
             # RACCOLGO I LOG IN UNICA VARIABILE
             # JOINING THE LOGS AS A ONE VARIABLE
-            log_output = str(function_4_log_output) + str(function_4_log_err)
+            log_output = str(function_4_log_output)
 
             # OTTENGO CIÒ CHE È STATO PRECEDENTEMENTE CARICATO NEL BUFFER DEL TESTO
             # OBTAINING WHAT WAS PREVIOUSLY ADDED TO THE TEXT BUFFER
@@ -560,12 +560,14 @@ class build_function_4 ():
             # NASCONDO IL CAMPO DI TESTO DEI LOG
             # HIDING THE LOGS TEXT FIELD
             self.log_scrollable_container.set_visible(False)
+            self.log_button.set_label(_("Show logs"))
 
         else :
 
             # RENDO VISIBILE IL CAMPO DI TESTO DEI LOG
             # SHOWING THE LOGS TEXT FIELD
             self.log_scrollable_container.set_visible(True)
+            self.log_button.set_label(_("Hide logs"))
 
         #-----------------------------------------------------------------------------------------------------
         

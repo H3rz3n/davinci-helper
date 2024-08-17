@@ -243,8 +243,9 @@ def check_nvidia_gpu_support (gpu_model_name_list, gpu_model_number_list):
 
                         # STAMPO IL MODELLO DI GPU TROVATO COME COMPATIBILE
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
+                        gpu_name = gpu_name.upper()
                         print("")
-                        print(_(f"A compatible Nvidia GPU was found : {gpu_name.upper()}"))
+                        print(_("A compatible Nvidia GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
                         print("")
 
                         # IMPOSTO COME TROVATA UNA GPU COMPATIBILE NVIDIA
@@ -304,12 +305,13 @@ def check_amd_gpu_support (gpu_model_name_list, gpu_model_number_list):
                     
                     # CONTROLLO SE IL NOME DELLA GPU È PRESENTE NELLA LISTA DELLE GPU SUPPORTATE E SE COMBACIA CON IL NUMERO DI GPU TROVATO COMPATIBILE
                     # CHECKING IF THE GPU NAME IS PRESENT INSIDE THE SUPPORTED GPU LIST AND IF IT MATCHES THE GPU NUMERIC NAME FOUND AS COMPATIBLE
-                    if ((gpu_name.find("rx") != -1 or gpu_name.find("vega") != -1) and (line.find("RX") != -1 or line.find("VEGA") != -1 )) and line.find(gpu_number) != -1 :
+                    if ((re.search(r"\brx\b", gpu_name, re.IGNORECASE) or re.search(r"\bvega\b", gpu_name, re.IGNORECASE)) and (re.search(r"\bRX\b", line) or re.search(r"\bVEGA\b", line)) and re.search(rf"\b{re.escape(gpu_number)}\b", line)):
 
                         # STAMPO IL MODELLO DI GPU TROVATO COME COMPATIBILE
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
+                        gpu_name = gpu_name.upper()
                         print("")
-                        print(_(f"A compatible AMD GPU was found : {gpu_name.upper()}"))
+                        print(_(f"A compatible AMD GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
                         print("")
 
                         # IMPOSTO COME TROVATA UNA GPU COMPATIBILE AMD
@@ -377,8 +379,9 @@ def check_intel_gpu_support (gpu_model_name_list, gpu_model_number_list):
 
                         # STAMPO IL MODELLO DI GPU TROVATO COME COMPATIBILE
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
+                        gpu_name = gpu_name.upper()
                         print("")
-                        print(_(f"A compatible Intel GPU was found : {gpu_name.upper()}"))
+                        print(_(f"A compatible Intel GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
                         print("")
 
                         # IMPOSTO COME TROVATA UNA GPU COMPATIBILE INTEL
@@ -576,13 +579,56 @@ def install_amd_driver():
 
     #-----------------------------------------------------------------------------------------------------
     
-    print("")
-    print(_("DEBUG : It was impossible to install the drivers for your GPU because it is currently not supported by this app. "))
-    print("")
-    print(_("If you know that your GPU is supported by DaVinci Resolve please open an issue report on the project GitHub page :"))
-    print("https://github.com/H3rz3n/davinci-helper/issues")
-    print("")
-    exit(2)
+    # ACQUISISCO SE È GIÀ INSTALLATO IL DRIVER AMD
+    # ACQUIRING IF IS ALREADY INSTALLED THE AMD DRIVER
+    amd_driver_check = subprocess.Popen("dnf list installed | grep rocm && dnf list installed | grep freeworld", shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True )
+    amd_driver_check_output, amd_driver_check_err = amd_driver_check.communicate()
+
+    # CONTROLLO SE È GIÀ INSTALLATO IL DRIVER AMD
+    # CHECKING IF IS ALREADY INSTALLED THE AMD DRIVER         
+    if (amd_driver_check_output.find("rocm-opencl") != -1) and (amd_driver_check_output.find("rocm-smi") != -1) and (amd_driver_check_output.find("rocm-core") != -1) and (amd_driver_check_output.find("rocm-hip") != -1) and (amd_driver_check_output.find("mesa-va-drivers-freeworld") != -1) and (amd_driver_check_output.find("mesa-vdpau-drivers-freeworld") != -1):
+
+        # STAMPO IL MESSAGGIO
+        # PRINTING THE MESSAGE
+        print("")
+        print(_("The open source AMD GPU driver was already installed on the system, there was no need to install it."))
+        print("")
+
+    else :
+
+        # INSTALLO IL DRIVER AMD
+        # INSTALLING THE AMD DRIVER  
+        amd_driver_install = subprocess.Popen("dnf install -y rocm-opencl rocm-smi rocm-core rocm-hip", shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True )
+        amd_driver_install_output, amd_driver_install_error = amd_driver_install.communicate()
+
+        # CAMBIO IL DRIVER MESA CON LA VERSIONE COMPLETA
+        # SWAPPING THE MESA TO THE COMPLETE VERSION
+        amd_driver_swap = subprocess.Popen("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld", shell=True,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True )
+        amd_driver_swap_output, amd_driver_swap_error = amd_driver_swap.communicate()
+
+        # CONTROLLO SE CI SONO STATI ERRORI
+        # CHECKING IF THERE WERE ERRORS
+        if amd_driver_install_error != None and amd_driver_swap_error != None :
+
+            # STAMPO IL MESSAGGIO DI ERRORE
+            # PRINTING THE ERROR MESSAGE
+            print("")
+            print(_("DEBUG : It was impossible to install the open source AMD GPU driver. Check your network connection and try again or install it by yourself."))
+            print("")
+            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+            print("https://github.com/H3rz3n/davinci-helper/issues")
+            print("")            
+            exit(1)
+
+        else :
+
+            # STAMPO IL MESSAGGIO DI OPERAZIONE RIUSCITA
+            # PRINTING THE SUCCESSFUL STATE
+            print("")
+            print(_("Successfully installed the open source AMD GPU driver."))
+            print("")
+
+    #-----------------------------------------------------------------------------------------------------
     
     #-----------------------------------------------------------------------------------------------------
 
