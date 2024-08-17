@@ -85,7 +85,7 @@
 
         <release version="1.1.0" date="2024-08-17">
             <description>
-                <p>Added support for AMD GPU.</p>
+                <p>Added support for AMD GPUs.</p>
             </description>
         </release>
     
