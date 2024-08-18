@@ -28,7 +28,9 @@ Currently the app was tested only on these OSs :
 Currently the app support only DaVinci Resolve 18.x.y. In the future will be added the support for DaVinci Resolve 19.
 
 ## What GPUs are currently supported ?
-In this first releases only Nvidia GPUs will be supported because we don't have any AMD or Intel GPU where to test on. If you have and AMD or Intel GPU and want to support the project please help use testing the drivers or provide as an already working solution.
+Currently are supported the following GPUs :
+- **Nvidia :** from `1xxx` series to `4xxx` series
+- **AMD :** from `5xxx` series to `7xxx`
 
  ## Supported localization :
  - English
