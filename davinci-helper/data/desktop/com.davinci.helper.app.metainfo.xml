@@ -87,7 +87,7 @@
     <!-- -->
     <releases>
 
-        <release version="1.1.0" date="2024-08-17">
+        <release version="1.1.0" date="2024-17-17">
             <description>
                 <p>Added support for AMD GPUs.</p>
             </description>
@@ -95,13 +95,13 @@
     
 
 
-        <release version="1.0.1" date="2024-08-17">
+        <release version="1.0.1" date="2024-17-17">
             <description>
                 <p>Switched to GPL-3.0 license</p>
             </description>
         </release>
 
-        <release version="1.0" date="2024-08-11">
+        <release version="1.0" date="2024-13-11">
             <description>
                 <p>Initial release of DaVinci Helper.</p>
             </description>
