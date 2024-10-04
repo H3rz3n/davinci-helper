@@ -17,7 +17,8 @@ License:        GPL-3.0
 URL:            https://github.com/H3rz3n/davinci-helper
 
 # COMPILATION SOURCE
-Source0:        {{{ git_dir_pack }}}
+Source0:        https://github.com/H3rz3n/davinci-helper/blob/testing/%{name}-%{version}.tar.gz
+
 # COMPILATION ARCHITECTURE
 BuildArch:      noarch
 
