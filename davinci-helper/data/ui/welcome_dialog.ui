@@ -128,7 +128,7 @@
                             <property name="vexpand">true</property>
                             
                             <!-- SETTING CSS CLASS -->
-                            <property name="css-classes">Dialog_Subtitle_Container</property>
+                            <property name="css-classes">Welcome_Dialog_Subtitle_Container</property>
 
                             <!-- GRID POSITION START -->
                             <layout>

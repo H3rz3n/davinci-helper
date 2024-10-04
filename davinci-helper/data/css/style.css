@@ -200,6 +200,24 @@
 
 
 
+.Welcome_Dialog_Subtitle_Container{
+
+    /* SIZE PARAMETERS */
+    min-width: 500px;
+    min-height: 190px;
+
+    /* SPACING PARAMETERS */
+    margin: 20px;
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+}
+
+
+
 .Dialog_Subtitle_Container{
 
     /* SIZE PARAMETERS */
