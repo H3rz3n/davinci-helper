@@ -203,12 +203,11 @@
 .Welcome_Dialog_Subtitle_Container{
 
     /* SIZE PARAMETERS */
-    min-width: 550px;
-    min-height: 280px;
+    min-width: 500px;
 
     /* SPACING PARAMETERS */
     margin: 20px;
-    padding: 10px;
+    padding: 20px;
 
     /* COLOR AND BORDER PARAMETERS */
     background-color: @sidebar_bg_color;

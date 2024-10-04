@@ -89,7 +89,7 @@ msgid ""
 "Now you can correctly start the DaVinci Resolve installer."
 msgstr ""
 "Tutte le dipendenze sono state correttamente installate nel sistema.\n"
-"Ora puoi avviare correttamente l'installazione di DaVinci Resolve."
+"Ora puoi avviare senza errori l'installazione di DaVinci Resolve."
 
 #: davinci_helper/functions/gui/function_1_gui.py:426
 msgid "There was an error installing the dependencies"
@@ -308,10 +308,10 @@ msgid ""
 "finds missing or outdated drivers the software will install them to make "
 "your GPU fully support DaVinci Resolve."
 msgstr ""
-"Questa parte del software controllerà quali GPU sono presenti nel tuo sistema e poi, in caso "
-"ne sia trovagta una supportata, controllerà che i corretti driver siano installati. In caso "
-"dovesse trovare driver mancanti o datati, il software li installerà per permettere "
-"alla tua GPU di supportare completamente DaVinci Resolve."
+"Questa parte del software controllerà quali GPU sono presenti nel tuo sistema. In caso "
+"ne sia trovata una supportata, il programma controllerà che i driver corretti siano installati. In caso "
+"dovesse trovare driver mancanti o datati, il programma li installerà per permettere "
+"alla tua GPU di supportare DaVinci Resolve."
 
 #: davinci_helper/functions/gui/function_4_gui.py:406
 msgid "The GPUs drivers have been correctly installed"
@@ -393,8 +393,8 @@ msgid ""
 "Thank you for trusting us and installing DaVinci Helper. We hope that\n"
 "this app will make the management of DaVinci Resolve easier for you.\n"
 msgstr ""
-"Grazie per averci dato fiducia ed aver installato DaVinci Helper.\n\n"
-"Speriamo che questa app vi semplificherà l'utilizzo\ndi DaVinci Resolve su Linux.\n"
+"Grazie per averci dato fiducia ed aver installato DaVinci Helper.\n"
+"Speriamo che questa app vi semplificherà l'utilizzo di DaVinci Resolve su Linux.\n"
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:117
 msgid ""
@@ -402,7 +402,7 @@ msgid ""
 "it's only a community project and comes without any guarantees.\n"
 msgstr ""
 "Questa app non è in nessun modo associata a BlackMagic Design,\n"
-"è solo un progetto realizzato dalla commmunity e non ha alcuna garanzia.\n"
+"è un progetto realizzato dalla commmunity e non possiede alcuna garanzia.\n"
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:120
 msgid ""
@@ -412,7 +412,7 @@ msgid ""
 "hosted_button_id=CPCG2RFAV82T8\">making a donation</a>  to the project."
 msgstr ""
 "Se trovi questa app utile a vorresti migliorarla, puoi aiutarci "
-"a <a href=\"https://github.com/H3rz3n/davinci-helper\">svilupparla</a> "
+"\na <a href=\"https://github.com/H3rz3n/davinci-helper\">svilupparla</a> "
 "oppure <a href=\"https://www.paypal.com/donate/?"
 "hosted_button_id=CPCG2RFAV82T8\">facendo una donazione</a> al progetto. "
 
@@ -451,7 +451,7 @@ msgstr ""
 #: davinci_helper/functions/gui/function_5_gui.py:167
 #: davinci_helper/main.py:353
 msgid "DaVinci Video Converter"
-msgstr "Convertitore video per DaVinci"
+msgstr "Converti video per DaVinci"
 
 #: davinci_helper/functions/gui/function_5_gui.py:170
 msgid "Exported video settings"

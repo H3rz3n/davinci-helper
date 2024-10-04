@@ -14,11 +14,8 @@
     <!-- DIALOG START -->
     <object class="AdwDialog" id="dialog_window">
 
-        <!-- SETTING THE DIALOG WIDTH -->
-        <property name="content_width">650</property>
-
-        <!-- SETTING THE DIALOG HEIGHT -->
-        <property name="content_height">350</property>
+            <!-- SETTING THE SIZE TO BE DYNAMIC -->
+            <property name="follows-content-size">true</property>
 
 
 
