@@ -13,7 +13,7 @@ DaVinci Helper will help you with :
 - Starting the official installation wizard
 - Applying all the necessary post install tricks to properly start DaVinci Resolve
 - Installing the necessary GPU drivers to make to correctly use your graphic card with DaVinci Resolve
-- Convertingt the video to make them work with DaVinci Resolve Free
+- Converting the video to make them work with DaVinci Resolve Free
 
 ## What OSs are currently supported by the latest version :
 Currently the app was tested on these OSs :
@@ -36,13 +36,28 @@ Currently are supported the following GPUs :
 - **Nvidia :** from `1xxx` series to `4xxx` series
 - **AMD :** from `5xxx` series to `7xxx`
 
- ## Supported localization :
- - English
- - Italian
- - French (Coming soon)
- - Spanish (Coming soon)
- - German (Coming soon)
- - Japanese (Coming soon)
+## Supported localization :
+- English
+- Italian
+- French (Coming soon)
+- Spanish (Coming soon)
+- German (Coming soon)
+- Japanese (Coming soon)
+
+ ## How install DaVinci Helper :
+ The most simple way to install and keep updated DaVinci Helper is to add the project COPR repository to your repository list and simple install it with the DNF packet manager.
+
+### Adding the project COPR repository :
+```
+sudo dnf copr enable -y herzen/davinci-helper-test
+```
+
+### Installing the app :
+```
+sudo dnf install -y davinci-helper
+```
+Or simply you can use the store provided by your distribution.
+
 
 ## I want to contribute to the project, what can I do ?
 If you want to contribute to this project you can help us [testing the GPU drivers](https://github.com/H3rz3n/davinci-helper/discussions), translating the app or [making a donation](https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8) to support the work needed for the maintenance and the continue update to keep up with the latest DaVinci version.
