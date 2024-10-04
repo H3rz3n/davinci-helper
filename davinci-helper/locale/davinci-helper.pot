@@ -316,13 +316,13 @@ msgstr ""
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:114
 msgid ""
-"Thank you for trusting us and installing DaVinci Helper. We hope that\n"
+"Thank you for trusting us and installing DaVinci Helper. We hope that"
 "this app will make the management of DaVinci Resolve easier for you.\n"
 msgstr ""
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:117
 msgid ""
-"This app is not affiliated in any way with BlackMagic Design,\n"
+"This app is not affiliated in any way with BlackMagic Design,"
 "it's only a community project and comes without any guarantees.\n"
 msgstr ""
 
