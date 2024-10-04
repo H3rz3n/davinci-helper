@@ -29,7 +29,7 @@ Currently the app was tested on these OSs :
 - Nobara 39 - All spins - Use V1.1.0
 
 ## What version of DaVinci are currently supported :
-Currently the app support only DaVinci Resolve 18.x.y and 19.x.x.
+Currently the app support only DaVinci Resolve 18.x.y and 19.x.x in the Free and Studio version.
 
 ## What GPUs are currently supported ?
 Currently are supported the following GPUs :
