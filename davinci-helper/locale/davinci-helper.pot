@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-17 12:49+0200\n"
+"POT-Creation-Date: 2024-09-21 18:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,6 +123,9 @@ msgstr ""
 #: davinci_helper/functions/function_4.py:465
 #: davinci_helper/functions/function_4.py:554
 #: davinci_helper/functions/function_4.py:615
+#: davinci_helper/functions/function_4.py:468
+#: davinci_helper/functions/function_4.py:557
+#: davinci_helper/functions/function_4.py:618
 msgid ""
 "Please open an issue report and paste this error code on the project GitHub "
 "page :"
@@ -317,20 +320,27 @@ msgstr ""
 
 # DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:247
+#: davinci_helper/functions/function_4.py:248
+#, python-brace-format
 msgid "A compatible Nvidia GPU was found : {gpu_name_placeholder}"
 msgstr ""
 
 # DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:312
+#: davinci_helper/functions/function_4.py:314
+#, python-brace-format
 msgid "A compatible AMD GPU was found : {gpu_name_placeholder}"
 msgstr ""
 
 # DO NOT TRANSLATE EVERYTHING INSIDE THE {} BRACKETS
 #: davinci_helper/functions/function_4.py:381
+#: davinci_helper/functions/function_4.py:384
+#, python-brace-format
 msgid "A compatible Intel GPU was found : {gpu_name_placeholder}"
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:417
+#: davinci_helper/functions/function_4.py:420
 msgid ""
 "DEBUG : Has not been found any supported GPU inside your system. If you know "
 "that you have a DaVinci Resolve compatible GPU, please open an issue and "
@@ -338,12 +348,14 @@ msgid ""
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:446
+#: davinci_helper/functions/function_4.py:449
 msgid ""
 "The RPM Fusion repository had already been added to the system, there was no "
 "need to add it."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:463
+#: davinci_helper/functions/function_4.py:466
 msgid ""
 "DEBUG : It was impossible to add the RPM Fusion Free and Non-Free "
 "repository. Check your network connection and try again or add it by "
@@ -351,28 +363,33 @@ msgid ""
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:475
+#: davinci_helper/functions/function_4.py:478
 msgid "Successfully added the RPM Fusion Free and Non-Free repository."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:535
+#: davinci_helper/functions/function_4.py:538
 msgid ""
 "The proprietary Nvidia GPU driver was already installed on the system, there "
 "was no need to install it."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:552
+#: davinci_helper/functions/function_4.py:555
 msgid ""
 "DEBUG : It was impossible to install the proprietary Nvidia GPU driver. "
 "Check your network connection and try again or install it by yourself."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:564
+#: davinci_helper/functions/function_4.py:567
 msgid "Successfully installed the proprietary Nvidia GPU driver."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:580
 #: davinci_helper/functions/function_4.py:601
 #: davinci_helper/functions/function_4.py:644
+#: davinci_helper/functions/function_4.py:647
 msgid ""
 "DEBUG : It was impossible to install the drivers for your GPU because it is "
 "currently not supported by this app. "
@@ -381,6 +398,7 @@ msgstr ""
 #: davinci_helper/functions/function_4.py:582
 #: davinci_helper/functions/function_4.py:603
 #: davinci_helper/functions/function_4.py:646
+#: davinci_helper/functions/function_4.py:649
 msgid ""
 "If you know that your GPU is supported by DaVinci Resolve please open an "
 "issue report on the project GitHub page :"
@@ -551,6 +569,14 @@ msgstr ""
 #. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. INSERIMENTO DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #: data/ui/function_2.ui:571 data/ui/function_3.ui:430
 #: data/ui/function_4.ui:434 data/ui/function_1.ui:434
 #: data/ui/gpu_warning_splash_screen.ui:434
@@ -602,6 +628,14 @@ msgstr ""
 #. SETTING THE TITLE IN THE TITLE BAR
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
 #. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DEL TITOLO NELLA BARRA DEL TITOLO
+#. SETTING THE TITLE IN THE TITLE BAR
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #: data/ui/info_function_1.ui:19 data/ui/info_function_2.ui:19
 #: data/ui/info_function_3.ui:19 data/ui/info_function_4.ui:19
 #: data/ui/main_window.ui:327 data/ui/main_window.ui:593
@@ -624,6 +658,14 @@ msgstr ""
 msgid "Understood"
 msgstr ""
 
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
+#. START BUTTON 1 TEXT LABEL
+#. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
+#. SETTING BUTTON TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE ESEGUI 1
 #. START BUTTON 1 TEXT LABEL
 #. IMPOSTAZIONE DELL'ETICHETTA DEL BOTTONE
@@ -779,6 +821,7 @@ msgstr ""
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:89
 #: data/desktop/com.davinci.helper.app.metainfo.xml:116
+#: data/desktop/com.davinci.helper.app.metainfo.xml:106
 msgid "Initial release of DaVinci Helper."
 msgstr ""
 
@@ -799,18 +842,21 @@ msgid ""
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:591
+#: davinci_helper/functions/function_4.py:594
 msgid ""
 "The open source AMD GPU driver was already installed on the system, there "
 "was no need to install it."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:613
+#: davinci_helper/functions/function_4.py:616
 msgid ""
 "DEBUG : It was impossible to install the open source AMD GPU driver. Check "
 "your network connection and try again or install it by yourself."
 msgstr ""
 
 #: davinci_helper/functions/function_4.py:625
+#: davinci_helper/functions/function_4.py:628
 msgid "Successfully installed the open source AMD GPU driver."
 msgstr ""
 
@@ -825,5 +871,10 @@ msgid "Added support for AMD GPU."
 msgstr ""
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:102
+#: data/desktop/com.davinci.helper.app.metainfo.xml:100
 msgid "Switched to GPL-3.0 license"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:92
+msgid "Added support for AMD GPUs."
 msgstr ""
