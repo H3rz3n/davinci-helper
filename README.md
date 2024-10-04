@@ -48,7 +48,7 @@ Currently are supported the following GPUs :
  The most simple way to install and keep updated DaVinci Helper is to add the project COPR repository to your repository list and simple install it with the DNF packet manager.
 
 ### Adding the project COPR repository :
-Open a terminal window and paste this instruction : `sudo dnf copr enable -y herzen/davinci-helper-test`
+Open a terminal window and paste this instruction : `sudo dnf copr enable -y herzen/davinci-helper`
 
 ### Installing the app :
 Open a terminal window and paste this instruction : `sudo dnf install -y davinci-helper`
