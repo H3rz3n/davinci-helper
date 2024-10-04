@@ -94,7 +94,7 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION
 %changelog
-* Sat Oct 03 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.0-1
+* Fri Oct 04 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.0-1
 - Full Adwaita UI.
 - Added support for DaVinci 19.
 - Added support for Fedora 41.
