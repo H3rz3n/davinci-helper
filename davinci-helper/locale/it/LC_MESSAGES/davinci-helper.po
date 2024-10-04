@@ -393,7 +393,7 @@ msgid ""
 "Thank you for trusting us and installing DaVinci Helper. We hope that\n"
 "this app will make the management of DaVinci Resolve easier for you.\n"
 msgstr ""
-"Grazie per aver riposto fiducia in noi ed aver installato DaVinci Helper.\n\n"
+"Grazie per averci dato fiducia ed aver installato DaVinci Helper.\n\n"
 "Speriamo che questa app vi semplificherà l'utilizzo\ndi DaVinci Resolve su Linux.\n"
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:117
