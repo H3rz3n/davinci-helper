@@ -16,6 +16,9 @@ License:        GPL-3.0
 # WEB ADDRESS OF THE APP GITHUB
 URL:            https://github.com/H3rz3n/davinci-helper
 
+# COMPILATION SOURCE
+Source0:        %{name}-%{version}.tar.gz
+
 # COMPILATION ARCHITECTURE
 BuildArch:      noarch
 
