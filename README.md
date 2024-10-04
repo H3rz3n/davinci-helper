@@ -44,22 +44,22 @@ Currently are supported the following GPUs :
 - German (Coming soon)
 - Japanese (Coming soon)
 
- ## How install DaVinci Helper in Fedora 40 and 41 :
+ ## How install DaVinci Helper in Fedora 40 and 41
  The most simple way to install and keep updated DaVinci Helper is to add the project COPR repository to your repository list and simple install it with the DNF packet manager.
 
-### Adding the project COPR repository :
+### Adding the project COPR repository
 Open a terminal window and paste this instruction : 
 ```
 sudo dnf copr enable -y herzen/davinci-helper
 ```
 
-### Installing the app :
+### Installing the app
 Open a terminal window and paste this instruction :  
 ```
 sudo dnf install -y davinci-helper
 ```
 
-## How install DaVinci Helper in Fedora 38 and 39 :
+## How install DaVinci Helper in Fedora 38 and 39
 Download the legacy version of the app, then open a terminal window paste the following command :
 ```
 sudo dnf install -y
