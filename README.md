@@ -58,8 +58,6 @@ Open the command line and paste this instruction :
 ```
 sudo dnf install -y davinci-helper
 ```
-Or simply you can use the store provided by your distribution.
-
 
 ## I want to contribute to the project, what can I do ?
 If you want to contribute to this project you can help us [testing the GPU drivers](https://github.com/H3rz3n/davinci-helper/discussions), translating the app or [making a donation](https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8) to support the work needed for the maintenance and the continue update to keep up with the latest DaVinci version.
