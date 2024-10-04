@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/screenshot/" alt="Banner" width="600"/>
+  <img src="/screenshot/git_hub_thumbnail.png" alt="Banner" width="600"/>
 </p>
 
 ## What is DaVinci Helper :
