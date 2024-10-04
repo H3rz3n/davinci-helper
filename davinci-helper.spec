@@ -40,7 +40,7 @@ Requires: python3-pip
 %undefine __python_requires
 %{?python_disable_dependency_generator}
 
-#
+# REMOVING SHEBANG OPTIONS
 %undefine _py3_shebang_s
 %undefine _py3_shebang_P
 
