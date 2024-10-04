@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!-- INTERFACE START -->
+<interface>
+
+	<!-- DECLARING INTERFACE DEPENDENCIES VERSIONS -->
+    <requires lib="gtk" version="4.0"/>
+    <requires lib="Adw" version="1.0"/>
+
+
+
+    <!-- DIALOG START -->
+    <object class="AdwDialog" id="dialog_window">
+
+            <!-- SETTING THE SIZE TO BE DYNAMIC -->
+            <property name="follows-content-size">true</property>
+
+
+
+            <!-- TOOLBAR CONTAINER START -->
+            <child><object class="AdwToolbarView">
+
+
+
+                <!-- ADWAITA HEADER BAR CHILD START - POSITION TOP -->
+                <child type="top">
+
+                    <!-- ADWAITA HEADER BAR -->
+                    <object class="AdwHeaderBar"/>
+                
+                <!-- ADWAITA HEADER BAR CHILD END -->
+                </child>
+
+
+
+                <!-- CONTENT START -->
+                <property name="content">
+
+
+                    <!-- GRID START -->
+                    <object class="GtkGrid" id="dialog_grid">
+
+                        <!-- SETTING COLUMN HOMOGENITY -->
+                        <property name="column-homogeneous">true</property>
+
+                        <!-- SETTING ROW HOMOGENITY -->
+                        <property name="row-homogeneous">false</property>
+
+                        <!-- SETTING THE VERTICAL ALIGNMENT -->
+                        <property name="valign">center</property>
+
+                        <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                        <property name="halign">center</property>
+
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="hexpand">true</property>
+
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="vexpand">true</property>
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">Dialog_Grid</property>
+
+
+
+
+                        <!-- ICON START -->
+                        <child><object class="GtkImage" id="dialog_icon">
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Dialog_Icon</property>
+
+                            <!-- GRID POSITION START -->
+                            <layout>
+
+                                <!-- VERTICAL POSITION -->
+                                <property name="column">0</property>
+
+                                <!-- HORIZONTAL POSITION -->
+                                <property name="row">0</property>
+
+                            <!-- GRID POSITION END -->
+                            </layout>
+
+                        <!-- ICON END -->
+                        </object></child>
+
+
+
+                        <!-- LABEL START -->
+                        <child><object class="GtkLabel" id="dialog_title">
+
+                            <!-- SETTING THE TEXT ALLIGNMENT -->
+                            <property name="justify">center</property>
+
+                            <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                            <property name="wrap">true</property>
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">title-1</property>
+
+                            <!-- GRID POSITION START -->
+                            <layout>
+
+                                <!-- VERTICAL POSITION -->
+                                <property name="column">0</property>
+
+                                <!-- HORIZONTAL POSITION -->
+                                <property name="row">1</property>
+
+                            <!-- GRID POSITION END -->
+                            </layout>
+
+                        <!-- LABEL END -->
+                        </object></child>
+
+
+
+                        <!-- SCROLLED CONTAINER START -->
+                        <child><object class="GtkScrolledWindow" id="dialog_subtitle_container">
+
+                            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                            <property name="hexpand">true</property>
+
+                            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                            <property name="vexpand">true</property>
+                            
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Dialog_Subtitle_Container</property>
+
+                            <!-- GRID POSITION START -->
+                            <layout>
+
+                                <!-- VERTICAL POSITION -->
+                                <property name="column">0</property>
+
+                                <!-- HORIZONTAL POSITION -->
+                                <property name="row">2</property>
+
+                            <!-- GRID POSITION END -->
+                            </layout>
+
+
+
+                            <!-- BOX START -->
+                            <child><object class="GtkBox">
+
+                                <!-- SETTING THE ORIENTATION -->
+                                <property name="orientation">vertical</property>
+
+                                <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                                <property name="halign">center</property>
+
+                                <!-- LABEL START -->
+                                <child><object class="GtkLabel" id="dialog_subtitle_1">
+
+                                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                                    <property name="justify">center</property>
+
+                                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                    <property name="wrap">true</property>
+
+                                    <!-- SETTING CSS CLASS -->
+                                    <property name="css-classes">body</property>
+
+                                <!-- LABEL END -->
+                                </object></child>
+
+
+
+                                <!-- LABEL START -->
+                                <child><object class="GtkLabel" id="dialog_subtitle_2">
+
+                                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                                    <property name="justify">center</property>
+
+                                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                    <property name="wrap">true</property>
+
+                                    <!-- SETTING CSS CLASS -->
+                                    <property name="css-classes">body</property>
+
+                                <!-- LABEL END -->
+                                </object></child>
+
+
+
+                                <!-- LABEL START -->
+                                <child><object class="GtkLabel" id="dialog_subtitle_3">
+
+                                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                                    <property name="justify">center</property>
+
+                                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                    <property name="wrap">true</property>
+
+                                    <!-- SETTING CSS CLASS -->
+                                    <property name="css-classes">body</property>
+
+                                <!-- LABEL END -->
+                                </object></child>
+
+
+
+                            <!-- BOX END -->
+                            </object></child>
+
+
+
+                        <!-- SCROLLED CONTAINER END -->
+                        </object></child>
+
+
+
+                        <!-- BOX START -->
+                        <child><object class="GtkBox" id="dialog_switch_box">
+
+                            <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                            <property name="halign">center</property>
+
+                            <!-- SETTING THE SPACE BETWEEN OBJECTS -->
+                            <property name="spacing">10</property>
+
+                            <!-- GRID POSITION START -->
+                            <layout>
+
+                                <!-- VERTICAL POSITION -->
+                                <property name="column">0</property>
+
+                                <!-- HORIZONTAL POSITION -->
+                                <property name="row">3</property>
+
+                            <!-- GRID POSITION END -->
+                            </layout>
+
+
+
+                            <!-- LABEL START -->
+                            <child><object class="GtkLabel" id="dialog_switch_label">
+
+                                <!-- SETTING THE TEXT ALLIGNMENT -->
+                                <property name="justify">center</property>
+
+                                <!-- SETTING CSS CLASS -->
+                                <property name="css-classes">body</property>
+
+                            <!-- LABEL END -->
+                            </object></child>
+
+
+
+                            <!-- SWITCH START -->
+                            <child><object class="GtkSwitch" id="dialog_switch">
+        
+                            <!-- SWITCH END -->
+                            </object></child>
+
+
+
+                        <!-- BOX END -->
+                        </object></child>
+
+
+
+                        <!-- BOX START -->
+                        <child><object class="GtkBox" id="dialog_button_box">
+
+                            <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                            <property name="halign">center</property>
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Dialog_Button_Box</property>
+
+                            <!-- GRID POSITION START -->
+                            <layout>
+
+                                <!-- VERTICAL POSITION -->
+                                <property name="column">0</property>
+
+                                <!-- HORIZONTAL POSITION -->
+                                <property name="row">4</property>
+
+                            <!-- GRID POSITION END -->
+                            </layout>
+
+
+
+                            <!-- BUTTON START -->
+                            <child><object class="GtkButton" id="dialog_close_button">
+
+                                <!-- SETTING BUTTON TEXT LABEL -->
+                                <property name="label" translatable="yes">Close</property> 
+
+                                <!-- SETTING CSS CLASS START -->
+                                <style>
+
+                                    <class name="pill"/>
+                                    <class name="suggested-action"/>
+                                    <class name="Dialog_Button"/>
+
+                                <!-- SETTING CSS CLASS END -->
+                                </style>
+
+                            <!-- BUTTON END -->
+                            </object></child>
+
+
+
+                        <!-- BOX END -->
+                        </object></child>
+
+
+
+                    <!-- GRID END -->
+                    </object>
+
+
+
+                <!-- CONTENT END -->
+                </property>
+
+
+
+            <!-- TOOLBAR CONTAINER END -->
+            </object></child>
+
+
+
+    <!-- DIALOG END -->
+    </object>
+
+
+
+<!-- INTERFACE END -->
+</interface>

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!-- INTERFACE START -->
+<interface domain="davinci-helper">
+
+	<!-- DECLARING INTERFACE DEPENDENCIES VERSIONS -->
+    <requires lib="gtk" version="4.0"/>
+    <requires lib="Adw" version="1.0"/>
+
+
+
+    <!-- TEMPLATE START -->
+    <template class="Function5" parent="GtkScrolledWindow">
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="hexpand">true</property>
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="vexpand">true</property>
+
+
+
+        <!-- BOX START -->
+        <child><object class="GtkBox">
+
+
+
+            <!-- GRID START -->
+            <child><object class="GtkGrid" id="converter_container_1">
+
+
+                <!-- SETTING COLUMN HOMOGENITY -->
+                <property name="column-homogeneous">true</property>
+
+                <!-- SETTING ROW HOMOGENITY -->
+                <property name="row-homogeneous">false</property>
+
+                <!-- SETTING THE VERTICAL ALIGNMENT -->
+                <property name="valign">center</property>
+
+                <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                <property name="halign">center</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="hexpand">true</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="vexpand">true</property>
+
+                <!-- SETTING CSS CLASS -->
+                <property name="css-classes">Function_Section_1_Grid</property>
+
+
+
+                <!-- ICON START -->
+                <child><object class="GtkImage" id="converter_icon">
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">Function_Icon</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">0</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- ICON END -->
+                </object></child>
+
+
+
+
+
+                <!-- LABEL START -->
+                <child><object class="GtkLabel" id="converter_title">
+
+                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                    <property name="justify">center</property>
+
+                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                    <property name="wrap">true</property>
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">title-1</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">1</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- LABEL END -->
+                </object></child>
+
+
+
+
+
+                <!-- SCROLLED CONTAINER START -->
+                <child><object class="GtkScrolledWindow" id="converter_file_list_scrollable_container">
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">Converter_File_List_Scrollable_Container</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">2</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+
+
+                    <!-- BOX LIST START -->
+                    <child><object class="GtkListBox" id="converter_file_list_container">
+
+                        <!-- SETTING THE HORIZONTAL EXPANSION OF THE CONTAINER -->
+                        <property name="hexpand">true</property>
+
+                        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                        <property name="vexpand">true</property>
+
+                        <property name="selection-mode">none</property>
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">navigation-sidebar</property>
+
+                        
+
+                        
+                        
+
+
+
+                    <!-- BOX LIST END -->
+                    </object></child>
+
+
+                    
+                <!-- SCROLLED CONTAINER END -->
+                </object></child>
+
+
+
+
+
+
+
+
+                <!-- LABEL START -->
+                <child><object class="GtkLabel" id="converter_subtitle">
+
+                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                    <property name="justify">center</property>
+
+                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                    <property name="wrap">true</property>
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">title-2</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">3</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- LABEL END -->
+                </object></child>
+
+
+
+
+
+                <!-- BOX START -->
+                <child><object class="GtkBox" id="converter_settings_container">
+
+                    <!-- SETTING THE ORIENTATION -->
+                    <property name="orientation">horizontal</property>
+
+                    <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                    <property name="halign">center</property>
+
+                    <!-- SETTING THE VERTICAL ALIGNMENT -->
+                    <property name="valign">center</property>
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">Converter_Settings_Container</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">4</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+
+
+                    <!-- BOX START -->
+                    <child><object class="GtkBox" id="converter_video_quality_dropdown_container">
+
+                        <!-- SETTING THE ORIENTATION -->
+                        <property name="orientation">horizontal</property>
+
+                        <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                        <property name="halign">center</property>
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">toolbar</property>
+
+
+
+                        <!-- LABEL START -->
+                        <child><object class="GtkLabel" id="converter_video_quality_dropdown_label">
+
+                            <!-- SETTING THE TEXT -->
+                            <property name="label" translatable="yes">Video quality</property>
+
+                            <!-- SETTING THE TEXT ALLIGNMENT -->
+                            <property name="justify">center</property>
+
+                            <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                            <property name="wrap">true</property>
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">body</property>
+
+                        <!-- LABEL END -->
+                        </object></child>
+
+
+
+                        <!-- DROPDOWN START -->
+                        <child><object class="GtkDropDown" id="converter_video_quality_dropdown">
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Converter_Dropdown</property>
+
+                             <!-- MENU START -->
+                            <property name="model">
+                                <object class="GtkStringList">
+                                    <items>
+                                        <item translatable="yes">Original</item>
+                                        <item translatable="yes">High</item>
+                                        <item translatable="yes">Medium</item>
+                                        <item translatable="yes">Low</item>
+                                    </items>
+                                </object>
+
+                             <!-- MENU END -->
+                            </property>
+
+
+
+                        <!-- DROPDOWN END -->
+                        </object></child>
+
+
+
+                    <!-- BOX END -->
+                    </object></child>
+
+
+
+                    <!-- BOX START -->
+                    <child><object class="GtkBox" id="converter_audio_quality_dropdown_container">
+
+                        <!-- SETTING THE ORIENTATION -->
+                        <property name="orientation">horizontal</property>
+
+                        <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                        <property name="halign">center</property>
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">toolbar</property>
+
+
+
+                        <!-- LABEL START -->
+                        <child><object class="GtkLabel" id="converter_audio_quality_dropdown_label">
+
+                            <!-- SETTING THE TEXT -->
+                            <property name="label" translatable="yes">Audio quality</property>
+
+                            <!-- SETTING THE TEXT ALLIGNMENT -->
+                            <property name="justify">center</property>
+
+                            <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                            <property name="wrap">true</property>
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">body</property>
+
+                        <!-- LABEL END -->
+                        </object></child>
+
+
+
+                        <!-- DROPDOWN START -->
+                        <child><object class="GtkDropDown" id="converter_audio_quality_dropdown">
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Converter_Dropdown</property>
+                            
+                            <!-- MENU START -->
+                            <property name="model">
+                                <object class="GtkStringList">
+                                    <items>
+                                        <item translatable="yes">Original</item>
+                                        <item translatable="yes">High</item>
+                                        <item translatable="yes">Medium</item>
+                                        <item translatable="yes">Low</item>                                                                                
+                                    </items>
+                                </object>
+                            <!-- MENU END -->
+                            </property>
+
+
+
+                        <!-- DROPDOWN END -->
+                        </object></child>
+
+
+
+                    <!-- BOX END -->
+                    </object></child>
+
+
+
+                    <!-- BOX START -->
+                    <child><object class="GtkBox" id="converter_entry_box">
+
+                        <!-- SETTING THE ORIENTATION -->
+                        <property name="orientation">horizontal</property>
+
+                        <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                        <property name="halign">center</property>
+
+                        <!-- SETTING THE VERTICAL ALIGNMENT -->
+                        <property name="valign">center</property>
+
+                        <!-- SETTING CSS CLASS START -->
+                        <style>
+
+                            <class name="linked"/>
+                            <class name="Converter_Entry_Box"/>
+
+                        <!-- SETTING CSS CLASS END -->
+                        </style>
+
+
+
+                        <!-- ENTRY FIELD START -->
+                        <child><object class="GtkEntry" id="converter_entry">
+
+                            <!-- PREVIEW TEXT OF THE TEXT FIELD -->
+                            <property name="placeholder_text" translatable="Yes">Please select the output folder</property>
+
+                            <!-- SETTING THE HORIZONTAL EXPANSION OF THE CONTAINER -->
+                            <property name="hexpand">true</property>
+
+                            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                            <property name="vexpand">true</property>
+
+                            <!-- SETTING THE ENTRY TO NOT BE MANUALLY WRITTEN BY THE USER -->
+                            <property name="can_focus">false</property>
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Converter_Entry</property>
+
+                        <!-- ENTRY FIELD END -->
+                        </object></child>
+
+
+
+                        <!-- BUTTON START -->
+                        <child><object class="GtkButton" id="converter_entry_button">
+
+                            <!-- SETTING BUTTON ICON -->
+                            <property name="icon-name">folder-drag-accept-symbolic</property>
+
+                            <!-- SETTING CSS CLASS -->
+                            <property name="css-classes">Converter_Entry_Button</property>
+
+                        <!-- BUTTON END -->
+                        </object></child>
+
+
+
+                    <!-- BOX END -->
+                    </object></child>
+
+
+
+                <!-- BOX END -->
+                </object></child>
+
+
+
+
+
+                <!-- BOT START -->
+                <child><object class="GtkBox" id="converter_button_box">
+
+                    <!-- SETTING THE ORIENTATION -->
+                    <property name="orientation">horizontal</property>
+
+                    <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                    <property name="halign">center</property>
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">Function_Button_Box</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">5</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="converter_start_button">
+
+                        <!-- SETTING BUTTON TEXT LABEL -->
+                        <property name="label" translatable="yes">Convert</property> 
+
+                        <!-- SETTING CSS CLASS START -->
+                        <style>
+
+                            <class name="pill"/>
+                            <class name="suggested-action"/>
+                            <class name="Function_Button"/>
+
+                        <!-- SETTING CSS CLASS END -->
+                        </style>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="converter_load_files_button">
+
+                        <!-- SETTING BUTTON TEXT LABEL -->
+                        <property name="label" translatable="yes">Load files</property> 
+
+                        <!-- SETTING CSS CLASS START -->
+                        <style>
+
+                            <class name="pill"/>
+                            <class name="Function_Button"/>
+
+                        <!-- SETTING CSS CLASS END -->
+                        </style>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="converter_delete_files_button">
+
+                        <!-- SETTING BUTTON TEXT LABEL -->
+                        <property name="label" translatable="yes">Clean list</property> 
+
+                        <!-- SETTING CSS CLASS START -->
+                        <style>
+
+                            <class name="pill"/>
+                            <class name="error"/>
+                            <class name="Function_Button"/>
+
+                        <!-- SETTING CSS CLASS END -->
+                        </style>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                <!-- BOX END -->
+                </object></child>
+
+
+
+            <!-- GRID END -->
+            </object></child>
+
+
+
+
+
+            <!-- BOX START -->
+            <child><object class="GtkBox" id="converter_container_2">
+
+                <!-- SETTING THE OBJECT VISIBILITY -->
+                <property name="visible">false</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="hexpand">true</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="vexpand">true</property>
+                
+                <!-- SETTING THE VERTICAL ALIGNMENT -->
+                <property name="valign">center</property>
+
+                <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                <property name="halign">center</property>
+
+
+
+                
+
+
+
+            <!-- BOX END -->
+            </object></child>
+
+
+
+
+
+
+
+            <!-- BOX START -->
+            <child><object class="GtkGrid" id="converter_container_3">
+
+                <!-- SETTING THE OBJECT VISIBILITY -->
+                <property name="visible">false</property>
+
+                <!-- SETTING COLUMN HOMOGENITY -->
+                <property name="column-homogeneous">true</property>
+
+                <!-- SETTING ROW HOMOGENITY -->
+                <property name="row-homogeneous">false</property>
+
+                <!-- SETTING THE VERTICAL ALIGNMENT -->
+                <property name="valign">center</property>
+
+                <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                <property name="halign">center</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="hexpand">true</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="vexpand">true</property>
+
+                <!-- SETTING CSS CLASS -->
+                <property name="css-classes">Function_Section_1_Grid</property>
+
+
+
+                <!-- PROGRESSBAR START -->
+                <child><object class="GtkProgressBar" id="converter_progressbar">
+
+                    <!-- SETTING IF SHOW THE TEXT LABEL -->
+                    <property name="show_text">true</property>
+
+                    <!-- SETTING THE TEXT LABEL -->
+                    <property name="text">Starting file conversion...</property>
+
+                    <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                    <property name="hexpand">true</property>
+
+                    <!-- SETTING CSS CLASS START -->
+                    <style>
+
+                        <class name="Converter_Progressbar"/>
+
+                    <!-- SETTING CSS CLASS END -->
+                    </style>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">1</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+
+                <!-- PROGRESSBAR END -->
+                </object></child>
+
+
+
+                <!-- LABEL START -->
+                <child><object class="GtkLabel" id="converter_progressbar_label">
+
+                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                    <property name="justify">center</property>
+
+                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                    <property name="wrap">true</property>
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes"></property>
+
+                    <!-- SETTING CSS CLASS START -->
+                    <style>
+
+                        <class name="title-4"/>
+                        <class name="Converter_Progressbar_Label"/>
+
+                    <!-- SETTING CSS CLASS END -->
+                    </style>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">2</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- LABEL END -->
+                </object></child>
+
+
+
+            <!-- BOX END -->
+            </object></child>
+
+
+
+
+            
+
+
+
+        <!-- BOX END -->
+        </object></child>
+
+
+
+    <!-- TEMPLATE END -->
+    </template>
+
+
+
+<!-- INTERFACE END -->
+</interface>
+
+

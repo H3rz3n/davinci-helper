@@ -1,6 +1,10 @@
 #!/usr/bin/bash
 clear
-version="1.1.0"
+version="2.0.0"
+
+if [ -d "/home/$USER/build_davinci_helper" ]; then
+    rm -rf "/home/$USER/build_davinci_helper"
+fi
 
 mkdir -p "/home/$USER/build_davinci_helper"
 cp -r * "/home/$USER/build_davinci_helper"
@@ -15,14 +19,12 @@ rpmbuild -bb davinci-helper.spec
 
 
 sudo dnf remove -y davinci-helper
-sudo dnf install -y /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.fc40.noarch.rpm --disablerepo=*
+sudo dnf install -y /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.noarch.rpm --disablerepo=*
 
 
-cp /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.fc40.noarch.rpm /home/$USER/Pubblici/Test_Davinci_Helper
+cp /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.noarch.rpm /home/$USER/Pubblici/Test_Davinci_Helper
 cd .. 
 rm -rf "/home/$USER/build_davinci_helper"
 rm "/home/$USER/rpmbuild/SOURCES/davinci-helper-${version}.tar.gz"
-
-
 
 
