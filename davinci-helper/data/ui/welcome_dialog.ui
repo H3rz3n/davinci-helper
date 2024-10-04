@@ -118,17 +118,15 @@
 
 
 
+                        <!-- SCROLLED CONTAINER START -->
+                        <child><object class="GtkScrolledWindow" id="dialog_subtitle_container">
 
+                            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                            <property name="hexpand">true</property>
 
-                        <!-- BOX START -->
-                        <child><object class="GtkBox">
-
-                            <!-- SETTING THE ORIENTATION -->
-                            <property name="orientation">vertical</property>
-
-                            <!-- SETTING THE HORIZONTAL ALIGNMENT -->
-                            <property name="halign">center</property>
-
+                            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                            <property name="vexpand">true</property>
+                            
                             <!-- SETTING CSS CLASS -->
                             <property name="css-classes">Welcome_Dialog_Subtitle_Container</property>
 
@@ -146,61 +144,73 @@
 
 
 
-                            <!-- LABEL START -->
-                            <child><object class="GtkLabel" id="dialog_subtitle_1">
+                            <!-- BOX START -->
+                            <child><object class="GtkBox">
 
-                                <!-- SETTING THE TEXT ALLIGNMENT -->
-                                <property name="justify">center</property>
+                                <!-- SETTING THE ORIENTATION -->
+                                <property name="orientation">vertical</property>
 
-                                <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-                                <property name="wrap">true</property>
+                                <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                                <property name="halign">center</property>
 
-                                <!-- SETTING CSS CLASS -->
-                                <property name="css-classes">body</property>
+                                <!-- LABEL START -->
+                                <child><object class="GtkLabel" id="dialog_subtitle_1">
 
-                            <!-- LABEL END -->
+                                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                                    <property name="justify">center</property>
+
+                                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                    <property name="wrap">true</property>
+
+                                    <!-- SETTING CSS CLASS -->
+                                    <property name="css-classes">body</property>
+
+                                <!-- LABEL END -->
+                                </object></child>
+
+
+
+                                <!-- LABEL START -->
+                                <child><object class="GtkLabel" id="dialog_subtitle_2">
+
+                                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                                    <property name="justify">center</property>
+
+                                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                    <property name="wrap">true</property>
+
+                                    <!-- SETTING CSS CLASS -->
+                                    <property name="css-classes">body</property>
+
+                                <!-- LABEL END -->
+                                </object></child>
+
+
+
+                                <!-- LABEL START -->
+                                <child><object class="GtkLabel" id="dialog_subtitle_3">
+
+                                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                                    <property name="justify">center</property>
+
+                                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                                    <property name="wrap">true</property>
+
+                                    <!-- SETTING CSS CLASS -->
+                                    <property name="css-classes">body</property>
+
+                                <!-- LABEL END -->
+                                </object></child>
+
+
+
+                            <!-- BOX END -->
                             </object></child>
 
 
 
-                            <!-- LABEL START -->
-                            <child><object class="GtkLabel" id="dialog_subtitle_2">
-
-                                <!-- SETTING THE TEXT ALLIGNMENT -->
-                                <property name="justify">center</property>
-
-                                <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-                                <property name="wrap">true</property>
-
-                                <!-- SETTING CSS CLASS -->
-                                <property name="css-classes">body</property>
-
-                            <!-- LABEL END -->
-                            </object></child>
-
-
-
-                            <!-- LABEL START -->
-                            <child><object class="GtkLabel" id="dialog_subtitle_3">
-
-                                <!-- SETTING THE TEXT ALLIGNMENT -->
-                                <property name="justify">center</property>
-
-                                <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
-                                <property name="wrap">true</property>
-
-                                <!-- SETTING CSS CLASS -->
-                                <property name="css-classes">body</property>
-
-                            <!-- LABEL END -->
-                            </object></child>
-
-
-
-                        <!-- BOX END -->
+                        <!-- SCROLLED CONTAINER END -->
                         </object></child>
-
-
 
 
 

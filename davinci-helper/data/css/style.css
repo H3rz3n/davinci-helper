@@ -204,6 +204,7 @@
 
     /* SIZE PARAMETERS */
     min-width: 500px;
+    min-height: 200px;
 
     /* SPACING PARAMETERS */
     margin: 20px;
