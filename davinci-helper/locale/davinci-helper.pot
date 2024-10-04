@@ -1006,3 +1006,7 @@ msgstr ""
 #: data/ui/file_size_warning_dialog.ui:275
 msgid "Cancel"
 msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:92
+msgid "Added support for AMD GPUs."
+msgstr ""
