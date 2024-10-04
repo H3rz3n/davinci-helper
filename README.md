@@ -54,7 +54,7 @@ Open a terminal window and paste this instruction : `sudo dnf copr enable -y her
 Open a terminal window and paste this instruction : `sudo dnf install -y davinci-helper`
 
 ## How install DaVinci Helper in Fedora 38 and 39 :
-Download the legacy version of the app, then open a terminal window paste the following command 
+Download the legacy version of the app, then open a terminal window paste the following command  
 `sudo dnf install -y`, then drag and drop the app package `.rpm` file or write the path to the app package.
 
 ## I want to contribute to the project, what can I do ?
