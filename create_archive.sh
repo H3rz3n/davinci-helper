@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 clear
-version="1.2.0"
+version="2.0.0"
 
 mv davinci-helper davinci-helper-${version}
 tar -cvzf davinci-helper-${version}.tar.gz davinci-helper-${version}

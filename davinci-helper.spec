@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        1.2.0
+Version:        2.0.0
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -17,8 +17,7 @@ License:        GPL-3.0
 URL:            https://github.com/H3rz3n/davinci-helper
 
 # COMPILATION SOURCE
-Source0:        https://github.com/H3rz3n/davinci-helper/blob/testing/%{name}-%{version}.tar.gz
-
+Source0:        {{{ git_dir_pack }}}
 # COMPILATION ARCHITECTURE
 BuildArch:      noarch
 
