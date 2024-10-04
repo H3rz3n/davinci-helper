@@ -72,7 +72,7 @@
 
     <!-- -->
     <!-- -->
-    <url type="donation">https://www.gnome.org/donate/</url>
+    <url type="donation">https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8</url>
 
     <!-- -->
     <!-- -->
@@ -87,7 +87,23 @@
     <!-- -->
     <releases>
 
-        <release version="1.1.0" date="2024-17-17">
+        <release version="2.0.0" date="2024-17-9">
+            <description>
+                
+                    <ul>
+                        <li>Brand new UI based on Adwaita</li>
+                        <li>Added support for video conversion</li>
+                        <li>Improved support for AMD GPUs</li>
+                        <li>Added light theme and theme switch</li>
+                        <li>Improved performance</li>
+                    </ul>
+                
+            </description>
+        </release>
+    
+
+
+        <release version="1.1.0" date="2024-21-8">
             <description>
                 <p>Added support for AMD GPUs.</p>
             </description>
@@ -95,13 +111,13 @@
     
 
 
-        <release version="1.0.1" date="2024-17-17">
+        <release version="1.0.1" date="2024-21-8">
             <description>
                 <p>Switched to GPL-3.0 license</p>
             </description>
         </release>
 
-        <release version="1.0" date="2024-13-11">
+        <release version="1.0.0" date="2024-13-8">
             <description>
                 <p>Initial release of DaVinci Helper.</p>
             </description>

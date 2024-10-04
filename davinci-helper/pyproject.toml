@@ -1,0 +1,117 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "davinci-helper"
+version = "2.0.0"
+description = "A helper app to help you install DaVinci Resolve."
+readme = "README.md"
+license = {text = "GPL-3.0"}
+authors = [
+    {name = "Lorenzo Maiuri", email = "lorenzo.maiuri@ik.me.com"}
+]
+keywords = ["davinci", "helper", "tool"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3"
+]
+dependencies = []
+requires-python = ">=3.8"
+
+[project.scripts]
+davinci-helper = "davinci_helper.main:main"
+
+[tool.setuptools]
+packages = ["davinci_helper", "davinci_helper.functions", "davinci_helper.functions.logic", "davinci_helper.functions.gui"]
+
+[tool.setuptools.package-data]
+"*" = [
+    "data/css/style.css",
+    "data/desktop/*.desktop",
+    "data/desktop/*.xml",
+    "data/icons/*.svg",
+    "data/icons/dark_mode/*.svg",
+    "data/icons/white_mode/*.svg",
+    "data/icons/function_icons/*.svg",
+    "data/icons/main_icons/*.svg",
+    "data/icons/main_icons/*.jpg",
+    "data/gpu_support/*.txt",
+    "data/polkit/*.rules",
+    "data/polkit/*.policy",
+    "data/settings/davinci_helper_settings",
+    "data/ui/*.ui",
+    "data/LICENSE",
+    "locale/it/LC_MESSAGES/davinci-helper.mo"
+]
+
+[tool.setuptools.data-files]
+"share/davinci-helper/data/css" = ["data/css/style.css"]
+"share/davinci-helper/data/desktop" = [
+    "data/desktop/com.davinci.helper.app.desktop",
+    "data/desktop/com.davinci.helper.app.metainfo.xml",
+    "data/desktop/davinci_helper_icon.svg"
+]
+"share/davinci-helper/data/icons" = ["data/icons/davinci_helper_icon.svg"]
+"share/davinci-helper/data/icons/dark_mode" = [
+    "data/icons/dark_mode/function_1.svg",
+    "data/icons/dark_mode/function_2.svg",
+    "data/icons/dark_mode/function_3.svg",
+    "data/icons/dark_mode/function_4.svg",
+    "data/icons/dark_mode/function_5.svg",
+    "data/icons/dark_mode/function_6.svg"
+]
+"share/davinci-helper/data/icons/white_mode" = [
+    "data/icons/white_mode/function_1.svg",
+    "data/icons/white_mode/function_2.svg",
+    "data/icons/white_mode/function_3.svg",
+    "data/icons/white_mode/function_4.svg",
+    "data/icons/white_mode/function_5.svg",
+    "data/icons/white_mode/function_6.svg"
+]
+"share/davinci-helper/data/icons/function_icons" = [
+    "data/icons/function_icons/error.svg",
+    "data/icons/function_icons/folder.svg",
+    "data/icons/function_icons/success.svg",
+    "data/icons/function_icons/warning.svg"
+]
+"share/davinci-helper/data/icons/main_icons" = [
+    "data/icons/main_icons/function_1.svg",
+    "data/icons/main_icons/function_2.svg",
+    "data/icons/main_icons/function_3.svg",
+    "data/icons/main_icons/function_4.svg",
+    "data/icons/main_icons/function_5.svg",
+    "data/icons/main_icons/ffmpeg_icon.jpg"
+]
+"share/davinci-helper/data/gpu_support" = [
+    "data/gpu_support/amd_support.txt",
+    "data/gpu_support/intel_support.txt",
+    "data/gpu_support/nvidia_support.txt"
+]
+"share/davinci-helper/data/polkit" = [
+    "data/polkit/com.davinci.helper.app.rules",
+    "data/polkit/com.davinci.helper.app.policy"
+]
+"share/davinci-helper/data/settings" = ["data/settings/davinci_helper_settings"]
+"share/davinci-helper/data/ui" = [
+    "data/ui/check_update_dialog.ui",
+    "data/ui/converter_dialog.ui",
+    "data/ui/ffmpeg_install.ui",
+    "data/ui/file_error_dialog.ui",
+    "data/ui/file_size_warning_dialog.ui",
+    "data/ui/function_1.ui",
+    "data/ui/function_2.ui",
+    "data/ui/function_3.ui",
+    "data/ui/function_4.ui",
+    "data/ui/function_5.ui",
+    "data/ui/loading.ui",
+    "data/ui/main.ui",
+    "data/ui/module_install_error_dialog.ui",
+    "data/ui/setting_management_dialog.ui",
+    "data/ui/start_screen.ui",
+    "data/ui/welcome_dialog.ui"
+]
+"share/davinci-helper/data" = ["data/LICENSE"]
+"share/davinci-helper/locale/it/LC_MESSAGES" = ["locale/it/LC_MESSAGES/davinci-helper.mo"]

@@ -1,0 +1,542 @@
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                    MAIN WINDOW CSS PARAMETERS                                          */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Main_Window_Dropdown_Menu {
+
+    /* TEXT PARAMETERS */
+    font-weight: normal;
+    font-size: 11pt;
+
+}
+
+
+
+.Main_Window_Sidebar_Container {
+
+    /* SPACING PARAMETERS */
+    padding: 7px;
+
+}
+
+
+
+/* STYLED NEEDED TO RESET THE GTKSPACER CSS  */
+.Main_Window_Reset_Spacer {
+
+    /* SIZE PARAMETERS */
+    min-height: 1px;
+
+    /* SPACING PARAMETERS */
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+
+
+.Main_Window_Sidebar_Icon {
+    
+    /* SIZE PARAMETERS */
+    -gtk-icon-size: 19px;
+
+    /* SPACING PARAMETERS */
+    margin-right: 10px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                           LOADING CSS PARAMETERS                                       */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Loading_Grid {
+
+    /* SPACING PARAMETERS */
+    margin: 35px;
+
+}
+
+
+
+.Loading_Spinner {
+
+    /* SIZE PARAMETERS */
+    min-width: 60px;
+    min-height: 60px;
+
+}
+
+
+
+.Loading_Text_Container {
+
+    /* SIZE PARAMETERS */
+    min-width: 450px;
+    min-height: 80px;
+
+    /* SPACING PARAMETERS */
+    margin: 30px;
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                         FUNCTION 0 CSS PARAMETERS                                      */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+
+.Start_Screen_Section_1_Grid {
+
+    /* SPACING PARAMETERS */
+    margin: 35px;
+    margin-bottom: 100px;
+
+}
+
+
+
+.Start_Screen_Section_1_Icon {
+
+    /* SIZE PARAMETERS */
+    min-width: 120px;
+    min-height: 120px;
+
+    /* SPACING PARAMETERS */
+    margin: 15px;
+
+}
+
+
+
+
+.Start_Screen_Section_1_Button_Box_1 {
+
+    /* SPACING PARAMETERS */
+    margin: 5px;
+    padding: 15px;
+
+}
+
+
+
+
+.Start_Screen_Section_1_Button {
+
+    /* SIZE PARAMETERS */
+    min-width: 25px;
+    min-height: 25px;
+
+    /* SPACING PARAMETERS */
+    margin: 7px;
+    padding: 10px;
+
+    /* BORDER PARAMETERS */
+    border-radius: 1000px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                         ALL FUNCTION CSS PARAMETERS                                    */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Dialog_Grid {
+
+    /* SPACING PARAMETERS */
+    margin: 15px;
+
+}
+
+
+
+.Dialog_Icon {
+
+    /* SIZE PARAMETERS */
+    min-width: 80px;
+    min-height: 80px;
+
+    /* SPACING PARAMETERS */
+    margin: 5px;
+
+}
+
+
+
+.Dialog_Icon2 {
+
+    /* SIZE PARAMETERS */
+    min-width: 100px;
+    min-height: 100px;
+
+    /* SPACING PARAMETERS */
+    margin: 5px;
+
+}
+
+
+
+.Dialog_Subtitle_Container{
+
+    /* SIZE PARAMETERS */
+    min-width: 500px;
+    min-height: 160px;
+
+    /* SPACING PARAMETERS */
+    margin: 20px;
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+}
+
+
+
+.Dialog_Button_Box {
+
+    /* SPACING PARAMETERS */
+    margin: 15px;
+
+}
+
+
+
+.Dialog_Button {
+
+    /* SPACING PARAMETERS */
+    margin: 5px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                         ALL FUNCTION CSS PARAMETERS                                    */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Function_Grid {
+
+    /* SPACING PARAMETERS */
+    margin: 35px;
+
+}
+
+
+
+.Function_Icon {
+
+    /* SIZE PARAMETERS */
+    min-width: 140px;
+    min-height: 140px;
+
+    /* SPACING PARAMETERS */
+    margin: 5px;
+
+}
+
+
+
+.Function_Info_Container {
+
+    /* SIZE PARAMETERS */
+    min-width: 470px;
+    min-height: 160px;
+
+    /* SPACING PARAMETERS */
+    margin: 20px;
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+}
+
+
+
+.Function_Button_Box {
+
+    /* SPACING PARAMETERS */
+    margin: 15px;
+    margin-bottom: 80px;
+
+}
+
+
+
+.Function_Button {
+
+    /* SPACING PARAMETERS */
+    margin: 5px;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                         FUNCTION 1 CSS PARAMETERS                                      */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Function_1_Section_3_Subtitle_Container {
+
+    /* SPACING PARAMETERS */
+    margin: 10px;
+
+}
+
+
+
+.Function_1_Section_3_Log_Container {
+
+    /* SIZE PARAMETERS */
+    min-width: 600px;
+    min-height: 250px;
+
+    /* SPACING PARAMETERS */
+    margin: 20px;
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+    /* PARAMETRI DEL TESTO */
+    /* TEXT PARAMETERS */
+    font-size: 10pt;
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                         FUNCTION 2 CSS PARAMETERS                                      */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Function_2_Section_1_File_Box {
+
+    /* SPACING PARAMETERS */
+    margin-top: 15px;
+    margin-top: 20px;
+
+}
+
+
+
+.Function_2_Section_1_File_Entry {
+
+    /* SIZE PARAMETERS */
+    min-width: 550px;
+    min-height: 50px;
+
+}
+
+
+
+.Function_Section_1_File_Button {
+
+    /* SIZE PARAMETERS */
+    -gtk-icon-size: 19px;
+
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+/*                                         FUNCTION 5 CSS PARAMETERS                                      */
+/* ------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+
+.Convert_File_Size_Dialog_Subtitle_Container{
+
+    /* SIZE PARAMETERS */
+    min-width: 550px;
+    min-height: 210px;
+
+    /* SPACING PARAMETERS */
+    margin: 20px;
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+}
+
+
+
+
+.Converter_File_List_Scrollable_Container {
+
+    /* SIZE PARAMETERS */
+    min-width: 700px;
+    min-height: 300px;
+
+    /* SPACING PARAMETERS */
+    margin: 30px;
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+    /* TEXT PARAMETERS */
+    font-size: 10pt;
+
+}
+
+
+
+.Converter_File_List_ListBox_Container {
+
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+}
+
+
+
+
+.Converter_Settings_Container {
+
+    /* SPACING PARAMETERS */
+    padding: 10px;
+    margin: 10px;
+
+    /* COLOR AND BORDER PARAMETERS */
+    background-color: @sidebar_bg_color;
+    border-radius: 15px;
+
+}
+
+
+
+.Converter_Dropdown {
+
+    /* SIZE PARAMETERS */
+    min-width: 100px;
+
+}
+
+
+
+.Converter_Entry_Box {
+
+    /* SPACING PARAMETERS */
+    margin-left: 3px;
+
+}
+
+
+
+.Converter_Entry {
+
+    /* SIZE PARAMETERS */
+    min-width: 250px;
+
+}
+
+
+
+.Converter_Entry_Button {
+
+    /* SIZE PARAMETERS */
+    -gtk-icon-size: 19px;
+
+    /* SPACING PARAMETERS */
+    padding: 10px;
+
+}
+
+
+
+
+.Converter_Progressbar_Label {
+
+    /* SPACING PARAMETERS */
+    margin: 30px;
+
+
+}
+
+.Converter_Progressbar {
+    
+}
+
+.Converter_Progressbar > trough {
+
+    /* SIZE PARAMETERS */
+    min-width: 650px;             
+    min-height: 7px;
+}
+
+.Converter_Progressbar > trough > progress {
+
+    /* SIZE PARAMETERS */
+    min-height: 7px;
+
+}
+
+.Converter_Progressbar > text {
+
+
+    /* SPACING PARAMETERS */
+    margin: 15px;
+
+    /* TEXT PARAMETERS */
+    font-size: 17px;
+
+}

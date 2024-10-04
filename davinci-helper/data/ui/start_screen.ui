@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<!-- INTERFACE START -->
+<interface domain="davinci-helper">
+
+	<!-- DECLARING INTERFACE DEPENDENCIES VERSIONS -->
+    <requires lib="gtk" version="4.0"/>
+    <requires lib="Adw" version="1.0"/>
+
+
+
+    <!-- PAGE 0 TEMPLATE START -->
+    <template class="start_screen" parent="GtkScrolledWindow">
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="hexpand">true</property>
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="vexpand">true</property>
+
+
+
+        <!-- BOX START -->
+        <child><object class="GtkBox">
+
+
+
+            <!-- GRID START -->
+            <child><object class="GtkGrid" id="section_1_container">
+
+                <!-- SETTING COLUMN HOMOGENITY -->
+                <property name="column-homogeneous">true</property>
+
+                <!-- SETTING ROW HOMOGENITY -->
+                <property name="row-homogeneous">false</property>
+
+                <!-- SETTING THE VERTICAL ALIGNMENT -->
+                <property name="valign">center</property>
+
+                <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                <property name="halign">center</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="hexpand">true</property>
+
+                <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+                <property name="vexpand">true</property>
+
+                <!-- SETTING CSS CLASS -->
+                <property name="css-classes">Start_Screen_Section_1_Grid</property>
+
+
+
+                <!-- ICON START -->
+                <child><object class="GtkImage" id="section_1_icon">
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">Start_Screen_Section_1_Icon</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">0</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- ICON END -->
+                </object></child>
+
+
+
+                <!-- LABEL START -->
+                <child><object class="GtkLabel" id="section_1_title">
+
+                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                    <property name="justify">center</property>
+
+                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                    <property name="wrap">true</property>
+
+                    <!-- SETTING CSS CLASS START -->
+                    <style>
+
+                        <class name="title-1"/>
+
+                    <!-- SETTING CSS CLASS END -->
+                    </style>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">1</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- LABEL END -->
+                </object></child>
+
+
+
+                <!-- LABEL START -->
+                <child><object class="GtkLabel" id="section_1_subtitle_1">
+
+                    <!-- SETTING THE TEXT ALLIGNMENT -->
+                    <property name="justify">center</property>
+
+                    <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                    <property name="wrap">true</property>
+
+                    <!-- SETTING CSS CLASS START -->
+                    <style>
+
+                        <class name="title-4"/>
+
+                    <!-- SETTING CSS CLASS END -->
+                    </style>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">2</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+                <!-- LABEL END -->
+                </object></child>
+
+
+
+                <!-- BOX START -->
+                <child><object class="GtkBox" id="section_1_button_box_1">
+
+                    <!-- SETTING THE ORIENTATION -->
+                    <property name="orientation">horizontal</property>
+
+                    <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+                    <property name="halign">center</property>
+
+                    <!-- SETTING CSS CLASS -->
+                    <property name="css-classes">Start_Screen_Section_1_Button_Box_1</property>
+
+                    <!-- GRID POSITION START -->
+                    <layout>
+
+                        <!-- VERTICAL POSITION -->
+                        <property name="column">0</property>
+
+                        <!-- HORIZONTAL POSITION -->
+                        <property name="row">3</property>
+
+                    <!-- GRID POSITION END -->
+                    </layout>
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="section_1_function_1_button">
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">Start_Screen_Section_1_Button</property>
+
+                        <!-- ICON -->
+                        <child><object class="GtkImage" id="section_1_function_1_button_icon"/></child>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="section_1_function_2_button">
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">Start_Screen_Section_1_Button</property>
+
+                        <!-- ICON -->
+                        <child><object class="GtkImage" id="section_1_function_2_button_icon"/></child>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="section_1_function_3_button">
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">Start_Screen_Section_1_Button</property>
+
+                        <!-- ICON -->
+                        <child><object class="GtkImage" id="section_1_function_3_button_icon"/></child>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="section_1_function_4_button">
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">Start_Screen_Section_1_Button</property>
+
+                        <!-- ICON -->
+                        <child><object class="GtkImage" id="section_1_function_4_button_icon"/></child>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+
+
+                    <!-- BUTTON START -->
+                    <child><object class="GtkButton" id="section_1_function_5_button">
+
+                        <!-- SETTING CSS CLASS -->
+                        <property name="css-classes">Start_Screen_Section_1_Button</property>
+
+                        <!-- ICON -->
+                        <child><object class="GtkImage" id="section_1_function_5_button_icon"/></child>
+
+                    <!-- BUTTON END -->
+                    </object></child>
+
+                    
+
+                        
+                    
+
+
+
+                    
+                <!-- BOX START -->
+                </object></child>
+
+
+
+            <!-- GRID END -->
+            </object></child>
+
+
+
+        <!-- BOX END -->
+        </object></child>
+
+
+
+    <!-- PAGE 0 TEMPLATE END -->
+    </template>
+
+
+
+<!-- INTERFACE END -->
+</interface>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<!-- INTERFACE START -->
+<interface domain="davinci-helper">
+
+	<!-- DECLARING INTERFACE DEPENDENCIES VERSIONS -->
+    <requires lib="gtk" version="4.0"/>
+    <requires lib="Adw" version="1.0"/>
+
+
+
+    <!-- LOADING TEMPLATE START -->
+    <template class="Loading" parent="GtkGrid">
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="hexpand">true</property>
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="vexpand">true</property>
+
+        <!-- SETTING COLUMN HOMOGENITY -->
+        <property name="column-homogeneous">true</property>
+
+        <!-- SETTING ROW HOMOGENITY -->
+        <property name="row-homogeneous">false</property>
+
+        <!-- SETTING THE VERTICAL ALIGNMENT -->
+        <property name="valign">center</property>
+
+        <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+        <property name="halign">center</property>
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="hexpand">true</property>
+
+        <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+        <property name="vexpand">true</property>
+
+        <!-- SETTING CSS CLASS -->
+        <property name="css-classes">Loading_Grid</property>
+
+
+
+        <!-- SPINNER START -->
+        <child><object class="GtkSpinner" id="loading_spinner">
+
+            <!-- SETTING THE VERTICAL ALIGNMENT -->
+            <property name="valign">center</property>
+
+            <!-- SETTING THE HORIZONTAL ALIGNMENT -->
+            <property name="halign">center</property>
+
+            <!-- SETTING CSS CLASS -->
+            <property name="css-classes">Loading_Spinner</property>
+
+            <!-- GRID POSITION START -->
+            <layout>
+
+                <!-- VERTICAL POSITION -->
+                <property name="column">0</property>
+
+                <!-- HORIZONTAL POSITION -->
+                <property name="row">0</property>
+
+            <!-- GRID POSITION END -->
+            </layout>
+
+        <!-- SPINNER END -->
+        </object></child>
+
+
+
+        <!-- SCROLLED CONTAINER START -->
+        <child><object class="GtkScrolledWindow" id="loading_text_container">
+
+            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+            <property name="hexpand">true</property>
+
+            <!-- SETTING THE VERTICAL EXPANSION OF THE CONTAINER -->
+            <property name="vexpand">true</property>
+
+                <!-- SETTING CSS CLASS -->
+            <property name="css-classes">Loading_Text_Container</property>
+
+            <!-- GRID POSITION START -->
+            <layout>
+
+                <!-- VERTICAL POSITION -->
+                <property name="column">0</property>
+
+                <!-- HORIZONTAL POSITION -->
+                <property name="row">1</property>
+
+            <!-- GRID POSITION END -->
+            </layout>
+
+
+
+            <!-- LABEL START -->
+            <child><object class="GtkLabel" id="loading_text">
+
+                <!-- SETTING THE TEXT ALLIGNMENT -->
+                <property name="justify">center</property>
+
+                <!-- SETTING THE POSSIBILITY TO GO TO A NEW LINE -->
+                <property name="wrap">true</property>
+
+                <!-- SETTING CSS CLASS START -->
+                <style>
+
+                    <class name="title-4"/>
+
+                <!-- SETTING CSS CLASS END -->
+                </style>
+
+            <!-- LABEL END -->
+            </object></child>
+
+
+
+        <!-- SCROLLED CONTAINER END -->
+        </object></child>
+
+
+
+    <!-- LOADING TEMPLATE END -->
+    </template>
+
+
+
+<!-- INTERFACE END -->
+</interface>

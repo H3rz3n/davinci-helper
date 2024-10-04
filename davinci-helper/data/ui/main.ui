@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!-- INTERFACE START -->
+<interface>
+
+	<!-- DECLARING INTERFACE DEPENDENCIES VERSIONS -->
+    <requires lib="gtk" version="4.0"/>
+    <requires lib="Adw" version="1.0"/>
+
+
+
+	<!-- WINDOW START-->
+    <object class="AdwApplicationWindow" id="main_window">
+
+		<!-- WINDOW TITLE -->
+		<property name="title">DaVinci Helper</property>
+
+		<!-- MINIMUN WIDTH -->
+		<property name="width-request">1440</property>
+
+		<!-- MINIMUM HEIGHT -->
+		<property name="height-request">900</property>
+
+		<!-- STARTING WIDTH -->
+		<property name="default-width">1600</property>
+
+		<!-- STARTING HEIGHT -->
+		<property name="default-height">900</property>
+		
+
+
+
+		<!-- WINDOW SPLIT VIEW LAYOUT START -->
+		<child><object class="AdwNavigationSplitView" id="split_view">
+
+				<!-- WINDOW SIDEBAR SECTION START -->
+				<property name="sidebar">
+
+					<!-- WINDOW SECTION START -->
+					<object class="AdwNavigationPage">
+
+						<!-- SETTING CSS CLASS -->
+						<property name="css-classes">Main_Window_Sidebar_Container</property>
+						
+						<!-- WINDOW SECTION TITLE -->
+						<property name="title" translatable="yes">DaVinci Helper</property>
+						
+
+
+						<!-- WINDOW SECTION CONTENT START -->
+						<property name="child">
+							
+							<!-- CONTENT BOX START -->
+							<object class="GtkBox">
+
+								<!-- SETTING THE ORIENTATION -->
+								<property name="orientation">vertical</property>
+
+
+
+								<!-- TOOLBAR CONTAINER START -->
+								<child><object class="AdwToolbarView">
+
+									<!-- ADWAITA HEADER BAR CHILD START - POSITION TOP -->
+									<child type="top">
+
+										<!-- ADWAITA HEADER BAR START -->
+										<object class="AdwHeaderBar">
+
+
+
+											<!-- DROPDOWN MENU BUTTON CHILD START -->
+											<child type="end">
+
+												<!-- DROPDOWN MENU BUTTON START -->
+												<object class="GtkMenuButton" id="main_window_menu_button">
+
+													<!-- SETTING WHICH POPOVER USE -->
+													<property name="popover">popover-menu</property>
+
+													<!-- SETTING THE BUTTON ICON -->
+													<property name="icon-name">open-menu-symbolic</property>
+
+												<!-- DROPDOWN MENU BUTTON END -->
+												</object>
+
+											<!-- DROPDOWN MENU BUTTON CHILD END -->
+											</child>
+
+
+										
+										<!-- ADWAITA HEADER BAR END -->
+										</object>
+									
+									<!-- ADWAITA HEADER BAR CHILD END -->
+									</child>
+
+								<!-- TOOLBAR CONTAINER END -->
+								</object></child>
+
+
+
+								<!-- ITEM LIST START -->
+								<child><object class="GtkListBox" id="main_window_sidebar_menu">
+									
+									<!-- SETTING LIST SELECTION MODE -->
+									<property name="selection-mode">browse</property>
+
+									<!-- SETTING CSS CLASS -->
+									<property name="css-classes">navigation-sidebar</property>
+									
+
+
+									<!-- ITEM START -->
+									<child><object class="GtkListBoxRow" id="main_window_sidebar_row_1">
+
+										<!-- ITEM CONTENT CONTAINER START -->
+										<child><object class="GtkBox">
+
+
+
+											<!-- ITEM ICON START -->
+											<child><object class="GtkImage" id="main_window_sidebar_icon_1">
+
+												<!-- SETTING THE ICON -->
+												<property name="icon-name"></property>
+
+												<!-- SETTING CSS CLASS -->
+												<property name="css-classes">Main_Window_Sidebar_Icon</property>
+
+											<!-- ITEM ICON END -->
+											</object></child>
+
+
+
+											<!-- ITEM LABEL START -->
+											<child><object class="GtkLabel" id="main_window_sidebar_label_1">
+
+												<!-- OBJECT ALIGN -->
+												<property name="halign">start</property>
+
+												<!-- TEXT LABEL -->
+												<property name="label"></property>
+
+											<!-- ITEM LABEL END -->
+											</object></child>
+
+
+
+										<!-- ITEM CONTENT CONTAINER END -->
+										</object></child>
+
+									<!-- ITEM END -->
+									</object></child>
+
+
+
+									<!-- ITEM START -->
+									<child><object class="GtkListBoxRow" id="main_window_sidebar_row_2">
+
+										<!-- ITEM CONTENT CONTAINER START -->
+										<child><object class="GtkBox">
+
+
+
+											<!-- ITEM ICON START -->
+											<child><object class="GtkImage" id="main_window_sidebar_icon_2">
+
+												<!-- SETTING THE ICON -->
+												<property name="icon-name"></property>
+
+												<!-- SETTING CSS CLASS -->
+												<property name="css-classes">Main_Window_Sidebar_Icon</property>
+
+											<!-- ITEM ICON END -->
+											</object></child>
+
+
+
+											<!-- ITEM LABEL START -->
+											<child><object class="GtkLabel" id="main_window_sidebar_label_2">
+												
+												<!-- OBJECT ALIGN -->
+												<property name="halign">start</property>
+												
+												<!-- TEXT LABEL -->
+												<property name="label"></property>
+
+											<!-- ITEM LABEL END -->
+											</object></child>
+
+
+
+										<!-- ITEM CONTENT CONTAINER END -->
+										</object></child>
+
+									<!-- ITEM END -->
+									</object></child>
+
+
+
+									<!-- ITEM START -->
+									<child><object class="GtkListBoxRow" id="main_window_sidebar_row_3">
+
+										<!-- ITEM CONTENT CONTAINER START -->
+										<child><object class="GtkBox">
+
+
+
+											<!-- ITEM ICON START -->
+											<child><object class="GtkImage" id="main_window_sidebar_icon_3">
+
+												<!-- SETTING THE ICON -->
+												<property name="icon-name"></property>
+
+												<!-- SETTING CSS CLASS -->
+												<property name="css-classes">Main_Window_Sidebar_Icon</property>
+
+											<!-- ITEM ICON END -->
+											</object></child>
+
+
+
+											<!-- ITEM LABEL START -->
+											<child><object class="GtkLabel" id="main_window_sidebar_label_3">
+
+												<!-- OBJECT ALIGN -->
+												<property name="halign">start</property>
+
+												<!-- TEXT LABEL -->
+												<property name="label"></property>
+
+											<!-- ITEM LABEL END -->
+											</object></child>
+
+											
+
+										<!-- ITEM CONTENT CONTAINER END -->
+										</object></child>
+
+									<!-- ITEM END -->
+									</object></child>
+
+
+
+									<!-- ITEM START -->
+									<child><object class="GtkListBoxRow" id="main_window_sidebar_row_4">
+
+										<!-- ITEM CONTENT CONTAINER START -->
+										<child><object class="GtkBox">
+
+
+
+											<!-- ITEM ICON START -->
+											<child><object class="GtkImage" id="main_window_sidebar_icon_4">
+
+												<!-- SETTING THE ICON -->
+												<property name="icon-name"></property>
+
+												<!-- SETTING CSS CLASS -->
+												<property name="css-classes">Main_Window_Sidebar_Icon</property>
+
+											<!-- ITEM ICON END -->
+											</object></child>
+
+
+
+											<!-- ITEM LABEL START -->
+											<child><object class="GtkLabel" id="main_window_sidebar_label_4">
+
+												<!-- OBJECT ALIGN -->
+												<property name="halign">start</property>
+
+												<!-- TEXT LABEL -->
+												<property name="label"></property>
+
+											<!-- ITEM LABEL END -->
+											</object></child>
+
+											
+
+										<!-- ITEM CONTENT CONTAINER END -->
+										</object></child>
+
+									<!-- ITEM END -->
+									</object></child>
+
+
+									
+									<!-- ITEM START -->
+									<child><object class="GtkListBoxRow" id="main_window_separator_1">
+
+										<!-- SETTING IT AS NON-INTERACTIVE -->
+										<property name="sensitive">False</property> 
+        								
+										<!-- SETTING IT AS NON-SELECTABLE -->
+										<property name="can-focus">False</property>
+
+
+										<!-- SETTING CSS CLASS -->
+										<property name="css-classes">Main_Window_Reset_Spacer</property>
+
+										<!-- ITEM SPACER -->
+										<child><object class="GtkSeparator"></object></child>
+
+									<!-- ITEM END -->
+									</object></child>
+
+
+
+									<!-- ITEM START -->
+									<child><object class="GtkListBoxRow" id="main_window_sidebar_row_5">
+
+										<!-- ITEM CONTENT CONTAINER START -->
+										<child><object class="GtkBox">
+
+
+
+											<!-- ITEM ICON START -->
+											<child><object class="GtkImage" id="main_window_sidebar_icon_5">
+
+												<!-- SETTING THE ICON -->
+												<property name="icon-name"></property>
+
+												<!-- SETTING CSS CLASS -->
+												<property name="css-classes">Main_Window_Sidebar_Icon</property>
+
+											<!-- ITEM ICON END -->
+											</object></child>
+
+
+
+											<!-- ITEM LABEL START -->
+											<child><object class="GtkLabel"  id="main_window_sidebar_label_5">
+
+												<!-- OBJECT ALIGN -->
+												<property name="halign">start</property>
+
+												<!-- TEXT LABEL -->
+												<property name="label"></property>
+
+											<!-- ITEM LABEL END -->
+											</object></child>
+
+											
+
+										<!-- ITEM CONTENT CONTAINER END -->
+										</object></child>
+
+									<!-- ITEM END -->
+									</object></child>
+
+								
+
+								<!-- ITEM LIST END -->
+								</object></child>
+
+
+
+							<!-- CONTENT BOX END -->
+							</object>
+
+
+
+						<!-- WINDOW SECTION CONTENT END -->
+						</property>
+
+					<!-- WINDOW SECTION END -->
+					</object>
+
+				<!-- WINDOW SIDEBAR SECTION END -->
+				</property>
+
+
+
+
+
+				<!-- WINDOW CONTENT SECTION START -->
+				<property name="content">
+
+					<!-- WINDOW SECTION START -->
+					<object class="AdwNavigationPage">
+
+						<!-- WINDOW SECTION TITLE -->
+						<property name="title" translatable="yes">Hi</property>
+
+
+
+						<!-- WINDOW SECTION CONTENT START -->
+						<property name="child">
+
+							<!-- CONTENT BOX START -->
+							<object class="GtkBox">
+
+								<!-- SETTING THE ORIENTATION -->
+								<property name="orientation">vertical</property>
+
+
+							
+								<!-- TOOLBAR CONTAINER START -->
+								<child><object class="AdwToolbarView">
+
+									<!-- ADWAITA HEADER BAR CHILD START - POSITION TOP -->
+									<child type="top">
+
+										<!-- ADWAITA HEADER BAR START -->
+										<object class="AdwHeaderBar">
+
+											<!-- HIDING THE TITLE -->
+											<property name="show-title">false</property>
+
+										<!-- ADWAITA HEADER BAR START -->
+										</object>
+
+
+									<!-- ADWAITA HEADER BAR CHILD END -->
+									</child>
+									
+
+
+								<!-- TOOLBAR CONTAINER END -->
+								</object></child>
+
+
+
+								<!-- CONTENT PAGES STACK START -->
+								<child><object class="AdwViewStack" id="main_window_function_stack">
+
+
+
+									<!-- PAGE START -->
+									<child><object class="AdwViewStackPage">
+
+										<!-- PAGE NAME / ID -->
+										<property name="name">start_screen</property>
+
+										<!-- PAGE TITLE -->
+										<property name="title">Page 0</property>
+
+
+
+										<!-- PAGE CONTENT START -->
+										<property name="child">
+
+											<!-- BOX START -->
+											<object class="GtkBox" id="start_screen_content_container">
+
+												<!-- SETTING THE ORIENTATION -->
+												<property name="orientation">vertical</property>
+											
+											<!-- BOX START -->
+											</object>
+
+										<!-- PAGE CONTENT END -->
+										</property>
+
+
+
+									<!-- PAGE END -->
+									</object></child>
+
+
+
+									<!-- PAGE START -->
+									<child><object class="AdwViewStackPage">
+
+										<!-- PAGE NAME / ID -->
+										<property name="name">function_1</property>
+
+										<!-- PAGE TITLE -->
+										<property name="title">Page 1</property>
+
+
+
+										<!-- PAGE CONTENT START -->
+										<property name="child">
+
+											<!-- ANIMATED CONTAINER START -->
+											<object class="GtkRevealer" id="function_1_content_revealer">
+
+												<!-- TYPE OF TRANSITION TO SHOW -->
+												<property name="transition-type">crossfade</property>
+
+												<!-- TRANSITION DURATION IN MILLISECONDS -->
+												<property name="transition-duration">800</property>
+
+												<!-- BOX START -->
+												<child><object class="GtkBox" id="function_1_content_container">
+
+													<!-- SETTING THE ORIENTATION -->
+													<property name="orientation">vertical</property>
+												
+												<!-- BOX START -->
+												</object></child>
+
+											<!-- ANIMATED CONTAINER END -->
+											</object>
+
+										<!-- PAGE CONTENT END -->
+										</property>
+
+
+
+									<!-- PAGE END -->
+									</object></child>
+
+
+
+									<!-- PAGE START -->
+									<child><object class="AdwViewStackPage">
+
+										<!-- PAGE NAME / ID -->
+										<property name="name">function_2</property>
+										
+										<!-- PAGE TITLE -->
+										<property name="title">Page 2</property>
+
+
+
+										<!-- PAGE CONTENT START -->
+										<property name="child">
+
+											<!-- ANIMATED CONTAINER START -->
+											<object class="GtkRevealer" id="function_2_content_revealer">
+
+												<!-- TYPE OF TRANSITION TO SHOW -->
+												<property name="transition-type">crossfade</property>
+
+												<!-- TRANSITION DURATION IN MILLISECONDS -->
+												<property name="transition-duration">800</property>
+
+												<!-- BOX START -->
+												<child><object class="GtkBox" id="function_2_content_container">
+
+													<!-- SETTING THE ORIENTATION -->
+													<property name="orientation">vertical</property>
+												
+												<!-- BOX START -->
+												</object></child>
+
+											<!-- ANIMATED CONTAINER END -->
+											</object>
+
+										<!-- PAGE CONTENT END -->
+										</property>
+
+
+
+
+									<!-- PAGE END -->
+									</object></child>
+
+
+
+									<!-- PAGE START -->
+									<child><object class="AdwViewStackPage">
+
+										<!-- PAGE NAME / ID -->
+										<property name="name">function_3</property>
+
+										<!-- PAGE TITLE -->
+										<property name="title">Page 3</property>
+
+
+
+										<!-- PAGE CONTENT START -->
+										<property name="child">
+
+											<!-- ANIMATED CONTAINER START -->
+											<object class="GtkRevealer" id="function_3_content_revealer">
+
+												<!-- TYPE OF TRANSITION TO SHOW -->
+												<property name="transition-type">crossfade</property>
+
+												<!-- TRANSITION DURATION IN MILLISECONDS -->
+												<property name="transition-duration">800</property>
+
+												<!-- BOX START -->
+												<child><object class="GtkBox" id="function_3_content_container">
+
+													<!-- SETTING THE ORIENTATION -->
+													<property name="orientation">vertical</property>
+												
+												<!-- BOX START -->
+												</object></child>
+
+											<!-- ANIMATED CONTAINER END -->
+											</object>
+
+										<!-- PAGE CONTENT END -->
+										</property>
+
+
+
+
+									<!-- PAGE END -->
+									</object></child>
+
+
+
+									<!-- PAGE START -->
+									<child><object class="AdwViewStackPage">
+										
+										<!-- PAGE NAME / ID -->
+										<property name="name">function_4</property>
+
+										<!-- PAGE TITLE -->
+										<property name="title">Page 4</property>
+
+
+										
+										<!-- PAGE CONTENT START -->
+										<property name="child">
+
+											<!-- ANIMATED CONTAINER START -->
+											<object class="GtkRevealer" id="function_4_content_revealer">
+
+												<!-- TYPE OF TRANSITION TO SHOW -->
+												<property name="transition-type">crossfade</property>
+
+												<!-- TRANSITION DURATION IN MILLISECONDS -->
+												<property name="transition-duration">800</property>
+
+												<!-- BOX START -->
+												<child><object class="GtkBox" id="function_4_content_container">
+
+													<!-- SETTING THE ORIENTATION -->
+													<property name="orientation">vertical</property>
+												
+												<!-- BOX START -->
+												</object></child>
+
+											<!-- ANIMATED CONTAINER END -->
+											</object>
+
+										<!-- PAGE CONTENT END -->
+										</property>
+
+
+
+									
+									<!-- PAGE END -->
+									</object></child>
+
+
+
+									<!-- PAGE START -->
+									<child><object class="AdwViewStackPage">
+										
+										<!-- PAGE NAME / ID -->
+										<property name="name">function_5</property>
+
+										<!-- PAGE TITLE -->
+										<property name="title">Page 5</property>
+
+
+
+										<!-- PAGE CONTENT START -->
+										<property name="child">
+
+											<!-- ANIMATED CONTAINER START -->
+											<object class="GtkRevealer" id="function_5_content_revealer">
+
+												<!-- TYPE OF TRANSITION TO SHOW -->
+												<property name="transition-type">crossfade</property>
+
+												<!-- TRANSITION DURATION IN MILLISECONDS -->
+												<property name="transition-duration">800</property>
+
+												<!-- BOX START -->
+												<child><object class="GtkBox" id="function_5_content_container">
+
+													<!-- SETTING THE ORIENTATION -->
+													<property name="orientation">vertical</property>
+												
+												<!-- BOX START -->
+												</object></child>
+
+											<!-- ANIMATED CONTAINER END -->
+											</object>
+
+										<!-- PAGE CONTENT END -->
+										</property>
+
+
+
+
+									<!-- PAGE END -->
+									</object></child>
+									
+
+
+								<!-- CONTENT PAGES STACK END -->
+								</object></child>
+
+
+							<!-- CONTENT BOX END -->
+							</object>
+
+
+
+						<!-- WINDOW SECTION CONTENT END -->
+						</property>
+
+					<!-- WINDOW SECTION END -->
+					</object>
+
+				<!-- WINDOW CONTENT SECTION END -->
+				</property>
+
+
+
+		<!-- WINDOW SPLIT VIEW LAYOUT END -->
+		</object></child>
+
+		
+
+		
+
+
+
+
+	<!-- WINDOW END-->
+	</object>
+
+
+
+
+
+
+
+	<!-- DROPDOWN MENU START -->
+	<object class="GtkPopoverMenu" id="popover-menu">
+
+		<!-- SETTING HEIGHT SIZE ON OPENING -->
+		<property name="width-request">275</property>
+
+		<!-- IMPOSTAZIONE DELL'ALTEZZA -->
+		<!-- SETTING HEIGHT SIZE ON OPENING -->
+    	<property name="height-request">100</property>
+
+		<!-- SETTING WHICH MENU TEMPLATE TO USE -->
+		<property name="menu-model">main_window_main-menu</property>
+
+		<!-- SETTING CSS CLASS  -->
+		<style>
+			<class name="Main_Window_Dropdown_Menu"/>
+		</style>
+
+	<!-- DROPDOWN MENU END -->
+	</object>
+
+
+
+
+
+	<!-- MENU STRUCTURE START -->
+	<menu id="main_window_main-menu">
+
+		<!-- SECTION 1 START -->
+		<section>
+
+
+
+			<!-- ITEM START -->
+			<item>
+
+				<!-- ITEM NAME -->
+				<attribute name="label" translatable="yes">Load default settings</attribute>
+
+				<!-- ITEM ACTION -->
+				<attribute name="action">app.reset_settings</attribute>
+			
+			<!-- ITEM END -->
+			</item>
+
+		<!-- SECTION 1 END -->
+		</section>
+
+
+
+		<!-- SECTION 1 START -->
+		<section>
+
+			<!-- ITEM START -->
+			<item>
+
+				<!-- ITEM NAME -->
+				<attribute name="label" translatable="yes">About this app</attribute>
+
+				<!-- ITEM ACTION -->
+				<attribute name="action">app.show_about</attribute>
+
+			<!-- ITEM END -->
+			</item>
+
+		<!-- SECTION 1 END -->
+		</section>
+
+
+
+	<!-- MENU STRUCTURE END -->
+  	</menu>
+
+
+
+
+
+<!-- INTERFACE END -->
+</interface>

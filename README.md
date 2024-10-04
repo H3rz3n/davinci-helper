@@ -3,7 +3,7 @@
 </p>
 
 ## What is DaVinci Helper :
-DaVinci Helper is a companion app that will simplify the installation and the use of BlackMagic DaVinci Resolve on Linux. This app is written using Python and has a GUI based on GTK4 and Adwaita. 
+DaVinci Helper is a companion app that will simplify the installation and the use of BlackMagic DaVinci Resolve (both Free and Studio version) on Linux. This app is written using Python and has a GUI based on GTK4 and Adwaita. 
 
 Currently **this program supports only Fedora Linux** in all his spins and derivatives. If the project will receive good feedback by the community I will make a version for Debian-based systems like Linux Mint and Ubuntu.
 
@@ -13,19 +13,23 @@ DaVinci Helper will help you with :
 - Starting the official installation wizard
 - Applying all the necessary post install tricks to properly start DaVinci Resolve
 - Installing the necessary GPU drivers to make to correctly use your graphic card with DaVinci Resolve
+- Convertingt the video to make them work with DaVinci Resolve Free
 
-
-## What OSs are currently supported :
-Currently the app was tested only on these OSs :
+## What OSs are currently supported by the latest version :
+Currently the app was tested on these OSs :
+- Fedora 41 - All spins
 - Fedora 40 - All spins
-- Fedora 39 - All spins
-- Fedora 38 - All spins
 - Nobara 40
-- Nobara 39
-- Nobara 38
+
+## What OSs are supported by an older version of the app:
+Currently the app was tested on these OSs :
+- Fedora 39 - All spins - Use V1.1.0
+- Fedora 38 - All spins - Use V1.1.0
+- Nobara 39 - All spins - Use V1.1.0
+- Nobara 39 - All spins - Use V1.1.0
 
 ## What version of DaVinci are currently supported :
-Currently the app support only DaVinci Resolve 18.x.y. In the future will be added the support for DaVinci Resolve 19.
+Currently the app support only DaVinci Resolve 18.x.y and 19.x.x.
 
 ## What GPUs are currently supported ?
 Currently are supported the following GPUs :
