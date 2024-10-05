@@ -70,7 +70,7 @@ sudo dnf install -y
 ```
 Then drag and drop the app package `.rpm` file or write the path to the app package.
 
-## I want to contribute to the project, what can I do ?
+## What you can do to contribute to DaVinci Helper development ?
 If you want to contribute to this project you can help us [testing the GPU drivers](https://github.com/H3rz3n/davinci-helper/discussions), translating the app or [making a donation](https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8) to support the work needed for the maintenance and the continue update to keep up with the latest DaVinci and Fedora versions.
 
 
