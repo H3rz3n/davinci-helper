@@ -15,6 +15,9 @@ DaVinci Helper will help you with :
 - Installing the necessary GPU drivers to make to correctly use your graphic card with DaVinci Resolve
 - Converting the video to make them work with DaVinci Resolve Free
 
+## What version of DaVinci are currently supported
+Currently the app support DaVinci Resolve 18.x.y and 19.x.x, both in the Free and Studio version.
+
 ## What OSs are currently supported by the latest version
 Currently the app was tested on these OSs :
 - Fedora 41 - All spins
@@ -27,9 +30,6 @@ Currently the app was tested on these OSs :
 - Fedora 38 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
 - Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
 - Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
-
-## What version of DaVinci are currently supported
-Currently the app support DaVinci Resolve 18.x.y and 19.x.x, both in the Free and Studio version.
 
 ## What GPUs are currently supported
 Currently are supported the following GPUs :
