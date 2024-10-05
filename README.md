@@ -23,10 +23,10 @@ Currently the app was tested on these OSs :
 
 ## What OSs are supported by an older version of the app
 Currently the app was tested on these OSs :
-- Fedora 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0)
-- Fedora 38 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0)
-- Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0)
-- Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0)
+- Fedora 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
+- Fedora 38 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
+- Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
+- Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
 
 ## What version of DaVinci are currently supported
 Currently the app support DaVinci Resolve 18.x.y and 19.x.x, both in the Free and Studio version.
