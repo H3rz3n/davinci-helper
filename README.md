@@ -60,7 +60,7 @@ sudo dnf install -y davinci-helper
 ```
 
 ## How install DaVinci Helper in Fedora 38 and 39
-Download the legacy version of the app, then open a terminal window paste the following command :
+Download the [legacy version](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) of the app, then open a terminal window paste the following command :
 ```
 sudo dnf install -y
 ```
