@@ -103,7 +103,7 @@ If you want to contribute to this project you can help us [testing the GPU drive
 
 
 
-<br><br><br><br><br><br>Tags : davinci linux fix ; davinci fedora fix ; davinci fedora does not start ; davinci linux gpu error ; davinci linux error ; davinci fedora gpu error ; davinci fedora zlib ; davinci fedora mesa-libGLU ; davinci fedora libraries ; davinci fedora does not start ; davinci fedora don't start ;
+<br><br><br><br><br><br>Tags : davinci resolve; davinci; resolve; linux; davinci resolve linux; davinci resolve fedora; davinci fedora; how install davinci linux; how install davinci fedora; how fix davinci linux; how fix davinci fedora; davinci fedora error; davinci linux error; fedora error; fedora davinci error; davinci fedora does not start ; davinci linux gpu error ; davinci fedora gpu error ; davinci fedora zlib ; davinci fedora mesa-libGLU ; davinci fedora libraries ; davinci fedora does not start ; davinci fedora don't start ;
 
 
 
