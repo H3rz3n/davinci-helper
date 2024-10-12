@@ -42,21 +42,44 @@ def check_fedora_version ():
     #-----------------------------------------------------------------------------------------------------
     
     # READING WHICH VERSION OF FEDORA IS INSTALLED
-    fedora_version = subprocess.run("cat /etc/fedora-release", shell=True, capture_output=True, text=True)
+    os_info = subprocess.run("hostnamectl", shell=True, capture_output=True, text=True)
 
     # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON WHETHER THERE ARE ERRORS OR NOT
-    if fedora_version.returncode == 0: 
+    if os_info.returncode == 0: 
+
+        # CHECKING WHIC VERSION OF FEDORA IS USED
+        if os_info.stdout.find("Fedora Linux 40") != -1 :
         
-        # PRINT THE FEDORA VERSION
-        print("You are using", fedora_version.stdout)
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux 40"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+        
+        elif os_info.stdout.find("Fedora Linux 41") != -1 :
+            
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux 41"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        
+        elif os_info.stdout.find("Nobara Linux 40") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Nobara Linux 40"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
 
         # RETURNS VALUE TO THE SCRIPT
-        return fedora_version.stdout
+        return os_version
         
     else:
-        print(_("DEBUG : There was an error reading what version of Fedora is installed :"))
+        print(_("DEBUG : There was an error reading what OS is installed :"))
         print("")
-        print(fedora_version.stderr)
+        print(os_info.stderr)
         print("")
         print(_("Please open an issue report and paste this error code on the project GitHub page :"))
         print("")
@@ -102,7 +125,7 @@ def get_libraries_list ():
 
 
 # FUNCTION THAT CHECK WHICH LIBRARIES ARE MISSING IN FEDORA 38-39-40
-def check_dependencies_38_39_40 (library_list_output):
+def check_dependencies_40 (library_list_output):
     
     #-----------------------------------------------------------------------------------------------------
     
@@ -249,7 +272,7 @@ def libraries_installation (lib_to_install):
 
 
 # ACQUIRING THE USED VERSION OF FEDORA
-fedora_version = check_fedora_version()
+os_version = check_fedora_version()
 
 
 
@@ -258,26 +281,14 @@ library_list = get_libraries_list()
 
 
 
-# CHECKING IF IS INSTALLED FEDORA 38
-if fedora_version.find("38") != -1 :
-    
-    # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
-    check_dependencies_38_39_40(library_list)
+# CHECKING IF IS INSTALLED FEDORA 40
+if os_version.find("40") != -1 :
 
-# CHECKING IF IS INSTALLED FEDORA 39
-elif fedora_version.find("39") != -1 :
-    
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
-    check_dependencies_38_39_40(library_list)
+    check_dependencies_40(library_list)
 
 # CHECKING IF IS INSTALLED FEDORA 40
-elif fedora_version.find("40") != -1 :
-
-    # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
-    check_dependencies_38_39_40(library_list)
-
-# CHECKING IF IS INSTALLED FEDORA 40
-elif fedora_version.find("41") != -1 :
+elif os_version.find("41") != -1 :
 
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
     check_dependencies_41(library_list)

@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.0.0
+Version:        2.0.1
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION
 %changelog
+* Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.1-1
+- Fixed OS detection on Nobara
+
 * Fri Oct 04 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.0-1
 - Full Adwaita UI.
 - Added support for DaVinci 19.
