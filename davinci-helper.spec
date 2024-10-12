@@ -94,8 +94,11 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION
 %changelog
+* Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.2-1
+- Fixing italian translation.
+
 * Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.1-1
-- Fixed OS detection on Nobara
+- Fixed OS detection on Nobara Linux.
 
 * Fri Oct 04 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.0-1
 - Full Adwaita UI.
