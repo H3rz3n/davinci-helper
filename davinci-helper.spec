@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.0.0
+Version:        2.0.2
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -40,7 +40,7 @@ Requires: python3-pip
 %undefine __python_requires
 %{?python_disable_dependency_generator}
 
-#
+# REMOVING SHEBANG OPTIONS
 %undefine _py3_shebang_s
 %undefine _py3_shebang_P
 
@@ -94,6 +94,12 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION
 %changelog
+* Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.2-1
+- Fixing italian translation.
+
+* Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.1-1
+- Fixed OS detection on Nobara Linux.
+
 * Fri Oct 04 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.0-1
 - Full Adwaita UI.
 - Added support for DaVinci 19.

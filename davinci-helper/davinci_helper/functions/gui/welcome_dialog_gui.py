@@ -114,10 +114,10 @@ class welcome_dialog_class ():
         self.dialog_title.set_text(_("Thank you for installing\nDaVinci Helper"))
        
         # LOADING SUBTITLE TEXT
-        self.dialog_subtitle_1.set_text(_("Thank you for trusting us and installing DaVinci Helper. We hope that\nthis app will make the management of DaVinci Resolve easier for you.\n"))
+        self.dialog_subtitle_1.set_text(_("Thank you for trusting us and installing DaVinci Helper. We hope that this app will make the management of DaVinci Resolve easier for you.\n"))
 
         # LOADING SUBTITLE TEXT
-        self.dialog_subtitle_2.set_text(_("This app is not affiliated in any way with BlackMagic Design,\nit's only a community project and comes without any guarantees.\n"))
+        self.dialog_subtitle_2.set_text(_("This app is not affiliated in any way with BlackMagic Design, it's only a community project and comes without any guarantees.\n"))
 
         # LOADING SUBTITLE TEXT
         paragraph_3 = (_('''If you find this app useful and want to improve it please consider helping us <a href=\"https://github.com/H3rz3n/davinci-helper\">developing</a> this app or <a href=\"https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8\">making a donation</a>  to the project.'''))
