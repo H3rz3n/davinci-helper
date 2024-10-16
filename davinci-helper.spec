@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION
 %changelog
+* Wed Oct 16 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.3-1
+- Fixing a major issues that will stuck the app during video conversion.
+
 * Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.2-1
 - Fixing italian translation.
 
