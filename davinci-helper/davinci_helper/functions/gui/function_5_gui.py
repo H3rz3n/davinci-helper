@@ -911,7 +911,7 @@ class function_5_class (Gtk.ScrolledWindow):
         #-----------------------------------------------------------------------------------------------------
 
         # SETTING THE FILE THAT IS CURRENTLY CONVERTING IN THE PROGRESS BAR
-        GLib.idle_add(self.converter_progressbar.set_text, (_("Converting the file : {self.file_name}")).format(file_name=self.file_name))
+        GLib.idle_add(self.converter_progressbar.set_text, (_("Converting the file : {file_name}")).format(file_name=self.file_name))
 
         #-----------------------------------------------------------------------------------------------------
 

@@ -27,6 +27,8 @@
             <li>DaVinci Resolve installation wizard easy start</li>
             <li>Application of post install patch</li>
             <li>Easy GPU Driver installation</li>
+            <li>Easy video conversion for DaVinci Resolve Free</li>
+            <li>Easy font import for DaVinci Resolve</li>
         </ul>
 
     <!-- -->
@@ -69,6 +71,20 @@
    
     <!-- -->
     <releases>
+
+        <!-- -->
+        <release version="2.0.3" date="2024-16-10">Fixing italian translation
+
+            <description>
+                
+                    <ul>
+                        <li>Fixing an important bug that will stuck the program during the video conversion</li>
+                    </ul>
+                
+            </description>
+
+        <!-- -->
+        </release>
 
         <!-- -->
         <release version="2.0.2" date="2024-12-10">Fixing italian translation
