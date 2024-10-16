@@ -28,13 +28,6 @@ Currently the app was tested on these OSs :
 - Fedora 40 - All spins
 - Nobara 40
 
-## What OSs are supported by an older version of the app
-Currently the app was tested on these OSs :
-- Fedora 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
-- Fedora 38 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
-- Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
-- Nobara 39 - All spins - [Use V1.1.0](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) - Support only DaVinci Resolve 18.x.x
-
 ## What GPUs are currently supported
 Currently are supported the following GPUs :
 - **Nvidia :** from `1xxx` series to `4xxx` series
