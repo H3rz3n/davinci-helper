@@ -952,7 +952,7 @@ class function_5_class (Gtk.ScrolledWindow):
             #-----------------------------------------------------------------------------------------------------
 
             # PRINTING THE NAME OF THE FINISHED FILES
-            print(_("Finished processing the file : {self.file_name}").format(file_name=self.file_name))
+            print(_("Finished processing the file : {file_name}").format(file_name=self.file_name))
             
             # SETTING THE PROGRESS BAR TO 100
             GLib.idle_add(self.converter_progressbar.set_fraction, 1.0)
