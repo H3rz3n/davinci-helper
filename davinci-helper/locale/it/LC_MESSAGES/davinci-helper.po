@@ -1276,7 +1276,6 @@ msgid "Cancel"
 msgstr "Cancella"
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:117
-#, fuzzy
 msgid ""
 "Thank you for trusting us and installing DaVinci Helper. We hope that this "
 "app will make the management of DaVinci Resolve easier for you.\n"
@@ -1285,7 +1284,6 @@ msgstr ""
 "Speriamo che questa app vi semplifichi l'utilizzo di DaVinci Resolve su Linux.\n"
 
 #: davinci_helper/functions/gui/welcome_dialog_gui.py:120
-#, fuzzy
 msgid ""
 "This app is not affiliated in any way with BlackMagic Design, it's only a "
 "community project and comes without any guarantees.\n"
