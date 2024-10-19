@@ -56,13 +56,6 @@ Open a terminal window and paste this instruction :
 sudo dnf install -y davinci-helper
 ```
 
-## How install DaVinci Helper in Fedora 38 and 39
-Download the [legacy version](https://github.com/H3rz3n/davinci-helper/releases/tag/v1.1.0) of the app, then open a terminal window paste the following command :
-```
-sudo dnf install -y
-```
-Then drag and drop the app package `.rpm` file or write the path to the app package.
-
 ## How use DaVinci Helper
 In [this link](https://github.com/H3rz3n/How-install-DaVinci-Resolve-in-Fedora-Linux) you can find a complete tutorial on how install DaVinci Resolve using DaVinci Helper.
 
