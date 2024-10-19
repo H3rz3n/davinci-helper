@@ -70,8 +70,8 @@ In [this link](https://github.com/H3rz3n/How-install-DaVinci-Resolve-in-Fedora-L
 If you want to contribute to this project you can help us [testing the GPU drivers](https://github.com/H3rz3n/davinci-helper/discussions), translating the app or [making a donation](https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8) to support the work needed for the maintenance and the continue update to keep up with the latest DaVinci and Fedora versions.
 
 
-
-
+## What is the project roadmap ?
+You can find all the information about the project roadmap in the [dedicated page](https://github.com/H3rz3n/davinci-helper/wiki/Project-roadmap).
 
 
 
