@@ -202,7 +202,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 960X720
-    if width == 960 and height == 720 :
+    if width <= 960 and height <= 720 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -235,7 +235,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1280X720
-    if width == 1280 and height == 720 :
+    if width <= 1280 and height <= 720 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -268,7 +268,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1440X1080
-    if width == 1440 and height == 1080 :
+    if width <= 1440 and height <= 1080 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -301,7 +301,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1920X1080
-    if width <= 1920 and height == 1080 :
+    if width <= 1920 and height <= 1080 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
