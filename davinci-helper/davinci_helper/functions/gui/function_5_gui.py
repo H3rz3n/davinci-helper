@@ -14,7 +14,7 @@
 
 # IMPORTAZIONE DEI MODULI STANDARD
 # STANDARD MODULE IMPORT
-import sys, gi, os, threading, gettext, locale, subprocess, re, fcntl
+import sys, gi, os, threading, gettext, locale, subprocess, re, fcntl, select
 
 # RICHIESTA DELLE VERSIONI DI GTK ED ADWAITA
 # REQUESTING THE CHOOSEN VERSION OF GTK AND ADWAITA
@@ -926,9 +926,11 @@ class function_5_class (Gtk.ScrolledWindow):
         #-----------------------------------------------------------------------------------------------------
 
         # MAKING THE READING OF OUTPUT OF THE PROCESS NOT BLOCKING
-        fd = self.ffmpeg_process.stdout.fileno()
-        fl = fcntl.fcntl(fd, fcntl.F_GETFL)
-        fcntl.fcntl(fd, fcntl.F_SETFL, fl | os.O_NONBLOCK)
+        fd_stdout = self.ffmpeg_process.stdout.fileno()
+        fd_stderr = self.ffmpeg_process.stderr.fileno()
+        fcntl.fcntl(fd_stdout, fcntl.F_SETFL, fcntl.fcntl(fd_stdout, fcntl.F_GETFL) | os.O_NONBLOCK)
+        fcntl.fcntl(fd_stderr, fcntl.F_SETFL, fcntl.fcntl(fd_stderr, fcntl.F_GETFL) | os.O_NONBLOCK)
+
 
         #-----------------------------------------------------------------------------------------------------
 
@@ -977,43 +979,56 @@ class function_5_class (Gtk.ScrolledWindow):
 
         #-----------------------------------------------------------------------------------------------------
 
-        # CHECK IF THERE IS OUTPUT FROM FFMPEG
-        try:
+        # Use select to check if there's data to read from stdout or stderr
+        ready_to_read, _, _ = select.select([self.ffmpeg_process.stdout, self.ffmpeg_process.stderr], [], [], 0.1)
 
-            # GETTING THE FFMPEG OUTPUT
-            output = self.ffmpeg_process.stdout.readline()
 
-        except BlockingIOError:
+        # GETTING THE FFMPEG OUTPUT
+        for pipe in ready_to_read:
 
-            # SETTING THE OUTPUT AS NONE IF IS ABSENT
-            output = None
+            # CHECK IF THERE IS OUTPUT FROM FFMPEG
+            try:
 
-        # CHECKING IF THE OUTPUT HAS BEEN ACQUIRED
-        if output:
+                # Read output from stdout or stderr
+                output = pipe.readline()
 
-            # READING THE FFMPEG LOG LINE BY LINE
-            for line in output.splitlines():
+            except BlockingIOError:
 
-                # CHECK IF THE LOG LINE CONTAINS THE PROCESSED TIME OUTPUT
-                if "out_time_ms=" in line:
-                    
-                    # GETTING THE FFMPEG PROCESSED TIME OUTPUT
-                    match = re.search(r"out_time_ms=(\d+)", line)
+                # SETTING THE OUTPUT AS NONE IF IS ABSENT
+                output = None
 
-                    # CHECKING IF THE MATCH HAS BEEN ACQUIRED
-                    if match:
+
+
+            # CHECKING IF THE OUTPUT HAS BEEN ACQUIRED
+            if output:
+
+                # READING THE FFMPEG LOG LINE BY LINE
+                for line in output.splitlines():
+
+                    # CHECK IF THE LOG LINE CONTAINS THE PROCESSED TIME OUTPUT
+                    if "out_time_ms=" in line:
                         
-                        # EXTRACTING THE VALUE FROM THE OBJECT
-                        out_time_ms = int(match.group(1))
+                        # GETTING THE FFMPEG PROCESSED TIME OUTPUT
+                        match = re.search(r"out_time_ms=(\d+)", line)
 
-                        # CALCULATING THE PROGRESS USING THE FORMULA "PARTIAL ELABORATED TIME / FILE DURATION"
-                        progress = out_time_ms / (self.duration_list[self.index] * 1_000_000)  # Calculate progress
+                        # CHECKING IF THE MATCH HAS BEEN ACQUIRED
+                        if match:
+                            
+                            # EXTRACTING THE VALUE FROM THE OBJECT
+                            out_time_ms = int(match.group(1))
 
-                        # SETTING THE PROGRESS BAR %
-                        GLib.idle_add(self.converter_progressbar.set_fraction, progress)
+                            # CALCULATING THE PROGRESS USING THE FORMULA "PARTIAL ELABORATED TIME / FILE DURATION"
+                            progress = out_time_ms / (self.duration_list[self.index] * 1_000_000)  # Calculate progress
 
-                        # SETTING THE PROGRESS BAR TEXT
-                        GLib.idle_add(self.converter_progressbar.set_text, _(f"{self.file_name} - {progress * 100:.2f}%"))
+                            # SETTING THE PROGRESS BAR %
+                            GLib.idle_add(self.converter_progressbar.set_fraction, progress)
+
+                            # SETTING THE PROGRESS BAR TEXT
+                            GLib.idle_add(self.converter_progressbar.set_text, _(f"{self.file_name} - {progress * 100:.2f}%"))
+
+
+
+        
 
 
 
