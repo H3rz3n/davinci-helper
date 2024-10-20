@@ -173,7 +173,7 @@ def get_encoder (width, fps):
         # RETURNING BACK THE CORRECT ENCODER
         return "DNxHD"
 
-    elif width < 1920 and fps > 60:
+    elif fps > 60:
 
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
         return "Unsupported"
@@ -379,7 +379,7 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
         else:
 
             # SETTING THE BITRATE
-            print (width)
+            print (width, fps)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
@@ -424,7 +424,7 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
         else:
 
             # SETTING THE BITRATE
-            print (width)
+            print (width, fps)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
@@ -469,7 +469,7 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
         else:
 
             # SETTING THE BITRATE
-            print (width)
+            print (width, fps)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
