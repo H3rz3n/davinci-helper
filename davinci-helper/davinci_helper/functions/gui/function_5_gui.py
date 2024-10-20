@@ -979,8 +979,9 @@ class function_5_class (Gtk.ScrolledWindow):
 
         #-----------------------------------------------------------------------------------------------------
 
-        # Use select to check if there's data to read from stdout or stderr
-        ready_to_read, _, _ = select.select([self.ffmpeg_process.stdout, self.ffmpeg_process.stderr], [], [], 0.1)
+        # Use 'unused' as a placeholder instead of '_'
+        ready_to_read, unused, unused = select.select([self.ffmpeg_process.stdout, self.ffmpeg_process.stderr], [], [], 0.1)
+
 
 
         # GETTING THE FFMPEG OUTPUT
