@@ -691,6 +691,9 @@ class function_5_class (Gtk.ScrolledWindow):
             # CONNECTING THE START BUTTON TO THE FUNCTION
             self.converter_dialog_class.dialog_continue_button.connect('clicked', lambda button : self.remove_unsupported_files())
 
+            # CONNECTING THE CLOSE BUTTON TO THE FUNCTION
+            self.converter_dialog_class.dialog_close_button.connect('clicked', lambda button : self.stop_loading())
+
             # SHOW UNSUPORTED FILE DIALOG
             self.converter_dialog_class.show_dialog(self)
 
