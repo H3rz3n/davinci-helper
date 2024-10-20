@@ -921,6 +921,8 @@ class function_5_class (Gtk.ScrolledWindow):
         # STARTING THE CONVERSION OF THE FILE
         self.ffmpeg_process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=True, bufsize=1)
 
+        print("\n\n\nThe FFMPEG command used to convert the file ",self.file_name, "is : ", command)
+
         #-----------------------------------------------------------------------------------------------------
 
         # MAKING THE READING OF OUTPUT OF THE PROCESS NOT BLOCKING

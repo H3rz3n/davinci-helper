@@ -546,8 +546,6 @@ def get_file_weight (video_bitrate, audio_bitrate, duration):
 
 
 
-#
-
 
 
 
