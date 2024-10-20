@@ -178,6 +178,11 @@ def get_encoder (width, fps):
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
         return "Unsupported"
 
+    elif width > 4096 :
+
+        # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
+        return "Unsupported"
+
     else :
 
         # RETURNING BACK THE CORRECT ENCODER
@@ -294,7 +299,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1920X1080
-    if width == 1920 and height == 1080 :
+    if width <= 1920 and height == 1080 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -341,32 +346,32 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
         # SETTING THE ORIGINAL QUALITY
         video_settings = "-profile:v dnxhr_hq"
         
-        if width == 1920 and fps <= 30 :
+        if width <= 1920 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 145
 
-        elif width == 1920 and fps <= 60 :
+        elif width <= 1920 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 220
 
-        elif width == 2048 and fps <= 30 :
+        elif width <= 2048 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 155
 
-        elif width == 2048 and fps <= 60 :
+        elif width <= 2048 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 240
 
-        elif width == 4096 and fps <= 30 :
+        elif width <= 4096 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 707
 
-        elif width == 4096 and fps <= 60 :
+        elif width <= 4096 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 1170
@@ -381,32 +386,32 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
         # SETTING THE ORIGINAL QUALITY
         video_settings = "-profile:v dnxhr_sq"
         
-        if width == 1920 and fps <= 30 :
+        if width <= 1920 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 90
 
-        elif width == 1920 and fps <= 60 :
+        elif width <= 1920 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 145
 
-        elif width == 2048 and fps <= 30 :
+        elif width <= 2048 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 95
 
-        elif width == 2048 and fps <= 60 :
+        elif width <= 2048 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 160
 
-        elif width == 4096 and fps <= 30 :
+        elif width <= 4096 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 384
 
-        elif width == 4096 and fps <= 60 :
+        elif width <= 4096 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 707
@@ -421,32 +426,32 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
         # SETTING THE ORIGINAL QUALITY
         video_settings = "-profile:v dnxhr_lb"
         
-        if width == 1920 and fps <= 30 :
+        if width <= 1920 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 45
 
-        elif width == 1920 and fps <= 60 :
+        elif width <= 1920 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 75
 
-        elif width == 2048 and fps <= 30 :
+        elif width <= 2048 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 50
 
-        elif width == 2048 and fps <= 60 :
+        elif width <= 2048 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 85
 
-        elif width == 4096 and fps <= 30 :
+        elif width <= 4096 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 192
 
-        elif width == 4096 and fps <= 60 :
+        elif width <= 4096 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 365
