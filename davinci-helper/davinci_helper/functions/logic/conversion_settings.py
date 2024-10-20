@@ -376,6 +376,11 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
             # SETTING THE BITRATE
             video_bitrate = 1170
 
+        else:
+
+            # SETTING THE BITRATE
+            print (width)
+
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
 
@@ -415,6 +420,11 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
 
             # SETTING THE BITRATE
             video_bitrate = 707
+        
+        else:
+
+            # SETTING THE BITRATE
+            print (width)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
@@ -455,6 +465,11 @@ def translate_video_settings_for_dnxhr (video_quality, width, fps):
 
             # SETTING THE BITRATE
             video_bitrate = 365
+
+        else:
+
+            # SETTING THE BITRATE
+            print (width)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
