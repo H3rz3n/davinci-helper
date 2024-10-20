@@ -176,11 +176,13 @@ def get_encoder (width, fps):
     elif fps > 61:
 
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
+        print(width, fps)
         return "Unsupported"
 
     elif width > 4097 :
 
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
+        print(width, fps)
         return "Unsupported"
 
     else :
