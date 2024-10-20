@@ -98,7 +98,7 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
         elif encoder == "DNxHR" :
 
             # GETTING THE CORRECT VIDEO SETTING
-            video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width)
+            video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width, fps)
 
             # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
             video_settings.append(video_placeholder)
@@ -331,7 +331,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
 
         
 # FUNCTION THAT WILL TRANSLATE THE VIDEO DROPDOWN SETTINGS IN FFMPEG SETTINGS
-def translate_video_settings_for_dnxhr (video_quality, width):
+def translate_video_settings_for_dnxhr (video_quality, width, fps):
 
     #-----------------------------------------------------------------------------------------------------
 
