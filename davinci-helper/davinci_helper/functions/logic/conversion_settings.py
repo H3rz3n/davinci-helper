@@ -168,17 +168,17 @@ def get_encoder (width, fps):
     #-----------------------------------------------------------------------------------------------------
 
     # GETTING THE CORRECT ENCODER USING THE WIDH PARAMETERS AS REFERENCE
-    if width <= 1920 and fps <= 60:
+    if width <= 1920 and fps <= 61:
 
         # RETURNING BACK THE CORRECT ENCODER
         return "DNxHD"
 
-    elif fps > 60:
+    elif fps > 61:
 
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
         return "Unsupported"
 
-    elif width > 4096 :
+    elif width > 4097 :
 
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
         return "Unsupported"
