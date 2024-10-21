@@ -73,6 +73,18 @@
     <releases>
 
         <!-- -->
+        <release version="2.0.5" date="2024-16-10">Fixing italian translation
+
+            <description>
+                
+                    <ul>
+                        <li>Fixing a major issues that will not install a necessary library during Nvidia gpu driver installation.</li>
+                    </ul>
+                
+            </description>
+
+
+        <!-- -->
         <release version="2.0.3" date="2024-16-10">Fixing italian translation
 
             <description>
