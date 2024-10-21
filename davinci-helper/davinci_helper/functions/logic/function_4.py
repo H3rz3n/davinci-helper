@@ -445,7 +445,7 @@ def install_nvidia_driver():
     else :
 
         # INSTALLING THE NVIDIA PROPRIETARY DRIVER  
-        nvidia_driver_install = subprocess.run("dnf install -y akmod-nvidia", shell=True, capture_output=True, text=True )
+        nvidia_driver_install = subprocess.run("dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
         if nvidia_driver_install.returncode != 0 :
