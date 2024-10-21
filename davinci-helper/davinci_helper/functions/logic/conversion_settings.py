@@ -154,7 +154,7 @@ def get_file_info (file):
     # GETTING THE FRAMERATE
 
     # DEFINING THE FFPROBE COMMAND
-    command = f"ffprobe -v 0 -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 {file}"
+    command = f"ffprobe -v 0 -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 '{file}'"
 
     # GETTING THE AVERAGE FRAMERATE FRACTION
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
