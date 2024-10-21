@@ -98,7 +98,7 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
         elif encoder == "DNxHR" :
 
             # GETTING THE CORRECT VIDEO SETTING
-            video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width)
+            video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width, fps)
 
             # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
             video_settings.append(video_placeholder)
@@ -128,7 +128,7 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
 
     #-----------------------------------------------------------------------------------------------------
     
-    return video_settings, audio_settings, f"{total_weight} GB", unsupported_list, duration_list
+    return video_settings, audio_settings, total_weight, unsupported_list, duration_list
     
     #-----------------------------------------------------------------------------------------------------
 
@@ -149,8 +149,31 @@ def get_file_info (file):
     # GETTING THE DURATION
     duration = video.duration
 
+    #-----------------------------------------------------------------------------------------------------
+
     # GETTING THE FRAMERATE
-    fps = video.fps
+
+    # DEFINING THE FFPROBE COMMAND
+    command = f"ffprobe -v 0 -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 '{file}'"
+
+    # GETTING THE AVERAGE FRAMERATE FRACTION
+    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
+
+    # SPLITTING THE NUMERATOR AND DENOMINATOR
+    avg_frame_rate = result.stdout.strip()
+    numerator, denominator = map(int, avg_frame_rate.split('/'))
+
+    # CALCULATING THE AVERAGE FRAMERATE
+    if denominator == 0 or numerator == 0:
+
+        # SETTING THE FPS TO A NUMBER THAT WILL TRIGGER AND ERROR DIALOG
+        fps = 100
+
+    else :
+
+        # GETTING THE CORRECT AVERAGE FRAMERATE
+        fps = numerator / denominator
+        fps = round(fps, 2)
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -168,14 +191,21 @@ def get_encoder (width, fps):
     #-----------------------------------------------------------------------------------------------------
 
     # GETTING THE CORRECT ENCODER USING THE WIDH PARAMETERS AS REFERENCE
-    if width <= 1920 and fps <= 60:
+    if width <= 1920 and fps <= 61:
 
         # RETURNING BACK THE CORRECT ENCODER
         return "DNxHD"
 
-    elif width < 1920 and fps > 60:
+    elif fps > 61:
 
         # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
+        print("The unsupported file has the following characteristics :", width, fps)
+        return "Unsupported"
+
+    elif width > 4097 :
+
+        # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
+        print("The unsupported file has the following characteristics :", width, fps)
         return "Unsupported"
 
     else :
@@ -195,7 +225,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 960X720
-    if width == 960 and height == 720 :
+    if width <= 960 and height <= 720 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -228,7 +258,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1280X720
-    if width == 1280 and height == 720 :
+    if width <= 1280 and height <= 720 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -261,7 +291,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1440X1080
-    if width == 1440 and height == 1080 :
+    if width <= 1440 and height <= 1080 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -294,7 +324,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF THE VIDEO IS 1920X1080
-    if width == 1920 and height == 1080 :
+    if width <= 1920 and height <= 1080 :
 
         # GETTING THE VIDEO QUALITY SETTINGS
         if video_quality == 0 :
@@ -331,7 +361,7 @@ def translate_video_settings_for_dnxhd (video_quality, width, height):
 
         
 # FUNCTION THAT WILL TRANSLATE THE VIDEO DROPDOWN SETTINGS IN FFMPEG SETTINGS
-def translate_video_settings_for_dnxhr (video_quality, width):
+def translate_video_settings_for_dnxhr (video_quality, width, fps):
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -341,35 +371,40 @@ def translate_video_settings_for_dnxhr (video_quality, width):
         # SETTING THE ORIGINAL QUALITY
         video_settings = "-profile:v dnxhr_hq"
         
-        if width == 1920 and fps == 30 :
+        if width <= 1920 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 145
 
-        elif width == 1920 and fps == 60 :
+        elif width <= 1920 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 220
 
-        elif width == 2048 and fps == 30 :
+        elif width <= 2048 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 155
 
-        elif width == 2048 and fps == 60 :
+        elif width <= 2048 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 240
 
-        elif width == 4096 and fps == 30 :
+        elif width <= 4096 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 707
 
-        elif width == 4096 and fps == 60 :
+        elif width <= 4096 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 1170
+
+        else:
+
+            # SETTING THE BITRATE
+            print (width, fps)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
@@ -381,35 +416,40 @@ def translate_video_settings_for_dnxhr (video_quality, width):
         # SETTING THE ORIGINAL QUALITY
         video_settings = "-profile:v dnxhr_sq"
         
-        if width == 1920 and fps == 30 :
+        if width <= 1920 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 90
 
-        elif width == 1920 and fps == 60 :
+        elif width <= 1920 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 145
 
-        elif width == 2048 and fps == 30 :
+        elif width <= 2048 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 95
 
-        elif width == 2048 and fps == 60 :
+        elif width <= 2048 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 160
 
-        elif width == 4096 and fps == 30 :
+        elif width <= 4096 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 384
 
-        elif width == 4096 and fps == 60 :
+        elif width <= 4096 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 707
+        
+        else:
+
+            # SETTING THE BITRATE
+            print (width, fps)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
@@ -421,35 +461,40 @@ def translate_video_settings_for_dnxhr (video_quality, width):
         # SETTING THE ORIGINAL QUALITY
         video_settings = "-profile:v dnxhr_lb"
         
-        if width == 1920 and fps == 30 :
+        if width <= 1920 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 45
 
-        elif width == 1920 and fps == 60 :
+        elif width <= 1920 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 75
 
-        elif width == 2048 and fps == 30 :
+        elif width <= 2048 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 50
 
-        elif width == 2048 and fps == 60 :
+        elif width <= 2048 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 85
 
-        elif width == 4096 and fps == 30 :
+        elif width <= 4096 and fps <= 30 :
 
             # SETTING THE BITRATE
             video_bitrate = 192
 
-        elif width == 4096 and fps == 60 :
+        elif width <= 4096 and fps <= 60 :
 
             # SETTING THE BITRATE
             video_bitrate = 365
+
+        else:
+
+            # SETTING THE BITRATE
+            print (width, fps)
 
         # GIVING BACK THE VALUES
         return video_settings, video_bitrate
@@ -545,8 +590,6 @@ def get_file_weight (video_bitrate, audio_bitrate, duration):
 
 
 
-
-#
 
 
 
