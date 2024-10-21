@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION
 %changelog
+* Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.6-1
+- Fixing a major issues that will not install all the necessary libraries during Nvidia GPU driver installation.
+
 * Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.5-1
 - Fixing a major issues that will not install a necessary library during Nvidia gpu driver installation.
 

@@ -433,10 +433,12 @@ def install_nvidia_driver():
     #-----------------------------------------------------------------------------------------------------
 
     # ACQUIRING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
-    nvidia_driver_check = subprocess.run("dnf list installed | grep akmod-nvidia", shell=True, capture_output=True, text=True )
+    nvidia_driver_check_1 = subprocess.run("dnf list installed | grep akmod-nvidia", shell=True, capture_output=True, text=True )
+    nvidia_driver_check_2 = subprocess.run("dnf list installed | grep xorg-x11-drv-nvidia-cuda", shell=True, capture_output=True, text=True )
+    nvidia_driver_check = nvidia_driver_check_1.stdout + nvidia_driver_check_2.stdout
 
     # CHECKING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
-    if nvidia_driver_check.stdout.find("akmod-nvidia") != -1:
+    if nvidia_driver_check.find("akmod-nvidia") != -1 and nvidia_driver_check.find("xorg-x11-drv-nvidia-cuda") != -1:
 
         # PRINTING THE MESSAGE
         print(_("The proprietary Nvidia GPU driver was already installed on the system, there was no need to install it."))
