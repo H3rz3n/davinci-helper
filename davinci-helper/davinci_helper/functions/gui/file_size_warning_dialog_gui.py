@@ -61,7 +61,7 @@ class file_size_warning_dialog_class ():
         #-----------------------------------------------------------------------------------------------------
 
         # ROUNDING THE TAKED DISK SPACE
-        disk_space = round(disk_space, 2)
+        disk_space_r = round(disk_space, 2)
 
         #-----------------------------------------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ class file_size_warning_dialog_class ():
         self.dialog_subtitle_1.set_text(_("The conversion of the files using the DNxHD/HR encoder will make new files fully compatible with DaVinci Resolve Free.\n\nThe use of these uncompressed sources will make your editing experience faster, but it will take a lot of disk space.\n"))
 
         # LOADING SUBTITLE TEXT
-        self.dialog_subtitle_2.set_text(_("The estimated disk space needed to convert the files is :\n{space_placeholder}GB\n").format(space_placeholder = disk_space))
+        self.dialog_subtitle_2.set_text(_("The estimated disk space needed to convert the files is :\n{space_placeholder}GB\n").format(space_placeholder = disk_space_r))
 
         # LOADING SUBTITLE TEXT
         self.dialog_subtitle_3.set_markup(_("If you want to use less disk space please consider using\nlower video and audio settings."))
