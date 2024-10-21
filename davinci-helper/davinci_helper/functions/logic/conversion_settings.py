@@ -128,7 +128,7 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
 
     #-----------------------------------------------------------------------------------------------------
     
-    return video_settings, audio_settings, f"{total_weight}", unsupported_list, duration_list
+    return video_settings, audio_settings, total_weight, unsupported_list, duration_list
     
     #-----------------------------------------------------------------------------------------------------
 

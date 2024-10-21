@@ -61,7 +61,7 @@ class file_size_warning_dialog_class ():
         #-----------------------------------------------------------------------------------------------------
 
         # ROUNDING THE TAKED DISK SPACE
-        disk_space = float(disk_space)
+        disk_space_f = float(disk_space)
         disk_space_f = round(disk_space_f, 2)
 
         #-----------------------------------------------------------------------------------------------------
