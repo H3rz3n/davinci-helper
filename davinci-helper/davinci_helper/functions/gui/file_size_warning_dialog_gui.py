@@ -60,6 +60,11 @@ class file_size_warning_dialog_class ():
 
         #-----------------------------------------------------------------------------------------------------
 
+        # ROUNDING THE TAKED DISK SPACE
+        disk_space = round(disk_space, 2)
+
+        #-----------------------------------------------------------------------------------------------------
+
         # GETTING THE WINDOW CONSTRUCTOR
         dialog = Gtk.Builder()
 

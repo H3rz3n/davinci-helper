@@ -160,7 +160,6 @@ def get_file_info (file):
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
 
     # SPLITTING THE NUMERATOR AND DENOMINATOR
-    print("Getting the average framerate of the file : ", file)
     avg_frame_rate = result.stdout.strip()
     numerator, denominator = map(int, avg_frame_rate.split('/'))
 
