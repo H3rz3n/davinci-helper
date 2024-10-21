@@ -149,8 +149,31 @@ def get_file_info (file):
     # GETTING THE DURATION
     duration = video.duration
 
+    #-----------------------------------------------------------------------------------------------------
+
     # GETTING THE FRAMERATE
-    fps = video.fps
+
+    # DEFINING THE FFPROBE COMMAND
+    command = f"ffprobe -v 0 -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 {file}"
+
+    # GETTING THE AVERAGE FRAMERATE FRACTION
+    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
+
+    # SPLITTING THE NUMERATOR AND DENOMINATOR
+    avg_frame_rate = result.stdout.strip()
+    numerator, denominator = map(int, avg_frame_rate.split('/'))
+
+    # CALCULATING THE AVERAGE FRAMERATE
+    if denominator == 0 :
+
+        # SETTING THE FPS TO A NUMBER THAT WILL TRIGGER AND ERROR DIALOG
+        fps = 100
+
+    else :
+
+        # GETTING THE CORRECT AVERAGE FRAMERATE
+        fps = numerator / denominator
+        fps = round(fps, 2)
 
     #-----------------------------------------------------------------------------------------------------
 
