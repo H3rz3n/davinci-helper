@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.0.6
+Version:        2.0.7
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -92,13 +92,16 @@ update-desktop-database &> /dev/null || :
 sudo systemctl restart polkit
 pip install moviepy
 
-# CHANGELOG OF THE VERSION
+# CHANGELOG OF THE VERSION 
 %changelog
+* Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.7-1
+- Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
+
 * Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.6-1
-- Fixing a major issues that will not install all the necessary libraries during Nvidia GPU driver installation.
+- Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
 
 * Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.5-1
-- Fixing a major issues that will not install a necessary library during Nvidia gpu driver installation.
+- Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
 
 * Wed Oct 16 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.3-1
 - Fixing a major issues that will stuck the app during video conversion.

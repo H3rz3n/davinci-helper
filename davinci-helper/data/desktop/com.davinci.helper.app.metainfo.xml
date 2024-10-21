@@ -73,6 +73,22 @@
     <releases>
 
         <!-- -->
+        <release version="2.0.7" date="2024-21-10">Fixing GPU driver installation
+
+            <description>
+                
+                    <ul>
+                        <li>Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation.</li>
+                    </ul>
+                
+            </description>
+                    
+          <!-- -->
+        </release>
+
+
+
+        <!-- -->
         <release version="2.0.6" date="2024-21-10">Fixing GPU driver installation
 
             <description>
@@ -82,6 +98,11 @@
                     </ul>
                 
             </description>
+
+          <!-- -->
+        </release>
+
+
 
         <!-- -->
         <release version="2.0.5" date="2024-21-10">Fixing GPU driver installation
@@ -93,6 +114,10 @@
                     </ul>
                 
             </description>
+
+          <!-- -->
+        </release>  
+
 
 
         <!-- -->
@@ -109,6 +134,8 @@
         <!-- -->
         </release>
 
+
+
         <!-- -->
         <release version="2.0.2" date="2024-12-10">Fixing italian translation
 
@@ -122,6 +149,8 @@
 
         <!-- -->
         </release>
+
+
 
         <!-- -->
         <release version="2.0.1" date="2024-12-10">
@@ -137,6 +166,7 @@
         <!-- -->
         </release>
     
+
 
         <!-- -->
         <release version="2.0.0" date="2024-17-9">
