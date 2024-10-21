@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.0.4
+Version:        2.0.5
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
