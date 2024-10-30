@@ -73,6 +73,22 @@
     <releases>
 
         <!-- -->
+        <release version="2.0.8" date="2024-30-10">Fixing GPU driver installation
+
+            <description>
+                
+                    <ul>
+                        <li>Fixed a minor issue that will make a broken output during AMD GPU driver installation.</li>
+                    </ul>
+                
+            </description>
+                    
+          <!-- -->
+        </release>
+
+
+
+        <!-- -->
         <release version="2.0.7" date="2024-21-10">Fixing GPU driver installation
 
             <description>

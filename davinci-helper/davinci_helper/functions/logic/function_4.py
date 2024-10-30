@@ -256,7 +256,7 @@ def check_amd_gpu_support (gpu_model_name_list, gpu_model_number_list):
 
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
                         gpu_name = gpu_name.upper()
-                        print(_(f"A compatible AMD GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
+                        print(_("A compatible AMD GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
                         print("")
 
                         # SETTING AD FOUND A SUPPORTED AMD GPU
@@ -309,7 +309,7 @@ def check_intel_gpu_support (gpu_model_name_list, gpu_model_number_list):
 
                         # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
                         gpu_name = gpu_name.upper()
-                        print(_(f"A compatible Intel GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
+                        print(_("A compatible Intel GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
                         print("")
 
                         # SETTING AD FOUND A SUPPORTED INTEL GPU

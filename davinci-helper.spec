@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Wed Oct 30 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.8-1
+- Fixed a minor issue that will make a broken output during AMD GPU driver installation
+
 * Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.7-1
 - Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
 
