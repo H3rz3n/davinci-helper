@@ -433,8 +433,8 @@ def install_nvidia_driver():
     #-----------------------------------------------------------------------------------------------------
 
     # ACQUIRING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
-    nvidia_driver_check_1 = subprocess.run("dnf list installed | grep akmod-nvidia", shell=True, capture_output=True, text=True )
-    nvidia_driver_check_2 = subprocess.run("dnf list installed | grep xorg-x11-drv-nvidia-cuda", shell=True, capture_output=True, text=True )
+    nvidia_driver_check_1 = subprocess.run("dnf list --installed | grep akmod-nvidia", shell=True, capture_output=True, text=True )
+    nvidia_driver_check_2 = subprocess.run("dnf list --installed | grep xorg-x11-drv-nvidia-cuda", shell=True, capture_output=True, text=True )
     nvidia_driver_check = nvidia_driver_check_1.stdout + nvidia_driver_check_2.stdout
 
     # CHECKING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
@@ -481,7 +481,7 @@ def install_amd_driver():
     #-----------------------------------------------------------------------------------------------------
     
     # ACQUIRING IF IS ALREADY INSTALLED THE AMD DRIVER
-    amd_driver_check = subprocess.run("dnf list installed | grep rocm && dnf list installed | grep freeworld", shell=True, capture_output=True, text=True ).stdout
+    amd_driver_check = subprocess.run("dnf list --installed | grep rocm && dnf list --installed | grep freeworld", shell=True, capture_output=True, text=True ).stdout
 
     #-----------------------------------------------------------------------------------------------------
 

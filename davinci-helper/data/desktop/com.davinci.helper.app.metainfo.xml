@@ -73,6 +73,22 @@
     <releases>
 
         <!-- -->
+        <release version="2.0.10" date="2024-07-11">Fixing GPU driver installation
+
+            <description>
+                
+                    <ul>
+                        <li>Fixed a minor issue with DNF-5 commands.</li>
+                    </ul>
+                
+            </description>
+                    
+          <!-- -->
+        </release>
+
+
+
+        <!-- -->
         <release version="2.0.9" date="2024-07-11">Fixing GPU driver installation
 
             <description>

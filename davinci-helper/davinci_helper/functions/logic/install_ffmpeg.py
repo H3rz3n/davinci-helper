@@ -48,7 +48,7 @@ def check_ffmpeg_presence ():
     #-----------------------------------------------------------------------------------------------------
 
     # ACQUIRING IF FFMPEG IS ALREADY INSTALLED
-    check_ffmpeg = subprocess.run("dnf list installed | grep ffmpeg", shell=True, capture_output=True, text=True )
+    check_ffmpeg = subprocess.run("dnf list --installed | grep ffmpeg", shell=True, capture_output=True, text=True )
 
     # CHECKING IF FFMPEG IS ALREADY INSTALLED
     if check_ffmpeg.stdout.find("ffmpeg-free") != -1 :
