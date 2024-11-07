@@ -95,7 +95,7 @@ pip install moviepy
 # CHANGELOG OF THE VERSION 
 %changelog
 * Thu Nov 07 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.9-1
-- Fixed a minor issue that will not correctly install the RPM-Fusion repository
+- Fixed a minor issue that prevented the RPM-Fusion repository from installing properly.
 
 * Wed Oct 30 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.8-1
 - Fixed a minor issue that will make a broken output during AMD GPU driver installation

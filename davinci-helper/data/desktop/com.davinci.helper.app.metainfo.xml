@@ -78,7 +78,7 @@
             <description>
                 
                     <ul>
-                        <li>Fixed a minor issue that will not correctly install the RPM-Fusion repository.</li>
+                        <li>Fixed a minor issue that prevented the RPM-Fusion repository from installing properly.</li>
                     </ul>
                 
             </description>
