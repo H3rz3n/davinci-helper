@@ -81,7 +81,7 @@ def add_repository ():
     rpm_fusion_repo_check = subprocess.run("dnf repolist", shell=True, capture_output=True, text=True )
 
     # CHECKING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
-    if rpm_fusion_repo_check.stdout.find("rpmfusion") != -1:
+    if rpm_fusion_repo_check.stdout.find("rpmfusion-free") != -1 and rpm_fusion_repo_check.stdout.find("rpmfusion-nonfree"):
 
         # PRINTING THE MESSAGE
         print(_("The RPM Fusion repository had already been added to the system, there was no need to add it."))

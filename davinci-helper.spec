@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.0.8
+Version:        2.0.9
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Thu Nov 07 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.9-1
+- Fixed a minor issue that will not correctly install the RPM-Fusion repository
+
 * Wed Oct 30 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.8-1
 - Fixed a minor issue that will make a broken output during AMD GPU driver installation
 
