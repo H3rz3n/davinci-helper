@@ -5,7 +5,7 @@
 ## What is DaVinci Helper :
 DaVinci Helper is a companion app that will simplify the installation and the use of BlackMagic DaVinci Resolve (both Free and Studio version) on Linux. This app is written using Python and has a GUI based on GTK4 and Adwaita. 
 
-Currently **this program supports only Fedora Linux** in all his spins and derivatives. If the project will receive good feedback by the community I will make a version for Debian-based systems like Linux Mint and Ubuntu.
+Currently **this program supports only Fedora Linux** in all his spins and derivatives. If the project will receive a good feedback from the community I will make a version for Debian-based systems like Linux Mint and Ubuntu.
 
 <p align="center">
   <img src="/screenshot/01.png" alt="Banner"/>
