@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.0.10
+Version:        2.0.11
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Sat Nov 09 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.0.11-1
+- Fixed app version.
+
 * Thu Nov 07 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.10-1
 - Fixed a minor issue with DNF-5 commands.
 
