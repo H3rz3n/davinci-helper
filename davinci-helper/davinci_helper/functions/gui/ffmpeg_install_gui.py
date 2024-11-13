@@ -404,6 +404,22 @@ class ffmpeg_install_class (Gtk.ScrolledWindow):
     
         #-----------------------------------------------------------------------------------------------------
 
+        # CHECKING ERROR CODE 4
+        elif function_script.returncode == 4 :
+
+            # LOADING THE SUBTITLE TEXT
+            self.section_3_subtitle.set_text(_("There was an error installing the required codecs\nand libraries from the RPM Fusion repository\nPlease check the logs to have more details."))
+    
+        #-----------------------------------------------------------------------------------------------------
+
+        # CHECKING ERROR CODE 5
+        elif function_script.returncode == 5 :
+
+            # LOADING THE SUBTITLE TEXT
+            self.section_3_subtitle.set_text(_("There was an error updating the multimedia group\nPlease check the logs to have more details."))
+    
+        #-----------------------------------------------------------------------------------------------------
+
         # CHECKING IF WAS IMPOSSIBILE TO START THE FUNCTION DUE TO MISSING ROOT PERMISSION
         elif function_script.stdout == "" :
 
