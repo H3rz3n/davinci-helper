@@ -141,7 +141,7 @@ def update_settings (unsupported_version):
         # REPLACING ALL THE PREVIEWS SETTINGS BECAUSE THERE IS NOTHING IMPORTANT TO PRESERVE
         restore_settings()
     
-    elif unsupported_version.find("v2.") :
+    elif unsupported_version.find("v2.0.0") :
 
         # REPLACING ALL THE PREVIEWS SETTINGS BECAUSE THERE IS NOTHING IMPORTANT TO PRESERVE
         restore_settings()
