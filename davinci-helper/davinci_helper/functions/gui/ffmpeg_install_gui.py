@@ -350,7 +350,7 @@ class ffmpeg_install_class (Gtk.ScrolledWindow):
         self.section_3_subtitle.set_text(_("FFMPEG has been correctly installed inside the system.\nNow you can start using DaVinci Video Convert."))
 
         # SETTING THE START BUTTON LABEL
-        self.section_3_start_button.set_label("Go to DaVinci Video Converter")
+        self.section_3_start_button.set_label(_("Go to DaVinci Video Converter"))
 
         # SETTING THE START BUTTON FUNCTION
         self.section_3_start_button.connect('clicked', self.show_davinci_converter)
@@ -401,6 +401,22 @@ class ffmpeg_install_class (Gtk.ScrolledWindow):
 
             # LOADING THE SUBTITLE TEXT
             self.section_3_subtitle.set_text(_("There was an error swapping FFMPEG lite with\nFFMPEG full from the RPM Fusion repository.\nPlease check the logs to have more details."))
+    
+        #-----------------------------------------------------------------------------------------------------
+
+        # CHECKING ERROR CODE 4
+        elif function_script.returncode == 4 :
+
+            # LOADING THE SUBTITLE TEXT
+            self.section_3_subtitle.set_text(_("There was an error installing the required codecs\nand libraries from the RPM Fusion repository\nPlease check the logs to have more details."))
+    
+        #-----------------------------------------------------------------------------------------------------
+
+        # CHECKING ERROR CODE 5
+        elif function_script.returncode == 5 :
+
+            # LOADING THE SUBTITLE TEXT
+            self.section_3_subtitle.set_text(_("There was an error updating the multimedia group\nPlease check the logs to have more details."))
     
         #-----------------------------------------------------------------------------------------------------
 

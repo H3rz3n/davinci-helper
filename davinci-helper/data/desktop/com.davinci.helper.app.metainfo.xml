@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- -->
+<!-- APP TYPE -->
 <component type="desktop-application">
 
-    <!-- -->
+    <!-- APP ID -->
     <id>com.davinci.helper.app.desktop</id>
 
-    <!-- -->
-    <metadata_license>CC0-1.0</metadata_license>
 
-    <!-- -->
+
+    <!-- APP FORMAL NAME -->
     <name>DaVinci Helper</name>
 
-    <!-- -->
+
+
+    <!-- APP SUMMARY -->
     <summary>The best DaVinci Resolve companion app on Linux</summary>
 
+
+
+    <!-- METADATA LICENSE -->
+    <metadata_license>CC0-1.0</metadata_license>
+
+
+
+    <!-- PROJECT/APP LICENSE -->
+    <project_license>GPL-3.0</project_license>
     
 
-    <!-- -->
+
+    <!-- APP DESCRIPTION -->
     <description>
 
         <p>This app is created with the purpose of making it easier for Linux users to install and use DaVinci Resolve.</p>
@@ -30,116 +41,143 @@
             <li>Easy video conversion for DaVinci Resolve Free</li>.
         </ul>
 
-    <!-- -->
+    <!-- END OF APP DESCRIPTION -->
     </description>
 
-    <!-- -->
-    <categories>
-        <category>Settings</category>
-        <category>Utility</category>
-    </categories>
-
-    <!-- -->
-    <developer_name>Lorenzo Maiuri</developer_name>
-
-    <!-- -->
-    <project_license>GPL-3.0</project_license>
-
-    <!-- -->
-    <content_rating type="oars-1.1"/>
-
-    <!-- -->
-    <translation type="gettext">@gettext-package@</translation>
-
-    <!-- -->
-    <url type="homepage">https://github.com/H3rz3n/davinci-helper</url>
-
-    <!-- -->
-    <url type="bugtracker">https://github.com/H3rz3n/davinci-helper/issues</url>
-
-    <!-- -->
-    <url type="donation">https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8</url>
-
-    <!-- -->
-    <url type="help">https://github.com/H3rz3n/davinci-helper/wiki</url>
 
 
-    
-
-       
-   
-    <!-- -->
-    <releases>
-
-        <!-- -->
-        <release version="2.0.11" date="2024-09-11">
-
-            <description>
-                
-                    <ul>
-                        <li>Fixed app version.</li>
-                    </ul>
-                
-            </description>
-                    
-          <!-- -->
-        </release>
-    
-    <!-- -->
-    </releases>
+    <!-- APP DESKTOP FILE NAME -->
+    <launchable type="desktop-id">com.davinci.helper.app.desktop</launchable>
 
 
 
-
-    <!-- -->
+    <!-- APP SCREENSHOT -->
     <screenshots>
 
+        <!-- FIRST SCREENSHOT -->
         <screenshot type="default">
             <image>https://github.com/H3rz3n/davinci-helper/blob/main/screenshot/01.png?raw=true</image>
+            <caption>App homepage</caption>
         </screenshot>
 
         <screenshot >
             <image>https://github.com/H3rz3n/davinci-helper/blob/main/screenshot/02.png?raw=true</image>
+            <caption>Dependecies assistant</caption>
         </screenshot>
 
         <screenshot >
             <image>https://github.com/H3rz3n/davinci-helper/blob/main/screenshot/03.png?raw=true</image>
+            <caption>Installer starter</caption>
         </screenshot>
 
         <screenshot >
             <image>https://github.com/H3rz3n/davinci-helper/blob/main/screenshot/04.png?raw=true</image>
+            <caption>Post-installation fix applicator</caption>
         </screenshot>
 
         <screenshot >
             <image>https://github.com/H3rz3n/davinci-helper/blob/main/screenshot/05.png?raw=true</image>
+            <caption>GPU driver assistant</caption>
         </screenshot>
 
         <screenshot >
             <image>https://github.com/H3rz3n/davinci-helper/blob/main/screenshot/06.png?raw=true</image>
+            <caption>Video coverter</caption>
         </screenshot>
     
-    <!-- -->
+    <!-- END OF APP SCREENSHOT -->
     </screenshots>
 
 
-    
-    <!-- -->
-    <launchable type="desktop-id">com.davinci.helper.app.desktop</launchable>
 
-    <!-- -->
+    <!-- APP HOMEPAGE LINK -->
+    <url type="homepage">https://github.com/H3rz3n/davinci-helper</url>
+
+    <!-- APP BUGTRACKER LINK -->
+    <url type="bugtracker">https://github.com/H3rz3n/davinci-helper/issues</url>
+
+    <!-- APP DONATION LINK -->
+    <url type="donation">https://www.paypal.com/donate/?hosted_button_id=CPCG2RFAV82T8</url>
+
+    <!-- APP HELP LINK -->
+    <url type="help">https://github.com/H3rz3n/davinci-helper/</url>
+
+
+
+    <!-- DEVELOPER / COMPANY INFO -->
+    <developer id="it.h3rz3n">
+        <name>Lorenzo Maiuri</name>
+    </developer>
+
+
+
+    <!-- CONTENT RATING -->
+    <content_rating type="oars-1.1"/>
+
+
+
+    <!-- APP BINARY NAME -->
+    <provides>
+        <binary>davinci-helper</binary>
+    </provides>
+
+
+
+    <!-- RELEASE SECTION START -->
+    <releases>
+
+        <!-- RELEASE NOTE START-->
+        <release version="2.1.0" date="2024-11-18">
+
+            <!-- DESCRIPTION START -->
+            <description>
+                
+                    <ul>
+                        <li>Added automatically installation of multimedia codecs.</li>
+                        <li>Fixed some italian translations.</li>
+                    </ul>
+            
+            <!-- DESCRIPTION END -->
+            </description>
+                    
+          <!--RELEASE NOTE END -->
+        </release>
+    
+    <!-- RELEASE SECTION END -->
+    </releases>
+
+
+
+    <!-- REQUIRMENTS -->
     <requires>
+
+        <!-- DISPLAY DIMENSION -->
         <display_length compare="ge">600</display_length>
+
     </requires>
 
-    <!-- -->
+
+
+    <!-- SUPPORTED INPUT METHODS START -->
     <recommends>
 
         <control>keyboard</control>
         <control>pointing</control>
         <control>touch</control>
     
-    <!-- -->
+    <!-- SUPPORTED INPUT METHODS END -->
     </recommends>
+
+
+
+    <!-- APP CATEGORIES START -->
+    <categories>
+
+        <category>Settings</category>
+        <category>Utility</category>
+
+    <!-- APP CATEGORIES END -->
+    </categories>
 
 
 

@@ -114,7 +114,7 @@ def check_settings_version ():
         lines = file.readlines()
 
         # CHECKING WHICH UI IS NECESSARY TO SHOW
-        if lines[0].find("v2.") == -1 :
+        if lines[0].find("v2.1") == -1 :
             
             # RETURNING THAT IS CURRENTLY IN USE AN UNSUPPORTED VERSION
             return True, lines[0]
@@ -140,11 +140,12 @@ def update_settings (unsupported_version):
 
         # REPLACING ALL THE PREVIEWS SETTINGS BECAUSE THERE IS NOTHING IMPORTANT TO PRESERVE
         restore_settings()
+    
+    elif unsupported_version.find("v2.0.0") :
 
-
+        # REPLACING ALL THE PREVIEWS SETTINGS BECAUSE THERE IS NOTHING IMPORTANT TO PRESERVE
+        restore_settings()
     '''
-    elif unsupported_version.find("v2.") :
-
     elif unsupported_version.find("v3.") :
     '''
 
