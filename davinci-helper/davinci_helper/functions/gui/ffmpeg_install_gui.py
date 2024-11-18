@@ -350,7 +350,7 @@ class ffmpeg_install_class (Gtk.ScrolledWindow):
         self.section_3_subtitle.set_text(_("FFMPEG has been correctly installed inside the system.\nNow you can start using DaVinci Video Convert."))
 
         # SETTING THE START BUTTON LABEL
-        self.section_3_start_button.set_label("Go to DaVinci Video Converter")
+        self.section_3_start_button.set_label(_("Go to DaVinci Video Converter"))
 
         # SETTING THE START BUTTON FUNCTION
         self.section_3_start_button.connect('clicked', self.show_davinci_converter)
