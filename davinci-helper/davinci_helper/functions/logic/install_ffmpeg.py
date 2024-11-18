@@ -358,7 +358,7 @@ def update_multimedia ():
     #-----------------------------------------------------------------------------------------------------
 
     # INSTALLING FFMPEG FROM RPM FUSION
-    multimedia_update = subprocess.run("dnf4 update @multimedia --setopt='install_weak_deps=False' --exclude=PackageKit-gstreamer-plugin", shell=True, capture_output=True, text=True)
+    multimedia_update = subprocess.run("dnf4 update -y @multimedia --setopt='install_weak_deps=False' --exclude=PackageKit-gstreamer-plugin", shell=True, capture_output=True, text=True)
 
     # CHECKING IF THERE WERE ERRORS
     if multimedia_update.returncode != 0 :
