@@ -154,17 +154,17 @@ def get_file_info (file):
             metadata = json.loads(result.stdout)
             stream_info = metadata.get("streams", [])[0]
 
-            # PARSING THE AVERAGE FRAME RATE
-            avg_frame_rate = stream_info.get("avg_frame_rate", "0/1")           # DEFAULT TO "0/1" IF NOT FOUND
-            num, denom = map(int, avg_frame_rate.split('/'))                    # CONVERT "NUM/DENOM" TO INTEGERS
-            frame_rate = num / denom if denom != 0 else 0
+            # EXTRACTING VALUES WITH EXPLICIT TYPE CONVERSIONS AND FALLBACK DEFAULTS
+            width = int(stream_info.get("width") or 0)                                                              # CONVERT TO INTEGER OR DEFAULT TO 0
+            height = int(stream_info.get("height") or 0)                                                            # CONVERT TO INTEGER OR DEFAULT TO 0
+            duration = float(stream_info.get("duration") or 0.0)                                                    # CONVERT TO FLOAT OR DEFAULT TO 0.0
 
-            return {
-                "width": int(stream_info.get("width", 0)),
-                "height": int(stream_info.get("height", 0)),
-                "duration": float(stream_info.get("duration", 0)),
-                "fps": frame_rate
-            }
+            # PARSING THE AVERAGE FRAME RATE
+            avg_frame_rate = stream_info.get("avg_frame_rate", "0/1")                                               # DEFAULT TO "0/1" IF NOT FOUND
+            num, denom = (int(n) for n in avg_frame_rate.split('/')) if '/' in avg_frame_rate else (0, 1)
+            fps = num / denom if denom != 0 else 0.0                                                                # ENSURE FRAME RATE IS A FLOAT
+
+            return width, height, duration, fps
 
         except Exception as e:
             raise RuntimeError(f"Failed to get video info: {e}")
