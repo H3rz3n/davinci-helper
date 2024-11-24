@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.1.0
+Version:        2.1.1
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -94,6 +94,9 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Sun Nov 24 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.1.1-1
+- Fixed broken moviepy API due to moviepy API update.
+
 * Thu Nov 14 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.1.0-1
 - Added automatically installation of multimedia codecs.
 

@@ -127,14 +127,13 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.1.0" date="2024-11-18">
+        <release version="2.1.1" date="2024-11-24">
 
             <!-- DESCRIPTION START -->
             <description>
                 
                     <ul>
-                        <li>Added automatically installation of multimedia codecs.</li>
-                        <li>Fixed some italian translations.</li>
+                        <li>Fixed broken moviepy API due to moviepy API update</li>
                     </ul>
             
             <!-- DESCRIPTION END -->
