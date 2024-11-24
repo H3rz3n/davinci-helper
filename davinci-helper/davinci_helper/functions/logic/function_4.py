@@ -180,46 +180,47 @@ def check_nvidia_gpu_support (gpu_model_name_list, gpu_model_number_list):
     
     #-----------------------------------------------------------------------------------------------------
 
-    # AZZERO I CONTATORI
-    # RESETTING THE COUNTERS
-    gpu_supported_nvidia = False
+    # TRYING TO OPEN THE GPU DATABASE
+    try:
+
+        # LOADING THE AMD GPU COMPATIBILITY LIST INTO MEMORY FOR FASTER ACCESS
+        with open(f"{gpu_database_path}/nvidia_support.txt", 'r', encoding='utf-8') as file:
+            supported_gpus = file.readlines()
+
+    except FileNotFoundError:
+
+        # PRINTING EXIT STATEMENT
+        print("Error: Nvidia GPU support file not found. Please check the database path.")
+        return False
 
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF ANY OF THE FOUND GPU IN THE SYSTEM IS COMPATIBLE
     # FINDING THE GPU NAME ASSOCIETED TO THE COMPATIBLE GPU NUMERIC NAME
     # IT IS NECESSARY TO DO THIS CROSS CHECK BECAUSE FILTERING THE SQUARE BRACKETS [ ] MAY FIND INCORRECT STRINGS, THANK YOU AMD
-  
-    # SLIDING THE GPU NAME LIST
-    for gpu_name in gpu_model_name_list :
 
-        # SLIDING THE GPU NUMERIC NAME LIST
-        for gpu_number in gpu_model_number_list :
+    # ITERATING OVER THE GPU NAMES TO CHECK FOR COMPATIBILITY
+    for gpu_name in gpu_model_name_list:
 
-            # REAGING ONE LINE AT TIME THE COMPATIBLE GPU LIST
-            with open(f"{gpu_database_path}/nvidia_support.txt", 'r', encoding='utf-8') as file :
-                for line in file:
+        # ITERATING OVER THE GPU NUMBERS TO CHECK FOR COMPATIBILITY
+        for gpu_number in gpu_model_number_list:
 
-                    # CHECKING IF THE GPU NAME IS PRESENT INSIDE THE SUPPORTED GPU LIST AND IF IT MATCHES THE GPU NUMERIC NAME FOUND AS COMPATIBLE
-                    if ((re.search(r"\bgtx\b", gpu_name, re.IGNORECASE) or re.search(r"\brtx\b", gpu_name, re.IGNORECASE) or re.search(r"\bvquadro\b", gpu_name, re.IGNORECASE)) and (re.search(r"\bGTX\b", line, re.IGNORECASE) or re.search(r"\bRTX\b", line, re.IGNORECASE) or re.search(r"\bQUADRO\b", line, re.IGNORECASE)) and re.search(rf"\b{re.escape(gpu_number)}\b", line)):
+            # ITERATING OVER THE LINE OF THE FOUND GPUS
+            for line in supported_gpus:
 
-                        # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
-                        gpu_name = gpu_name.upper()
-                        print(_("A compatible Nvidia GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
-                        print("")
+                # CHECK FOR RX, VEGA, OR RADEON IN BOTH THE GPU NAME AND THE LINE
+                if (re.search(r"\b(gtx|rtx|quadro)\b", gpu_name, re.IGNORECASE) and re.search(r"\b(gtx|rtx|quadro)\b", line, re.IGNORECASE) and re.search(rf"\b{re.escape(gpu_number)}\b", line, re.IGNORECASE)):
+        
+                    # PRINTING A SUCCESS MESSAGE
+                    print(f"A compatible Nvidia GPU was found: {gpu_name.upper()}\n")
+                    return True
 
-                        # SETTING AD FOUND A SUPPORTED NVIDIA GPU
-                        gpu_supported_nvidia = True
-
-                        # EXTING THE CICLE IN A SECURE WAY
-                        break
+    # RETURNING FALSE IF NO COMPATIBLE GPUS ARE FOUND
+    return False
 
     #-----------------------------------------------------------------------------------------------------
 
-    # RETURNING TO THE APP IF THERE ARE SUPPORTED GPUs 
-    return gpu_supported_nvidia
-
-    #-----------------------------------------------------------------------------------------------------           
+           
 
         
 
@@ -230,52 +231,48 @@ def check_amd_gpu_support (gpu_model_name_list, gpu_model_number_list):
 
     #-----------------------------------------------------------------------------------------------------
 
-    # AZZERO I CONTATORI
-    # RESETTING THE COUNTERS
-    gpu_supported_amd = False
-    
+    # TRYING TO OPEN THE GPU DATABASE
+    try:
+
+        # LOADING THE AMD GPU COMPATIBILITY LIST INTO MEMORY FOR FASTER ACCESS
+        with open(f"{gpu_database_path}/amd_support.txt", 'r', encoding='utf-8') as file:
+            supported_gpus = file.readlines()
+
+    except FileNotFoundError:
+
+        # PRINTING EXIT STATEMENT
+        print("Error: AMD GPU support file not found. Please check the database path.")
+        return False
+
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF ANY OF THE FOUND GPU IN THE SYSTEM IS COMPATIBLE
     # FINDING THE GPU NAME ASSOCIETED TO THE COMPATIBLE GPU NUMERIC NAME
     # IT IS NECESSARY TO DO THIS CROSS CHECK BECAUSE FILTERING THE SQUARE BRACKETS [ ] MAY FIND INCORRECT STRINGS, THANK YOU AMD
-    
-    # SLIDING THE GPU NAME LIST
-    for gpu_name in gpu_model_name_list :
 
-        # SLIDING THE GPU NUMERIC NAME LIST
-        for gpu_number in gpu_model_number_list :
-            
-            # REAGING ONE LINE AT TIME THE COMPATIBLE GPU LIST
-            with open(f"{gpu_database_path}/amd_support.txt", 'r', encoding='utf-8') as file :
-            
-                for line in file:
-                    
-                    # CHECKING IF THE GPU NAME IS PRESENT INSIDE THE SUPPORTED GPU LIST AND IF IT MATCHES THE GPU NUMERIC NAME FOUND AS COMPATIBLE
-                    if ((re.search(r"\brx\b", gpu_name, re.IGNORECASE) or re.search(r"\bvega\b", gpu_name, re.IGNORECASE)) and (re.search(r"\bRX\b", line, re.IGNORECASE) or re.search(r"\bVEGA\b", line, re.IGNORECASE)) and re.search(rf"\b{re.escape(gpu_number)}\b", line)):
+    # ITERATING OVER THE GPU NAMES TO CHECK FOR COMPATIBILITY
+    for gpu_name in gpu_model_name_list:
 
-                        # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
-                        gpu_name = gpu_name.upper()
-                        print(_("A compatible AMD GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
-                        print("")
+        # ITERATING OVER THE GPU NUMBERS TO CHECK FOR COMPATIBILITY
+        for gpu_number in gpu_model_number_list:
 
-                        # SETTING AD FOUND A SUPPORTED AMD GPU
-                        gpu_supported_amd = True
+            # ITERATING OVER THE LINE OF THE FOUND GPUS
+            for line in supported_gpus:
 
-                        # RETURNING TO THE APP IF THERE ARE SUPPORTED GPUs 
-                        return gpu_supported_amd
+                # CHECK FOR RX, VEGA, OR RADEON IN BOTH THE GPU NAME AND THE LINE
+                if (re.search(r"\b(rx|vega|radeon)\b", gpu_name, re.IGNORECASE) and re.search(r"\b(rx|vega|radeon)\b", line, re.IGNORECASE) and re.search(rf"\b{re.escape(gpu_number)}\b", line, re.IGNORECASE)):
+        
+                    # PRINTING A SUCCESS MESSAGE
+                    print(f"A compatible AMD GPU was found: {gpu_name.upper()}\n")
+                    return True
 
-                        # EXTING THE CICLE IN A SECURE WAY
-                        break
-                    
-            
-    #-----------------------------------------------------------------------------------------------------
-    
-    # RETURNING TO THE APP IF THERE ARE SUPPORTED GPUs 
-    return gpu_supported_amd
+    # RETURNING FALSE IF NO COMPATIBLE GPUS ARE FOUND
+    return False
 
     #-----------------------------------------------------------------------------------------------------
-    
+
+
+
 
 
 
@@ -285,8 +282,18 @@ def check_intel_gpu_support (gpu_model_name_list, gpu_model_number_list):
     
     #-----------------------------------------------------------------------------------------------------
 
-    # RESETTING THE COUNTERS
-    gpu_supported_intel = False
+    # TRYING TO OPEN THE GPU DATABASE
+    try:
+
+        # LOADING THE AMD GPU COMPATIBILITY LIST INTO MEMORY FOR FASTER ACCESS
+        with open(f"{gpu_database_path}/intel_support.txt", 'r', encoding='utf-8') as file:
+            supported_gpus = file.readlines()
+
+    except FileNotFoundError:
+
+        # PRINTING EXIT STATEMENT
+        print("Error: Intel GPU support file not found. Please check the database path.")
+        return False
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -294,36 +301,28 @@ def check_intel_gpu_support (gpu_model_name_list, gpu_model_number_list):
     # FINDING THE GPU NAME ASSOCIETED TO THE COMPATIBLE GPU NUMERIC NAME
     # IT IS NECESSARY TO DO THIS CROSS CHECK BECAUSE FILTERING THE SQUARE BRACKETS [ ] MAY FIND INCORRECT STRINGS, THANK YOU AMD
 
-    # SLIDING THE GPU NAME LIST
-    for gpu_name in gpu_model_name_list :
+    # ITERATING OVER THE GPU NAMES TO CHECK FOR COMPATIBILITY
+    for gpu_name in gpu_model_name_list:
 
-        # SLIDING THE GPU NUMERIC NAME LIST
-        for gpu_number in gpu_model_number_list :
+        # ITERATING OVER THE GPU NUMBERS TO CHECK FOR COMPATIBILITY
+        for gpu_number in gpu_model_number_list:
 
-            # REAGING ONE LINE AT TIME THE COMPATIBLE GPU LIST
-            with open(f"{gpu_database_path}/intel_support.txt", 'r', encoding='utf-8') as file :
-                for line in file:
+            # ITERATING OVER THE LINE OF THE FOUND GPUS
+            for line in supported_gpus:
 
-                    # CHECKING IF THE GPU NAME IS PRESENT INSIDE THE SUPPORTED GPU LIST AND IF IT MATCHES THE GPU NUMERIC NAME FOUND AS COMPATIBLE
-                    if ((re.search(r"\barc\b", gpu_name, re.IGNORECASE)) and (re.search(r"\bARC\b", line, re.IGNORECASE)) and re.search(rf"\b{re.escape(gpu_number)}\b", line)):
+                # CHECK FOR RX, VEGA, OR RADEON IN BOTH THE GPU NAME AND THE LINE
+                if (re.search(r"\b(arc)\b", gpu_name, re.IGNORECASE) and re.search(r"\b(arc)\b", line, re.IGNORECASE) and re.search(rf"\b{re.escape(gpu_number)}\b", line, re.IGNORECASE)):
+        
+                    # PRINTING A SUCCESS MESSAGE
+                    print(f"A compatible Intel GPU was found: {gpu_name.upper()}\n")
+                    return True
 
-                        # PRINTING THE GPU MODEL FOUND AS COMPATIBLE
-                        gpu_name = gpu_name.upper()
-                        print(_("A compatible Intel GPU was found : {gpu_name_placeholder}").format(gpu_name_placeholder = gpu_name))
-                        print("")
-
-                        # SETTING AD FOUND A SUPPORTED INTEL GPU
-                        gpu_supported_intel = True
-
-                        # EXTING THE CICLE IN A SECURE WAY
-                        break
+    # RETURNING FALSE IF NO COMPATIBLE GPUS ARE FOUND
+    return False
 
     #-----------------------------------------------------------------------------------------------------
 
-    # RETURNING TO THE APP IF THERE ARE SUPPORTED GPUs 
-    return gpu_supported_intel
 
-    #-----------------------------------------------------------------------------------------------------
 
 
 
@@ -438,7 +437,7 @@ def install_nvidia_driver():
     nvidia_driver_check = nvidia_driver_check_1.stdout + nvidia_driver_check_2.stdout
 
     # CHECKING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
-    if nvidia_driver_check.find("akmod-nvidia") != -1 and ((nvidia_driver_check.find("xorg-x11-drv-nvidia-cuda") != -1) and not (nvidia_driver_check.find("xorg-x11-drv-nvidia-cuda-"))) :
+    if nvidia_driver_check.find("akmod-nvidia") != -1 and ((nvidia_driver_check.find("xorg-x11-drv-nvidia-cuda") != -1)) :
 
         # PRINTING THE MESSAGE
         print(_("The proprietary Nvidia GPU driver was already installed on the system, there was no need to install it."))
