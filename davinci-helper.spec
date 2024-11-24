@@ -90,7 +90,6 @@ install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.ap
 %post
 update-desktop-database &> /dev/null || :
 sudo systemctl restart polkit
-pip install moviepy
 
 # CHANGELOG OF THE VERSION 
 %changelog

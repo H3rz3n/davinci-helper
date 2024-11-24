@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------------------------------
 
 # STANDARD MODULES IMPORT
-import sys, os, subprocess, threading, gettext, locale. json
+import sys, os, subprocess, threading, gettext, locale, json
 
 #-----------------------------------------------------------------------------------------------------
 
