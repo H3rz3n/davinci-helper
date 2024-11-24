@@ -160,10 +160,10 @@ def get_file_info (file):
             frame_rate = num / denom if denom != 0 else 0
 
             return {
-                "duration": float(stream_info.get("duration", 0)),
                 "width": int(stream_info.get("width", 0)),
                 "height": int(stream_info.get("height", 0)),
-                "avg_frame_rate": frame_rate
+                "duration": float(stream_info.get("duration", 0)),
+                "fps": frame_rate
             }
 
         except Exception as e:
