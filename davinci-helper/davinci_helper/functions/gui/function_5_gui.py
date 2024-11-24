@@ -607,34 +607,7 @@ class function_5_class (Gtk.ScrolledWindow):
 
         else :
 
-            # CHECKING IF THE NECESSARY PYTHON MODULES ARE INSTALLED 
-            self.check_python_modules()
-
-        #-----------------------------------------------------------------------------------------------------
-
-
-
-    # FUNCTION THAT WILL CHECK IF THE NECESSARY PYTHON MODULES ARE INSTALLED
-    def check_python_modules (self):
-
-        #-----------------------------------------------------------------------------------------------------
-
-        # LAUNCHING THE FUNCTION THAT WILL INSTAL THE NECESSARY PYTHON MODULES IF IS NEEDED
-        check_module = subprocess.run("python /usr/lib/python*/site-packages/davinci_helper/functions/logic/install_python_modules.py", shell=True, capture_output=True, text=True)
-
-        # CHECKING IF THERE ARE ANY ERRORS
-        if check_module.returncode == 1 :
-
-            # GETTING THE DIALOG CLASS
-            self.module_install_error_dialog_class = module_install_error_dialog_class(self, check_module.stdout)
-
-            # SHOWING THE FILE SIZE WARNING
-            self.module_install_error_dialog_class.show_dialog(self)
-            
-
-        else :
-            
-            # STARTING THE LOADING FUNCTION
+           # STARTING THE LOADING FUNCTION
             self.start_loading()
 
             # SHOWING THE FILE SIZE WARNING DIALOG
@@ -642,6 +615,10 @@ class function_5_class (Gtk.ScrolledWindow):
             threading.Thread(target=self.getting_ffmpeg_file_settings).start()
 
         #-----------------------------------------------------------------------------------------------------
+
+
+
+    
 
 
 
