@@ -135,64 +135,63 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
 def get_file_info (file):
 
     #-----------------------------------------------------------------------------------------------------
+    print(file)
     
-    # GETTING VIDEO DURATION, WIDTH AND HEIGHT
-    try:
-        # EXECUTING FFPROBE AND GET METADATA AS JSON
-        result = subprocess.run(
-            [
-                "ffprobe", "-v", "error", "-select_streams", "v:0",
-                "-show_entries", "stream=width,height,duration",
-                "-of", "json", file
-            ],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            shell=True
-        )
-        if result.returncode != 0:
-            raise ValueError(f"ffprobe error: {result.stderr.strip()}")
+    # GETTING VIDEO AVERAGE FRAMERATE, DURATION, WIDTH AND HEIGHT
+    if not os.path.isfile(file):
 
-        # PARSE THE JSON OUTPUT
-        metadata = json.loads(result.stdout)
-        stream_info = metadata.get("streams", [])[0]
-        return {
-            "duration": float(stream_info.get("duration", 0)),
-            "width": int(stream_info.get("width", 0)),
-            "height": int(stream_info.get("height", 0))
-        }
-    except Exception as e:
-        raise RuntimeError(f"Failed to get video info: {e}")
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # GETTING THE FRAMERATE
-
-    # DEFINING THE FFPROBE COMMAND
-    command = f"ffprobe -v 0 -select_streams v:0 -show_entries stream=avg_frame_rate -of default=noprint_wrappers=1:nokey=1 '{file}'"
-
-    # GETTING THE AVERAGE FRAMERATE FRACTION
-    result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
-
-    # SPLITTING THE NUMERATOR AND DENOMINATOR
-    avg_frame_rate = result.stdout.strip()
-    numerator, denominator = map(int, avg_frame_rate.split('/'))
-
-    # CALCULATING THE AVERAGE FRAMERATE
-    if denominator == 0 or numerator == 0:
-
-        # SETTING THE FPS TO A NUMBER THAT WILL TRIGGER AND ERROR DIALOG
-        fps = 100
+        raise FileNotFoundError(f"The file {file} does not exist or is inaccessible.")
+        exit(1)
 
     else :
 
-        # GETTING THE CORRECT AVERAGE FRAMERATE
-        fps = numerator / denominator
-        fps = round(fps, 2)
+        try:
+            # EXECUTING FFPROBE AND GET METADATA AS JSON
+            result = subprocess.run(
+                [
+                    "ffprobe", "-v", "error", "-select_streams", "v:0",
+                    "-show_entries", "stream=width,height,duration,avg_frame_rate",
+                    "-of", "json", file
+                ],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                shell=True
+            )
+            if result.returncode != 0:
+                raise ValueError(f"ffprobe error: {result.stderr.strip()}")
 
-    #-----------------------------------------------------------------------------------------------------
+            # PARSE THE JSON OUTPUT
+            metadata = json.loads(result.stdout)
+            stream_info = metadata.get("streams", [])[0]
+            return {
+                "duration": float(stream_info.get("duration", 0)),
+                "width": int(stream_info.get("width", 0)),
+                "height": int(stream_info.get("height", 0)),
+                "avg_frame_rate": int(stream_info.get("avg_frame_rate", 0))
+            }
+        except Exception as e:
+            raise RuntimeError(f"Failed to get video info: {e}")
 
-    return width, height, duration, fps
+        #-----------------------------------------------------------------------------------------------------
+        
+        numerator, denominator = map(int, avg_frame_rate.split('/'))
+
+        # CALCULATING THE AVERAGE FRAMERATE
+        if denominator == 0 or numerator == 0:
+
+            # SETTING THE FPS TO A NUMBER THAT WILL TRIGGER AND ERROR DIALOG
+            fps = 100
+
+        else :
+
+            # GETTING THE CORRECT AVERAGE FRAMERATE
+            fps = numerator / denominator
+            fps = round(fps, 2)
+
+        #-----------------------------------------------------------------------------------------------------
+
+        return width, height, duration, fps
 
     #-----------------------------------------------------------------------------------------------------
 
