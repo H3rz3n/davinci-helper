@@ -127,13 +127,13 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.1.1" date="2024-11-24">
+        <release version="2.2.0" date="2024-11-24">
 
             <!-- DESCRIPTION START -->
             <description>
                 
                     <ul>
-                        <li>Fixed broken moviepy API due to moviepy API update</li>
+                        <li>Switched from moviepy to FFPROBE for media info</li>
                     </ul>
             
             <!-- DESCRIPTION END -->

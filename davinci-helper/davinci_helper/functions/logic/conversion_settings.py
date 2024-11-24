@@ -7,11 +7,7 @@
 #-----------------------------------------------------------------------------------------------------
 
 # STANDARD MODULES IMPORT
-import sys, os, subprocess, threading, gettext, locale
-
-# IMPORTING NOT STANDARD MODULES
-from moviepy import VideoFileClip
-        
+import sys, os, subprocess, threading, gettext, locale. json
 
 #-----------------------------------------------------------------------------------------------------
 
@@ -139,15 +135,34 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
 def get_file_info (file):
 
     #-----------------------------------------------------------------------------------------------------
+    
+    # GETTING VIDEO DURATION, WIDTH AND HEIGHT
+    try:
+        # EXECUTING FFPROBE AND GET METADATA AS JSON
+        result = subprocess.run(
+            [
+                "ffprobe", "-v", "error", "-select_streams", "v:0",
+                "-show_entries", "stream=width,height,duration",
+                "-of", "json", file
+            ],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            shell=True
+        )
+        if result.returncode != 0:
+            raise ValueError(f"ffprobe error: {result.stderr.strip()}")
 
-    # LOADING THE CLIP
-    video = VideoFileClip(file)
-
-    # GETTING THE VIDEO RESOLUTION
-    width, height = video.size
-
-    # GETTING THE DURATION
-    duration = video.duration
+        # PARSE THE JSON OUTPUT
+        metadata = json.loads(result.stdout)
+        stream_info = metadata.get("streams", [])[0]
+        return {
+            "duration": float(stream_info.get("duration", 0)),
+            "width": int(stream_info.get("width", 0)),
+            "height": int(stream_info.get("height", 0))
+        }
+    except Exception as e:
+        raise RuntimeError(f"Failed to get video info: {e}")
 
     #-----------------------------------------------------------------------------------------------------
 

@@ -94,54 +94,8 @@ pip install moviepy
 
 # CHANGELOG OF THE VERSION 
 %changelog
-* Sun Nov 24 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.1.1-1
-- Fixed broken moviepy API due to moviepy API update.
+* Sun Nov 24 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.0-1
+- Switched from moviepy to FFPROBE for media info.
 
-* Thu Nov 14 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.1.0-1
-- Added automatically installation of multimedia codecs.
 
-* Sat Nov 09 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.0.11-1
-- Fixed app version.
 
-* Thu Nov 07 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.10-1
-- Fixed a minor issue with DNF-5 commands.
-
-* Thu Nov 07 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.9-1
-- Fixed a minor issue that prevented the RPM-Fusion repository from installing properly.
-
-* Wed Oct 30 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.8-1
-- Fixed a minor issue that will make a broken output during AMD GPU driver installation
-
-* Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.7-1
-- Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
-
-* Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.6-1
-- Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
-
-* Mon Oct 21 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.5-1
-- Fixed a major issues that will make the app not install all the necessary libraries during Nvidia GPU driver installation
-
-* Wed Oct 16 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.3-1
-- Fixing a major issues that will stuck the app during video conversion.
-
-* Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.2-1
-- Fixing italian translation.
-
-* Sat Oct 12 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.1-1
-- Fixed OS detection on Nobara Linux.
-
-* Fri Oct 04 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 2.0.0-1
-- Full Adwaita UI.
-- Added support for DaVinci 19.
-- Added support for Fedora 41.
-- Added support for video conversion.
-- Minor bug fixes and improved performance.
-
-* Sat Aug 17 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.1.0-1
-- Added AMD GPU support.
-
-* Sat Aug 17 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.0.1-1
-- Switched license to GPL-3.0
-
-* Tue Aug 13 2024 Lorenzo Maiuri <lorenzo.maiuri@gmail.com> - 1.0.0-1
-- Initial release
