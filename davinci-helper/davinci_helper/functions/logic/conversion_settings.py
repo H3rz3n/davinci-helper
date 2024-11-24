@@ -10,7 +10,7 @@
 import sys, os, subprocess, threading, gettext, locale
 
 # IMPORTING NOT STANDARD MODULES
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
         
 
 #-----------------------------------------------------------------------------------------------------
