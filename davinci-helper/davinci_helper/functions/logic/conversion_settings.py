@@ -150,37 +150,24 @@ def get_file_info (file):
             if result.returncode != 0:
                 raise ValueError(f"ffprobe error: {result.stderr.strip()}")
 
-            # PARSE THE JSON OUTPUT
+            # PARSING THE JSON OUTPUT
             metadata = json.loads(result.stdout)
             stream_info = metadata.get("streams", [])[0]
+
+            # PARSING THE AVERAGE FRAME RATE
+            avg_frame_rate = stream_info.get("avg_frame_rate", "0/1")           # DEFAULT TO "0/1" IF NOT FOUND
+            num, denom = map(int, avg_frame_rate.split('/'))                    # CONVERT "NUM/DENOM" TO INTEGERS
+            frame_rate = num / denom if denom != 0 else 0
+
             return {
                 "duration": float(stream_info.get("duration", 0)),
                 "width": int(stream_info.get("width", 0)),
                 "height": int(stream_info.get("height", 0)),
-                "avg_frame_rate": int(stream_info.get("avg_frame_rate", 0))
+                "avg_frame_rate": frame_rate
             }
+
         except Exception as e:
             raise RuntimeError(f"Failed to get video info: {e}")
-
-        #-----------------------------------------------------------------------------------------------------
-        
-        numerator, denominator = map(int, avg_frame_rate.split('/'))
-
-        # CALCULATING THE AVERAGE FRAMERATE
-        if denominator == 0 or numerator == 0:
-
-            # SETTING THE FPS TO A NUMBER THAT WILL TRIGGER AND ERROR DIALOG
-            fps = 100
-
-        else :
-
-            # GETTING THE CORRECT AVERAGE FRAMERATE
-            fps = numerator / denominator
-            fps = round(fps, 2)
-
-        #-----------------------------------------------------------------------------------------------------
-
-        return width, height, duration, fps
 
     #-----------------------------------------------------------------------------------------------------
 
