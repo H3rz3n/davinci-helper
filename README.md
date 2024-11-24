@@ -31,7 +31,7 @@ Currently the app was tested on these OSs :
 ## What GPUs are currently supported
 Currently are supported the following GPUs :
 - **Nvidia :** from `1xxx` series to `4xxx` series
-- **AMD :** from `5xxx` series to `7xxx` series, `880M` and `890M` iGPU
+- **AMD :** from `5xxx` series to `7xxx` series for dedicated GPUs, `880M` and `890M` iGPUs
 
 ## Supported localization :
 - English

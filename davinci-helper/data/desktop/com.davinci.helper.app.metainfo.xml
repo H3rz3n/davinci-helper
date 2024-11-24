@@ -134,6 +134,8 @@
                 
                     <ul>
                         <li>Switched from moviepy to FFPROBE for media info</li>
+                        <li>Added support for AMD iGPU 880M and 890M</li>
+                        <li>Improved GPU driver installer performance</li>
                     </ul>
             
             <!-- DESCRIPTION END -->

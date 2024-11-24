@@ -94,6 +94,8 @@ sudo systemctl restart polkit
 %changelog
 * Sun Nov 24 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.0-1
 - Switched from moviepy to FFPROBE for media info.
+- Added support for AMD iGPU 880M and 890M.
+- Improved GPU driver installer performance.
 
 
 
