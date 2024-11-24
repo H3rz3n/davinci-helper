@@ -11,7 +11,7 @@
 app_name = "DaVinci Helper"
 
 # APP VERSION
-app_version = "v2.1.0"
+app_version = "v2.1.1"
 
 # APP ICON
 app_icon = "davinci_helper_icon"
