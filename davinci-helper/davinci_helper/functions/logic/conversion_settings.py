@@ -135,7 +135,6 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
 def get_file_info (file):
 
     #-----------------------------------------------------------------------------------------------------
-    print(file)
     
     # GETTING VIDEO AVERAGE FRAMERATE, DURATION, WIDTH AND HEIGHT
     if not os.path.isfile(file):
