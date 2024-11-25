@@ -127,15 +127,13 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.2.0" date="2024-11-24">
+        <release version="2.2.1" date="2024-11-25">
 
             <!-- DESCRIPTION START -->
             <description>
                 
                     <ul>
-                        <li>Switched from moviepy to FFPROBE for media info</li>
-                        <li>Added support for AMD iGPU 880M and 890M</li>
-                        <li>Improved GPU driver installer performance</li>
+                        <li>Fixed support for AMD iGPUs</li>
                     </ul>
             
             <!-- DESCRIPTION END -->
