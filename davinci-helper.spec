@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.2.0
+Version:        2.2.1
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -92,6 +92,9 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Mon Nov 25 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.1-1
+- Fixed support for AMD iGPUs.
+
 * Sun Nov 24 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.0-1
 - Switched from moviepy to FFPROBE for media info.
 - Added support for AMD iGPU 880M and 890M.

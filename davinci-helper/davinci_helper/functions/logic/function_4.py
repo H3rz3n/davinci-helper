@@ -48,7 +48,7 @@ def find_gpu_vendor ():
     #-----------------------------------------------------------------------------------------------------
 
     # ACQUIRING THE GPU VENDOR
-    gpu_lspci = subprocess.run("lspci | grep -i vga", shell=True, capture_output=True, text=True )
+    gpu_lspci = subprocess.run("lspci | grep -Ei 'vga|display'", shell=True, capture_output=True, text=True )
 
     # MAKING LOWERCASE ALL THE STRING CHARACTER
     gpu_lspci = gpu_lspci.stdout.lower()
