@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.2.2
+Version:        2.2.3
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -92,7 +92,7 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
-* Tue Dec 17 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.2-1
+* Tue Dec 17 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.3-1
 - Added support for AMD iGPU 780M.
 
 * Mon Nov 25 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.1-1
