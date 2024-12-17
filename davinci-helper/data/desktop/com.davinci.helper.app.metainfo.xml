@@ -127,6 +127,22 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
+        <release version="2.2.2" date="2024-12-17">
+
+            <!-- DESCRIPTION START -->
+            <description>
+                
+                    <ul>
+                        <li>Added support for AMD iGPU 780M</li>
+                    </ul>
+            
+            <!-- DESCRIPTION END -->
+            </description>
+                    
+          <!--RELEASE NOTE END -->
+        </release>
+
+        <!-- RELEASE NOTE START-->
         <release version="2.2.1" date="2024-11-25">
 
             <!-- DESCRIPTION START -->
