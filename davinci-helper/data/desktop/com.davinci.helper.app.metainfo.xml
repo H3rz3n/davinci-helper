@@ -133,8 +133,8 @@
             <description>
                 
                     <ul>
-                        <li>Added support for Nobara 41</li>
-                        <li>Fixed uppercase file extension not correctly detected</li>
+                        <li>Added support for Nobara 41.</li>
+                        <li>Fixed uppercase file extension not correctly detected.</li>
                         <li>Fixed the conversion of files with spaces in their names.</li>
 
 
