@@ -127,29 +127,20 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.2.3" date="2024-12-17">
+        <release version="2.3.0" date="2025-02-00">
 
             <!-- DESCRIPTION START -->
             <description>
                 
                     <ul>
-                        <li>Added support for AMD iGPU 780M</li>
-                    </ul>
-            
-            <!-- DESCRIPTION END -->
-            </description>
-                    
-          <!--RELEASE NOTE END -->
-        </release>
+                        <li>Added support for Nobara 41</li>
+                        <li>Fixed uppercase file extension not correctly detected</li>
+                        <li>Fixed the conversion of files with spaces in their names.</li>
 
-        <!-- RELEASE NOTE START-->
-        <release version="2.2.1" date="2024-11-25">
 
-            <!-- DESCRIPTION START -->
-            <description>
-                
-                    <ul>
-                        <li>Fixed support for AMD iGPUs</li>
+                        <li>Added support for Intel iGPUs</li>
+                        <li>Fixed support for Nvidia mobile GPUs</li>
+                        <li>Added support for more AMD iGPUs</li>
                     </ul>
             
             <!-- DESCRIPTION END -->

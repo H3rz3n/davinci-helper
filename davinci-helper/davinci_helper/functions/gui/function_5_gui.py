@@ -364,13 +364,25 @@ class function_5_class (Gtk.ScrolledWindow):
         video_filter.add_pattern("*.mov")
 
         # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        video_filter.add_pattern("*.MOV")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
         video_filter.add_pattern("*.mp4")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        video_filter.add_pattern("*.MP4")
 
         # SETTING THE SELECTABLE FILE TYPE EXTENSION
         video_filter.add_pattern("*.mkv")
 
         # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        video_filter.add_pattern("*.MKV")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
         video_filter.add_pattern("*.avi")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        video_filter.add_pattern("*.AVI")
         
         # SETTING THE FILTER IN THE FILE CHOOSER DIALOG WINDOW
         file_dialog.set_default_filter(video_filter)
@@ -896,7 +908,7 @@ class function_5_class (Gtk.ScrolledWindow):
         #-----------------------------------------------------------------------------------------------------
 
         # DEFINING THE FFMPEG COMMAND
-        command = f"ffmpeg -i '{self.file_path_list[self.index]}' -progress pipe:1 -c:v dnxhd {self.video_settings_list[self.index]} -c:a {self.audio_settings} -y '{self.output_path}/{self.output_file_name}'"
+        command = f'ffmpeg -i "{self.file_path_list[self.index]}" -progress pipe:1 -c:v dnxhd {self.video_settings_list[self.index]} -c:a {self.audio_settings} -y "{self.output_path}/{self.output_file_name}"'
 
         # STARTING THE CONVERSION OF THE FILE
         self.ffmpeg_process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, shell=True, bufsize=1)

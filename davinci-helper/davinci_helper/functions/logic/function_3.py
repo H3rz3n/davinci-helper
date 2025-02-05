@@ -206,8 +206,8 @@ def post_installation_18 ():
 def post_installation_19 ():
 
     #-----------------------------------------------------------------------------------------------------
-
-    print("Currently in development, sorry")
+    
+    #
     post_installation_18()
     #exit(2)
 
