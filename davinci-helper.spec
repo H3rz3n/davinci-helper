@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.3.0
+Version:        2.3.1
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -104,6 +104,7 @@ update-desktop-database &> /dev/null || :
 - Fixed the conversion of files with spaces in their names.
 - Fixed support for Nvidia mobile GPUs.
 - Fixed italian translation.
+- Fixed ffmpeg non-free installation.
 
 
 
