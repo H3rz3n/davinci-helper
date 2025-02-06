@@ -141,9 +141,6 @@
                     <!-- ENTRY FIELD START -->
                     <child><object class="GtkEntry" id="section_1_file_entry">
 
-                        <!-- PREVIEW TEXT OF THE TEXT FIELD -->
-                        <property name="placeholder_text" translatable="Yes">Please select the "name.zip" file to launch the installation wizard of DaVinci Resolve</property>
-
                         <!-- SETTING THE HORIZONTAL EXPANSION OF THE CONTAINER -->
                         <property name="hexpand">true</property>
 
