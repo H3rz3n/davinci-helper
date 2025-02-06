@@ -161,6 +161,9 @@ class function_2_class (Gtk.ScrolledWindow):
         # LOADING INFO TEXT
         self.section_1_info.set_text(_("This part of the software will ask you to indicate the DaVinci Resolve installer file path, then it will run it with the necessary patch to make it launch properly."))
 
+        # LOADING ENTRY TEXT
+        self.section_1_file_entry.set_placeholder_text(_("Please select the 'name.zip' or 'file.run' file to launch the installation wizard of DaVinci Resolve"))
+
         # CONNECTING THE FILE BUTTON TO THE FUNCTION
         self.section_1_file_button.connect('clicked', self.open_file_dialog)
 

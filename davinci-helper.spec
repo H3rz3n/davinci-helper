@@ -60,8 +60,9 @@ DaVinci Helper is the ultimate app to help you install and run DaVinci Resolve o
 %pyproject_install
 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.desktop %{buildroot}%{_datadir}/applications/com.davinci.helper.app.desktop
-install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
-install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.metainfo.xml %{buildroot}%{_datadir}/metainfo/com.davinci.helper.app.metainfo.xml
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg  %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg %{buildroot}%{_datadir}/app-info/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.metainfo.xml %{buildroot}%{_metainfodir}/com.davinci.helper.app.metainfo.xml
 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.policy %{buildroot}/%{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.rules %{buildroot}/%{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
@@ -81,7 +82,8 @@ install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.ap
 %{_bindir}/%{name}
 %{_datadir}/applications/com.davinci.helper.app.desktop
 %{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
-%{_datadir}/metainfo/com.davinci.helper.app.metainfo.xml
+%{_datadir}/app-info/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+%{_metainfodir}/com.davinci.helper.app.metainfo.xml
 %{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
 %{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
 
@@ -93,12 +95,15 @@ update-desktop-database &> /dev/null || :
 %changelog
 * Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.0-1
 - Added support for Nobara 41.
+- Added experimental support for Fedora 42.
+- Added experimental support for Fedora Rawhide.
+- Added for using .run installer wizard file.
+- Added support for Intel iGPUs.
+- Added support for more AMD iGPUs.
 - Fixed uppercase file extension not correctly detected.
 - Fixed the conversion of files with spaces in their names.
-- Added support for Intel iGPUs.
 - Fixed support for Nvidia mobile GPUs.
-- Added support for more AMD iGPUs.
-- Added for using .run installer wizard file.
+- Fixed italian translation.
 
 
 

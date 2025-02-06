@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 09:43+0100\n"
+"POT-Creation-Date: 2025-02-06 18:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,7 +72,9 @@ msgid ""
 "If you decide to continue, the following file will not be converted :\n"
 msgstr ""
 
+#. SETTING BUTTON TEXT LABEL
 #: davinci_helper/functions/gui/converter_dialog_gui.py:159
+#: data/ui/file_size_warning_dialog.ui:254
 msgid "Continue"
 msgstr ""
 
@@ -167,20 +169,23 @@ msgid ""
 "is required only if there are any missing libraries to install."
 msgstr ""
 
+#. SETTING BUTTON TEXT LABEL
 #: davinci_helper/functions/gui/function_1_gui.py:208
 #: davinci_helper/functions/gui/function_1_gui.py:239
-#: davinci_helper/functions/gui/function_2_gui.py:220
-#: davinci_helper/functions/gui/function_2_gui.py:248
 #: davinci_helper/functions/gui/function_3_gui.py:208
 #: davinci_helper/functions/gui/function_3_gui.py:239
 #: davinci_helper/functions/gui/function_4_gui.py:208
 #: davinci_helper/functions/gui/function_4_gui.py:239
+#: davinci_helper/functions/gui/function_2_gui.py:223
+#: davinci_helper/functions/gui/function_2_gui.py:251 data/ui/function_1.ui:223
+#: data/ui/function_2.ui:295 data/ui/function_3.ui:223
+#: data/ui/function_4.ui:223
 msgid "Show Info"
 msgstr ""
 
+#. SETTING BUTTON TEXT LABEL
 #: davinci_helper/functions/gui/function_1_gui.py:211
 #: davinci_helper/functions/gui/function_1_gui.py:489
-#: davinci_helper/functions/gui/function_2_gui.py:601
 #: davinci_helper/functions/gui/function_3_gui.py:211
 #: davinci_helper/functions/gui/function_3_gui.py:497
 #: davinci_helper/functions/gui/function_4_gui.py:211
@@ -188,13 +193,17 @@ msgstr ""
 #: davinci_helper/functions/gui/module_install_error_dialog_guy.py:161
 #: davinci_helper/functions/gui/ffmpeg_install_gui.py:186
 #: davinci_helper/functions/gui/ffmpeg_install_gui.py:458
+#: davinci_helper/functions/gui/function_2_gui.py:613
+#: data/ui/ffmpeg_install.ui:438 data/ui/function_1.ui:522
+#: data/ui/function_2.ui:594 data/ui/function_3.ui:522
+#: data/ui/function_4.ui:522 data/ui/module_install_error_dialog.ui:283
 msgid "Show logs"
 msgstr ""
 
 #: davinci_helper/functions/gui/function_1_gui.py:247
-#: davinci_helper/functions/gui/function_2_gui.py:256
 #: davinci_helper/functions/gui/function_3_gui.py:247
 #: davinci_helper/functions/gui/function_4_gui.py:247
+#: davinci_helper/functions/gui/function_2_gui.py:259
 msgid "Hide info"
 msgstr ""
 
@@ -249,56 +258,12 @@ msgid ""
 msgstr ""
 
 #: davinci_helper/functions/gui/function_1_gui.py:497
-#: davinci_helper/functions/gui/function_2_gui.py:609
 #: davinci_helper/functions/gui/function_3_gui.py:505
 #: davinci_helper/functions/gui/function_4_gui.py:497
 #: davinci_helper/functions/gui/module_install_error_dialog_guy.py:169
 #: davinci_helper/functions/gui/ffmpeg_install_gui.py:466
+#: davinci_helper/functions/gui/function_2_gui.py:621
 msgid "Hide logs"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:159
-msgid ""
-"Launch DaVinci Resolve\n"
-"installation wizard"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:162
-msgid ""
-"This part of the software will ask you to indicate the DaVinci Resolve "
-"installer file path, then it will run it with the necessary patch to make it "
-"launch properly."
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:276
-msgid "Select the DaVinci Resolve installer .zip file"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:536
-msgid "You have successfully started the DaVinci wizard"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:539
-msgid ""
-"You have successfully started the DaVinci Resolve installation wizard.\n"
-"Now you can install DaVinci Resolve on your computer."
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:559
-msgid "There was an error launching the DaVinci wizard"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:567
-msgid ""
-"There was an error extracting the DaVinci Resolve installer zip inside the "
-"target folder.\n"
-"Please check the logs to have more details."
-msgstr ""
-
-#: davinci_helper/functions/gui/function_2_gui.py:576
-msgid ""
-"There was an error launching the DaVinci Resolve installation wizard.\n"
-"Please check the logs to have more details."
 msgstr ""
 
 #: davinci_helper/functions/gui/function_3_gui.py:152
@@ -400,52 +365,6 @@ msgstr ""
 msgid ""
 "There was an error during the installation of the GPUs drivers.\n"
 "Please check the logs to have more details."
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:167
-#: davinci_helper/main.py:353
-msgid "DaVinci Video Converter"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:170
-msgid "Exported video settings"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:195
-msgid ""
-"The time needed to complete this task will vary\n"
-"on your computer and network performance."
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:298
-msgid "Select the converted videos output folder"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:355
-msgid "Select the files to convert"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:906
-#, python-brace-format
-msgid "Converting the file : {file_name}"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:951
-#, python-brace-format
-msgid "Finished processing the file : {file_name}"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:957
-#, python-brace-format
-msgid "{self.file_name} - 100%"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:1020
-msgid "{self.file_name} - {progress * 100:.2f}%"
-msgstr ""
-
-#: davinci_helper/functions/gui/function_5_gui.py:1042
-msgid "Starting with the next file..."
 msgstr ""
 
 #: davinci_helper/functions/gui/loading_gui.py:92
@@ -564,23 +483,135 @@ msgid ""
 "Please check the logs to have more details."
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:57
-#: davinci_helper/functions/logic/function_1.py:65
-#: davinci_helper/functions/logic/function_1.py:74
-#: davinci_helper/functions/logic/function_1.py:82
+#: davinci_helper/functions/gui/function_2_gui.py:159
+msgid ""
+"Launch DaVinci Resolve\n"
+"installation wizard"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:162
+msgid ""
+"This part of the software will ask you to indicate the DaVinci Resolve "
+"installer file path, then it will run it with the necessary patch to make it "
+"launch properly."
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:165
+msgid ""
+"Please select the 'name.zip' or 'file.run' file to launch the installation "
+"wizard of DaVinci Resolve"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:279
+msgid "Select the DaVinci Resolve installer .zip file"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:548
+msgid "You have successfully started the DaVinci wizard"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:551
+msgid ""
+"You have successfully started the DaVinci Resolve installation wizard.\n"
+"Now you can install DaVinci Resolve on your computer."
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:571
+msgid "There was an error launching the DaVinci wizard"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:579
+msgid ""
+"There was an error extracting the DaVinci Resolve installer zip inside the "
+"target folder.\n"
+"Please check the logs to have more details."
+msgstr ""
+
+#: davinci_helper/functions/gui/function_2_gui.py:588
+msgid ""
+"There was an error launching the DaVinci Resolve installation wizard.\n"
+"Please check the logs to have more details."
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:167
+#: davinci_helper/main.py:353
+msgid "DaVinci Video Converter"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:170
+msgid "Exported video settings"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:173
+msgid "Please select the output folder"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:198
+msgid ""
+"The time needed to complete this task will vary\n"
+"on your computer and network performance."
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:301
+msgid "Select the converted videos output folder"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:358
+msgid "Select the files to convert"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:909
 #, python-brace-format
-msgid "You are using a supported OS version : {os_version_placeholder}"
+msgid "Converting the file : {file_name}"
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:88
-msgid "DEBUG : There was an error reading what OS is installed :"
+#: davinci_helper/functions/gui/function_5_gui.py:954
+#, python-brace-format
+msgid "Finished processing the file : {file_name}"
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:92
-#: davinci_helper/functions/logic/function_1.py:123
-#: davinci_helper/functions/logic/function_1.py:265
-#: davinci_helper/functions/logic/function_2.py:74
-#: davinci_helper/functions/logic/function_2.py:94
+#: davinci_helper/functions/gui/function_5_gui.py:960
+#, python-brace-format
+msgid "{self.file_name} - 100%"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:1023
+msgid "{self.file_name} - {progress * 100:.2f}%"
+msgstr ""
+
+#: davinci_helper/functions/gui/function_5_gui.py:1045
+msgid "Starting with the next file..."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:90
+#: davinci_helper/functions/logic/function_4.py:59
+msgid ""
+"The RPM Fusion repository had already been added to the system, there was no "
+"need to add it."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:102
+#: davinci_helper/functions/logic/function_4.py:71
+msgid ""
+"DEBUG : It was impossible to add the RPM Fusion Free and Non-Free repository."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:103
+#: davinci_helper/functions/logic/function_4.py:72
+msgid "Check your network connection and try again or add it by yourself."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:107
+#: davinci_helper/functions/logic/install_ffmpeg.py:141
+#: davinci_helper/functions/logic/install_ffmpeg.py:175
+#: davinci_helper/functions/logic/install_ffmpeg.py:337
+#: davinci_helper/functions/logic/install_ffmpeg.py:371
+#: davinci_helper/functions/logic/function_1.py:117
+#: davinci_helper/functions/logic/function_1.py:148
+#: davinci_helper/functions/logic/function_1.py:290
+#: davinci_helper/functions/logic/function_2.py:64
+#: davinci_helper/functions/logic/function_2.py:106
+#: davinci_helper/functions/logic/function_2.py:126
 #: davinci_helper/functions/logic/function_3.py:58
 #: davinci_helper/functions/logic/function_3.py:165
 #: davinci_helper/functions/logic/function_3.py:184
@@ -590,45 +621,119 @@ msgstr ""
 #: davinci_helper/functions/logic/function_4.py:201
 #: davinci_helper/functions/logic/function_4.py:249
 #: davinci_helper/functions/logic/function_4.py:283
-#: davinci_helper/functions/logic/install_ffmpeg.py:107
-#: davinci_helper/functions/logic/install_ffmpeg.py:141
-#: davinci_helper/functions/logic/install_ffmpeg.py:175
-#: davinci_helper/functions/logic/install_ffmpeg.py:337
-#: davinci_helper/functions/logic/install_ffmpeg.py:371
 msgid ""
 "Please open an issue report and paste this error code on the project GitHub "
 "page :"
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:120
-msgid "DEBUG : There was an error reading the library list :"
+#: davinci_helper/functions/logic/install_ffmpeg.py:116
+#: davinci_helper/functions/logic/function_4.py:85
+msgid ""
+"The RPM Fusion Free and Non-Free repository have been successfully added."
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:172
-#: davinci_helper/functions/logic/function_1.py:228
+#: davinci_helper/functions/logic/install_ffmpeg.py:137
+msgid "DEBUG : It was impossible to install FFMPEG from RPM Fusion."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:150
+msgid ""
+"FFMPEG was successfully installed from RPM Fusion. Now you can use DaVinci "
+"Converter "
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:171
+msgid ""
+"DEBUG : It was impossible to swap the lite version FFMPEG with the one from "
+"RPM Fusion."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:184
+msgid ""
+"FFMPEG lite was successfully swapped with FFMPEG full from RPM Fusion. Now "
+"you can use DaVinci Converter "
+msgstr ""
+
 #: davinci_helper/functions/logic/install_ffmpeg.py:299
+#: davinci_helper/functions/logic/function_1.py:197
+#: davinci_helper/functions/logic/function_1.py:253
 msgid "The following libraries will be installed because they are missing :"
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:182
-#: davinci_helper/functions/logic/function_1.py:238
+#: davinci_helper/functions/logic/install_ffmpeg.py:309
+msgid ""
+"There are no missing codecs and libraries to install, you can now use "
+"DaVinci Converter"
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:333
+msgid ""
+"DEBUG : It was impossible to install the codecs and other libraries from RPM "
+"Fusion."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:346
+#: davinci_helper/functions/logic/install_ffmpeg.py:380
+msgid ""
+"All the codecs and missing libraries were successfully installed from RPM "
+"Fusion. Now you can use DaVinci Converter"
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:367
+msgid "DEBUG : It was impossible to update the multimedia group."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:440
+msgid ""
+"FFMPEG was already installed on the system\n"
+"there was no need to install it."
+msgstr ""
+
+#: davinci_helper/functions/logic/install_ffmpeg.py:481
+msgid ""
+"All the codecs and libraries were already installed\n"
+"on the system, there was no need to install it."
+msgstr ""
+
+#: davinci_helper/functions/logic/function_1.py:57
+#: davinci_helper/functions/logic/function_1.py:65
+#: davinci_helper/functions/logic/function_1.py:73
+#: davinci_helper/functions/logic/function_1.py:81
+#: davinci_helper/functions/logic/function_1.py:89
+#: davinci_helper/functions/logic/function_1.py:97
+#: davinci_helper/functions/logic/function_1.py:105
+#, python-brace-format
+msgid "You are using a supported OS version : {os_version_placeholder}"
+msgstr ""
+
+#: davinci_helper/functions/logic/function_1.py:113
+msgid "DEBUG : There was an error reading what OS is installed :"
+msgstr ""
+
+#: davinci_helper/functions/logic/function_1.py:145
+msgid "DEBUG : There was an error reading the library list :"
+msgstr ""
+
+#: davinci_helper/functions/logic/function_1.py:207
+#: davinci_helper/functions/logic/function_1.py:263
 msgid ""
 "There are no missing libraries to install, you can now install DaVinci "
 "Resolve"
 msgstr ""
 
-#: davinci_helper/functions/logic/function_1.py:261
+#: davinci_helper/functions/logic/function_1.py:286
 msgid "DEBUG : There was an error installing the missing libraries :"
 msgstr ""
 
-#: davinci_helper/functions/logic/function_2.py:71
-msgid "DEBUG : There was an error extracting the DaVinci Resolve installer :"
-msgstr ""
-
-#: davinci_helper/functions/logic/function_2.py:91
+#: davinci_helper/functions/logic/function_2.py:61
+#: davinci_helper/functions/logic/function_2.py:123
 msgid ""
 "DEBUG : There was an error launching the DaVinci Resolve installation "
 "wizard :"
+msgstr ""
+
+#: davinci_helper/functions/logic/function_2.py:103
+msgid "DEBUG : There was an error extracting the DaVinci Resolve installer :"
 msgstr ""
 
 #: davinci_helper/functions/logic/function_3.py:55
@@ -691,30 +796,6 @@ msgstr ""
 
 #: davinci_helper/functions/logic/function_3.py:195
 msgid "The libraries were correctly moved inside the secure folder."
-msgstr ""
-
-#: davinci_helper/functions/logic/function_4.py:59
-#: davinci_helper/functions/logic/install_ffmpeg.py:90
-msgid ""
-"The RPM Fusion repository had already been added to the system, there was no "
-"need to add it."
-msgstr ""
-
-#: davinci_helper/functions/logic/function_4.py:71
-#: davinci_helper/functions/logic/install_ffmpeg.py:102
-msgid ""
-"DEBUG : It was impossible to add the RPM Fusion Free and Non-Free repository."
-msgstr ""
-
-#: davinci_helper/functions/logic/function_4.py:72
-#: davinci_helper/functions/logic/install_ffmpeg.py:103
-msgid "Check your network connection and try again or add it by yourself."
-msgstr ""
-
-#: davinci_helper/functions/logic/function_4.py:85
-#: davinci_helper/functions/logic/install_ffmpeg.py:116
-msgid ""
-"The RPM Fusion Free and Non-Free repository have been successfully added."
 msgstr ""
 
 #: davinci_helper/functions/logic/function_4.py:108
@@ -783,63 +864,6 @@ msgstr ""
 msgid "The complete Intel driver has been successfully installed."
 msgstr ""
 
-#: davinci_helper/functions/logic/install_ffmpeg.py:137
-msgid "DEBUG : It was impossible to install FFMPEG from RPM Fusion."
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:150
-msgid ""
-"FFMPEG was successfully installed from RPM Fusion. Now you can use DaVinci "
-"Converter "
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:171
-msgid ""
-"DEBUG : It was impossible to swap the lite version FFMPEG with the one from "
-"RPM Fusion."
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:184
-msgid ""
-"FFMPEG lite was successfully swapped with FFMPEG full from RPM Fusion. Now "
-"you can use DaVinci Converter "
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:309
-msgid ""
-"There are no missing codecs and libraries to install, you can now use "
-"DaVinci Converter"
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:333
-msgid ""
-"DEBUG : It was impossible to install the codecs and other libraries from RPM "
-"Fusion."
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:346
-#: davinci_helper/functions/logic/install_ffmpeg.py:380
-msgid ""
-"All the codecs and missing libraries were successfully installed from RPM "
-"Fusion. Now you can use DaVinci Converter"
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:367
-msgid "DEBUG : It was impossible to update the multimedia group."
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:440
-msgid ""
-"FFMPEG was already installed on the system\n"
-"there was no need to install it."
-msgstr ""
-
-#: davinci_helper/functions/logic/install_ffmpeg.py:481
-msgid ""
-"All the codecs and libraries were already installed\n"
-"on the system, there was no need to install it."
-msgstr ""
-
 #: davinci_helper/main.py:341
 msgid "Install missing dependencies"
 msgstr ""
@@ -854,4 +878,215 @@ msgstr ""
 
 #: davinci_helper/main.py:350
 msgid "Check and install GPU drivers"
+msgstr ""
+
+#. APP FORMAL NAME
+#. WINDOW SECTION TITLE
+#: data/desktop/com.davinci.helper.app.desktop:5
+#: data/desktop/com.davinci.helper.app.metainfo.xml:12 data/ui/main.ui:48
+msgid "DaVinci Helper"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.desktop:11
+msgid "Video;Editing;DaVinci;Resolve"
+msgstr ""
+
+#. APP SUMMARY
+#: data/desktop/com.davinci.helper.app.metainfo.xml:17
+msgid "The best DaVinci Resolve companion app on Linux"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:34
+msgid ""
+"This app is created with the purpose of making it easier for Linux users to "
+"install and use DaVinci Resolve."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:35
+msgid "Features :"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:37
+msgid "Automatic and dynamic dependecies installation"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:38
+msgid "DaVinci Resolve installation wizard easy start"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:39
+msgid "Application of post install patch"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:40
+msgid "Easy GPU Driver installation"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:41
+msgid "Easy video conversion for DaVinci Resolve Free"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:43
+#: data/desktop/com.davinci.helper.app.metainfo.xml:150
+msgid "Visit the project GitHub page for more information."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:61
+msgid "App homepage"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:66
+msgid "Dependecies assistant"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:71
+msgid "Installer starter"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:76
+msgid "Post-installation fix applicator"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:81
+msgid "GPU driver assistant"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:86
+msgid "Video coverter"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:110
+msgid "Lorenzo Maiuri"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:136
+msgid "This new version of the app comes with the following changes :"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:139
+msgid "Added support for Nobara 41."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:140
+msgid "Added experimental support for Fedora 42."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:141
+msgid "Added experimental support for Fedora Rawhide."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:142
+msgid "Fixed uppercase file extension not correctly detected."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:143
+msgid "Fixed the conversion of files with spaces in their names."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:144
+msgid "Added support for Intel iGPUs."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:145
+msgid "Fixed support for Nvidia mobile GPUs."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:146
+msgid "Added support for more AMD iGPUs."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:147
+msgid "Added for using .run installer wizard file."
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/check_update_dialog.ui:245
+msgid "Download"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/check_update_dialog.ui:267 data/ui/converter_dialog.ui:203
+#: data/ui/converter_dialog.ui:227 data/ui/file_error_dialog.ui:203
+#: data/ui/module_install_error_dialog.ui:262
+#: data/ui/setting_management_dialog.ui:203 data/ui/welcome_dialog.ui:294
+msgid "Close"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/ffmpeg_install.ui:138
+msgid "Install"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/ffmpeg_install.ui:417 data/ui/function_1.ui:501
+#: data/ui/function_2.ui:573 data/ui/function_3.ui:501
+#: data/ui/function_4.ui:501
+msgid "Start again"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/file_size_warning_dialog.ui:275
+msgid "Cancel"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/function_1.ui:202 data/ui/function_2.ui:274
+#: data/ui/function_3.ui:202 data/ui/function_4.ui:202
+msgid "Start"
+msgstr ""
+
+#. SETTING THE TEXT
+#: data/ui/function_5.ui:247
+msgid "Video quality"
+msgstr ""
+
+#: data/ui/function_5.ui:273 data/ui/function_5.ui:339
+msgid "Original"
+msgstr ""
+
+#: data/ui/function_5.ui:274 data/ui/function_5.ui:340
+msgid "High"
+msgstr ""
+
+#: data/ui/function_5.ui:275 data/ui/function_5.ui:341
+msgid "Medium"
+msgstr ""
+
+#: data/ui/function_5.ui:276 data/ui/function_5.ui:342
+msgid "Low"
+msgstr ""
+
+#. SETTING THE TEXT
+#: data/ui/function_5.ui:313
+msgid "Audio quality"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/function_5.ui:459
+msgid "Convert"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/function_5.ui:480
+msgid "Load files"
+msgstr ""
+
+#. SETTING BUTTON TEXT LABEL
+#: data/ui/function_5.ui:500
+msgid "Clean list"
+msgstr ""
+
+#. WINDOW SECTION TITLE
+#: data/ui/main.ui:387
+msgid "Hi"
+msgstr ""
+
+#. ITEM NAME
+#: data/ui/main.ui:771
+msgid "Load default settings"
+msgstr ""
+
+#. ITEM NAME
+#: data/ui/main.ui:791
+msgid "About this app"
 msgstr ""

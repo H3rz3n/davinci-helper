@@ -25,6 +25,12 @@
 
     <!-- PROJECT/APP LICENSE -->
     <project_license>GPL-3.0</project_license>
+
+
+
+    <!-- APP ICON -->
+    <icon type="local">/usr/share/metainfo/davinci_helper_icon.svg</icon>
+
     
 
 
@@ -133,16 +139,19 @@
             <!-- DESCRIPTION START -->
             <description>
 
-                    <p>This version new version of the app comes with the following changes :</p>
+                    <p>This new version of the app comes with the following changes :</p>
                 
                     <ul>
                         <li>Added support for Nobara 41.</li>
+                        <li>Added experimental support for Fedora 42.</li>
+                        <li>Added experimental support for Fedora Rawhide.</li>
+                        <li>Added for using .run installer wizard file.</li>
+                        <li>Added support for Intel iGPUs.</li>
+                        <li>Added support for more AMD iGPUs.</li>
                         <li>Fixed uppercase file extension not correctly detected.</li>
                         <li>Fixed the conversion of files with spaces in their names.</li>
-                        <li>Added support for Intel iGPUs.</li>
                         <li>Fixed support for Nvidia mobile GPUs.</li>
-                        <li>Added support for more AMD iGPUs.</li>
-                        <li>Added for using .run installer wizard file.</li>
+                        <li>Fixed italian translation</li>
                     </ul>
 
                     <p>Visit the project GitHub page for more information.</p>
@@ -188,6 +197,15 @@
 
     <!-- APP CATEGORIES END -->
     </categories>
+
+    <!-- TRANSLATION START -->
+    <translation>
+
+        <language>it</language>
+        <percentage>100</percentage>
+    
+    <!-- TRANSLATION END -->
+    </translation>
 
 
 
