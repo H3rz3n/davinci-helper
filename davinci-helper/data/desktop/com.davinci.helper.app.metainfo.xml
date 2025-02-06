@@ -4,7 +4,7 @@
 <component type="desktop-application">
 
     <!-- APP ID -->
-    <id>com.davinci.helper.app.desktop</id>
+    <id>com.davinci.helper.app</id>
 
 
 
@@ -47,7 +47,7 @@
 
 
     <!-- APP DESKTOP FILE NAME -->
-    <launchable type="desktop-id">com.davinci.helper.app</launchable>
+    <launchable type="desktop-id">com.davinci.helper.app.desktop</launchable>
 
 
 
