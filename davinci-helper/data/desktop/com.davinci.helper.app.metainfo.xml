@@ -29,7 +29,7 @@
 
 
     <!-- APP ICON -->
-    <icon type="local">davinci_helper_icon.svg</icon>
+    <icon type="local">/usr/share/metainfo/davinci_helper_icon.svg</icon>
 
     
 
