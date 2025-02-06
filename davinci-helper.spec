@@ -95,12 +95,13 @@ update-desktop-database &> /dev/null || :
 - Added support for Nobara 41.
 - Added experimental support for Fedora 42.
 - Added experimental support for Fedora Rawhide.
+- Added for using .run installer wizard file.
+- Added support for Intel iGPUs.
+- Added support for more AMD iGPUs.
 - Fixed uppercase file extension not correctly detected.
 - Fixed the conversion of files with spaces in their names.
-- Added support for Intel iGPUs.
 - Fixed support for Nvidia mobile GPUs.
-- Added support for more AMD iGPUs.
-- Added for using .run installer wizard file.
+- Fixed italian translation.
 
 
 

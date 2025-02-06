@@ -637,6 +637,7 @@ msgid ""
 "Please select the 'name.zip' or 'file.run' file to launch the installation "
 "wizard of DaVinci Resolve"
 msgstr ""
+"Seleziona il file `.zip` oppure il file `.run` per avviare il programma di installazione di DaVinci Resolve"
 
 #: davinci_helper/functions/gui/function_2_gui.py:279
 msgid "Select the DaVinci Resolve installer .zip file"
@@ -687,7 +688,7 @@ msgstr "Impostazioni dei video esportati"
 
 #: davinci_helper/functions/gui/function_5_gui.py:173
 msgid "Please select the output folder"
-msgstr ""
+msgstr "Seleziona la cartella di output"
 
 #: davinci_helper/functions/gui/function_5_gui.py:198
 msgid ""
@@ -1117,7 +1118,8 @@ msgid ""
 "This app is created with the purpose of making it easier for Linux users to "
 "install and use DaVinci Resolve."
 msgstr ""
-"Questo programma è stato creato per semplificare il processore di installazione e l'uso di DaVinci Resolve per gli utenti Linux."
+"Questo programma è stato creato per semplificare il processore di "
+"installazione e l'uso di DaVinci Resolve per gli utenti Linux."
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:35
 msgid "Features :"
@@ -1141,7 +1143,9 @@ msgstr "Installazione semplificata dei driver della GPU"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:41
 msgid "Easy video conversion for DaVinci Resolve Free"
-msgstr "Conversione semplice ed intuitiva per utilizzare i video su DaVinci Resolve Free"
+msgstr ""
+"Conversione semplice ed intuitiva per utilizzare i video su DaVinci Resolve "
+"Free"
 
 #: data/desktop/com.davinci.helper.app.metainfo.xml:43
 #: data/desktop/com.davinci.helper.app.metainfo.xml:150
