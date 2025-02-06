@@ -169,6 +169,9 @@ class function_5_class (Gtk.ScrolledWindow):
         # LOADING TITLE TEXT
         self.converter_subtitle.set_text(_("Exported video settings"))
 
+        # LOADING ENTRY TEXT
+        self.converter_entry.set_placeholder_text(_("Please select the output folder"))
+
         # CONNECTING THE BUTTON TO THE FUNCTION
         self.converter_entry_button.connect('clicked', self.open_output_folder_dialog)
 

@@ -133,10 +133,12 @@
             <!-- DESCRIPTION START -->
             <description>
 
-                    <p>This version new version of the app comes with the following changes :</p>
+                    <p>This new version of the app comes with the following changes :</p>
                 
                     <ul>
                         <li>Added support for Nobara 41.</li>
+                        <li>Added experimental support for Fedora 42.</li>
+                        <li>Added experimental support for Fedora Rawhide.</li>
                         <li>Fixed uppercase file extension not correctly detected.</li>
                         <li>Fixed the conversion of files with spaces in their names.</li>
                         <li>Added support for Intel iGPUs.</li>
@@ -188,6 +190,15 @@
 
     <!-- APP CATEGORIES END -->
     </categories>
+
+    <!-- TRANSLATION START -->
+    <translation>
+
+        <language>it</language>
+        <percentage>100</percentage>
+    
+    <!-- TRANSLATION END -->
+    </translation>
 
 
 

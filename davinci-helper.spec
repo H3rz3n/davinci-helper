@@ -93,6 +93,8 @@ update-desktop-database &> /dev/null || :
 %changelog
 * Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.0-1
 - Added support for Nobara 41.
+- Added experimental support for Fedora 42.
+- Added experimental support for Fedora Rawhide.
 - Fixed uppercase file extension not correctly detected.
 - Fixed the conversion of files with spaces in their names.
 - Added support for Intel iGPUs.

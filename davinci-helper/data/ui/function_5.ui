@@ -383,9 +383,6 @@
                         <!-- ENTRY FIELD START -->
                         <child><object class="GtkEntry" id="converter_entry">
 
-                            <!-- PREVIEW TEXT OF THE TEXT FIELD -->
-                            <property name="placeholder_text" translatable="Yes">Please select the output folder</property>
-
                             <!-- SETTING THE HORIZONTAL EXPANSION OF THE CONTAINER -->
                             <property name="hexpand">true</property>
 
