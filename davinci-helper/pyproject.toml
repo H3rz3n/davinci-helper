@@ -38,7 +38,6 @@ packages = ["davinci_helper", "davinci_helper.functions", "davinci_helper.functi
     "data/icons/function_icons/*.svg",
     "data/icons/main_icons/*.svg",
     "data/icons/main_icons/*.jpg",
-    "data/gpu_support/*.txt",
     "data/polkit/*.rules",
     "data/polkit/*.policy",
     "data/settings/davinci_helper_settings",
@@ -84,11 +83,6 @@ packages = ["davinci_helper", "davinci_helper.functions", "davinci_helper.functi
     "data/icons/main_icons/function_4.svg",
     "data/icons/main_icons/function_5.svg",
     "data/icons/main_icons/ffmpeg_icon.jpg"
-]
-"share/davinci-helper/data/gpu_support" = [
-    "data/gpu_support/amd_support.txt",
-    "data/gpu_support/intel_support.txt",
-    "data/gpu_support/nvidia_support.txt"
 ]
 "share/davinci-helper/data/polkit" = [
     "data/polkit/com.davinci.helper.app.rules",
