@@ -8,7 +8,7 @@ DaVinci Helper is a companion app that will simplify the installation and the us
 Currently **this program supports only Fedora Linux** in all his spins and derivatives. If the project will receive a good feedback from the community I will make a version for Debian-based systems like Linux Mint and Ubuntu.
 
 <p align="center">
-  <img src="/screenshot/01.png" alt="Banner"/>
+  <img src="/screenshot/01_alt.png" alt="Banner"/>
 </p>
 
 ## What this app does :
