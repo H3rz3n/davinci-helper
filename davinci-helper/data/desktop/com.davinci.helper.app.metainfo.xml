@@ -40,6 +40,7 @@
             <li>Easy GPU Driver installation</li>
             <li>Easy video conversion for DaVinci Resolve Free</li>.
         </ul>
+        <p>Visit the project GitHub page for more information.</p>
 
     <!-- END OF APP DESCRIPTION -->
     </description>
@@ -131,6 +132,8 @@
 
             <!-- DESCRIPTION START -->
             <description>
+
+                    <p>This version new version of the app comes with the following changes :</p>
                 
                     <ul>
                         <li>Added support for Nobara 41.</li>
@@ -141,6 +144,8 @@
                         <li>Added support for more AMD iGPUs.</li>
                         <li>Added for using .run installer wizard file.</li>
                     </ul>
+
+                    <p>Visit the project GitHub page for more information.</p>
             
             <!-- DESCRIPTION END -->
             </description>
