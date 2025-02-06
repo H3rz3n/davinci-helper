@@ -64,6 +64,21 @@ def check_fedora_version ():
             # PRINT THE FEDORA VERSION
             print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
 
+        elif os_info.stdout.find("Fedora Linux 42") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux 42"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif ((os_info.stdout).lower()).find("rawhide") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux Rawhide"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
         
         elif os_info.stdout.find("Nobara Linux 40") != -1 :
 
@@ -80,6 +95,16 @@ def check_fedora_version ():
 
             # PRINT THE FEDORA VERSION
             print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Nobara Linux 42") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Nobara Linux 42"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        
 
         # RETURNS VALUE TO THE SCRIPT
         return os_version
@@ -295,11 +320,24 @@ if os_version.find("40") != -1 :
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
     check_dependencies_40(library_list)
 
-# CHECKING IF IS INSTALLED FEDORA 40
+# CHECKING IF IS INSTALLED FEDORA 41
 elif os_version.find("41") != -1 :
 
     # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
     check_dependencies_41(library_list)
+
+# CHECKING IF IS INSTALLED FEDORA 42
+elif os_version.find("42") != -1 :
+
+    # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
+    check_dependencies_41(library_list)
+
+# CHECKING IF IS INSTALLED FEDORA RAWHIDE
+elif os_version.find("Rawhide") != -1 :
+
+    # EXECUTION OF THE FUNCTION THAT INSTALL THE MISSING DEPENDENCIES
+    check_dependencies_41(library_list)
+
 
 
 
