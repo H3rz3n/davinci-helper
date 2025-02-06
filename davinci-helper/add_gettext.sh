@@ -1,4 +1,7 @@
 #!/bin/bash
-find davinci_helper data -name "*.py" -o -name "*.ui" -o -name "*.xml" -o -name "*.desktop" | xargs xgettext -j -o locale/davinci-helper.pot
 
-msgmerge -U locale/it/LC_MESSAGES/davinci-helper.po locale/davinci-helper.pot
+# MERGING THE NEW TEMPLATE LINES IN THE TRANSLATION FILE
+msgmerge --update --no-fuzzy-matching locale/it/LC_MESSAGES/davinci-helper.po locale/davinci-helper.pot
+
+# DELETING OLD TRANSLATION LINE UNUSED
+msgattrib --no-obsolete locale/it/LC_MESSAGES/davinci-helper.po -o locale/it/LC_MESSAGES/davinci-helper.po

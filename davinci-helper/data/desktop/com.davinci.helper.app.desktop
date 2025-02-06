@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Version=2.2.3
+Version=2.3.0
 Name=DaVinci Helper
 Exec=davinci-helper
 Icon=davinci_helper_icon.svg

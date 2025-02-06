@@ -146,7 +146,7 @@ def get_file_info (file):
 
         try:
             # EXECUTING FFPROBE AND GET METADATA AS JSON
-            result = subprocess.run(f"ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration,avg_frame_rate -of json {file}", stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
+            result = subprocess.run(f'ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration,avg_frame_rate -of json "{file}"', stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, shell=True)
             if result.returncode != 0:
                 raise ValueError(f"ffprobe error: {result.stderr.strip()}")
 

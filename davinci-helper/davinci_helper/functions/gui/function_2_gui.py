@@ -283,6 +283,15 @@ class function_2_class (Gtk.ScrolledWindow):
 
         # SETTING THE SELECTABLE FILE TYPE EXTENSION
         zip_filter.add_pattern("*.zip")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        zip_filter.add_pattern("*.ZIP")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        zip_filter.add_pattern("*.run")
+
+        # SETTING THE SELECTABLE FILE TYPE EXTENSION
+        zip_filter.add_pattern("*.RUN")
         
         # SETTING THE FILTER IN THE FILE CHOOSER DIALOG WINDOW
         file_dialog.set_default_filter(zip_filter)

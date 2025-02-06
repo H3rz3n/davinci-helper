@@ -4,7 +4,7 @@
 <component type="desktop-application">
 
     <!-- APP ID -->
-    <id>com.davinci.helper.app.desktop</id>
+    <id>com.davinci.helper.app</id>
 
 
 
@@ -40,6 +40,7 @@
             <li>Easy GPU Driver installation</li>
             <li>Easy video conversion for DaVinci Resolve Free</li>.
         </ul>
+        <p>Visit the project GitHub page for more information.</p>
 
     <!-- END OF APP DESCRIPTION -->
     </description>
@@ -127,30 +128,24 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.2.3" date="2024-12-17">
+        <release version="2.3.0" date="2025-02-06" type="stable">
 
             <!-- DESCRIPTION START -->
             <description>
+
+                    <p>This version new version of the app comes with the following changes :</p>
                 
                     <ul>
-                        <li>Added support for AMD iGPU 780M</li>
+                        <li>Added support for Nobara 41.</li>
+                        <li>Fixed uppercase file extension not correctly detected.</li>
+                        <li>Fixed the conversion of files with spaces in their names.</li>
+                        <li>Added support for Intel iGPUs.</li>
+                        <li>Fixed support for Nvidia mobile GPUs.</li>
+                        <li>Added support for more AMD iGPUs.</li>
+                        <li>Added for using .run installer wizard file.</li>
                     </ul>
-            
-            <!-- DESCRIPTION END -->
-            </description>
-                    
-          <!--RELEASE NOTE END -->
-        </release>
 
-        <!-- RELEASE NOTE START-->
-        <release version="2.2.1" date="2024-11-25">
-
-            <!-- DESCRIPTION START -->
-            <description>
-                
-                    <ul>
-                        <li>Fixed support for AMD iGPUs</li>
-                    </ul>
+                    <p>Visit the project GitHub page for more information.</p>
             
             <!-- DESCRIPTION END -->
             </description>
