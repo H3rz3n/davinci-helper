@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------------------------------
 
 # ERROR TAB :
-# EXIT 1 - IT WAS IMPOSSIBLE TO FIND A SUPPORTED GPU INSIDE THE SYSTEM
+# EXIT 1 - UNUSED
 # EXIT 2 - IT WAS IMPOSSIBLE TO ADD THE RPM FUSION REPOSITORY
 # EXIT 3 - IT WAS IMPOSSIBLE TO INSTALL THE GPU DRIVER
 
@@ -39,314 +39,6 @@ gettext.textdomain('davinci-helper')
 _ = gettext.gettext
 
 #-----------------------------------------------------------------------------------------------------
-
-
-
-# FUNCTION THAT FINDS THE GPU VENDOR
-def find_gpu_vendor ():
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # ACQUIRING THE GPU VENDOR
-    gpu_lspci = subprocess.run("lspci | grep -Ei 'vga|display'", shell=True, capture_output=True, text=True )
-
-    # MAKING LOWERCASE ALL THE STRING CHARACTER
-    gpu_lspci = gpu_lspci.stdout.lower()
-
-    # RESETTING THE COUNTER
-    gpu_vendor = ""
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VENDOR IS NVIDIA
-    if gpu_lspci.find("nvidia") != -1 :
-
-        # SALVO IL PRODUTTORE DELLA GPU
-        # SAVING THE GPU VENDOR
-        gpu_vendor = " nvidia"
-    
-    # CHECKING IF THE VENDOR IS AMD
-    if gpu_lspci.find("amd") != -1 :
-
-        # SAVING THE GPU VENDOR
-        gpu_vendor =  gpu_vendor + " amd"
-
-    # CHECKING IF THE VENDOR IS INTEL
-    if gpu_lspci.find("intel") != -1 :
-
-        # SALVO IL PRODUTTORE DELLA GPU
-        # SAVING THE GPU VENDOR
-        gpu_vendor =  gpu_vendor + " intel"
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # DELETING START AND END SPACES FROM THE STRING
-    gpu_vendor = gpu_vendor.strip()
-
-    # RETURNING TO THE APP THE VENDOR NAMES AND THE LSPCI OUTPUT
-    return gpu_lspci, gpu_vendor
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-# FUNCTION THAT EXTRACTS GPU NAME FROM LSPCI
-def extract_gpu_model_name(gpu_lspci):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # EXTRACTING THE GPU FROM THE [ ] BRACKETS
-    gpu_model_name_list = re.findall(r'\[(.*?)\]', gpu_lspci)
-
-    # RETURNING TO THE APP THE GPU MODEL NAME
-    return gpu_model_name_list
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-# FUNCTION THAT EXTRACTS THE NUMERIC GPU NAME FROM LSPCI
-def extract_gpu_model_number (gpu_lspci):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # EXTRACTING THE GPUS FROM THE [ ] BRACKETS
-    square_brackets_output = re.findall(r'\[(.*?)\]', gpu_lspci)
-
-    # RESETTING THE NUMERIC GPUS NAMES LIST
-    gpu_model_number_list = []
-
-    # EXTRACTING THE NUMERIC GPUS NAMES
-    for item in square_brackets_output :
-
-        gpu_model_number_list.extend(re.findall(r'\d+',item))
-
-    # RETURNING TO THE APP THE GPU NUMERIC MODEL NAME
-    return gpu_model_number_list
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-# FUNCTION THAT START THE RESERCH OF WHICH GPU MODEL IS IN USE
-def start_gpu_support_search(gpu_vendor, gpu_model_name_list, gpu_model_number_list):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # RESETTING THE COUNTERS
-    gpu_supported_nvidia = False
-    gpu_supported_amd = False
-    gpu_supported_intel = False
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VENDOR IS NVIDIA
-    if gpu_vendor.find("nvidia") != -1 :
-
-        # CHECKING IF THE GPU IS SUPPORTED
-        gpu_supported_nvidia = check_nvidia_gpu_support(gpu_model_name_list, gpu_model_number_list)
-    
-    # CHECKING IF THE VENDOR IS AMD
-    if gpu_vendor.find("amd") != -1 :
-
-        # CHECKING IF THE GPU IS SUPPORTED
-        gpu_supported_amd = check_amd_gpu_support(gpu_model_name_list, gpu_model_number_list)
-
-    # CHECKING IF THE VENDOR IS INTEL
-    if gpu_vendor.find("intel") != -1 :
-
-        # CHECKING IF THE GPU IS SUPPORTED
-        gpu_supported_intel = check_intel_gpu_support(gpu_model_name_list ,gpu_model_number_list)
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # RETURNING TO THE APP IF THE GPUs ARE SUPPORTED  
-    return gpu_supported_nvidia, gpu_supported_amd, gpu_supported_intel
-
-    #-----------------------------------------------------------------------------------------------------
-
-        
-
-
-
-# FUNCTION THAT FINDS IF THE NVIDIA GPU IS COMPATIBLE
-def check_nvidia_gpu_support (gpu_model_name_list, gpu_model_number_list):
-    
-    #-----------------------------------------------------------------------------------------------------
-
-    # TRYING TO OPEN THE GPU DATABASE
-    try:
-
-        # LOADING THE AMD GPU COMPATIBILITY LIST INTO MEMORY FOR FASTER ACCESS
-        with open(f"{gpu_database_path}/nvidia_support.txt", 'r', encoding='utf-8') as file:
-            supported_gpus = file.readlines()
-
-    except FileNotFoundError:
-
-        # PRINTING EXIT STATEMENT
-        print("Error: Nvidia GPU support file not found. Please check the database path.")
-        return False
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF ANY OF THE FOUND GPU IN THE SYSTEM IS COMPATIBLE
-    # FINDING THE GPU NAME ASSOCIETED TO THE COMPATIBLE GPU NUMERIC NAME
-    # IT IS NECESSARY TO DO THIS CROSS CHECK BECAUSE FILTERING THE SQUARE BRACKETS [ ] MAY FIND INCORRECT STRINGS, THANK YOU AMD
-
-    # ITERATING OVER THE GPU NAMES TO CHECK FOR COMPATIBILITY
-    for gpu_name in gpu_model_name_list:
-
-        # ITERATING OVER THE GPU NUMBERS TO CHECK FOR COMPATIBILITY
-        for gpu_number in gpu_model_number_list:
-
-            # ITERATING OVER THE LINE OF THE FOUND GPUS
-            for line in supported_gpus:
-
-                # CHECK FOR RX, VEGA, OR RADEON IN BOTH THE GPU NAME AND THE LINE
-                if (re.search(r"\b(gtx|rtx|quadro)\b", gpu_name, re.IGNORECASE) and re.search(r"\b(gtx|rtx|quadro)\b", line, re.IGNORECASE) and re.search(rf"\b{re.escape(gpu_number)}\b", line, re.IGNORECASE)):
-        
-                    # PRINTING A SUCCESS MESSAGE
-                    print(f"A compatible Nvidia GPU was found: {gpu_name.upper()}\n")
-                    return True
-
-    # RETURNING FALSE IF NO COMPATIBLE GPUS ARE FOUND
-    return False
-
-    #-----------------------------------------------------------------------------------------------------
-
-           
-
-        
-
-
-
-# FUNCTION THAT FINDS IF THE AMD GPU IS COMPATIBLE
-def check_amd_gpu_support (gpu_model_name_list, gpu_model_number_list):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # TRYING TO OPEN THE GPU DATABASE
-    try:
-
-        # LOADING THE AMD GPU COMPATIBILITY LIST INTO MEMORY FOR FASTER ACCESS
-        with open(f"{gpu_database_path}/amd_support.txt", 'r', encoding='utf-8') as file:
-            supported_gpus = file.readlines()
-
-    except FileNotFoundError:
-
-        # PRINTING EXIT STATEMENT
-        print("Error: AMD GPU support file not found. Please check the database path.")
-        return False
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF ANY OF THE FOUND GPU IN THE SYSTEM IS COMPATIBLE
-    # FINDING THE GPU NAME ASSOCIETED TO THE COMPATIBLE GPU NUMERIC NAME
-    # IT IS NECESSARY TO DO THIS CROSS CHECK BECAUSE FILTERING THE SQUARE BRACKETS [ ] MAY FIND INCORRECT STRINGS, THANK YOU AMD
-
-    # ITERATING OVER THE GPU NAMES TO CHECK FOR COMPATIBILITY
-    for gpu_name in gpu_model_name_list:
-
-        # ITERATING OVER THE GPU NUMBERS TO CHECK FOR COMPATIBILITY
-        for gpu_number in gpu_model_number_list:
-
-            # ITERATING OVER THE LINE OF THE FOUND GPUS
-            for line in supported_gpus:
-
-                # CHECK FOR RX, VEGA, OR RADEON IN BOTH THE GPU NAME AND THE LINE
-                if (re.search(r"\b(rx|vega|radeon)\b", gpu_name, re.IGNORECASE) and re.search(r"\b(rx|vega|radeon)\b", line, re.IGNORECASE) and re.search(rf"\b{re.escape(gpu_number)}\b", line, re.IGNORECASE)):
-        
-                    # PRINTING A SUCCESS MESSAGE
-                    print(f"A compatible AMD GPU was found: {gpu_name.upper()}\n")
-                    return True
-
-    # RETURNING FALSE IF NO COMPATIBLE GPUS ARE FOUND
-    return False
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-# FUNCTION THAT FINDS IF THE INTEL GPU IS COMPATIBLE
-def check_intel_gpu_support (gpu_model_name_list, gpu_model_number_list):
-    
-    #-----------------------------------------------------------------------------------------------------
-
-    # TRYING TO OPEN THE GPU DATABASE
-    try:
-
-        # LOADING THE AMD GPU COMPATIBILITY LIST INTO MEMORY FOR FASTER ACCESS
-        with open(f"{gpu_database_path}/intel_support.txt", 'r', encoding='utf-8') as file:
-            supported_gpus = file.readlines()
-
-    except FileNotFoundError:
-
-        # PRINTING EXIT STATEMENT
-        print("Error: Intel GPU support file not found. Please check the database path.")
-        return False
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF ANY OF THE FOUND GPU IN THE SYSTEM IS COMPATIBLE
-    # FINDING THE GPU NAME ASSOCIETED TO THE COMPATIBLE GPU NUMERIC NAME
-    # IT IS NECESSARY TO DO THIS CROSS CHECK BECAUSE FILTERING THE SQUARE BRACKETS [ ] MAY FIND INCORRECT STRINGS, THANK YOU AMD
-
-    # ITERATING OVER THE GPU NAMES TO CHECK FOR COMPATIBILITY
-    for gpu_name in gpu_model_name_list:
-
-        # ITERATING OVER THE GPU NUMBERS TO CHECK FOR COMPATIBILITY
-        for gpu_number in gpu_model_number_list:
-
-            # ITERATING OVER THE LINE OF THE FOUND GPUS
-            for line in supported_gpus:
-
-                # CHECK FOR RX, VEGA, OR RADEON IN BOTH THE GPU NAME AND THE LINE
-                if (re.search(r"\b(arc)\b", gpu_name, re.IGNORECASE) and re.search(r"\b(arc)\b", line, re.IGNORECASE) and re.search(rf"\b{re.escape(gpu_number)}\b", line, re.IGNORECASE)):
-        
-                    # PRINTING A SUCCESS MESSAGE
-                    print(f"A compatible Intel GPU was found: {gpu_name.upper()}\n")
-                    return True
-
-    # RETURNING FALSE IF NO COMPATIBLE GPUS ARE FOUND
-    return False
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-# FUNCTION THAT PRINTS THE ERROR MESSAGE IF THE APP HAS NOT FOUND A COMPATIBLE GPU
-def check_supported_gpu_presence(gpu_supported_nvidia, gpu_supported_amd, gpu_supported_intel):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THERE ISN'T A COMPATIBLE GPU
-    if gpu_supported_nvidia == False and gpu_supported_amd == False and gpu_supported_intel == False :
-
-        # STAMPO IL MESSAGGIO DI ERRORE
-        # PRINTING THE ERROR MESSAGE
-        print(_("DEBUG : No supported GPU has been found inside your system."))
-        print(_("If you know that you have a DaVinci Resolve compatible GPU,"))
-        print(_("please open an issue and paste this error code on the project GitHub page :"))
-        print("")
-        print("https://github.com/H3rz3n/davinci-helper/issues")
-        print("")
-        exit(1)
-    
-    #-----------------------------------------------------------------------------------------------------
 
 
 
@@ -399,42 +91,15 @@ def add_repository():
 
 
 
-# FUNCTION THAT STARTS THE CORRECT GPU DRIVER INSTALLATION
-def start_driver_install(gpu_supported_nvidia, gpu_supported_amd, gpu_supported_intel):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING WHICH DRIVER NEEDS TO BE INSTALLED AND STARTING THE CORRECT INSTALLATION FUNCTION
-    if gpu_supported_nvidia == True :
-
-        # STARTING THE DRIVER INSTALLATION
-        install_nvidia_driver()
-
-    if gpu_supported_amd == True :
-
-        # STARTING THE DRIVER INSTALLATION
-        install_amd_driver()
-
-    if gpu_supported_intel == True :
-
-        # STARTING THE DRIVER INSTALLATION
-        install_intel_driver()
-    
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
 # FUNCTION THAT STARTS THE NVIDIA DRIVER INSTALLATION
 def install_nvidia_driver():
 
     #-----------------------------------------------------------------------------------------------------
 
     # ACQUIRING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
-    nvidia_driver_check_1 = subprocess.run("dnf list --installed | grep akmod-nvidia", shell=True, capture_output=True, text=True )
-    nvidia_driver_check_2 = subprocess.run("dnf list --installed | grep xorg-x11-drv-nvidia-cuda", shell=True, capture_output=True, text=True )
-    nvidia_driver_check = nvidia_driver_check_1.stdout + nvidia_driver_check_2.stdout
+    nvidia_driver_check = subprocess.run("dnf list --installed | grep akmod-nvidia ; dnf list --installed | grep xorg-x11-drv-nvidia-cuda", shell=True, capture_output=True, text=True ).stdout
+
+    #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
     if nvidia_driver_check.find("akmod-nvidia") != -1 and ((nvidia_driver_check.find("xorg-x11-drv-nvidia-cuda") != -1)) :
@@ -480,7 +145,7 @@ def install_amd_driver():
     #-----------------------------------------------------------------------------------------------------
     
     # ACQUIRING IF IS ALREADY INSTALLED THE AMD DRIVER
-    amd_driver_check = subprocess.run("dnf list --installed | grep rocm && dnf list --installed | grep freeworld", shell=True, capture_output=True, text=True ).stdout
+    amd_driver_check = subprocess.run("dnf list --installed | grep rocm ; dnf list --installed | grep freeworld", shell=True, capture_output=True, text=True ).stdout
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -522,16 +187,16 @@ def install_amd_driver():
     else :
 
         # SWAPPING THE MESA TO THE COMPLETE VERSION
-        amd_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld", shell=True, capture_output=True, text=True )
+        mesa_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
-        if amd_driver_swap.returncode != 0 :
+        if mesa_driver_swap.returncode != 0 :
 
             # PRINTING THE ERROR MESSAGE
-            print(_("DEBUG : It was impossible to install the open source AMD GPU driver."))
+            print(_("DEBUG : It was impossible to swap the MESA GPU driver with the complete version."))
             print(_("Check your network connection and try again or install it by yourself."))
             print("")
-            print(amd_driver_swap.stdout)
+            print(mesa_driver_swap.stdout)
             print("")
             print(_("Please open an issue report and paste this error code on the project GitHub page :"))
             print("https://github.com/H3rz3n/davinci-helper/issues")
@@ -541,14 +206,11 @@ def install_amd_driver():
         else :
 
             # PRINTING THE SUCCESSFUL STATE
-            print(_("The open source AMD GPU driver has been successfully installed."))
+            print(_("The MESA GPU driver has been successfully swapped with the complete version."))
             print("")
 
     #-----------------------------------------------------------------------------------------------------
     
-    #-----------------------------------------------------------------------------------------------------
-
-
 
 
 
@@ -556,16 +218,79 @@ def install_amd_driver():
 # FUNCTION THAT STARTS THE INTEL GPU DRIVER INSTALLATION
 def install_intel_driver():
 
-   #-----------------------------------------------------------------------------------------------------
-    
-    print(_("DEBUG : It was impossible to install the drivers for your GPU because it is currently not supported by this app. "))
-    print("")
-    print(_("If you know that your GPU is supported by DaVinci Resolve please open an issue report on the project GitHub page :"))
-    print("")
-    print("https://github.com/H3rz3n/davinci-helper/issues")
-    print("")
-    exit(1)
-    
+    #-----------------------------------------------------------------------------------------------------
+
+    # ACQUIRING IF IS ALREADY INSTALLED THE COMPLETE INTEL DRIVER
+    intel_driver_check = subprocess.run("dnf list --installed | grep intel-compute-runtime ; dnf list --installed | grep intel-opencl ; dnf list --installed | grep freeworld", shell=True, capture_output=True, text=True ).stdout
+
+    #-----------------------------------------------------------------------------------------------------
+
+    # CHECKING IF IS ALREADY INSTALLED THE COMPLETE INTEL DRIVER
+    if intel_driver_check.find("intel-compute-runtime") != -1 and ((intel_driver_check.find("intel-opencl") != -1)) :
+
+        # PRINTING THE MESSAGE
+        print(_("The complete Intel GPU driver was already installed on the system, there was no need to install it."))
+        print("")
+
+    else :
+
+        # INSTALLING THE COMPLETE INTEL DRIVER  
+        intel_driver_install = subprocess.run("dnf install -y intel-compute-runtime intel-opencl", shell=True, capture_output=True, text=True )
+
+        # CHECKING IF THERE WERE ERRORS
+        if intel_driver_install.returncode != 0 :
+
+            # PRINTING THE ERROR MESSAGE
+            print(_("DEBUG : It was impossible to install the complete Intel GPU driver."))
+            print(_("Check your network connection and try again or install it by yourself."))
+            print("")
+            print(intel_driver_install.stdout)
+            print("")
+            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+            print("https://github.com/H3rz3n/davinci-helper/issues")
+            print("")            
+            exit(3)
+
+        else :
+
+            # PRINTING THE SUCCESSFUL STATE
+            print(_("The complete Intel driver has been successfully installed."))
+            print("")
+
+
+
+    # CHECKING IF IS ALREADY INSTALLED THE MESA FREEWORLD DRIVER         
+    if (intel_driver_check.find("mesa-va-drivers-freeworld") != -1) and (intel_driver_check.find("mesa-vdpau-drivers-freeworld") != -1):
+
+        # PRINTING THE MESSAGE
+        print(_("The MESA Freeworld drivers were already installed on the system, there was no need to install it."))
+        print("")
+
+    else :
+
+        # SWAPPING THE MESA TO THE COMPLETE VERSION
+        mesa_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld", shell=True, capture_output=True, text=True )
+
+        # CHECKING IF THERE WERE ERRORS
+        if mesa_driver_swap.returncode != 0 :
+
+            # PRINTING THE ERROR MESSAGE
+            print(_("DEBUG : It was impossible to swap the MESA GPU driver with the complete version."))
+            print(_("Check your network connection and try again or install it by yourself."))
+            print("")
+            print(mesa_driver_swap.stdout)
+            print("")
+            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+            print("https://github.com/H3rz3n/davinci-helper/issues")
+            print("")            
+            exit(3)
+
+        else :
+
+            # PRINTING THE SUCCESSFUL STATE
+            print(_("The MESA GPU driver has been successfully swapped with the complete version."))
+            print("")
+
     #-----------------------------------------------------------------------------------------------------
 
 
@@ -575,37 +300,32 @@ def install_intel_driver():
 
 
 
+#-----------------------------------------------------------------------------------------------------
 
+# ACQUIRING THE GPU VENDOR
+gpu_lspci = subprocess.run("lspci | grep -Ei 'vga|display'", shell=True, capture_output=True, text=True )
 
+# MAKING LOWERCASE ALL THE STRING CHARACTER
+gpu_lspci = gpu_lspci.stdout.lower()
 
+#-----------------------------------------------------------------------------------------------------
 
-# STARTING THE FUNCTION THAT FINDS THE GPU VENDOR
-gpu_lspci, gpu_vendor = find_gpu_vendor()
+# CHECKING IF THE VENDOR IS NVIDIA
+if gpu_lspci.find("nvidia") != -1 :
 
-# ACQUIRING GPU MODEL NAME
-gpu_model_name_list = extract_gpu_model_name(gpu_lspci)
+    # STARTING THE DRIVER INSTALLATION
+    install_nvidia_driver()
 
-# ACQUIRING GPU MODEL NAME
-gpu_model_number_list = extract_gpu_model_number(gpu_lspci)
+# CHECKING IF THE VENDOR IS AMD
+if gpu_lspci.find("amd") != -1 :
 
-# STARTING THE FUNCTION THAT FINDS THE GPU MODEL
-gpu_supported_nvidia, gpu_supported_amd, gpu_supported_intel = start_gpu_support_search(gpu_vendor, gpu_model_name_list, gpu_model_number_list)
+    # STARTING THE DRIVER INSTALLATION
+    install_amd_driver()
 
-# STARTING THE FUNCTION THAT CHECKS IF THERE ARE NOT BEEN FOUND COMPATIBLE GPUs
-check_supported_gpu_presence(gpu_supported_nvidia, gpu_supported_amd, gpu_supported_intel)
+# CHECKING IF THE VENDOR IS INTEL
+if gpu_lspci.find("intel") != -1 :
 
-# STARTING THE FUNCTION THAT ADDS THE RPM FUSION REPOSITORY
-add_repository()
+    # STARTING THE DRIVER INSTALLATION
+    install_intel_driver()
 
-# STARTING THE FUNCTION THAT INSTALLS THE NECESSARY GPU DRIVERS
-start_driver_install(gpu_supported_nvidia, gpu_supported_amd, gpu_supported_intel)
-
-
-
-
-
-
-
-
-
-
+#-----------------------------------------------------------------------------------------------------

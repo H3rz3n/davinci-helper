@@ -47,64 +47,96 @@ file_path = sys.argv[1]
 
 #-----------------------------------------------------------------------------------------------------
 
-# ACQUIRING THE USER'S DOWNLOAD DIRECTORY
-download_directory = subprocess.run("xdg-user-dir DOWNLOAD", shell=True, capture_output=True, text=True)
+# CHECKING IF THE USER HAS SELECTED THE ZIP OR THE .RUN FILE
+if file_path.find(".run") != -1 :
 
-#-----------------------------------------------------------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------
 
-# DEFINING THE INSTALLER EXTRACTION PATH
-folder_path = download_directory.stdout.strip() + "/davinci_resolve_installer"
+    # STARTING THE INSTALLATION WIZARD
+    start_wizard = subprocess.run(f"SKIP_PACKAGE_CHECK=1 {file_path}",shell=True, capture_output=True, text=True)
 
-#-----------------------------------------------------------------------------------------------------
+    # CHECKING FOR ERRORS AFTER STARTING THE INSTALLATION WIZARD AND RETURN THEM TO THE MAIN PROGRAM
+    if start_wizard.returncode != 0 :
+        
+        print(_("DEBUG : There was an error launching the DaVinci Resolve installation wizard :"))
+        print(start_wizard.stdout)
+        print("")
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+        print("")
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(2)
 
-# CREATING THE FOLDER WHERE TO EXTRACT THE INSTALLER
-subprocess.run(f"mkdir -p {folder_path}", shell=True, capture_output=True, text=True)
+    else:
+        
+        exit(0)
 
-#-----------------------------------------------------------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------
 
-# INSTALLER EXTRACTION
-unzip = subprocess.run(f"unzip -o {file_path} -d {folder_path}",shell=True, capture_output=True, text=True)
 
-# CHECKING FOR ERRORS AFTER RUNNING THE PROGRAM AND RETURN THEM TO THE MAIN PROGRAM
-if unzip.returncode != 0 :
 
-    print(_("DEBUG : There was an error extracting the DaVinci Resolve installer :"))
-    print(unzip.stdout)
-    print("")
-    print(_("Please open an issue report and paste this error code on the project GitHub page :"))
-    print("")
-    print("https://github.com/H3rz3n/davinci-helper/issues")
-    print("")
-    exit(1)
+else :
 
-#-----------------------------------------------------------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------
 
-# STARTING THE INSTALLATION WIZARD
-start_wizard = subprocess.run(f"cd {folder_path} && SKIP_PACKAGE_CHECK=1 ./*.run",shell=True, capture_output=True, text=True)
+    # ACQUIRING THE USER'S DOWNLOAD DIRECTORY
+    download_directory = subprocess.run("xdg-user-dir DOWNLOAD", shell=True, capture_output=True, text=True)
 
-# CHECKING FOR ERRORS AFTER STARTING THE INSTALLATION WIZARD AND RETURN THEM TO THE MAIN PROGRAM
-if start_wizard.returncode != 0 :
+    #-----------------------------------------------------------------------------------------------------
 
-    # DELETING THE FOLDER WHERE WE EXTRACTED THE INSTALLER
-    subprocess.run(f"rm -r {folder_path}", shell=True, capture_output=True, text=True)
-    
-    print(_("DEBUG : There was an error launching the DaVinci Resolve installation wizard :"))
-    print(start_wizard.stdout)
-    print("")
-    print(_("Please open an issue report and paste this error code on the project GitHub page :"))
-    print("")
-    print("https://github.com/H3rz3n/davinci-helper/issues")
-    print("")
-    exit(2)
+    # DEFINING THE INSTALLER EXTRACTION PATH
+    folder_path = download_directory.stdout.strip() + "/davinci_resolve_installer"
 
-else:
+    #-----------------------------------------------------------------------------------------------------
 
-    # DELETING THE FOLDER WHERE WE EXTRACTED THE INSTALLER
-    subprocess.run(f"rm -r {folder_path}", shell=True, capture_output=True, text=True)
-    
-    exit(0)
+    # CREATING THE FOLDER WHERE TO EXTRACT THE INSTALLER
+    subprocess.run(f"mkdir -p {folder_path}", shell=True, capture_output=True, text=True)
 
-#-----------------------------------------------------------------------------------------------------
+    #-----------------------------------------------------------------------------------------------------
+
+    # INSTALLER EXTRACTION
+    unzip = subprocess.run(f"unzip -o {file_path} -d {folder_path}",shell=True, capture_output=True, text=True)
+
+    # CHECKING FOR ERRORS AFTER RUNNING THE PROGRAM AND RETURN THEM TO THE MAIN PROGRAM
+    if unzip.returncode != 0 :
+
+        print(_("DEBUG : There was an error extracting the DaVinci Resolve installer :"))
+        print(unzip.stdout)
+        print("")
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+        print("")
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(1)
+
+    #-----------------------------------------------------------------------------------------------------
+
+    # STARTING THE INSTALLATION WIZARD
+    start_wizard = subprocess.run(f"cd {folder_path} && SKIP_PACKAGE_CHECK=1 ./*.run",shell=True, capture_output=True, text=True)
+
+    # CHECKING FOR ERRORS AFTER STARTING THE INSTALLATION WIZARD AND RETURN THEM TO THE MAIN PROGRAM
+    if start_wizard.returncode != 0 :
+
+        # DELETING THE FOLDER WHERE WE EXTRACTED THE INSTALLER
+        subprocess.run(f"rm -r {folder_path}", shell=True, capture_output=True, text=True)
+        
+        print(_("DEBUG : There was an error launching the DaVinci Resolve installation wizard :"))
+        print(start_wizard.stdout)
+        print("")
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+        print("")
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(2)
+
+    else:
+
+        # DELETING THE FOLDER WHERE WE EXTRACTED THE INSTALLER
+        subprocess.run(f"rm -r {folder_path}", shell=True, capture_output=True, text=True)
+        
+        exit(0)
+
+    #-----------------------------------------------------------------------------------------------------
 
 
 

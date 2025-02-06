@@ -92,16 +92,14 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
-* Tue Dec 17 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.3-1
-- Added support for AMD iGPU 780M.
-
-* Mon Nov 25 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.1-1
-- Fixed support for AMD iGPUs.
-
-* Sun Nov 24 2024 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.2.0-1
-- Switched from moviepy to FFPROBE for media info.
-- Added support for AMD iGPU 880M and 890M.
-- Improved GPU driver installer performance.
+* Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.0-1
+- Added support for Nobara 41.
+- Fixed uppercase file extension not correctly detected.
+- Fixed the conversion of files with spaces in their names.
+- Added support for Intel iGPUs.
+- Fixed support for Nvidia mobile GPUs.
+- Added support for more AMD iGPUs.
+- Added for using .run installer wizard file.
 
 
 
