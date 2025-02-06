@@ -25,6 +25,12 @@
 
     <!-- PROJECT/APP LICENSE -->
     <project_license>GPL-3.0</project_license>
+
+
+
+    <!-- APP ICON -->
+    <icon type="local">davinci_helper_icon.svg</icon>
+
     
 
 

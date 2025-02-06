@@ -60,8 +60,9 @@ DaVinci Helper is the ultimate app to help you install and run DaVinci Resolve o
 %pyproject_install
 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.desktop %{buildroot}%{_datadir}/applications/com.davinci.helper.app.desktop
-install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
-install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.metainfo.xml %{buildroot}%{_metainfodir}/com.davinci.helper.app.metainfo.xml
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg  %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg %{buildroot}%{_datadir}/app-info/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.metainfo.xml %{buildroot}%{_datadir}/metainfo/com.davinci.helper.app.metainfo.xml
 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.policy %{buildroot}/%{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.rules %{buildroot}/%{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
