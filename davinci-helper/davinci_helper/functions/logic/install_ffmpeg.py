@@ -57,12 +57,12 @@ def check_ffmpeg_presence ():
     if check_ffmpeg.stdout.find("ffmpeg-free") != -1 :
 
         # RETURNING THE PRESENCE VALUE
-        return "Full"
+        return "Lite"
 
     elif check_ffmpeg.stdout.find("ffmpeg") != -1 : 
 
         # RETURNING THE PRESENCE VALUE
-        return "Lite"
+        return "Full"
 
     else :
 
@@ -128,7 +128,7 @@ def install_ffmpeg ():
     #-----------------------------------------------------------------------------------------------------
 
     # INSTALLING FFMPEG FROM RPM FUSION
-    ffmpeg_install = subprocess.run("dnf install -y ffmpeg-free", shell=True, capture_output=True, text=True)
+    ffmpeg_install = subprocess.run("dnf install -y ffmpeg", shell=True, capture_output=True, text=True)
 
     # CHECKING IF THERE WERE ERRORS
     if ffmpeg_install.returncode != 0 :
@@ -162,7 +162,7 @@ def swap_ffmpeg ():
     #-----------------------------------------------------------------------------------------------------
 
     # INSTALLING FFMPEG FROM RPM FUSION
-    ffmpeg_swap = subprocess.run("dnf swap -y ffmpeg ffmpeg-free --allowerasing", shell=True, capture_output=True, text=True)
+    ffmpeg_swap = subprocess.run("dnf swap -y ffmpeg-free ffmpeg --allowerasing", shell=True, capture_output=True, text=True)
 
     # CHECKING IF THERE WERE ERRORS
     if ffmpeg_swap.returncode != 0 :

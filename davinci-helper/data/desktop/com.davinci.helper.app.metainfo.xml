@@ -134,7 +134,7 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.3.0" date="2025-02-06" type="stable">
+        <release version="2.3.1" date="2025-02-06" type="stable">
 
             <!-- DESCRIPTION START -->
             <description>
@@ -152,6 +152,7 @@
                         <li>Fixed the conversion of files with spaces in their names.</li>
                         <li>Fixed support for Nvidia mobile GPUs.</li>
                         <li>Fixed italian translation</li>
+                        <li>Fixed ffmpeg non-free installation</li>
                     </ul>
 
                     <p>Visit the project GitHub page for more information.</p>
