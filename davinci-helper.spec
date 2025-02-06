@@ -82,6 +82,7 @@ install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.ap
 %{_bindir}/%{name}
 %{_datadir}/applications/com.davinci.helper.app.desktop
 %{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+%{_datadir}/app-info/icons/hicolor/scalable/apps/davinci_helper_icon.svg
 %{_metainfodir}/com.davinci.helper.app.metainfo.xml
 %{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
 %{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules
