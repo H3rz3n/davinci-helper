@@ -51,6 +51,7 @@ packages = ["davinci_helper", "davinci_helper.functions", "davinci_helper.functi
 "share/davinci-helper/data/desktop" = [
     "data/desktop/com.davinci.helper.app.desktop",
     "data/desktop/com.davinci.helper.app.metainfo.xml",
+    "data/desktop/com.davinci.helper.app.svg",
     "data/desktop/davinci_helper_icon.svg"
 ]
 "share/davinci-helper/data/icons" = ["data/icons/davinci_helper_icon.svg"]
