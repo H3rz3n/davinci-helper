@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Version=2.3.1
+Version=2.3.2
 Name=DaVinci Helper
 Exec=davinci-helper
-Icon=davinci_helper_icon.svg
+Icon=com.davinci.helper.app.svg
 Terminal=false
 Type=Application
 Categories=Utility;Settings;

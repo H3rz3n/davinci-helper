@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.3.1
+Version:        2.3.2
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -60,8 +60,8 @@ DaVinci Helper is the ultimate app to help you install and run DaVinci Resolve o
 %pyproject_install
 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.desktop %{buildroot}%{_datadir}/applications/com.davinci.helper.app.desktop
-install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg  %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
-install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/davinci_helper_icon.svg %{buildroot}%{_datadir}/app-info/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.svg  %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/com.davinci.helper.app.svg
+install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.svg %{buildroot}%{_datadir}/app-info/icons/hicolor/scalable/apps/com.davinci.helper.app.svg
 install -Dm644 %{_builddir}/%{name}-%{version}/data/desktop/com.davinci.helper.app.metainfo.xml %{buildroot}%{_metainfodir}/com.davinci.helper.app.metainfo.xml
 
 install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.app.policy %{buildroot}/%{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
@@ -81,8 +81,8 @@ install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.ap
 # LIST OF THE INSTALLED FILES AND THEIR POSITION
 %{_bindir}/%{name}
 %{_datadir}/applications/com.davinci.helper.app.desktop
-%{_datadir}/icons/hicolor/scalable/apps/davinci_helper_icon.svg
-%{_datadir}/app-info/icons/hicolor/scalable/apps/davinci_helper_icon.svg
+%{_datadir}/icons/hicolor/scalable/apps/com.davinci.helper.app.svg
+%{_datadir}/app-info/icons/hicolor/scalable/apps/com.davinci.helper.app.svg
 %{_metainfodir}/com.davinci.helper.app.metainfo.xml
 %{_datadir}/polkit-1/actions/com.davinci.helper.app.policy
 %{_datadir}/polkit-1/rules.d/com.davinci.helper.app.rules

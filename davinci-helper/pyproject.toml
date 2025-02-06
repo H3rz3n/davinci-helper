@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "davinci-helper"
-version = "2.3.1"
+version = "2.3.2"
 description = "A helper app to help you install DaVinci Resolve."
 readme = "README.md"
 license = {text = "GPL-3.0"}
@@ -51,6 +51,7 @@ packages = ["davinci_helper", "davinci_helper.functions", "davinci_helper.functi
 "share/davinci-helper/data/desktop" = [
     "data/desktop/com.davinci.helper.app.desktop",
     "data/desktop/com.davinci.helper.app.metainfo.xml",
+    "data/desktop/com.davinci.helper.app.svg",
     "data/desktop/davinci_helper_icon.svg"
 ]
 "share/davinci-helper/data/icons" = ["data/icons/davinci_helper_icon.svg"]

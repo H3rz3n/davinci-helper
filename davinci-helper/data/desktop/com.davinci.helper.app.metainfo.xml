@@ -29,23 +29,20 @@
 
 
     <!-- APP ICON -->
-    <icon type="local">/usr/share/metainfo/davinci_helper_icon.svg</icon>
+    <icon type="stock">com.davinci.helper.app</icon>
 
     
-
 
     <!-- APP DESCRIPTION -->
     <description>
 
         <p>This app is created with the purpose of making it easier for Linux users to install and use DaVinci Resolve.</p>
         <p>Features :</p>
-        <ul>
-            <li>Automatic and dynamic dependecies installation</li>
-            <li>DaVinci Resolve installation wizard easy start</li>
-            <li>Application of post install patch</li>
-            <li>Easy GPU Driver installation</li>
-            <li>Easy video conversion for DaVinci Resolve Free</li>.
-        </ul>
+        <p>Automatic and dynamic dependecies installation</p>
+        <p>DaVinci Resolve installation wizard easy start</p>
+        <p>Application of post install patch</p>
+        <p>Easy GPU Driver installation</p>
+        <p>Easy video conversion for DaVinci Resolve Free</p>.
         <p>Visit the project GitHub page for more information.</p>
 
     <!-- END OF APP DESCRIPTION -->
@@ -134,27 +131,23 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.3.1" date="2025-02-06" type="stable">
+        <release version="2.3.2" date="2025-02-06" type="stable">
 
             <!-- DESCRIPTION START -->
-            <description>
+            <description transalte="no">
 
                     <p>This new version of the app comes with the following changes :</p>
-                
-                    <ul>
-                        <li>Added support for Nobara 41.</li>
-                        <li>Added experimental support for Fedora 42.</li>
-                        <li>Added experimental support for Fedora Rawhide.</li>
-                        <li>Added for using .run installer wizard file.</li>
-                        <li>Added support for Intel iGPUs.</li>
-                        <li>Added support for more AMD iGPUs.</li>
-                        <li>Fixed uppercase file extension not correctly detected.</li>
-                        <li>Fixed the conversion of files with spaces in their names.</li>
-                        <li>Fixed support for Nvidia mobile GPUs.</li>
-                        <li>Fixed italian translation</li>
-                        <li>Fixed ffmpeg non-free installation</li>
-                    </ul>
-
+                    <p>Added support for Nobara 41.</p>
+                    <p>Added experimental support for Fedora 42.</p>
+                    <p>Added experimental support for Fedora Rawhide.</p>
+                    <p>Added for using .run installer wizard file.</p>
+                    <p>Added support for Intel iGPUs.</p>
+                    <p>Added support for more AMD iGPUs.</p>
+                    <p>Fixed uppercase file extension not correctly detected.</p>
+                    <p>Fixed the conversion of files with spaces in their names.</p>
+                    <p>Fixed support for Nvidia mobile GPUs.</p>
+                    <p>Fixed italian translation</p>
+                    <p>Fixed ffmpeg non-free installation</p>
                     <p>Visit the project GitHub page for more information.</p>
             
             <!-- DESCRIPTION END -->
@@ -198,16 +191,6 @@
 
     <!-- APP CATEGORIES END -->
     </categories>
-
-    <!-- TRANSLATION START -->
-    <translation>
-
-        <language>it</language>
-        <percentage>100</percentage>
-    
-    <!-- TRANSLATION END -->
-    </translation>
-
 
 
 <!-- -->
