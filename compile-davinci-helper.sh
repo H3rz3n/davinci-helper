@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 clear
-version="2.0.0"
+version="2.4.0"
 
 if [ -d "/home/$USER/build_davinci_helper" ]; then
     rm -rf "/home/$USER/build_davinci_helper"
@@ -22,9 +22,9 @@ sudo dnf remove -y davinci-helper
 sudo dnf install -y /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.noarch.rpm --disablerepo=*
 
 
-cp /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.noarch.rpm /home/$USER/Pubblici/Test_Davinci_Helper
-cd .. 
-rm -rf "/home/$USER/build_davinci_helper"
-rm "/home/$USER/rpmbuild/SOURCES/davinci-helper-${version}.tar.gz"
+#cp /home/$USER/rpmbuild/RPMS/noarch/davinci-helper-${version}-1.noarch.rpm /home/$USER/Pubblici/Test_Davinci_Helper
+#cd .. 
+#rm -rf "/home/$USER/build_davinci_helper"
+#rm "/home/$USER/rpmbuild/SOURCES/davinci-helper-${version}.tar.gz"
 
 

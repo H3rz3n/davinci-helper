@@ -64,69 +64,52 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
 
         # GETTING THE VIDEO INFO
         width, height, duration, fps = get_file_info(file)
-
-        #-----------------------------------------------------------------------------------------------------
-        
-        # GETTING THE CORRECT ENCODER
-        encoder = get_encoder(width, fps)
+        print("Dati del file : ", width, "-", height, "-", fps)
 
         #-----------------------------------------------------------------------------------------------------
 
-        if encoder == "DNxHD" :
+        # GETTING THE CORRECT VIDEO SETTING
+        video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width, height, fps)
 
-            # GETTING THE CORRECT VIDEO SETTINGS
-            video_placeholder, video_bitrate = translate_video_settings_for_dnxhd(video_quality, width, height)
+        # CHECKING IF THE VIDEO IS COMPATIBLE WITH THE CODEC
+        if video_bitrate == 0 :
 
-            # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
-            video_settings.append(video_placeholder)
-
-            # GETTING THE CORRECT VIDEO SETTING
-            audio_settings, audio_bitrate = translate_settings_for_audio(audio_quality, duration)
-
-            # EXECUTING THE FILE WEIGHT CALCULATION
-            file_weight = get_file_weight(video_bitrate, audio_bitrate, duration)
-
-            # ADDING THE VIDEO DURATION TO THE DURATION LIST
-            duration_list.append(duration)
-
-        #-----------------------------------------------------------------------------------------------------
-
-        elif encoder == "DNxHR" :
-
-            # GETTING THE CORRECT VIDEO SETTING
-            video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width, fps)
-
-            # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
-            video_settings.append(video_placeholder)
-
-            # GETTING THE CORRECT VIDEO SETTING
-            audio_settings, audio_bitrate = translate_settings_for_audio(audio_quality, duration)
-
-            # EXECUTING THE FILE WEIGHT CALCULATION
-            file_weight = get_file_weight(video_bitrate, audio_bitrate, duration)
-
-            # ADDING THE VIDEO DURATION TO THE DURATION LIST
-            duration_list.append(duration)
-
-        #-----------------------------------------------------------------------------------------------------
-
-        else :
+            #-----------------------------------------------------------------------------------------------------
 
             # ADDING THE FILE TO THE UNSUPPORTED FILE LIST
             unsupported_list.append(file)
-            
-        #-----------------------------------------------------------------------------------------------------
 
-        # ADDING THE FILE WEIGHT TO THE TOTAL WEIGHT
-        total_weight = total_weight + file_weight
+            #-----------------------------------------------------------------------------------------------------
 
-        #-----------------------------------------------------------------------------------------------------
+        else :
+
+            #-----------------------------------------------------------------------------------------------------
+
+            # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
+            video_settings.append(video_placeholder)
+
+            # GETTING THE CORRECT VIDEO SETTING
+            audio_settings, audio_bitrate = translate_settings_for_audio(audio_quality, duration)
+
+            # EXECUTING THE FILE WEIGHT CALCULATION
+            file_weight = get_file_weight(video_bitrate, audio_bitrate, duration)
+
+            # ADDING THE VIDEO DURATION TO THE DURATION LIST
+            duration_list.append(duration)
+
+            #-----------------------------------------------------------------------------------------------------
+
+            # ADDING THE FILE WEIGHT TO THE TOTAL WEIGHT
+            total_weight = total_weight + file_weight
+
+            #-----------------------------------------------------------------------------------------------------
 
     #-----------------------------------------------------------------------------------------------------
     
     return video_settings, audio_settings, total_weight, unsupported_list, duration_list
     
     #-----------------------------------------------------------------------------------------------------
+
 
 
 
@@ -163,6 +146,63 @@ def get_file_info (file):
             avg_frame_rate = stream_info.get("avg_frame_rate", "0/1")                                               # DEFAULT TO "0/1" IF NOT FOUND
             num, denom = (int(n) for n in avg_frame_rate.split('/')) if '/' in avg_frame_rate else (0, 1)
             fps = num / denom if denom != 0 else 0.0                                                                # ENSURE FRAME RATE IS A FLOAT
+            fps = round(fps, 2)
+
+            # NORMALIZING FRAMERATES
+            if fps >= 23 and fps < 24 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 23.976
+
+            elif fps >= 24 and fps < 25 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 24
+
+            elif fps >= 25 and fps < 26 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 25
+
+            elif fps >= 29 and fps < 30 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 29.97
+
+            elif fps >= 30 and fps < 31 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 30
+
+            elif fps >= 47 and fps < 49 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 48
+
+            elif fps >= 49 and fps < 51 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 50
+
+            elif fps >= 58 and fps < 60 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 59.94
+
+            elif fps >= 60 and fps < 61 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 60
+
+            elif fps >= 119 and fps < 121 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 120
+
+            elif fps >= 239 and fps < 241 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 240
 
             return width, height, duration, fps
 
@@ -175,319 +215,280 @@ def get_file_info (file):
 
 
 
-# FUNCTION THAT WILL GET THE CORRECT ENCODER FOR THE VIDEO
-def get_encoder (width, fps):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # GETTING THE CORRECT ENCODER USING THE WIDH PARAMETERS AS REFERENCE
-    if width <= 1920 and fps <= 61:
-
-        # RETURNING BACK THE CORRECT ENCODER
-        return "DNxHD"
-
-    elif fps > 61:
-
-        # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
-        print("The unsupported file has the following characteristics :", width, fps)
-        return "Unsupported"
-
-    elif width > 4097 :
-
-        # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
-        print("The unsupported file has the following characteristics :", width, fps)
-        return "Unsupported"
-
-    else :
-
-        # RETURNING BACK THE CORRECT ENCODER
-        return "DNxHR"
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-# FUNCTION THAT WILL TRANSLATE VIDEO THE DROPDOWN SETTINGS IN FFMPEG SETTINGS
-def translate_video_settings_for_dnxhd (video_quality, width, height):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 960X720
-    if width <= 960 and height <= 720 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 115M"
-            video_bitrate = 115
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 75M"
-            video_bitrate = 75
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 60M"
-            video_bitrate = 60
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 42M"
-            video_bitrate = 42
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 1280X720
-    if width <= 1280 and height <= 720 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 220M"
-            video_bitrate = 220
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 120M"
-            video_bitrate = 120
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 90M"
-            video_bitrate = 90
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 60M"
-            video_bitrate = 60
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 1440X1080
-    if width <= 1440 and height <= 1080 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 110M"
-            video_bitrate = 110
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 100M"
-            video_bitrate = 100
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 84M"
-            video_bitrate = 84
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 63M"
-            video_bitrate = 63
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 1920X1080
-    if width <= 1920 and height <= 1080 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 440M"
-            video_bitrate = 440
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 220M"
-            video_bitrate = 220
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 120M"
-            video_bitrate = 120
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 75M"
-            video_bitrate = 75
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-    
-    #-----------------------------------------------------------------------------------------------------
-   
-
-
-
         
 # FUNCTION THAT WILL TRANSLATE THE VIDEO DROPDOWN SETTINGS IN FFMPEG SETTINGS
-def translate_video_settings_for_dnxhr (video_quality, width, fps):
+def translate_video_settings_for_dnxhr (video_quality, width, height, fps):
 
     #-----------------------------------------------------------------------------------------------------
 
-    # GETTING THE VIDEO QUALITY SETTINGS
-    if video_quality == 0 :
-    
-        # SETTING THE ORIGINAL QUALITY
-        video_settings = "-profile:v dnxhr_hq"
-        
-        if width <= 1920 and fps <= 30 :
+    # DEFINING THE QUALITY DICTIONARY
+    profiles = {
+        0: "dnxhr_hq",  # HIGH QUALITY
+        1: "dnxhr_sq",  # STANDARD QUALITY
+        2: "dnxhr_lb",  # LOW BANDWIDTH
+        3: "dnxhr_lb"   # LOW BANDWIDTH
+    }
 
-            # SETTING THE BITRATE
-            video_bitrate = 145
-
-        elif width <= 1920 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 220
-
-        elif width <= 2048 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 155
-
-        elif width <= 2048 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 240
-
-        elif width <= 4096 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 707
-
-        elif width <= 4096 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 1170
-
-        else:
-
-            # SETTING THE BITRATE
-            print (width, fps)
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-    
-    if video_quality == 1 :
-
-        # SETTING THE ORIGINAL QUALITY
-        video_settings = "-profile:v dnxhr_sq"
-        
-        if width <= 1920 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 90
-
-        elif width <= 1920 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 145
-
-        elif width <= 2048 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 95
-
-        elif width <= 2048 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 160
-
-        elif width <= 4096 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 384
-
-        elif width <= 4096 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 707
-        
-        else:
-
-            # SETTING THE BITRATE
-            print (width, fps)
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
+    print("Dati del file : ", width, "-", height, "-", fps)
 
     #-----------------------------------------------------------------------------------------------------
 
-    if video_quality == 2 or video_quality == 3 :
+    # DEFINING THE DICTIONARY OF THE SUPPORTED RESOLUTIONS AND FRAMERATES
+    bitrate_table = {
 
-        # SETTING THE ORIGINAL QUALITY
-        video_settings = "-profile:v dnxhr_lb"
+        # HIGH QUALITY (dnxhr_hq)
+        "dnxhr_hq": {
+
+            # 144p
+            (256, 144, 23.976): 9, (256, 144, 24): 9, (256, 144, 25): 10, (256, 144, 29.97): 11, (256, 144, 30): 12,
+            (256, 144, 48): 15, (256, 144, 50): 16, (256, 144, 59.94): 18, (256, 144, 60): 20, (256, 144, 120): 35, (256, 144, 240): 70,
+
+            # 144p - VERTICAL
+            (144, 256, 23.976): 9, (144, 256, 24): 9, (144, 256, 25): 10, (144, 256, 29.97): 11, (144, 256, 30): 12,
+            (144, 256, 48): 15, (144, 256, 50): 16, (144, 256, 59.94): 18, (144, 256, 60): 20, (144, 256, 120): 35, (144, 256, 240): 70,
+
+            # 240p
+            (426, 240, 23.976): 18, (426, 240, 24): 18, (426, 240, 25): 20, (426, 240, 29.97): 22, (426, 240, 30): 24,
+            (426, 240, 48): 30, (426, 240, 50): 32, (426, 240, 59.94): 36, (426, 240, 60): 40, (426, 240, 120): 70, (426, 240, 240): 140,
+
+            # 240p - VERTICAL
+            (240, 426, 23.976): 18, (240, 426, 24): 18, (240, 426, 25): 20, (240, 426, 29.97): 22, (240, 426, 30): 24,
+            (240, 426, 48): 30, (240, 426, 50): 32, (240, 426, 59.94): 36, (240, 426, 60): 40, (240, 426, 120): 70, (240, 426, 240): 140,
+
+            # 360p
+            (640, 360, 23.976): 32, (640, 360, 24): 32, (640, 360, 25): 35, (640, 360, 29.97): 38, (640, 360, 30): 40,
+            (640, 360, 48): 55, (640, 360, 50): 58, (640, 360, 59.94): 65, (640, 360, 60): 70, (640, 360, 120): 120, (640, 360, 240): 240,
+
+            # 360p - VERTICAL
+            (360, 640, 23.976): 32, (360, 640, 24): 32, (360, 640, 25): 35, (360, 640, 29.97): 38, (360, 640, 30): 40,
+            (360, 640, 48): 55, (360, 640, 50): 58, (360, 640, 59.94): 65, (360, 640, 60): 70, (360, 640, 120): 120, (360, 640, 240): 240,
+
+            # 480p
+            (854, 480, 23.976): 45, (854, 480, 24): 45, (854, 480, 25): 50, (854, 480, 29.97): 55, (854, 480, 30): 60,
+            (854, 480, 48): 80, (854, 480, 50): 85, (854, 480, 59.94): 95, (854, 480, 60): 100, (854, 480, 120): 180, (854, 480, 240): 360,
+
+            # 480p - VERTICAL
+            (480, 854, 23.976): 45, (480, 854, 24): 45, (480, 854, 25): 50, (480, 854, 29.97): 55, (480, 854, 30): 60,
+            (480, 854, 48): 80, (480, 854, 50): 85, (480, 854, 59.94): 95, (480, 854, 60): 100, (480, 854, 120): 180, (480, 854, 240): 360,
+
+            # 720p
+            (1280, 720, 23.976): 70, (1280, 720, 24): 70, (1280, 720, 25): 75, (1280, 720, 29.97): 85, (1280, 720, 30): 90,
+            (1280, 720, 48): 130, (1280, 720, 50): 140, (1280, 720, 59.94): 160, (1280, 720, 60): 170, (1280, 720, 120): 300, (1280, 720, 240): 600,
+
+            # 720p - VERTICAL
+            (720, 1280, 23.976): 70, (720, 1280, 24): 70, (720, 1280, 25): 75, (720, 1280, 29.97): 85, (720, 1280, 30): 90,
+            (720, 1280, 48): 130, (720, 1280, 50): 140, (720, 1280, 59.94): 160, (720, 1280, 60): 170, (720, 1280, 120): 300, (720, 1280, 240): 600,
+
+            # 1080p 
+            (1920, 1080, 23.976): 130, (1920, 1080, 24): 130, (1920, 1080, 25): 145, (1920, 1080, 29.97): 160, (1920, 1080, 30): 170,
+            (1920, 1080, 48): 250, (1920, 1080, 50): 270, (1920, 1080, 59.94): 310, (1920, 1080, 60): 330, (1920, 1080, 120): 600, (1920, 1080, 240): 1200,
+
+            # 1080p - VERTICAL
+            (1080, 1920, 23.976): 130, (1080, 1920, 24): 130, (1080, 1920, 25): 145, (1080, 1920, 29.97): 160, (1080, 1920, 30): 170,
+            (1080, 1920, 48): 250, (1080, 1920, 50): 270, (1080, 1920, 59.94): 310, (1080, 1920, 60): 330, (1080, 1920, 120): 600, (1080, 1920, 240): 1200,
+
+            # 2K
+            (2560, 1440, 23.976): 320, (2560, 1440, 24): 320, (2560, 1440, 25): 350, (2560, 1440, 29.97): 380, (2560, 1440, 30): 400,
+            (2560, 1440, 48): 600, (2560, 1440, 50): 650, (2560, 1440, 59.94): 750, (2560, 1440, 60): 800, (2560, 1440, 120): 1400, (2560, 1440, 240): 2800,
+
+            # 2K - VERTICAL
+            (1440, 2560, 23.976): 320, (1440, 2560, 24): 320, (1440, 2560, 25): 350, (1440, 2560, 29.97): 380, (1440, 2560, 30): 400,
+            (1440, 2560, 48): 600, (1440, 2560, 50): 650, (1440, 2560, 59.94): 750, (1440, 2560, 60): 800, (1440, 2560, 120): 1400, (1440, 2560, 240): 2800,
+
+            # 4K
+            (3840, 2160, 23.976): 650, (3840, 2160, 24): 650, (3840, 2160, 25): 700, (3840, 2160, 29.97): 750, (3840, 2160, 30): 800,
+            (3840, 2160, 48): 1200, (3840, 2160, 50): 1300, (3840, 2160, 59.94): 1500, (3840, 2160, 60): 1600, (3840, 2160, 120): 2800, (3840, 2160, 240): 5600,
+
+            # 4K - VERTICAL
+            (2160, 3840, 23.976): 650, (2160, 3840, 24): 650, (2160, 3840, 25): 700, (2160, 3840, 29.97): 750, (2160, 3840, 30): 800,
+            (2160, 3840, 48): 1200, (2160, 3840, 50): 1300, (2160, 3840, 59.94): 1500, (2160, 3840, 60): 1600, (2160, 3840, 120): 2800, (2160, 3840, 240): 5600,
+
+            # 8K
+            (7680, 4320, 23.976): 1800, (7680, 4320, 24): 1800, (7680, 4320, 25): 2000, (7680, 4320, 29.97): 2200, (7680, 4320, 30): 2400,
+            (7680, 4320, 48): 3600, (7680, 4320, 50): 4000, (7680, 4320, 59.94): 4500, (7680, 4320, 60): 4800, (7680, 4320, 120): 8400, (7680, 4320, 240): 16800,
+
+            # 8K - VERTICAL
+            (4320, 7680, 23.976): 1800, (4320, 7680, 24): 1800, (4320, 7680, 25): 2000, (4320, 7680, 29.97): 2200, (4320, 7680, 30): 2400,
+            (4320, 7680, 48): 3600, (4320, 7680, 50): 4000, (4320, 7680, 59.94): 4500, (4320, 7680, 60): 4800, (4320, 7680, 120): 8400, (4320, 7680, 240): 16800,
+        },
+
+        # STANDARD QUALITY (dnxhr_sq)
+        "dnxhr_sq": {
+
+            # 144p
+            (256, 144, 23.976): 6, (256, 144, 24): 6, (256, 144, 25): 7, (256, 144, 29.97): 8, (256, 144, 30): 8,
+            (256, 144, 48): 10, (256, 144, 50): 11, (256, 144, 59.94): 12, (256, 144, 60): 13, (256, 144, 120): 22, (256, 144, 240): 45,
+
+            # 144p - VERTICAL
+            (144, 256, 23.976): 6, (144, 256, 24): 6, (144, 256, 25): 7, (144, 256, 29.97): 8, (144, 256, 30): 8,
+            (144, 256, 48): 10, (144, 256, 50): 11, (144, 256, 59.94): 12, (144, 256, 60): 13, (144, 256, 120): 22, (144, 256, 240): 45,
+
+            # 240p
+            (426, 240, 23.976): 12, (426, 240, 24): 12, (426, 240, 25): 13, (426, 240, 29.97): 15, (426, 240, 30): 16,
+            (426, 240, 48): 20, (426, 240, 50): 22, (426, 240, 59.94): 25, (426, 240, 60): 27, (426, 240, 120): 50, (426, 240, 240): 100,
+
+            # 240p - VERTICAL
+            (240, 426, 23.976): 12, (240, 426, 24): 12, (240, 426, 25): 13, (240, 426, 29.97): 15, (240, 426, 30): 16,
+            (240, 426, 48): 20, (240, 426, 50): 22, (240, 426, 59.94): 25, (240, 426, 60): 27, (240, 426, 120): 50, (240, 426, 240): 100,
+
+            # 360p
+            (640, 360, 23.976): 22, (640, 360, 24): 22, (640, 360, 25): 24, (640, 360, 29.97): 27, (640, 360, 30): 30,
+            (640, 360, 48): 40, (640, 360, 50): 44, (640, 360, 59.94): 50, (640, 360, 60): 55, (640, 360, 120): 95, (640, 360, 240): 190,
+
+            # 360p - VERTICAL
+            (360, 640, 23.976): 22, (360, 640, 24): 22, (360, 640, 25): 24, (360, 640, 29.97): 27, (360, 640, 30): 30,
+            (360, 640, 48): 40, (360, 640, 50): 44, (360, 640, 59.94): 50, (360, 640, 60): 55, (360, 640, 120): 95, (360, 640, 240): 190,
+
+            # 480p
+            (854, 480, 23.976): 30, (854, 480, 24): 30, (854, 480, 25): 33, (854, 480, 29.97): 37, (854, 480, 30): 40,
+            (854, 480, 48): 55, (854, 480, 50): 60, (854, 480, 59.94): 66, (854, 480, 60): 70, (854, 480, 120): 130, (854, 480, 240): 260,
+
+            # 480p - VERTICAL
+            (480, 854, 23.976): 30, (480, 854, 24): 30, (480, 854, 25): 33, (480, 854, 29.97): 37, (480, 854, 30): 40,
+            (480, 854, 48): 55, (480, 854, 50): 60, (480, 854, 59.94): 66, (480, 854, 60): 70, (480, 854, 120): 130, (480, 854, 240): 260,
+
+            # 720p
+            (1280, 720, 23.976): 50, (1280, 720, 24): 50, (1280, 720, 25): 55, (1280, 720, 29.97): 60, (1280, 720, 30): 65,
+            (1280, 720, 48): 95, (1280, 720, 50): 100, (1280, 720, 59.94): 115, (1280, 720, 60): 120, (1280, 720, 120): 220, (1280, 720, 240): 440,
+
+            # 720p - VERTICAL
+            (720, 1280, 23.976): 50, (720, 1280, 24): 50, (720, 1280, 25): 55, (720, 1280, 29.97): 60, (720, 1280, 30): 65,
+            (720, 1280, 48): 95, (720, 1280, 50): 100, (720, 1280, 59.94): 115, (720, 1280, 60): 120, (720, 1280, 120): 220, (720, 1280, 240): 440,
+
+            # 1080p
+            (1920, 1080, 23.976): 95, (1920, 1080, 24): 95, (1920, 1080, 25): 105, (1920, 1080, 29.97): 115, (1920, 1080, 30): 125,
+            (1920, 1080, 48): 190, (1920, 1080, 50): 200, (1920, 1080, 59.94): 230, (1920, 1080, 60): 250, (1920, 1080, 120): 450, (1920, 1080, 240): 900,
+
+            # 1080p - VERTICAL
+            (1080, 1920, 23.976): 95, (1080, 1920, 24): 95, (1080, 1920, 25): 105, (1080, 1920, 29.97): 115, (1080, 1920, 30): 125,
+            (1080, 1920, 48): 190, (1080, 1920, 50): 200, (1080, 1920, 59.94): 230, (1080, 1920, 60): 250, (1080, 1920, 120): 450, (1080, 1920, 240): 900,
+
+            # 2K
+            (2560, 1440, 23.976): 240, (2560, 1440, 24): 240, (2560, 1440, 25): 260, (2560, 1440, 29.97): 285, (2560, 1440, 30): 300,
+            (2560, 1440, 48): 450, (2560, 1440, 50): 490, (2560, 1440, 59.94): 560, (2560, 1440, 60): 600, (2560, 1440, 120): 1050, (2560, 1440, 240): 2100,
+
+            # 2K - VERTICAL
+            (1440, 2560, 23.976): 240, (1440, 2560, 24): 240, (1440, 2560, 25): 260, (1440, 2560, 29.97): 285, (1440, 2560, 30): 300,
+            (1440, 2560, 48): 450, (1440, 2560, 50): 490, (1440, 2560, 59.94): 560, (1440, 2560, 60): 600, (1440, 2560, 120): 1050, (1440, 2560, 240): 2100,
+
+            # 4K
+            (3840, 2160, 23.976): 490, (3840, 2160, 24): 490, (3840, 2160, 25): 525, (3840, 2160, 29.97): 560, (3840, 2160, 30): 600,
+            (3840, 2160, 48): 900, (3840, 2160, 50): 975, (3840, 2160, 59.94): 1125, (3840, 2160, 60): 1200, (3840, 2160, 120): 2100, (3840, 2160, 240): 4200,
+
+            # 4K - VERTICAL
+            (2160, 3840, 23.976): 490, (2160, 3840, 24): 490, (2160, 3840, 25): 525, (2160, 3840, 29.97): 560, (2160, 3840, 30): 600,
+            (2160, 3840, 48): 900, (2160, 3840, 50): 975, (2160, 3840, 59.94): 1125, (2160, 3840, 60): 1200, (2160, 3840, 120): 2100, (2160, 3840, 240): 4200,
+
+            # 8K
+            (7680, 4320, 23.976): 1350, (7680, 4320, 24): 1350, (7680, 4320, 25): 1500, (7680, 4320, 29.97): 1650, (7680, 4320, 30): 1800,
+            (7680, 4320, 48): 2700, (7680, 4320, 50): 3000, (7680, 4320, 59.94): 3375, (7680, 4320, 60): 3600, (7680, 4320, 120): 6300, (7680, 4320, 240): 12600,
+
+            # 8K - VERTICAL
+            (4320, 7680, 23.976): 1350, (4320, 7680, 24): 1350, (4320, 7680, 25): 1500, (4320, 7680, 29.97): 1650, (4320, 7680, 30): 1800,
+            (4320, 7680, 48): 2700, (4320, 7680, 50): 3000, (4320, 7680, 59.94): 3375, (4320, 7680, 60): 3600, (4320, 7680, 120): 6300, (4320, 7680, 240): 12600,
+        },
+
+        # LOW BANDWIDTH (dnxhr_lb)
+        "dnxhr_lb": {
+
+            # 144p
+            (256, 144, 23.976): 2, (256, 144, 24): 2, (256, 144, 25): 3, (256, 144, 29.97): 3, (256, 144, 30): 3,
+            (256, 144, 48): 4, (256, 144, 50): 4, (256, 144, 59.94): 5, (256, 144, 60): 5, (256, 144, 120): 9, (256, 144, 240): 18,
+
+            # 144p - VERTICAL
+            (144, 256, 23.976): 2, (144, 256, 24): 2, (144, 256, 25): 3, (144, 256, 29.97): 3, (144, 256, 30): 3,
+            (144, 256, 48): 4, (144, 256, 50): 4, (144, 256, 59.94): 5, (144, 256, 60): 5, (144, 256, 120): 9, (144, 256, 240): 18,
+
+            # 240p
+            (426, 240, 23.976): 5, (426, 240, 24): 5, (426, 240, 25): 5, (426, 240, 29.97): 6, (426, 240, 30): 6,
+            (426, 240, 48): 8, (426, 240, 50): 9, (426, 240, 59.94): 10, (426, 240, 60): 11, (426, 240, 120): 20, (426, 240, 240): 40,
+
+            # 240p - VERTICAL
+            (240, 426, 23.976): 5, (240, 426, 24): 5, (240, 426, 25): 5, (240, 426, 29.97): 6, (240, 426, 30): 6,
+            (240, 426, 48): 8, (240, 426, 50): 9, (240, 426, 59.94): 10, (240, 426, 60): 11, (240, 426, 120): 20, (240, 426, 240): 40,
+
+            # 360p
+            (640, 360, 23.976): 9, (640, 360, 24): 9, (640, 360, 25): 10, (640, 360, 29.97): 11, (640, 360, 30): 12,
+            (640, 360, 48): 16, (640, 360, 50): 18, (640, 360, 59.94): 20, (640, 360, 60): 22, (640, 360, 120): 38, (640, 360, 240): 76,
+
+            # 360p - VERTICAL
+            (360, 640, 23.976): 9, (360, 640, 24): 9, (360, 640, 25): 10, (360, 640, 29.97): 11, (360, 640, 30): 12,
+            (360, 640, 48): 16, (360, 640, 50): 18, (360, 640, 59.94): 20, (360, 640, 60): 22, (360, 640, 120): 38, (360, 640, 240): 76,
+
+            # 480p
+            (854, 480, 23.976): 12, (854, 480, 24): 12, (854, 480, 25): 13, (854, 480, 29.97): 15, (854, 480, 30): 16,
+            (854, 480, 48): 22, (854, 480, 50): 24, (854, 480, 59.94): 26, (854, 480, 60): 28, (854, 480, 120): 52, (854, 480, 240): 104,
+
+            # 480p - VERTICAL
+            (480, 854, 23.976): 12, (480, 854, 24): 12, (480, 854, 25): 13, (480, 854, 29.97): 15, (480, 854, 30): 16,
+            (480, 854, 48): 22, (480, 854, 50): 24, (480, 854, 59.94): 26, (480, 854, 60): 28, (480, 854, 120): 52, (480, 854, 240): 104,
+
+            # 720p
+            (1280, 720, 23.976): 20, (1280, 720, 24): 20, (1280, 720, 25): 22, (1280, 720, 29.97): 24, (1280, 720, 30): 26,
+            (1280, 720, 48): 38, (1280, 720, 50): 40, (1280, 720, 59.94): 46, (1280, 720, 60): 48, (1280, 720, 120): 88, (1280, 720, 240): 176,
+
+            # 720p - VERTICAL
+            (720, 1280, 23.976): 20, (720, 1280, 24): 20, (720, 1280, 25): 22, (720, 1280, 29.97): 24, (720, 1280, 30): 26,
+            (720, 1280, 48): 38, (720, 1280, 50): 40, (720, 1280, 59.94): 46, (720, 1280, 60): 48, (720, 1280, 120): 88, (720, 1280, 240): 176,
+
+            # 1080p
+            (1920, 1080, 23.976): 38, (1920, 1080, 24): 38, (1920, 1080, 25): 42, (1920, 1080, 29.97): 46, (1920, 1080, 30): 50,
+            (1920, 1080, 48): 76, (1920, 1080, 50): 80, (1920, 1080, 59.94): 92, (1920, 1080, 60): 100, (1920, 1080, 120): 180, (1920, 1080, 240): 360,
+
+            # 1080p - VERTICAL
+            (1080, 1920, 23.976): 38, (1080, 1920, 24): 38, (1080, 1920, 25): 42, (1080, 1920, 29.97): 46, (1080, 1920, 30): 50,
+            (1080, 1920, 48): 76, (1080, 1920, 50): 80, (1080, 1920, 59.94): 92, (1080, 1920, 60): 100, (1080, 1920, 120): 180, (1080, 1920, 240): 360,
+
+            # 2K
+            (2560, 1440, 23.976): 96, (2560, 1440, 24): 96, (2560, 1440, 25): 104, (2560, 1440, 29.97): 114, (2560, 1440, 30): 120,
+            (2560, 1440, 48): 180, (2560, 1440, 50): 196, (2560, 1440, 59.94): 224, (2560, 1440, 60): 240, (2560, 1440, 120): 420, (2560, 1440, 240): 840,
+
+            # 2K - VERTICAL
+            (1440, 2560, 23.976): 96, (1440, 2560, 24): 96, (1440, 2560, 25): 104, (1440, 2560, 29.97): 114, (1440, 2560, 30): 120,
+            (1440, 2560, 48): 180, (1440, 2560, 50): 196, (1440, 2560, 59.94): 224, (1440, 2560, 60): 240, (1440, 2560, 120): 420, (1440, 2560, 240): 840,
+
+            # 4K
+            (3840, 2160, 23.976): 196, (3840, 2160, 24): 196, (3840, 2160, 25): 210, (3840, 2160, 29.97): 224, (3840, 2160, 30): 240,
+            (3840, 2160, 48): 360, (3840, 2160, 50): 390, (3840, 2160, 59.94): 450, (3840, 2160, 60): 480, (3840, 2160, 120): 840, (3840, 2160, 240): 1680,
+
+            # 4K - VERTICAL
+            (2160, 3840, 23.976): 196, (2160, 3840, 24): 196, (2160, 3840, 25): 210, (2160, 3840, 29.97): 224, (2160, 3840, 30): 240,
+            (2160, 3840, 48): 360, (2160, 3840, 50): 390, (2160, 3840, 59.94): 450, (2160, 3840, 60): 480, (2160, 3840, 120): 840, (2160, 3840, 240): 1680,
+
+            # 8K
+            (7680, 4320, 23.976): 540, (7680, 4320, 24): 540, (7680, 4320, 25): 600, (7680, 4320, 29.97): 660, (7680, 4320, 30): 720,
+            (7680, 4320, 48): 1080, (7680, 4320, 50): 1200, (7680, 4320, 59.94): 1350, (7680, 4320, 60): 1440, (7680, 4320, 120): 2520, (7680, 4320, 240): 5040,
+
+            # 8K - VERTICAL
+            (4320, 7680, 23.976): 540, (4320, 7680, 24): 540, (4320, 7680, 25): 600, (4320, 7680, 29.97): 660, (4320, 7680, 30): 720,
+            (4320, 7680, 48): 1080, (4320, 7680, 50): 1200, (4320, 7680, 59.94): 1350, (4320, 7680, 60): 1440, (4320, 7680, 120): 2520, (4320, 7680, 240): 5040,
+        }
+
+    }
+
+    #-----------------------------------------------------------------------------------------------------
+
+    # ACQUIRING THE QUALITY PROFILE
+    profile = profiles[video_quality]
+
+    # CHECKING IF THE VIDEO FILE IS COMPATIBLE WITH THE CODEC
+    if (width, height, fps) not in bitrate_table[profile]:
+
+        # SETTING THE ERROR
+        video_settings = "not"
+        video_bitrate = 0
         
-        if width <= 1920 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 45
-
-        elif width <= 1920 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 75
-
-        elif width <= 2048 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 50
-
-        elif width <= 2048 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 85
-
-        elif width <= 4096 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 192
-
-        elif width <= 4096 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 365
-
-        else:
-
-            # SETTING THE BITRATE
-            print (width, fps)
-
-        # GIVING BACK THE VALUES
+        # RETURNING THE VALUES
         return video_settings, video_bitrate
+
+    # SETTING THE VIDEO SETTINGS
+    video_settings = f"-profile:v {profile}"
+
+    # SETTING THE VIDEO BITRATE
+    video_bitrate = bitrate_table[profile][(width, height, fps)]
+
+    # RETURNING THE VALUES
+    return video_settings, video_bitrate
 
     #-----------------------------------------------------------------------------------------------------
 

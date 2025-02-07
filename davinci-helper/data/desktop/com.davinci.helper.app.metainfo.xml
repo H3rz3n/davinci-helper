@@ -131,6 +131,21 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
+        <release version="2.4.0" date="2025-02-07" type="stable">
+
+            <!-- DESCRIPTION START -->
+            <description transalte="no">
+
+                    <p>This new version of the app comes with the following changes :</p>
+                    <p>- Improved video converter performance and compatibility.</p>
+            
+            <!-- DESCRIPTION END -->
+            </description>
+                    
+          <!--RELEASE NOTE END -->
+        </release>
+
+        <!-- RELEASE NOTE START-->
         <release version="2.3.5" date="2025-02-07" type="stable">
 
             <!-- DESCRIPTION START -->
@@ -145,46 +160,6 @@
           <!--RELEASE NOTE END -->
         </release>
 
-        <!-- RELEASE NOTE START-->
-        <release version="2.3.4" date="2025-02-07" type="stable">
-
-            <!-- DESCRIPTION START -->
-            <description transalte="no">
-
-                    <p>This new version of the app comes with the following changes :</p>
-                    <p>- Fixed support for native use of .run installer wizard file.</p>
-            
-            <!-- DESCRIPTION END -->
-            </description>
-                    
-          <!--RELEASE NOTE END -->
-        </release>
-
-        <!-- RELEASE NOTE START-->
-        <release version="2.3.2" date="2025-02-06" type="stable">
-
-            <!-- DESCRIPTION START -->
-            <description transalte="no">
-
-                    <p>This new version of the app comes with the following changes :</p>
-                    <p>Added support for Nobara 41.</p>
-                    <p>Added experimental support for Fedora 42.</p>
-                    <p>Added experimental support for Fedora Rawhide.</p>
-                    <p>Added for using .run installer wizard file.</p>
-                    <p>Added support for Intel iGPUs.</p>
-                    <p>Added support for more AMD iGPUs.</p>
-                    <p>Fixed uppercase file extension not correctly detected.</p>
-                    <p>Fixed the conversion of files with spaces in their names.</p>
-                    <p>Fixed support for Nvidia mobile GPUs.</p>
-                    <p>Fixed italian translation</p>
-                    <p>Fixed ffmpeg non-free installation</p>
-                    <p>Visit the project GitHub page for more information.</p>
-            
-            <!-- DESCRIPTION END -->
-            </description>
-                    
-          <!--RELEASE NOTE END -->
-        </release>
     
     <!-- RELEASE SECTION END -->
     </releases>
