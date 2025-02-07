@@ -98,12 +98,12 @@ class file_error_dialog_class ():
         if error_type == "Missing" :
 
             # DEFINING SUBTITLE TEXT
-            subtitle_text= (_("It seems like you didn't load any file.\nPlease load a valid DaVinci Resolve installer zip file to continue."))
+            subtitle_text= (_("It seems like you didn't load any file.\nPlease load a valid DaVinci Resolve installer file to continue."))
 
         elif error_type == "Unsuitable":
 
             # DEFINING SUBTITLE TEXT
-            subtitle_text= (_("It seems like you tried to load an usupported file.\nPlease load a valid DaVinci Resolve installer zip file to continue.\nIf you have renamed it, remember that the file name must\ncontain the words 'DaVinci', 'Resolve', 'Linux' inside of it\nand it must to have the '.zip' extension."))
+            subtitle_text= (_("It seems like you tried to load an usupported file.\nPlease load a valid DaVinci Resolve installer file to continue.\nIf you have renamed it, remember that the file name must\ncontain the words 'DaVinci', 'Resolve', 'Linux' inside of it\nand it must to have the '.zip' or `.run` extension."))
 
         # LOADING SUBTITLE TEXT
         self.dialog_subtitle.set_text(subtitle_text)
