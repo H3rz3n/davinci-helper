@@ -66,67 +66,49 @@ def calculate_disk_space (file_path_list, video_quality, audio_quality):
         width, height, duration, fps = get_file_info(file)
 
         #-----------------------------------------------------------------------------------------------------
-        
-        # GETTING THE CORRECT ENCODER
-        encoder = get_encoder(width, fps)
 
-        #-----------------------------------------------------------------------------------------------------
+        # GETTING THE CORRECT VIDEO SETTING
+        video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width, height, fps)
 
-        if encoder == "DNxHD" :
+        # CHECKING IF THE VIDEO IS COMPATIBLE WITH THE CODEC
+        if video_bitrate == 0 :
 
-            # GETTING THE CORRECT VIDEO SETTINGS
-            video_placeholder, video_bitrate = translate_video_settings_for_dnxhd(video_quality, width, height)
-
-            # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
-            video_settings.append(video_placeholder)
-
-            # GETTING THE CORRECT VIDEO SETTING
-            audio_settings, audio_bitrate = translate_settings_for_audio(audio_quality, duration)
-
-            # EXECUTING THE FILE WEIGHT CALCULATION
-            file_weight = get_file_weight(video_bitrate, audio_bitrate, duration)
-
-            # ADDING THE VIDEO DURATION TO THE DURATION LIST
-            duration_list.append(duration)
-
-        #-----------------------------------------------------------------------------------------------------
-
-        elif encoder == "DNxHR" :
-
-            # GETTING THE CORRECT VIDEO SETTING
-            video_placeholder, video_bitrate = translate_video_settings_for_dnxhr(video_quality, width, fps)
-
-            # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
-            video_settings.append(video_placeholder)
-
-            # GETTING THE CORRECT VIDEO SETTING
-            audio_settings, audio_bitrate = translate_settings_for_audio(audio_quality, duration)
-
-            # EXECUTING THE FILE WEIGHT CALCULATION
-            file_weight = get_file_weight(video_bitrate, audio_bitrate, duration)
-
-            # ADDING THE VIDEO DURATION TO THE DURATION LIST
-            duration_list.append(duration)
-
-        #-----------------------------------------------------------------------------------------------------
-
-        else :
+            #-----------------------------------------------------------------------------------------------------
 
             # ADDING THE FILE TO THE UNSUPPORTED FILE LIST
             unsupported_list.append(file)
-            
-        #-----------------------------------------------------------------------------------------------------
 
-        # ADDING THE FILE WEIGHT TO THE TOTAL WEIGHT
-        total_weight = total_weight + file_weight
+            #-----------------------------------------------------------------------------------------------------
 
-        #-----------------------------------------------------------------------------------------------------
+        else :
+
+            #-----------------------------------------------------------------------------------------------------
+
+            # ADDING THE VIDEO CONVERSION SETTINGS TO THE LIST
+            video_settings.append(video_placeholder)
+
+            # GETTING THE CORRECT VIDEO SETTING
+            audio_settings, audio_bitrate = translate_settings_for_audio(audio_quality, duration)
+
+            # EXECUTING THE FILE WEIGHT CALCULATION
+            file_weight = get_file_weight(video_bitrate, audio_bitrate, duration)
+
+            # ADDING THE VIDEO DURATION TO THE DURATION LIST
+            duration_list.append(duration)
+
+            #-----------------------------------------------------------------------------------------------------
+
+            # ADDING THE FILE WEIGHT TO THE TOTAL WEIGHT
+            total_weight = total_weight + file_weight
+
+            #-----------------------------------------------------------------------------------------------------
 
     #-----------------------------------------------------------------------------------------------------
     
     return video_settings, audio_settings, total_weight, unsupported_list, duration_list
     
     #-----------------------------------------------------------------------------------------------------
+
 
 
 
@@ -175,319 +157,103 @@ def get_file_info (file):
 
 
 
-# FUNCTION THAT WILL GET THE CORRECT ENCODER FOR THE VIDEO
-def get_encoder (width, fps):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # GETTING THE CORRECT ENCODER USING THE WIDH PARAMETERS AS REFERENCE
-    if width <= 1920 and fps <= 61:
-
-        # RETURNING BACK THE CORRECT ENCODER
-        return "DNxHD"
-
-    elif fps > 61:
-
-        # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
-        print("The unsupported file has the following characteristics :", width, fps)
-        return "Unsupported"
-
-    elif width > 4097 :
-
-        # RETURNING BACK THE UNSUPPORTED VIDEO STATUS
-        print("The unsupported file has the following characteristics :", width, fps)
-        return "Unsupported"
-
-    else :
-
-        # RETURNING BACK THE CORRECT ENCODER
-        return "DNxHR"
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-# FUNCTION THAT WILL TRANSLATE VIDEO THE DROPDOWN SETTINGS IN FFMPEG SETTINGS
-def translate_video_settings_for_dnxhd (video_quality, width, height):
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 960X720
-    if width <= 960 and height <= 720 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 115M"
-            video_bitrate = 115
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 75M"
-            video_bitrate = 75
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 60M"
-            video_bitrate = 60
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 42M"
-            video_bitrate = 42
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 1280X720
-    if width <= 1280 and height <= 720 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 220M"
-            video_bitrate = 220
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 120M"
-            video_bitrate = 120
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 90M"
-            video_bitrate = 90
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 60M"
-            video_bitrate = 60
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 1440X1080
-    if width <= 1440 and height <= 1080 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 110M"
-            video_bitrate = 110
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 100M"
-            video_bitrate = 100
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 84M"
-            video_bitrate = 84
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 63M"
-            video_bitrate = 63
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # CHECKING IF THE VIDEO IS 1920X1080
-    if width <= 1920 and height <= 1080 :
-
-        # GETTING THE VIDEO QUALITY SETTINGS
-        if video_quality == 0 :
-        
-            # SETTING THE ORIGINAL QUALITY
-            video_settings = "-b:v 440M"
-            video_bitrate = 440
-
-        elif video_quality == 1 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 220M"
-            video_bitrate = 220
-
-        elif video_quality == 2 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 120M"
-            video_bitrate = 120
-
-        elif video_quality == 3 :
-
-            # SETTING THE HIGH QUALITY
-            video_settings = "-b:v 75M"
-            video_bitrate = 75
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-    
-    #-----------------------------------------------------------------------------------------------------
-   
-
-
-
         
 # FUNCTION THAT WILL TRANSLATE THE VIDEO DROPDOWN SETTINGS IN FFMPEG SETTINGS
-def translate_video_settings_for_dnxhr (video_quality, width, fps):
+def translate_video_settings_for_dnxhr (video_quality, width, height, fps):
 
     #-----------------------------------------------------------------------------------------------------
 
-    # GETTING THE VIDEO QUALITY SETTINGS
-    if video_quality == 0 :
-    
-        # SETTING THE ORIGINAL QUALITY
-        video_settings = "-profile:v dnxhr_hq"
-        
-        if width <= 1920 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 145
-
-        elif width <= 1920 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 220
-
-        elif width <= 2048 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 155
-
-        elif width <= 2048 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 240
-
-        elif width <= 4096 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 707
-
-        elif width <= 4096 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 1170
-
-        else:
-
-            # SETTING THE BITRATE
-            print (width, fps)
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
-
-    #-----------------------------------------------------------------------------------------------------
-    
-    if video_quality == 1 :
-
-        # SETTING THE ORIGINAL QUALITY
-        video_settings = "-profile:v dnxhr_sq"
-        
-        if width <= 1920 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 90
-
-        elif width <= 1920 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 145
-
-        elif width <= 2048 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 95
-
-        elif width <= 2048 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 160
-
-        elif width <= 4096 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 384
-
-        elif width <= 4096 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 707
-        
-        else:
-
-            # SETTING THE BITRATE
-            print (width, fps)
-
-        # GIVING BACK THE VALUES
-        return video_settings, video_bitrate
+    # DEFINING THE QUALITY DICTIONARY
+    profiles = {
+        0: "dnxhr_hq",  # HIGH QUALITY
+        1: "dnxhr_sq",  # STANDARD QUALITY
+        2: "dnxhr_lb",  # LOW BANDWIDTH
+        3: "dnxhr_lb"   # LOW BANDWIDTH
+    }
 
     #-----------------------------------------------------------------------------------------------------
 
-    if video_quality == 2 or video_quality == 3 :
+    # DEFINING THE DICTIONARY OF THE SUPPORTED RESOLUTIONS AND FRAMERATES
+    bitrate_table = {
 
-        # SETTING THE ORIGINAL QUALITY
-        video_settings = "-profile:v dnxhr_lb"
+        # DICTIONARY OF MAX QUALITY
+        "dnxhr_hq": {
+            (1920, 1080, 30): 145, (1920, 1080, 60): 220, (1920, 1080, 120): 440, (1920, 1080, 240): 880,
+            (1080, 1920, 30): 145, (1080, 1920, 60): 220, (1080, 1920, 120): 440, (1080, 1920, 240): 880,
+
+            (2048, 1152, 30): 155, (2048, 1152, 60): 240, (2048, 1152, 120): 480, (2048, 1152, 240): 960,
+            (1152, 2048, 30): 155, (1152, 2048, 60): 240, (1152, 2048, 120): 480, (1152, 2048, 240): 960,
+
+            (2560, 1440, 30): 350, (2560, 1440, 60): 600, (2560, 1440, 120): 1200, (2560, 1440, 240): 2400,
+            (1440, 2560, 30): 350, (1440, 2560, 60): 600, (1440, 2560, 120): 1200, (1440, 2560, 240): 2400,
+
+            (3840, 2160, 30): 707, (3840, 2160, 60): 1170, (3840, 2160, 120): 2340, (3840, 2160, 240): 4680,
+            (2160, 3840, 30): 707, (2160, 3840, 60): 1170, (2160, 3840, 120): 2340, (2160, 3840, 240): 4680,
+
+            (7680, 4320, 30): 2000, (7680, 4320, 60): 4000, (7680, 4320, 120): 8000, (7680, 4320, 240): 16000,
+            (4320, 7680, 30): 2000, (4320, 7680, 60): 4000, (4320, 7680, 120): 8000, (4320, 7680, 240): 16000
+        },
+
+        # DICTIONARY OF HIGH QUALITY
+        "dnxhr_sq": {
+            (1920, 1080, 30): 90, (1920, 1080, 60): 145, (1920, 1080, 120): 290, (1920, 1080, 240): 580,
+            (1080, 1920, 30): 90, (1080, 1920, 60): 145, (1080, 1920, 120): 290, (1080, 1920, 240): 580,
+
+            (2048, 1152, 30): 95, (2048, 1152, 60): 160, (2048, 1152, 120): 320, (2048, 1152, 240): 640,
+            (1152, 2048, 30): 95, (1152, 2048, 60): 160, (1152, 2048, 120): 320, (1152, 2048, 240): 640,
+
+            (2560, 1440, 30): 200, (2560, 1440, 60): 340, (2560, 1440, 120): 680, (2560, 1440, 240): 1360,
+            (1440, 2560, 30): 200, (1440, 2560, 60): 340, (1440, 2560, 120): 680, (1440, 2560, 240): 1360,
+
+            (3840, 2160, 30): 384, (3840, 2160, 60): 707, (3840, 2160, 120): 1414, (3840, 2160, 240): 2828,
+            (2160, 3840, 30): 384, (2160, 3840, 60): 707, (2160, 3840, 120): 1414, (2160, 3840, 240): 2828,
+
+            (7680, 4320, 30): 1200, (7680, 4320, 60): 2400, (7680, 4320, 120): 4800, (7680, 4320, 240): 9600,
+            (4320, 7680, 30): 1200, (4320, 7680, 60): 2400, (4320, 7680, 120): 4800, (4320, 7680, 240): 9600
+        },
+
+        # DICTIONARY OF MID/LOW QUALITY
+        "dnxhr_lb": {
+            (1920, 1080, 30): 45, (1920, 1080, 60): 75, (1920, 1080, 120): 150, (1920, 1080, 240): 300,
+            (1080, 1920, 30): 45, (1080, 1920, 60): 75, (1080, 1920, 120): 150, (1080, 1920, 240): 300,
+
+            (2048, 1152, 30): 50, (2048, 1152, 60): 85, (2048, 1152, 120): 170, (2048, 1152, 240): 340,
+            (1152, 2048, 30): 50, (1152, 2048, 60): 85, (1152, 2048, 120): 170, (1152, 2048, 240): 340,
+
+            (2560, 1440, 30): 100, (2560, 1440, 60): 175, (2560, 1440, 120): 350, (2560, 1440, 240): 700,
+            (1440, 2560, 30): 100, (1440, 2560, 60): 175, (1440, 2560, 120): 350, (1440, 2560, 240): 700,
+
+            (3840, 2160, 30): 192, (3840, 2160, 60): 365, (3840, 2160, 120): 730, (3840, 2160, 240): 1460,
+            (2160, 3840, 30): 192, (2160, 3840, 60): 365, (2160, 3840, 120): 730, (2160, 3840, 240): 1460,
+
+            (7680, 4320, 30): 600, (7680, 4320, 60): 1200, (7680, 4320, 120): 2400, (7680, 4320, 240): 4800,
+            (4320, 7680, 30): 600, (4320, 7680, 60): 1200, (4320, 7680, 120): 2400, (4320, 7680, 240): 4800
+        }
+    }
+
+    #-----------------------------------------------------------------------------------------------------
+
+    # ACQUIRING THE QUALITY PROFILE
+    profile = profiles[video_quality]
+
+    # CHECKING IF THE VIDEO FILE IS COMPATIBLE WITH THE CODEC
+    if (width, height, fps) not in bitrate_table[profile]:
+
+        # SETTING THE ERROR
+        video_settings = "not"
+        video_bitrate = 0
         
-        if width <= 1920 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 45
-
-        elif width <= 1920 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 75
-
-        elif width <= 2048 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 50
-
-        elif width <= 2048 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 85
-
-        elif width <= 4096 and fps <= 30 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 192
-
-        elif width <= 4096 and fps <= 60 :
-
-            # SETTING THE BITRATE
-            video_bitrate = 365
-
-        else:
-
-            # SETTING THE BITRATE
-            print (width, fps)
-
-        # GIVING BACK THE VALUES
+        # RETURNING THE VALUES
         return video_settings, video_bitrate
+
+    # SETTING THE VIDEO SETTINGS
+    video_settings = f"-profile:v {profile}"
+
+    # SETTING THE VIDEO BITRATE
+    video_bitrate = bitrate_table[profile][(width, height, fps)]
+
+    # RETURNING THE VALUES
+    return video_settings, video_bitrate
 
     #-----------------------------------------------------------------------------------------------------
 

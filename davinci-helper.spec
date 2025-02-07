@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.3.5
+Version:        2.4.0
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -94,24 +94,11 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.0-1
+- Improved video converter performance and compatibility.
+
 * Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.5-1
 - Fixed polkit not restarting after app installation.
-
-* Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.4-1
-- Fixed support for native use of .run installer wizard file.
-
-* Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.2-1
-- Added support for Nobara 41.
-- Added experimental support for Fedora 42.
-- Added experimental support for Fedora Rawhide.
-- Added for using .run installer wizard file.
-- Added support for Intel iGPUs.
-- Added support for more AMD iGPUs.
-- Fixed uppercase file extension not correctly detected.
-- Fixed the conversion of files with spaces in their names.
-- Fixed support for Nvidia mobile GPUs.
-- Fixed italian translation.
-- Fixed ffmpeg non-free installation.
 
 
 
