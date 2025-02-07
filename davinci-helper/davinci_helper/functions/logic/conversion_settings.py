@@ -146,6 +146,63 @@ def get_file_info (file):
             avg_frame_rate = stream_info.get("avg_frame_rate", "0/1")                                               # DEFAULT TO "0/1" IF NOT FOUND
             num, denom = (int(n) for n in avg_frame_rate.split('/')) if '/' in avg_frame_rate else (0, 1)
             fps = num / denom if denom != 0 else 0.0                                                                # ENSURE FRAME RATE IS A FLOAT
+            fps = round(fps, 2)
+
+            # NORMALIZING FRAMERATES
+            if fps >= 23 and fps < 24 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 23.976
+
+            elif fps >= 24 and fps < 25 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 24
+
+            elif fps >= 25 and fps < 26 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 25
+
+            elif fps >= 29 and fps < 30 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 29.97
+
+            elif fps >= 30 and fps < 31 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 30
+
+            elif fps >= 47 and fps < 49 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 48
+
+            elif fps >= 49 and fps < 51 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 50
+
+            elif fps >= 58 and fps < 60 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 59.94
+
+            elif fps >= 60 and fps < 61 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 60
+
+            elif fps >= 119 and fps < 121 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 120
+
+            elif fps >= 239 and fps < 241 :
+
+                # APPROXIMATING THE FPS VALUE TO A STANDARD VALUE
+                fps = 240
 
             return width, height, duration, fps
 
