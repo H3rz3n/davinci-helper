@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.3.4
+Version:        2.3.5
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -90,11 +90,15 @@ install -Dm644 %{_builddir}/%{name}-%{version}/data/polkit/com.davinci.helper.ap
 # POST INSTALLATION OPERATIONS
 %post
 update-desktop-database &> /dev/null || :
+sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.5-1
+- Fixed polkit not restarting after app installation.
+
 * Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.4-1
-- Fixed support for native use of.run installer wizard file.
+- Fixed support for native use of .run installer wizard file.
 
 * Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.2-1
 - Added support for Nobara 41.
