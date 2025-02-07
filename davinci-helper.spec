@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.3.3
+Version:        2.3.4
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -93,7 +93,7 @@ update-desktop-database &> /dev/null || :
 
 # CHANGELOG OF THE VERSION 
 %changelog
-* Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.3-1
+* Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.4-1
 - Fixed support for native use of.run installer wizard file.
 
 * Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.2-1

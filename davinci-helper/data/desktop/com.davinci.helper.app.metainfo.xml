@@ -131,13 +131,13 @@
     <releases>
 
         <!-- RELEASE NOTE START-->
-        <release version="2.3.3" date="2025-02-07" type="stable">
+        <release version="2.3.4" date="2025-02-07" type="stable">
 
             <!-- DESCRIPTION START -->
             <description transalte="no">
 
                     <p>This new version of the app comes with the following changes :</p>
-                    <p>Fixed support for native use of.run installer wizard file.</p>
+                    <p>- Fixed support for native use of.run installer wizard file.</p>
             
             <!-- DESCRIPTION END -->
             </description>

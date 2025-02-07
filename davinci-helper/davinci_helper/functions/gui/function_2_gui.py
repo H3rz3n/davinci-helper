@@ -276,7 +276,7 @@ class function_2_class (Gtk.ScrolledWindow):
         file_dialog.set_modal(True)
 
         # SETTING THE WINDOW TITLE
-        file_dialog.set_title(_("Select the DaVinci Resolve installer .zip file"))
+        file_dialog.set_title(_("Select the DaVinci Resolve installer `.zip` or `.run` file"))
 
         # ACQUIRING THE OPTION TO FILTER THE FILE TYPE THAT THE USER CAN CHOSE
         zip_filter = Gtk.FileFilter()
@@ -369,7 +369,7 @@ class function_2_class (Gtk.ScrolledWindow):
             for word in name_check:
                 if word in file_path:
                     counter += 1
-                if counter >= 4:
+                if counter >= 3:
                     check_passed=True
 
             #-----------------------------------------------------------------------------------------------------

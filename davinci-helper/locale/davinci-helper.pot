@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 18:11+0100\n"
+"POT-Creation-Date: 2025-02-07 15:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,16 +115,16 @@ msgstr ""
 #: davinci_helper/functions/gui/file_error_dialog_gui.py:101
 msgid ""
 "It seems like you didn't load any file.\n"
-"Please load a valid DaVinci Resolve installer zip file to continue."
+"Please load a valid DaVinci Resolve installer file to continue."
 msgstr ""
 
 #: davinci_helper/functions/gui/file_error_dialog_gui.py:106
 msgid ""
 "It seems like you tried to load an usupported file.\n"
-"Please load a valid DaVinci Resolve installer zip file to continue.\n"
+"Please load a valid DaVinci Resolve installer file to continue.\n"
 "If you have renamed it, remember that the file name must\n"
 "contain the words 'DaVinci', 'Resolve', 'Linux' inside of it\n"
-"and it must to have the '.zip' extension."
+"and it must to have the '.zip' or `.run` extension."
 msgstr ""
 
 #: davinci_helper/functions/gui/file_size_warning_dialog_gui.py:109
@@ -503,7 +503,7 @@ msgid ""
 msgstr ""
 
 #: davinci_helper/functions/gui/function_2_gui.py:279
-msgid "Select the DaVinci Resolve installer .zip file"
+msgid "Select the DaVinci Resolve installer `.zip` or `.run` file"
 msgstr ""
 
 #: davinci_helper/functions/gui/function_2_gui.py:548
@@ -896,107 +896,120 @@ msgstr ""
 msgid "The best DaVinci Resolve companion app on Linux"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:34
+#: data/desktop/com.davinci.helper.app.metainfo.xml:39
 msgid ""
 "This app is created with the purpose of making it easier for Linux users to "
 "install and use DaVinci Resolve."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:35
+#: data/desktop/com.davinci.helper.app.metainfo.xml:40
 msgid "Features :"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:37
+#: data/desktop/com.davinci.helper.app.metainfo.xml:41
 msgid "Automatic and dynamic dependecies installation"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:38
+#: data/desktop/com.davinci.helper.app.metainfo.xml:42
 msgid "DaVinci Resolve installation wizard easy start"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:39
+#: data/desktop/com.davinci.helper.app.metainfo.xml:43
 msgid "Application of post install patch"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:40
+#: data/desktop/com.davinci.helper.app.metainfo.xml:44
 msgid "Easy GPU Driver installation"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:41
+#: data/desktop/com.davinci.helper.app.metainfo.xml:45
 msgid "Easy video conversion for DaVinci Resolve Free"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:43
-#: data/desktop/com.davinci.helper.app.metainfo.xml:150
+#: data/desktop/com.davinci.helper.app.metainfo.xml:46
+#: data/desktop/com.davinci.helper.app.metainfo.xml:166
 msgid "Visit the project GitHub page for more information."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:61
+#: data/desktop/com.davinci.helper.app.metainfo.xml:64
 msgid "App homepage"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:66
+#: data/desktop/com.davinci.helper.app.metainfo.xml:69
 msgid "Dependecies assistant"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:71
+#: data/desktop/com.davinci.helper.app.metainfo.xml:74
 msgid "Installer starter"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:76
+#: data/desktop/com.davinci.helper.app.metainfo.xml:79
 msgid "Post-installation fix applicator"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:81
+#: data/desktop/com.davinci.helper.app.metainfo.xml:84
 msgid "GPU driver assistant"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:86
+#: data/desktop/com.davinci.helper.app.metainfo.xml:89
 msgid "Video coverter"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:110
+#: data/desktop/com.davinci.helper.app.metainfo.xml:113
 msgid "Lorenzo Maiuri"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:136
+#: data/desktop/com.davinci.helper.app.metainfo.xml:139
+#: data/desktop/com.davinci.helper.app.metainfo.xml:154
 msgid "This new version of the app comes with the following changes :"
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:139
+#: data/desktop/com.davinci.helper.app.metainfo.xml:140
+msgid "- Fixed support for native use of.run installer wizard file."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:155
 msgid "Added support for Nobara 41."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:140
+#: data/desktop/com.davinci.helper.app.metainfo.xml:156
 msgid "Added experimental support for Fedora 42."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:141
+#: data/desktop/com.davinci.helper.app.metainfo.xml:157
 msgid "Added experimental support for Fedora Rawhide."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:142
-msgid "Fixed uppercase file extension not correctly detected."
+#: data/desktop/com.davinci.helper.app.metainfo.xml:158
+msgid "Added for using .run installer wizard file."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:143
-msgid "Fixed the conversion of files with spaces in their names."
-msgstr ""
-
-#: data/desktop/com.davinci.helper.app.metainfo.xml:144
+#: data/desktop/com.davinci.helper.app.metainfo.xml:159
 msgid "Added support for Intel iGPUs."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:145
-msgid "Fixed support for Nvidia mobile GPUs."
-msgstr ""
-
-#: data/desktop/com.davinci.helper.app.metainfo.xml:146
+#: data/desktop/com.davinci.helper.app.metainfo.xml:160
 msgid "Added support for more AMD iGPUs."
 msgstr ""
 
-#: data/desktop/com.davinci.helper.app.metainfo.xml:147
-msgid "Added for using .run installer wizard file."
+#: data/desktop/com.davinci.helper.app.metainfo.xml:161
+msgid "Fixed uppercase file extension not correctly detected."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:162
+msgid "Fixed the conversion of files with spaces in their names."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:163
+msgid "Fixed support for Nvidia mobile GPUs."
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:164
+msgid "Fixed italian translation"
+msgstr ""
+
+#: data/desktop/com.davinci.helper.app.metainfo.xml:165
+msgid "Fixed ffmpeg non-free installation"
 msgstr ""
 
 #. SETTING BUTTON TEXT LABEL
