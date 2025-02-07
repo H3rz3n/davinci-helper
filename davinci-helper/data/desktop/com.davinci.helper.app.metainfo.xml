@@ -127,8 +127,23 @@
 
 
 
-    <!-- RELEASE SECTION START -->
+    <!-- RELEASE SECTION START --> 
     <releases>
+
+        <!-- RELEASE NOTE START-->
+        <release version="2.3.3" date="2025-02-07" type="stable">
+
+            <!-- DESCRIPTION START -->
+            <description transalte="no">
+
+                    <p>This new version of the app comes with the following changes :</p>
+                    <p>Fixed support for native use of.run installer wizard file.</p>
+            
+            <!-- DESCRIPTION END -->
+            </description>
+                    
+          <!--RELEASE NOTE END -->
+        </release>
 
         <!-- RELEASE NOTE START-->
         <release version="2.3.2" date="2025-02-06" type="stable">

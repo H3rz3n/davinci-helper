@@ -358,7 +358,7 @@ class function_2_class (Gtk.ScrolledWindow):
             #-----------------------------------------------------------------------------------------------------
             
             # ESTABLISHING THE PARAMETERS THAT THE INSTALLATION FILE MUST HAVE
-            name_check = ["DaVinci", "Resolve", "Linux", ".zip"]
+            name_check = ["DaVinci", "Resolve", "Linux"]
 
             # AZZERAMENTO DELLA VARIABILE DI CONTROLLO E DEL CONTATORE
             # RESETTING THE CONTROL TRIGGER AND THE COUNTER
