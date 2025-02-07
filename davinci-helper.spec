@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.3.2
+Version:        2.3.3
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -93,7 +93,10 @@ update-desktop-database &> /dev/null || :
 
 # CHANGELOG OF THE VERSION 
 %changelog
-* Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.0-1
+* Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.3-1
+- Fixed support for native use of.run installer wizard file.
+
+* Thu Feb 06 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.3.2-1
 - Added support for Nobara 41.
 - Added experimental support for Fedora 42.
 - Added experimental support for Fedora Rawhide.
