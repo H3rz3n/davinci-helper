@@ -171,6 +171,8 @@ def translate_video_settings_for_dnxhr (video_quality, width, height, fps):
         3: "dnxhr_lb"   # LOW BANDWIDTH
     }
 
+    print("Dati del file : ", width, "-", height)
+
     #-----------------------------------------------------------------------------------------------------
 
     # DEFINING THE DICTIONARY OF THE SUPPORTED RESOLUTIONS AND FRAMERATES
@@ -258,7 +260,7 @@ def translate_video_settings_for_dnxhr (video_quality, width, height, fps):
 
         # LOW BANDWIDTH (dnxhr_lb)
         "dnxhr_lb": {
-            
+
             # 144p
             (256, 144, 30): 2, (256, 144, 60): 4,  
             (144, 256, 30): 2, (144, 256, 60): 4,  
