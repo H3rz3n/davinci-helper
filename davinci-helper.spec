@@ -5,7 +5,7 @@ Name:           davinci-helper
 Version:        2.4.2
 
 # RELEASE AND DISTRIBUTION VERSION
-Release:        2
+Release:        3
 
 # SHORT SUMMARY OF WHAT THE APP DOES
 Summary:        The best DaVinci Resolve companion app on Linux
