@@ -304,13 +304,7 @@ def install_intel_driver_42():
     #-----------------------------------------------------------------------------------------------------
 
     # CHECKING IF IS ALREADY INSTALLED THE COMPLETE INTEL DRIVER
-    if intel_driver_check.find("libva-intel-media-driver") == -1 and ((intel_driver_check.find("intel-media-driver") != -1)) :
-
-        # PRINTING THE MESSAGE
-        print(_("The complete Intel GPU driver was already installed on the system, there was no need to install it."))
-        print("")
-
-    else :
+    if intel_driver_check.find("libva-intel-media-driver") != -1 :
 
         # INSTALLING THE COMPLETE INTEL DRIVER  
         intel_driver_install = subprocess.run("dnf swap -y libva-intel-media-driver intel-media-driver --allowerasing", shell=True, capture_output=True, text=True )
@@ -333,7 +327,42 @@ def install_intel_driver_42():
 
             # PRINTING THE SUCCESSFUL STATE
             print(_("The complete Intel driver has been successfully installed."))
+            print("")           
+
+    else :
+
+        # CHECKING IF THE CORRECT DRIVER IS INSTALLED
+        if intel_driver_check.find("intel-media-driver") != -1 :
+
+             # PRINTING THE MESSAGE
+            print(_("The complete Intel GPU driver was already installed on the system, there was no need to install it."))
             print("")
+
+        else :
+
+            # INSTALLING THE COMPLETE INTEL DRIVER  
+            intel_driver_install = subprocess.run("dnf install -y intel-media-driver --allowerasing", shell=True, capture_output=True, text=True )
+
+            # CHECKING IF THERE WERE ERRORS
+            if intel_driver_install.returncode != 0 :
+
+                # PRINTING THE ERROR MESSAGE
+                print(_("DEBUG : It was impossible to install the complete Intel GPU driver."))
+                print(_("Check your network connection and try again or install it by yourself."))
+                print("")
+                print(intel_driver_install.stdout)
+                print("")
+                print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+                print("https://github.com/H3rz3n/davinci-helper/issues")
+                print("")            
+                exit(3)
+
+            else :
+
+                # PRINTING THE SUCCESSFUL STATE
+                print(_("The complete Intel driver has been successfully installed."))
+                print("")           
+
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -479,21 +508,21 @@ if gpu_lspci.find("nvidia") != -1 :
 if gpu_lspci.find("amd") != -1 :
 
     #CHECKING WHICH VERSION OF THE IS IN USE
-    if os_version.find("40") or os_version.find("41"):
+    if os_version.find("40") != -1 or os_version.find("41") != -1 or os_version.find("42") != -1:
 
         # STARTING THE DRIVER INSTALLATION
-        install_amd_driver_40_41()
+        install_amd_driver()
 
     else :
 
         # STARTING THE DRIVER INSTALLATION
-        install_amd_driver_42()
+        install_amd_driver()
 
 # CHECKING IF THE VENDOR IS INTEL
 if gpu_lspci.find("intel") != -1 :
 
     #CHECKING WHICH VERSION OF THE IS IN USE
-    if os_version.find("40") or os_version.find("41"):
+    if os_version.find("40") != -1 or os_version.find("41") != -1:
 
         # STARTING THE DRIVER INSTALLATION
         install_intel_driver_40_41()

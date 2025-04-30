@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.3.0\n"
+"Project-Id-Version: 2.4.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-07 15:59+0100\n"
-"PO-Revision-Date: 2024-10-01 14:10+0200\n"
+"PO-Revision-Date: 2024-30-04 14:10+0200\n"
 "Last-Translator: Lorenzo Maiuri <lorenzo.maiuri@ik.me>\n"
 "Language-Team: Italian <LL@li.org>\n"
 "Language: it\n"
