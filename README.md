@@ -25,11 +25,14 @@ Currently the app support DaVinci Resolve `18.x.y` and `19.x.y`, both in the Fre
 ## What OSs are currently supported by the latest version
 Currently the app was tested on these OSs :
 - `Fedora Rawhide` - Experimental
-- `Fedora 42` - Experimental
+- `Fedora 42` - All spins
 - `Fedora 41` - All spins
 - `Fedora 40`- All spins
 - `Nobara 41`
 - `Nobara 40`
+- `Ultramarine Linux 40` - Experimental
+- `Ultramarine Linux 41` - Experimental
+- `Ultramarine Linux 42` - Experimental
 
 ## What GPUs are currently supported
 Currently are supported the following GPUs :
