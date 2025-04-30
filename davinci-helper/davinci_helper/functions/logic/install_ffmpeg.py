@@ -76,14 +76,14 @@ def check_ffmpeg_presence ():
 
 
 # FUNCTION THAT ADDS THE RPM FUSION REPOSITORY
-def add_repository ():
+def add_repository():
 
     #-----------------------------------------------------------------------------------------------------
 
     # ACQUIRING IF RPM FUSION REPO IS ALREADY INSTALLED
     rpm_fusion_repo_check = subprocess.run("dnf repolist", shell=True, capture_output=True, text=True )
 
-    # CHECKING IF IS ALREADY INSTALLED THE PROPRIETARY NVIDIA DRIVER
+    # CHECKING IF RPM FUSION REPO IS ALREADY INSTALLED
     if rpm_fusion_repo_check.stdout.find("rpmfusion-free") != -1 and rpm_fusion_repo_check.stdout.find("rpmfusion-nonfree"):
 
         # PRINTING THE MESSAGE
@@ -93,7 +93,7 @@ def add_repository ():
     else :
     
         # ADDING THE RPM FUSION REPOSITORY
-        adding_repo = subprocess.run("dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", shell=True, capture_output=True, text=True )
+        adding_repo = subprocess.run("dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
         if adding_repo.returncode != 0 :
@@ -108,7 +108,7 @@ def add_repository ():
             print("")
             print("https://github.com/H3rz3n/davinci-helper/issues")
             print("")
-            exit(1)
+            exit(2)
 
         else :
 
@@ -117,6 +117,7 @@ def add_repository ():
             print("")
 
     #-----------------------------------------------------------------------------------------------------
+
 
 
 
@@ -347,43 +348,6 @@ def install_codecs (lib_install_list):
         print("")
 
     #-----------------------------------------------------------------------------------------------------
-
-
-
-
-
-# FUNCTION THAT WILL INSTALL ALL THE CODECS FROM RPM FUSION REPOSITORY
-def update_multimedia ():
-
-    #-----------------------------------------------------------------------------------------------------
-
-    # INSTALLING FFMPEG FROM RPM FUSION
-    multimedia_update = subprocess.run("dnf4 update -y @multimedia --setopt='install_weak_deps=False' --exclude=PackageKit-gstreamer-plugin", shell=True, capture_output=True, text=True)
-
-    # CHECKING IF THERE WERE ERRORS
-    if multimedia_update.returncode != 0 :
-
-        # PRINTING THE ERROR MESSAGE
-        print(_("DEBUG : It was impossible to update the multimedia group."))
-        print("")
-        print(multimedia_update.stdout)
-        print("")
-        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
-        print("")
-        print("https://github.com/H3rz3n/davinci-helper/issues")
-        print("")
-        exit(5)
-
-    else :
-
-        # PRINTING THE SUCCESSFUL STATE
-        print(_("All the codecs and missing libraries were successfully installed from RPM Fusion. Now you can use DaVinci Converter"))
-        print("")
-
-    #-----------------------------------------------------------------------------------------------------
-
-
-
 
 
 
