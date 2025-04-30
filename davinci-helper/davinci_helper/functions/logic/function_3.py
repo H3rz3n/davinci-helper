@@ -87,6 +87,16 @@ def check_davinci_version ():
 
         # STARTING THE FUNCTION THAT APPLYS THE DAVINCI 19 POST INSTALLATION PATCH
         post_installation_19()
+
+    elif davinci_info.stdout.find("20") != -1 :
+
+        # STAMPA LA VERSIONE DI DAVINCI IN USO
+        # PRINTING WHICH VERSION OF DAVINCI IS IN USE
+        print(_("DaVinci Resolve 20.x.x was found in the system"))
+        print("")
+
+        # STARTING THE FUNCTION THAT APPLYS THE DAVINCI 19 POST INSTALLATION PATCH
+        post_installation_19()
         
     else :
 
