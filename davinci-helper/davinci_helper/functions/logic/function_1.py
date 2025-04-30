@@ -104,6 +104,31 @@ def check_fedora_version ():
             # PRINT THE FEDORA VERSION
             print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
 
+        elif os_info.stdout.find("Ultramarine Linux 40") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Ultramarine Linux 40"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Ultramarine Linux 41") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Ultramarine Linux 41"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Ultramarine Linux 42") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Ultramarine Linux 42"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+
         
 
         # RETURNS VALUE TO THE SCRIPT

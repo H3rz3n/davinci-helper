@@ -62,7 +62,7 @@ def add_repository():
     else :
     
         # ADDING THE RPM FUSION REPOSITORY
-        adding_repo = subprocess.run("dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", shell=True, capture_output=True, text=True )
+        adding_repo = subprocess.run("dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
         if adding_repo.returncode != 0 :
@@ -187,7 +187,7 @@ def install_amd_driver():
     else :
 
         # SWAPPING THE MESA TO THE COMPLETE VERSION
-        mesa_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld", shell=True, capture_output=True, text=True )
+        mesa_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld && dnf swap -y mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686 && dnf swap -y mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
         if mesa_driver_swap.returncode != 0 :
@@ -216,7 +216,7 @@ def install_amd_driver():
 
 
 # FUNCTION THAT STARTS THE INTEL GPU DRIVER INSTALLATION
-def install_intel_driver():
+def install_intel_driver_40_41():
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -293,12 +293,200 @@ def install_intel_driver():
 
     #-----------------------------------------------------------------------------------------------------
 
+# FUNCTION THAT STARTS THE INTEL GPU DRIVER INSTALLATION
+def install_intel_driver_42():
+
+    #-----------------------------------------------------------------------------------------------------
+
+    # ACQUIRING IF IS ALREADY INSTALLED THE COMPLETE INTEL DRIVER
+    intel_driver_check = subprocess.run("dnf list --installed | grep intel-media-driver ; dnf list --installed | grep libva-intel-media-driver", shell=True, capture_output=True, text=True ).stdout
+
+    #-----------------------------------------------------------------------------------------------------
+
+    # CHECKING IF IS ALREADY INSTALLED THE COMPLETE INTEL DRIVER
+    if intel_driver_check.find("libva-intel-media-driver") != -1 :
+
+        # INSTALLING THE COMPLETE INTEL DRIVER  
+        intel_driver_install = subprocess.run("dnf swap -y libva-intel-media-driver intel-media-driver --allowerasing", shell=True, capture_output=True, text=True )
+
+        # CHECKING IF THERE WERE ERRORS
+        if intel_driver_install.returncode != 0 :
+
+            # PRINTING THE ERROR MESSAGE
+            print(_("DEBUG : It was impossible to install the complete Intel GPU driver."))
+            print(_("Check your network connection and try again or install it by yourself."))
+            print("")
+            print(intel_driver_install.stdout)
+            print("")
+            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+            print("https://github.com/H3rz3n/davinci-helper/issues")
+            print("")            
+            exit(3)
+
+        else :
+
+            # PRINTING THE SUCCESSFUL STATE
+            print(_("The complete Intel driver has been successfully installed."))
+            print("")           
+
+    else :
+
+        # CHECKING IF THE CORRECT DRIVER IS INSTALLED
+        if intel_driver_check.find("intel-media-driver") != -1 :
+
+             # PRINTING THE MESSAGE
+            print(_("The complete Intel GPU driver was already installed on the system, there was no need to install it."))
+            print("")
+
+        else :
+
+            # INSTALLING THE COMPLETE INTEL DRIVER  
+            intel_driver_install = subprocess.run("dnf install -y intel-media-driver --allowerasing", shell=True, capture_output=True, text=True )
+
+            # CHECKING IF THERE WERE ERRORS
+            if intel_driver_install.returncode != 0 :
+
+                # PRINTING THE ERROR MESSAGE
+                print(_("DEBUG : It was impossible to install the complete Intel GPU driver."))
+                print(_("Check your network connection and try again or install it by yourself."))
+                print("")
+                print(intel_driver_install.stdout)
+                print("")
+                print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+                print("https://github.com/H3rz3n/davinci-helper/issues")
+                print("")            
+                exit(3)
+
+            else :
+
+                # PRINTING THE SUCCESSFUL STATE
+                print(_("The complete Intel driver has been successfully installed."))
+                print("")           
+
+
+    #-----------------------------------------------------------------------------------------------------
 
 
 
 
+# FUNCTION THAT CHECK WHICH VERSION OF FEDORA IS INSTALLED
+def check_fedora_version ():
+
+    #-----------------------------------------------------------------------------------------------------
+    
+    # READING WHICH VERSION OF FEDORA IS INSTALLED
+    os_info = subprocess.run("hostnamectl", shell=True, capture_output=True, text=True)
+
+    # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON WHETHER THERE ARE ERRORS OR NOT
+    if os_info.returncode == 0: 
+
+        # CHECKING WHIC VERSION OF FEDORA IS USED
+        if os_info.stdout.find("Fedora Linux 40") != -1 :
+        
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux 40"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+        
+        elif os_info.stdout.find("Fedora Linux 41") != -1 :
+            
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux 41"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Fedora Linux 42") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux 42"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif ((os_info.stdout).lower()).find("rawhide") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Fedora Linux Rawhide"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+        
+        elif os_info.stdout.find("Nobara Linux 40") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Nobara Linux 40"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Nobara Linux 41") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Nobara Linux 41"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Nobara Linux 42") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Nobara Linux 42"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Ultramarine Linux 40") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Ultramarine Linux 40"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Ultramarine Linux 41") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Ultramarine Linux 41"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
+
+        elif os_info.stdout.find("Ultramarine Linux 42") != -1 :
+
+            # SETTING THE FOUND OS VERSION
+            os_version = "Ultramarine Linux 42"
+
+            # PRINT THE FEDORA VERSION
+            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
 
 
+        
+
+        # RETURNS VALUE TO THE SCRIPT
+        return os_version
+        
+    else:
+        print(_("DEBUG : There was an error reading what OS is installed :"))
+        print("")
+        print(os_info.stderr)
+        print("")
+        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+        print("")
+        print("https://github.com/H3rz3n/davinci-helper/issues")
+        print("")
+        exit(1)
+
+    #-----------------------------------------------------------------------------------------------------
+
+
+
+
+#-----------------------------------------------------------------------------------------------------
+
+# ACQUIRING THE OS VERSION IN USE
+os_version = check_fedora_version()
 
 #-----------------------------------------------------------------------------------------------------
 
@@ -319,13 +507,29 @@ if gpu_lspci.find("nvidia") != -1 :
 # CHECKING IF THE VENDOR IS AMD
 if gpu_lspci.find("amd") != -1 :
 
-    # STARTING THE DRIVER INSTALLATION
-    install_amd_driver()
+    #CHECKING WHICH VERSION OF THE IS IN USE
+    if os_version.find("40") != -1 or os_version.find("41") != -1 or os_version.find("42") != -1:
+
+        # STARTING THE DRIVER INSTALLATION
+        install_amd_driver()
+
+    else :
+
+        # STARTING THE DRIVER INSTALLATION
+        install_amd_driver()
 
 # CHECKING IF THE VENDOR IS INTEL
 if gpu_lspci.find("intel") != -1 :
 
-    # STARTING THE DRIVER INSTALLATION
-    install_intel_driver()
+    #CHECKING WHICH VERSION OF THE IS IN USE
+    if os_version.find("40") != -1 or os_version.find("41") != -1:
+
+        # STARTING THE DRIVER INSTALLATION
+        install_intel_driver_40_41()
+
+    else :
+
+        # STARTING THE DRIVER INSTALLATION
+        install_intel_driver_42()
 
 #-----------------------------------------------------------------------------------------------------
