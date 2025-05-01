@@ -20,7 +20,7 @@ DaVinci Helper will help you with :
 - Converting the video to make them work with DaVinci Resolve Free
 
 ## What version of DaVinci are currently supported
-Currently the app support DaVinci Resolve `18.x.y` and `19.x.y`, both in the Free and Studio version.
+Currently the app support DaVinci Resolve `18.x.y`,`19.x.y` and `20.x.y`, both in the Free and Studio version.
 
 ## What OSs are currently supported by the latest version
 Currently the app was tested on these OSs :
