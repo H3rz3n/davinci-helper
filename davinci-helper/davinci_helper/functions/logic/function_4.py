@@ -159,7 +159,7 @@ def install_amd_driver():
     else :
 
         # INSTALLING THE AMD DRIVER  
-        amd_driver_install = subprocess.run("dnf install -y rocm-opencl rocm-smi rocm-core rocm-hip", shell=True, capture_output=True, text=True )
+        amd_driver_install = subprocess.run("dnf install -y rocm-opencl rocm-smi rocm-core rocm-hip --allowerasing", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
         if amd_driver_install.returncode != 0 :
@@ -187,7 +187,7 @@ def install_amd_driver():
     else :
 
         # SWAPPING THE MESA TO THE COMPLETE VERSION
-        mesa_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld && dnf swap -y mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686 && dnf swap -y mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686", shell=True, capture_output=True, text=True )
+        mesa_driver_swap = subprocess.run("dnf swap -y mesa-va-drivers mesa-va-drivers-freeworld && dnf swap -y mesa-vdpau-drivers mesa-vdpau-drivers-freeworld && dnf swap -y mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686 && dnf swap -y mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686 --allowerasing", shell=True, capture_output=True, text=True )
 
         # CHECKING IF THERE WERE ERRORS
         if mesa_driver_swap.returncode != 0 :
