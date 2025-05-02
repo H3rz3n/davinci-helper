@@ -11,7 +11,7 @@
 app_name = "DaVinci Helper"
 
 # APP VERSION
-app_version = "v2.4.2"
+app_version = "v2.4.3"
 
 # APP ICON
 app_icon = "com.davinci.helper.app"

@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.4.2
+Version:        2.4.3
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        3
@@ -94,6 +94,9 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
+* Fri May 02 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.3-1
+- Fixed AMD GPU drivers installation.
+
 * Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.0-1
 - Improved video converter performance and compatibility.
 
