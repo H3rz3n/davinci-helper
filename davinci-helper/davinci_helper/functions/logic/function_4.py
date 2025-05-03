@@ -145,7 +145,7 @@ def install_amd_driver():
     #-----------------------------------------------------------------------------------------------------
     
     # ACQUIRING IF IS ALREADY INSTALLED THE AMD DRIVER
-    amd_driver_check = subprocess.run("dnf list --installed | grep rocm ; dnf list --installed | grep freeworld", shell=True, capture_output=True, text=True ).stdout
+    amd_driver_check = subprocess.run("dnf list --installed | grep rocm ; dnf list --installed | grep freeworld; dnf list --installed | grep rocr", shell=True, capture_output=True, text=True ).stdout
 
     #-----------------------------------------------------------------------------------------------------
 
@@ -158,22 +158,44 @@ def install_amd_driver():
 
     else :
 
-        # INSTALLING THE AMD DRIVER  
-        amd_driver_install = subprocess.run("dnf install -y rocm-opencl rocm-smi rocm-core rocm-hip --allowerasing", shell=True, capture_output=True, text=True )
+        # CHECKING IF IS NECESSARY TO REMOVE A WRONG PACKAGE
+        if (amd_driver_check.find("opencl-rocr-amdgpu-pro") != -1):
 
-        # CHECKING IF THERE WERE ERRORS
-        if amd_driver_install.returncode != 0 :
+            # INSTALLING THE AMD DRIVER  
+            amd_driver_install = subprocess.run("dnf remove -y opencl-rocr-amdgpu-pro && dnf install -y rocm-opencl rocm-smi rocm-core rocm-hip --allowerasing", shell=True, capture_output=True, text=True )
 
-            # PRINTING THE ERROR MESSAGE
-            print(_("DEBUG : It was impossible to install the open source AMD GPU driver."))
-            print(_("Check your network connection and try again or install it by yourself."))
-            print("")
-            print(amd_driver_install.stdout)
-            print("")
-            print(_("Please open an issue report and paste this error code on the project GitHub page :"))
-            print("https://github.com/H3rz3n/davinci-helper/issues")
-            print("")            
-            exit(3)
+            # CHECKING IF THERE WERE ERRORS
+            if amd_driver_install.returncode != 0 :
+
+                # PRINTING THE ERROR MESSAGE
+                print(_("DEBUG : It was impossible to install the open source AMD GPU driver."))
+                print(_("Check your network connection and try again or install it by yourself."))
+                print("")
+                print(amd_driver_install.stdout)
+                print("")
+                print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+                print("https://github.com/H3rz3n/davinci-helper/issues")
+                print("")            
+                exit(3)
+
+        else :
+
+            # INSTALLING THE AMD DRIVER  
+            amd_driver_install = subprocess.run("dnf install -y rocm-opencl rocm-smi rocm-core rocm-hip --allowerasing", shell=True, capture_output=True, text=True )
+
+            # CHECKING IF THERE WERE ERRORS
+            if amd_driver_install.returncode != 0 :
+
+                # PRINTING THE ERROR MESSAGE
+                print(_("DEBUG : It was impossible to install the open source AMD GPU driver."))
+                print(_("Check your network connection and try again or install it by yourself."))
+                print("")
+                print(amd_driver_install.stdout)
+                print("")
+                print(_("Please open an issue report and paste this error code on the project GitHub page :"))
+                print("https://github.com/H3rz3n/davinci-helper/issues")
+                print("")            
+                exit(3)
 
     #-----------------------------------------------------------------------------------------------------
         
