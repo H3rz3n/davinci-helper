@@ -2,10 +2,10 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.4.3
+Version:        2.4.4
 
 # RELEASE AND DISTRIBUTION VERSION
-Release:        3
+Release:        1
 
 # SHORT SUMMARY OF WHAT THE APP DOES
 Summary:        The best DaVinci Resolve companion app on Linux
@@ -94,7 +94,11 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
-* Fri May 02 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.3-1
+
+* Fri May 03 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.4-1
+- Resolved installation issues with AMD GPU drivers in certain configurations..
+
+* Fri May 02 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.3-3
 - Fixed AMD GPU drivers installation.
 
 * Fri Feb 07 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.0-1
