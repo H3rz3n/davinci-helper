@@ -96,7 +96,7 @@ sudo systemctl restart polkit
 %changelog
 
 * Fri May 03 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.4-1
-- Resolved installation issues with AMD GPU drivers in certain configurations..
+- Resolved installation issues with AMD GPU drivers in certain configurations.
 
 * Fri May 02 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.3-3
 - Fixed AMD GPU drivers installation.
