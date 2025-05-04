@@ -480,8 +480,20 @@ class function_2_class (Gtk.ScrolledWindow):
 
         #-----------------------------------------------------------------------------------------------------
 
-        # LAUNCHING THE FUNCTION SCRIPT
-        function_script = subprocess.run(f"python /usr/lib/python*/site-packages/davinci_helper/functions/logic/function_2.py '{file_path}'", shell=True, capture_output=True, text=True)
+        # GETTING THE SCRIPT PATH
+        python_version = f"{sys.version_info.major}.{sys.version_info.minor}"
+        script_path = f"/usr/lib/python{python_version}/site-packages/davinci_helper/functions/logic/function_2.py"
+        
+        # ENSURING TO USE THE CORRECT PYTHON VERSION
+        interpreter = sys.executable
+
+        # EXEC THE SCRIPT WITH THE CORRECT PYTHON VERSION
+        function_script = subprocess.run(
+            f"{interpreter} '{script_path}' '{file_path}'",
+            shell=True,
+            capture_output=True,
+            text=True
+        )
 
         #-----------------------------------------------------------------------------------------------------
 
