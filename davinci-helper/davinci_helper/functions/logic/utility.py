@@ -11,6 +11,31 @@ import sys, os, subprocess, threading, gettext, locale, re
 
 #-----------------------------------------------------------------------------------------------------
 
+# DEFINING UI FILES PATH
+ui_path = os.path.join("/usr/share/davinci-helper/data/ui")
+
+# DEFINING ICON FILES PATH
+icon_path = os.path.join("/usr/share/davinci-helper/data/icons")
+
+# DEFINING TRANSLATE FILES PATH
+locale_path = os.path.join("/usr/share/davinci-helper/locale")
+
+#-----------------------------------------------------------------------------------------------------
+
+# ASSOCIATE THE NAME OF THE TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE LOCALE MODULE
+locale.bindtextdomain('davinci-helper', locale_path)
+
+# ASSOCIATE THE NAME OF TRANSLATION DICTIONARY TO THIS FILE PATH FOR THE GETTEXT MODULE
+gettext.bindtextdomain('davinci-helper', locale_path)
+
+# TELLING GETTEXT WHICH FILE TO USE FOR THE TRANSLATION OF THE APP
+gettext.textdomain('davinci-helper')
+
+# TELLING GETTEXT THE TRANSLATE SIGNAL
+_ = gettext.gettext
+
+#-----------------------------------------------------------------------------------------------------
+
 # FUNCTION THAT CHECK WHICH VERSION OF FEDORA IS INSTALLED
 def check_fedora_version ():
 
