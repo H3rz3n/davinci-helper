@@ -1,5 +1,5 @@
 #
-# Copyright 2024 Lorenzo Maiuri
+# Copyright 2025 Lorenzo Maiuri
 # Published under GPL-3.0 license
 #   
 
@@ -14,6 +14,9 @@
 
 # STANDARD MODULES IMPORT
 import sys, os, subprocess, threading, gettext, locale
+
+# NOT STANDARD MODULES IMPORT
+from .utility import utility
 
 #-----------------------------------------------------------------------------------------------------
 
@@ -35,119 +38,6 @@ gettext.textdomain('davinci-helper')
 _ = gettext.gettext
 
 #-----------------------------------------------------------------------------------------------------
-
-# FUNCTION THAT CHECK WHICH VERSION OF FEDORA IS INSTALLED
-def check_fedora_version ():
-
-    #-----------------------------------------------------------------------------------------------------
-    
-    # READING WHICH VERSION OF FEDORA IS INSTALLED
-    os_info = subprocess.run("hostnamectl", shell=True, capture_output=True, text=True)
-
-    # PRINTING IN THE TERMINAL THE RESULT DEPENDING ON WHETHER THERE ARE ERRORS OR NOT
-    if os_info.returncode == 0: 
-
-        # CHECKING WHIC VERSION OF FEDORA IS USED
-        if os_info.stdout.find("Fedora Linux 40") != -1 :
-        
-            # SETTING THE FOUND OS VERSION
-            os_version = "Fedora Linux 40"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-        
-        elif os_info.stdout.find("Fedora Linux 41") != -1 :
-            
-            # SETTING THE FOUND OS VERSION
-            os_version = "Fedora Linux 41"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif os_info.stdout.find("Fedora Linux 42") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Fedora Linux 42"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif ((os_info.stdout).lower()).find("rawhide") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Fedora Linux Rawhide"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-        
-        elif os_info.stdout.find("Nobara Linux 40") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Nobara Linux 40"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif os_info.stdout.find("Nobara Linux 41") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Nobara Linux 41"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif os_info.stdout.find("Nobara Linux 42") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Nobara Linux 42"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif os_info.stdout.find("Ultramarine Linux 40") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Ultramarine Linux 40"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif os_info.stdout.find("Ultramarine Linux 41") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Ultramarine Linux 41"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-        elif os_info.stdout.find("Ultramarine Linux 42") != -1 :
-
-            # SETTING THE FOUND OS VERSION
-            os_version = "Ultramarine Linux 42"
-
-            # PRINT THE FEDORA VERSION
-            print(_("You are using a supported OS version : {os_version_placeholder}").format(os_version_placeholder = os_version))
-
-
-        
-
-        # RETURNS VALUE TO THE SCRIPT
-        return os_version
-        
-    else:
-        print(_("DEBUG : There was an error reading what OS is installed :"))
-        print("")
-        print(os_info.stderr)
-        print("")
-        print(_("Please open an issue report and paste this error code on the project GitHub page :"))
-        print("")
-        print("https://github.com/H3rz3n/davinci-helper/issues")
-        print("")
-        exit(1)
-
-    #-----------------------------------------------------------------------------------------------------
-
-
 
 
 

@@ -1,5 +1,5 @@
 #
-# Copyright 2024 Lorenzo Maiuri
+# Copyright 2025 Lorenzo Maiuri
 # Published under GPL-3.0 license
 # GitHub : https://github.com/H3rz3n/davinci-helper
 #
@@ -11,7 +11,7 @@
 app_name = "DaVinci Helper"
 
 # APP VERSION
-app_version = "v2.4.5"
+app_version = "v2.4.6"
 
 # APP ICON
 app_icon = "com.davinci.helper.app"

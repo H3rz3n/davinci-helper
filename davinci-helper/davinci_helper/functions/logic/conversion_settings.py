@@ -1,5 +1,5 @@
 #
-# Copyright 2024 Lorenzo Maiuri
+# Copyright 2025 Lorenzo Maiuri
 # Pubblicato sotto licenza GPL-3.0
 # Published under GPL-3.0 license
 #   
