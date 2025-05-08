@@ -16,7 +16,7 @@
 import sys, os, subprocess, threading, gettext, locale
 
 # NOT STANDARD MODULES IMPORT
-from davinci_helper.functions.logic.utility import *
+import davinci_helper.functions.logic.utility as utility
 
 
 #-----------------------------------------------------------------------------------------------------
@@ -221,7 +221,7 @@ def libraries_installation (lib_to_install):
 
 
 # ACQUIRING THE USED VERSION OF FEDORA
-os_version = check_fedora_version()
+os_version = utility.check_fedora_version()
 
 
 

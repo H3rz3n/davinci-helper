@@ -19,8 +19,7 @@
 import sys, os, subprocess, threading, gettext, locale
 
 # NOT STANDARD MODULES IMPORT
-from davinci_helper.functions.logic.utility import *
-from davinci_helper.functions.logic.function_4 import *
+import davinci_helper.functions.logic.utility as utility
 
 #-----------------------------------------------------------------------------------------------------
 
@@ -387,7 +386,7 @@ is_installed_ffmpeg = check_ffmpeg_presence()
 #-----------------------------------------------------------------------------------------------------
 
 # ACQUIRING WHICH VERSION OF FEDORA IS IN USE
-os_version = check_fedora_version()
+os_version = utility.check_fedora_version()
 
 #-----------------------------------------------------------------------------------------------------
 
@@ -397,7 +396,7 @@ if is_installed_ffmpeg == "Lite" :
     #-----------------------------------------------------------------------------------------------------
 
     # ADDING RPM FUSION REPOSITORY
-    add_repository()
+    utility.add_repository()
 
     # INSTALLING FFMPEG
     swap_ffmpeg()
@@ -409,7 +408,7 @@ elif is_installed_ffmpeg == "None" :
     #-----------------------------------------------------------------------------------------------------
 
     # ADDING RPM FUSION REPOSITORY
-    add_repository()
+    utility.add_repository()
 
     # INSTALLING FFMPEG
     install_ffmpeg()
@@ -442,7 +441,7 @@ if is_installed_multimedia_codecs == "None" :
     #-----------------------------------------------------------------------------------------------------
 
     # ADDING RPM FUSION REPOSITORY
-    add_repository()
+    utility.add_repository()
 
     # INSTALLING FFMPEG
     install_codecs(lib_install_list)
