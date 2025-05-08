@@ -1,6 +1,6 @@
 
 #
-# Copyright 2024 Lorenzo Maiuri
+# Copyright 2025 Lorenzo Maiuri
 # Published under GPL-3.0 license
 # GitHub : https://github.com/H3rz3n/davinci-helper
 #
