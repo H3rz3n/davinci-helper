@@ -2,7 +2,7 @@
 Name:           davinci-helper
 
 # APP VERSION
-Version:        2.4.6
+Version:        2.4.7
 
 # RELEASE AND DISTRIBUTION VERSION
 Release:        1
@@ -94,6 +94,9 @@ sudo systemctl restart polkit
 
 # CHANGELOG OF THE VERSION 
 %changelog
+
+* Thu May 08 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.7-1
+- Fixed a major typo in the source code.
 
 * Thu May 08 2025 Lorenzo Maiuri <lorenzo.maiuri@ik.me> - 2.4.6-1
 - Resolved installation issues with FFMPEG in certain configurations.
