@@ -17,7 +17,7 @@
 import sys, os, subprocess, threading, gettext, locale, re
 
 # NOT STANDARD MODULES IMPORT
-from davinci_helper.functions.logic.utility import utility
+from davinci_helper.functions.logic.utility import *
 
 #-----------------------------------------------------------------------------------------------------
 
