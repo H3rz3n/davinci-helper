@@ -33,8 +33,6 @@
   </a>
 </p>
 
-# DaVinci Helper
-
 ## What is DaVinci Helper?
 
 **DaVinci Helper** is a companion app that simplifies the installation and use of BlackMagic DaVinci Resolve (both Free and Studio versions) on Linux.  
