@@ -2,37 +2,6 @@
   <img src="/screenshot/git_hub_thumbnail.png" alt="Banner" width="600"/>
 </p>
 
-<p align="center">
-  <!-- Version badge -->
-  <a href="https://github.com/H3rz3n/davinci-helper/releases">
-    <img src="https://img.shields.io/github/v/release/H3rz3n/davinci-helper?style=flat" alt="Latest Release">
-  </a>
-  <!-- License badge -->
-  <a href="https://github.com/H3rz3n/davinci-helper/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/H3rz3n/davinci-helper?style=flat" alt="License">
-  </a>
-  <!-- Issues badge -->
-  <a href="https://github.com/H3rz3n/davinci-helper/issues">
-    <img src="https://img.shields.io/github/issues/H3rz3n/davinci-helper?style=flat" alt="Issues">
-  </a>
-  <!-- Pull Requests badge -->
-  <a href="https://github.com/H3rz3n/davinci-helper/pulls">
-    <img src="https://img.shields.io/github/issues-pr/H3rz3n/davinci-helper?style=flat" alt="Pull Requests">
-  </a>
-  <!-- Stars badge -->
-  <a href="https://github.com/H3rz3n/davinci-helper/stargazers">
-    <img src="https://img.shields.io/github/stars/H3rz3n/davinci-helper?style=flat" alt="Stars">
-  </a>
-  <!-- Forks badge -->
-  <a href="https://github.com/H3rz3n/davinci-helper/network/members">
-    <img src="https://img.shields.io/github/forks/H3rz3n/davinci-helper?style=flat" alt="Forks">
-  </a>
-  <!-- COPR badge -->
-  <a href="https://copr.fedorainfracloud.org/coprs/herzen/davinci-helper/">
-    <img src="https://img.shields.io/badge/COPR-enabled-brightgreen?style=flat&logo=fedora" alt="Fedora COPR enabled">
-  </a>
-</p>
-
 ## What is DaVinci Helper?
 
 **DaVinci Helper** is a companion app that simplifies the installation and use of BlackMagic DaVinci Resolve (both Free and Studio versions) on Linux.  
