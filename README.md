@@ -2,6 +2,9 @@
   <img src="/screenshot/git_hub_thumbnail.png" alt="Banner" width="600"/>
 </p>
 
+> [!WARNING]
+> The project is undergoing a complete rewrite in Flutter to improve performance and extend compatibility to Debian-based systems
+
 ## What is DaVinci Helper?
 
 **DaVinci Helper** is a companion app that simplifies the installation and use of BlackMagic DaVinci Resolve (both Free and Studio versions) on Linux.  
