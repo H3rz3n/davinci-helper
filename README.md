@@ -3,7 +3,7 @@
 </p>
 
 > [!WARNING]
-> The project is undergoing a complete rewrite in Flutter to improve performance and extend compatibility to Debian-based systems
+> The project is being completely rewritten in Flutter to enhance performance and expand compatibility with Debian-based systems. All currently open issues will be addressed in the new version. 
 
 ## What is DaVinci Helper?
 
